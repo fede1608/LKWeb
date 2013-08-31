@@ -238,20 +238,25 @@
 												<?php 
 												$cantNotis=countNews();
 												$paginas=intval($pagina/$cantidad)<=intval($cantNotis/$cantidad) ?intval(($pagina-1)/$cantidad)*5 +1:intval(($cantNotis-1)/$cantidad)*5 +1;
+												if($paginas!=1)
 												echo '<li>
-													<a href="noticias.php?pag='.($paginas==1?1:$paginas-1).'"><i class="icon-chevron-left"></i></a>
+													<a href="noticias.php?pag='.($paginas-1).'"><i class="icon-chevron-left"></i></a>
 												</li>';
-												for($i=0;$i<intval($cantNotis/$cantidad)+1;$i++){
-												echo $paginas!=$pagina?'<li>
-													<a href="noticias.php?pag='.$paginas.'">'.$paginas.'</a>
-												</li>':'<li class="active">
-													<a href="noticias.php?pag='.$paginas.'">'.$paginas.'</a>
-												</li>';
-												$paginas++;
+												$fin=false;
+												for($i=0;$i<5;$i++){
+													if($paginas<=ceil($cantNotis/$cantidad))
+														echo $paginas!=$pagina?'<li>
+															<a href="noticias.php?pag='.$paginas.'">'.$paginas.'</a>
+														</li>':'<li class="active">
+															<a href="noticias.php?pag='.$paginas.'">'.$paginas.'</a>
+														</li>';
+													else $fin=true;
+													$paginas++;
 												}
-												echo '<li>
-													<a href="noticias.php?pag='.$paginas.'"><i class="icon-chevron-right"></i></a>
-												</li>';
+												if(!$fin)
+													echo '<li>
+														<a href="noticias.php?pag='.$paginas.'"><i class="icon-chevron-right"></i></a>
+													</li>';
 												?>
 												
 												
