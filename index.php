@@ -331,53 +331,10 @@
 									</i>
 								</div>
 							</div>
-							<div class="col-lg-4">
-								<section class="panel bg-info lter no-borders">
-									<div class="panel-body">
-										<a class="pull-right" href="#"><i class="icon-laptop"></i></a>
-										<span class="h4">
-											Estado del Servidor x10
-										</span>
-										<div class="text-center padder m-t">
-											<div class="progress progress-sm progress-striped active">
-												<div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="30%" style="width: 30%">
-											</div>
-										</div>
-                                        
-									</div>
-									<footer class="panel-footer lt">
-                                   <div class="text-center"> Status</div>
-										<div class="row">
-                                            <div class="col-xs-4">
-                                            	<small class="text-muted block">
-                                            		GameServer
-                                            	</small>
-                                            	<span>
-                                            		<i class="icon-globe" style="color: #119922;font-size: 16px;">
-                                            		</i>Online
-                                            	</span>
-                                            </div>
-                                            <div class="col-xs-4">
-                                            	<small class="text-muted block">
-                                            		Players On
-                                            	</small>
-                                            	<span>
-                                            		56/100
-                                            	</span>
-                                            </div>
-                                            <div class="col-xs-4">
-                                            	<small class="text-muted block">
-                                            		LoginServer
-                                            	</small>
-                                            	<span>
-                                            		<i class="icon-globe" style="color: #FF0000;font-size: 16px;">
-                                            		</i>Offline
-                                            	</span>
-                                            </div>
-                                        </div>
-                                    </footer>
-								</section>
-                                <!-- /Estado -->
+                            
+							<?php include_once('status.php');
+                            getStatus();//
+                            ?>
                                 <!-- Votos -->
                                 <section class="panel clearfix">
 									<div class="panel-body">
