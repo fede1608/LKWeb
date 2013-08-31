@@ -63,7 +63,7 @@
                                             $notis=getNews($cantidad,$pagina);
 											$alt='';
                                             foreach($notis as $noti){
-                                                $noti1['fecha']= $noti1['fecha'] - (4*60*60);
+                                                $noti['fecha']= $noti['fecha'] - (4*60*60);
 												$alt=$alt==''?'alt':'';
                                                 echo '<article class="timeline-item '.$alt.'">
 												<div class="timeline-caption">

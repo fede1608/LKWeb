@@ -55,6 +55,7 @@
 								</div>
                             
                             <!-- Noticias -->
+                            
 								<section class="panel">
 									<header class="panel-heading">
 										<span class="badge bg-info pull-right">
@@ -62,8 +63,15 @@
 										</span>
 										News
 									</header>
+                                    
 									<section class="panel-body">
-										<article class="media">
+                                    <?php 
+                                            include 'newsfeed.php';
+											$cantidad=3;
+                                            $notis=getNews($cantidad,1); 
+                                            foreach($notis as $noti){
+                                                $noti['fecha']= $noti['fecha'] - (4*60*60);
+                                                echo'<article class="media">
 											<div class="pull-left thumb-sm">
 												<span class="icon-stack">
 													<i class="icon-circle text-success icon-stack-base">
@@ -75,82 +83,27 @@
 											<div class="media-body">
 												<div class="pull-right media-xs text-center text-muted">
 													<strong class="h4">
-														12:18
+														'.date('d',$noti['fecha']).'
 													</strong>
 													<br>
 													<small class="label bg-light">
-														pm
+														'.date('M',$noti['fecha']).'
 													</small>
 												</div>
-												<a href="#" class="h4">Surprise Gift</a>
+												<a href="#" class="h4">'.$noti['titulo'].'</a>
                                                 <small class="block text-muted">
-															By Zephyr
+															By '.$noti[autor].'
 												</small>
 												<small class="block m-t-sm">
-													Se implementaron los &iacute;tems Surprise Gift Low/Mid/High para que el reward de los eventos sea m&aacute;s din&aacute;mico.
+													'.$noti['contenido'].'
 												</small>
 											</div>
-										</article>
-										<div class="line pull-in">
-										</div>
-										<article class="media">
-											<div class="pull-left thumb-sm">
-												<span class="icon-stack">
-													<i class="icon-circle text-danger icon-stack-base">
-													</i>
-													<i class="icon-file icon-light">
-													</i>
-												</span>
-											</div>
-											<div class="media-body">
-												<div class="pull-right media-xs text-center text-muted">
-													<strong class="h4">
-														17
-													</strong>
-													<br>
-													<small class="label bg-light">
-														feb
-													</small>
-												</div>
-												<a href="#" class="h4">Implementaci&oacute;n de Surprise Gift</a>
-                                                <small class="block text-muted">
-															By Zephyr
-												</small>
-												<small class="block m-t-sm">
-													Se implementaron los &iacute;tems Surprise Gift Low/Mid/High para que el reward de los eventos sea m&aacute;s din&aacute;mico.
-												</small>
-											</div>
-										</article>
-										<div class="line pull-in">
-										</div>
-										<article class="media">
-											<div class="pull-left thumb-sm">
-												<span class="icon-stack">
-													<i class="icon-circle text-warning icon-stack-base">
-													</i>
-													<i class="icon-star icon-light">
-													</i>
-												</span>
-											</div>
-											<div class="media-body">
-												<div class="pull-right media-xs text-center text-muted">
-													<strong class="h4">
-														09
-													</strong>
-													<br>
-													<small class="label bg-light">
-														ene
-													</small>
-												</div>
-												<a href="#" class="h4 text-success">Promocion 15%</a>
-                                                	<small class="block text-muted">
-															By fede1608
-														</small>
-												<small class="block m-t-sm">
-													Hasta el 7/5 15% extra en todos los paquetes de donaci&oacute;n con todos los medios de pago!
-												</small>
-											</div>
-										</article>
+										</article><div class="line pull-in">
+										</div>';
+                                                }
+                                            
+                                            ?>
+										
 									</section>
 								</section>
 								<!-- /Noticias -->
