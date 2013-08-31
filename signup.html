@@ -3,12 +3,13 @@
 	<head>
 		<meta charset="utf-8">
 		<title>
-			Web Application | todo
+			Bienvenido! | Linekkit
 		</title>
 		<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="css/app.v1.css">
 		<link rel="stylesheet" href="css/font.css" cache="false">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
 			</script>
@@ -18,55 +19,124 @@
 			</script>
 		<![endif]-->
 	</head>
-	<body>
+	<body style=" background-image:url(images/wallpaper_freya_d1920x1200.jpg) !important; background-size:cover !important;">
 		<section id="content" class="m-t-lg wrapper-md animated fadeInDown">
-			<a class="nav-brand" href="index.html">todo</a>
+			
 			<div class="row m-n">
-				<div class="col-md-4 col-md-offset-4 m-t-lg">
-					<section class="panel">
+                <!-- Columna izquierda -->
+                <div class="col-lg-4 col-lg-offset-2 m-t-lg">
+                <img src="images/logo.png" width="455" height="132">
+                <br>
+                <!-- Info del server -->
+                <div style="background-color:rgba(0, 0, 0, 0.46); color:#E9E2E2; -moz-border-radius: 10px;
+border-radius: 10px;">
+                    <h1 style=" text-align:center; font-family:Alegreya SC">Crea tu cuenta <u><b>ahora</b></u> y forma parte del servidor Freya <u><b>lider</b></u> de América Latina</h1>
+                    
+                    <h3 style="text-align:center; font-family:Alegreya SC">Exp x10|SP x10|Drop x7|Adena x10</h3><h4 style="text-align:center; font-family:Alegreya SC">Spoil x7 | Party x1.5 | Raid drop x3 | Quest drop x3 | Quest Exp/SP reward x2 | DualBox por PC <br> <br>Comunidad web | Geodata Premium | Protección Lameguard | Servidor Intel Xeon con SSDs en RAID 0 | 100Mb de conexión ilimitada</h4>
+                <!-- / Info del server -->
+                </div>
+               </div>                
+                <!-- /Columna izquierda -->
+            	<!-- Columna derecha -->
+				<div class="col-lg-4 m-t-lg">
+					<section class="panel" style="margin-top:40px;">
 						<header class="panel-heading bg bg-primary text-center">
-							Sign up
+							Completa los datos de tu cuenta
 						</header>
-						<form action="http://themes.flatfull.com/todo/index.html" class="panel-body">
-							<div class="form-group">
+								<div class="panel">
+									<div class="wizard clearfix" id="form-wizard">
+										<ul class="steps">
+											<li data-target="#step1" class="active">
+												<span class="badge badge-info">
+													1
+												</span>
+												Usuario
+											</li>
+											<li data-target="#step2">
+												<span class="badge">
+													2
+												</span>
+												Seguridad
+											</li>
+											<li data-target="#step3">
+												<span class="badge">
+													3
+												</span>
+												Unirse
+											</li>
+										</ul>
+									</div>
+									<div class="step-content">
+										<form>
+                                            <div class="step-pane active" id="step1">
+                                <div class="form-group">
 								<label class="control-label">
-									Display name
+									Elige un nombre para tu cuenta en el juego
 								</label>
-								<input type="text" placeholder="eg. Your name or company" class="form-control">
-							</div>
-							<div class="form-group">
+								<input type="text" class="form-control" data-trigger="change" data-required="true" placeholder="ej. Tu nombre o cuenta de otro juego">
+                                </div>
+                                <div class="form-group">
 								<label class="control-label">
-									Your email address
+									Ingresa tu nombre de la comunidad (foros)
 								</label>
-								<input type="email" placeholder="test@example.com" class="form-control">
-							</div>
-							<div class="form-group">
+								<input type="text" class="form-control" data-trigger="change" data-required="true"  placeholder="ej. El mismo que el campo anterior o uno nuevo" >
+                                </div>
+                                <div class="form-group">
 								<label class="control-label">
-									Type a password
+									Tu dirección de email
 								</label>
-								<input type="password" id="inputPassword" placeholder="Password" class="form-control">
+								<input type="text" class="form-control" data-trigger="change" data-required="true" data-type="email" placeholder="test@example.com">
+                                </div>
 							</div>
-							<div class="checkbox">
+											<div class="step-pane" id="step2">
+												<div class="form-group">
+								<label class="control-label">
+									Escribe una contraseña (y no se la digas a nadie)
+								</label>
+								<input type="password" id="inputPassword" placeholder="Contraseña" class="form-control" data-trigger="change" data-required="true">
+							</div>
+                            <div class="form-group">
+								<label class="control-label">
+									Completa el CAPTCHA, los robots no pueden jugar :(
+								</label>
+								<input type="text" placeholder="ej. A1B2C3" class="form-control" data-trigger="change" data-required="true">
+							</div>
+											</div>
+											<div class="step-pane" id="step3">
+												<div class="checkbox">
 								<label>
 									<input type="checkbox">
-									Agree the
-									<a href="#">terms and policy</a>
+									Acepto los
+									<a href="#">términos y condiciones</a>
 								</label>
 							</div>
 							<button type="submit" class="btn btn-info">
-								Sign up
+								Unirse a Linekkit
 							</button>
+											</div>
+										</form>
+										<div class="actions m-t">
+											<button type="button" class="btn btn-white btn-sm btn-prev" data-target="#form-wizard" data-wizard="previous" disabled="disabled">
+												Anterior
+											</button>
+											<button type="button" class="btn btn-white btn-sm btn-next" data-target="#form-wizard" data-wizard="next" data-last="Finish">
+												Siguiente
+											</button>
+										</div>
+									</div>
+								</div>
 							<div class="line line-dashed">
 							</div>
 							<p class="text-muted text-center">
 								<small>
-									Already have an account?
+									¿Ya tienes una cuenta?
 								</small>
 							</p>
-							<a href="signin.html" class="btn btn-white btn-block">Sign in</a>
+							<a href="signin.html" class="btn btn-white btn-block">Iniciar sesión</a>
 						</form>
 					</section>
 				</div>
+                <!-- Columna derecha -->
 			</div>
 		</section>
 		<!-- footer -->
@@ -74,10 +144,10 @@
 			<div class="text-center padder clearfix">
 				<p>
 					<small>
-						Mobile first web app framework base on Bootstrap
-						<br>
-						&copy; 2013
-					</small>
+						Linekkit Freya
+					<br>
+						linekkit.com &copy; 2013
+				  </small>
 				</p>
 			</div>
 		</footer>
