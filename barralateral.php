@@ -157,6 +157,9 @@ function getBar($tipo,$active){
 								<li '.($active==6?'class="active"':'').'>
 									<a href="noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
 								</li>
+                                <li '.($active==7?'class="active"':'').'>
+									<a href="foro.php"> <i class="icon-book"></i> <span>Foro</span> </a>
+								</li>
 							</ul>
 						</nav>
 						<!-- / nav -->
