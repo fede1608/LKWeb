@@ -19,9 +19,7 @@
 			</script>
 		<![endif]-->
 	</head>
-
-	<body style=" background-image:url(images/wallpaper_freya_d1920x1200.jpg) !important; background-size:cover !important;">
-
+	<body style="background-image:url(images/wallpaper_freya_d1920x1200.jpg) !important; background-size:cover !important;">
 		<section id="content" class="m-t-lg wrapper-md animated fadeInDown">
 			
 			<div class="row m-n">
@@ -45,77 +43,81 @@ border-radius: 10px;">
 						<header class="panel-heading bg bg-primary text-center">
 							Completa los datos de tu cuenta
 						</header>
-								<div class="panel">
+						<form action="index.html" class="panel-body" style="padding-bottom:0">
+                        
+                       <div class="panel">
 									<div class="wizard clearfix" id="form-wizard">
 										<ul class="steps">
 											<li data-target="#step1" class="active">
 												<span class="badge badge-info">
 													1
 												</span>
-												Usuario
+												
 											</li>
 											<li data-target="#step2">
 												<span class="badge">
 													2
 												</span>
-												Seguridad
+												
 											</li>
 											<li data-target="#step3">
 												<span class="badge">
 													3
 												</span>
-												Unirse
+												
+											</li>
+                                            <li data-target="#step4">
+												<span class="badge">
+													4
+												</span>
+												
+											</li>
+                                            <li data-target="#step5">
+												<span class="badge">
+													5
+												</span>
+												
 											</li>
 										</ul>
 									</div>
 									<div class="step-content">
 										<form>
-                                            <div class="step-pane active" id="step1">
-                                <div class="form-group">
-								<label class="control-label">
+											<div class="step-pane active" id="step1">
+												<label class="control-label">
 									Elige un nombre para tu cuenta en el juego
-								</label>
-								<input type="text" name="gameuser" placeholder="ej. Tu nombre o cuenta de otro juego" data-required="true" class="form-control">
-                                </div>
-                                <div class="form-group">
-								<label class="control-label">
-									Ingresa tu nombre de la comunidad (foros)
-								</label>
-								<input type="text" name="forouser" placeholder="ej. El mismo que antes o uno diferente" data-required="true" class="form-control">
-                                </div>
-                                <div class="form-group">
-								<label class="control-label">
-									Tu dirección de email
-								</label>
-								<input type="text" name="email" placeholder="test@example.com" class="bg-focus form-control" data-required="true" data-type="email">
-                                </div>
-							</div>
-											<div class="step-pane" id="step2">
-												<div class="form-group">
-								<label class="control-label">
-									Escribe una contraseña (y no se la digas a nadie)
-								</label>
-								<input type="password" id="inputPassword" placeholder="Contraseña" class="form-control" data-trigger="change" data-required="true">
-							</div>
-                            <div class="form-group">
-								<label class="control-label">
-									Completa el CAPTCHA, los robots no pueden jugar :(
-								</label>
-								<input type="text" placeholder="ej. A1B2C3" class="form-control" data-trigger="change" data-required="true">
-							</div>
+												</label>
+												<input type="text" class="form-control" data-trigger="change" data-required="true" data-type="url" placeholder="website">
 											</div>
+                                            
+                                            <div class="step-pane" id="step2">
+												<p>
+													Your website:
+												</p>
+												<input type="text" class="form-control" data-trigger="change" data-required="true" data-type="url" placeholder="website">
+											</div>
+                                            
 											<div class="step-pane" id="step3">
-												<div class="checkbox">
-								<label>
-									<input type="checkbox">
-									Acepto los
-									<a href="#">términos y condiciones</a>
-								</label>
-							</div>
-							<button type="submit" class="btn btn-info">
-								Unirse a Linekkit
-							</button>
+												<p>
+													Your email:
+												</p>
+												<input type="text" class="form-control" data-trigger="change" data-required="true" data-type="email" placeholder="email address">
 											</div>
+                                            
+											<div class="step-pane" id="step4">
+												<label class="control-label">
+									Elige un nombre para tu cuenta en el juego
+												</label>
+												<input type="text" class="form-control" data-trigger="change" data-required="true" data-type="url" placeholder="website">
+											</div>
+                                            
+                                            <div class="step-pane" id="step5">
+												<label class="control-label">
+									Elige un nombre para tu cuenta en el juego
+												</label>
+												<input type="text" class="form-control" data-trigger="change" data-required="true" data-type="url" placeholder="website">
+											</div>
+                                            
+                                            
 										</form>
 										<div class="actions m-t">
 											<button type="button" class="btn btn-white btn-sm btn-prev" data-target="#form-wizard" data-wizard="previous" disabled="disabled">
@@ -125,11 +127,12 @@ border-radius: 10px;">
 												Siguiente
 											</button>
 										</div>
-									</div>
-								</div>
-                                
-                                </form>
-							<div class="panel-body" style="padding-top:0">
+													
+						</form>
+                        	
+                            </div>
+                            </div>
+                            <div class="panel-body" style="padding-top:0">
                                 <!-- Linea punteada de fin de formulario-->
                                 <div class="line line-dashed">
                                 </div>
@@ -140,7 +143,7 @@ border-radius: 10px;">
                                 </p>
                                 <a href="signin.html" class="btn btn-white btn-block">Iniciar sesión</a>
                             </div>
-						
+                            
 					</section>
 				</div>
                 <!-- Columna derecha -->
