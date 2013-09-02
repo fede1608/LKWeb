@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Linekkit */
+.fondo-transparente-negro
+{
+	background-color: rgba(0,0,0,0.6);
+}
+.borde-transparente-negro
+{
+	border-color: rgba(53,53,53,0.75);;
+}
+.letras-blancas
+{
+	color:#E9E2E2;
+}
+.letras-negras{
+	color:#000 !important;
+}
