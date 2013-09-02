@@ -4,16 +4,22 @@
  * @author fede1
  * @copyright 2013
  */
-
-include_once("analytics.php");
-
-session_start();
-define ('_ACM_VALID', 1);
-
 function islogged(){
 if(isset($_SESSION['acm'])) return true;
 return false;
 }
+
+include_once("analytics.php");
+
+
+
+define('IN_MYBB', NULL);
+require_once 'forum/global.php';
+require_once 'forum/MyBBIntegrator.php';
+$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config); 
+
+session_start();
+define ('_ACM_VALID', 1);
 require './acm/classes/config.class.php';
 // require './acm/config.php';
 require './acm/libs/Smarty.class.php';

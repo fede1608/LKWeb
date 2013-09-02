@@ -1,3 +1,6 @@
+<?php
+include_once 'session.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -25,7 +28,7 @@
             ?>
 			<!-- .vbox -->
 			<section id="content">
-				<iframe src="http://www.linekkit.com/forum" width="100%" height=100%></iframe>
+				<iframe src="http://www.linekkit.com/forum<?php echo $_GET['page']; ?>" width="100%" height=100%></iframe>
                 </section>
 			<!-- /.vbox -->
 		</section>

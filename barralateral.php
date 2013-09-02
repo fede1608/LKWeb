@@ -6,6 +6,21 @@
  */
 
 function getBar($tipo,$active){
+    global $mybb, $MyBBI;
+    $flogged=$MyBBI->isLoggedIn();
+    $msgFnotlogged='';
+    if($flogged){
+        $userFData=$MyBBI->getUser();
+        $avatar='forum/'.$userFData['avatar'];
+    }else{
+        $avatar='images/default.jpg';
+        $msgFnotlogged='<div class="bg-danger wrapper hidden-vertical animated rollIn text-sm">
+							<a href="#" data-dismiss="alert" class="pull-right m-r-n-sm m-t-n-sm"><i class="icon-close icon-remove "></i></a>
+							Heya, no has iniciado sesi&oacuten en el foro, por favor loggea <b><a href="foro.php?page=/member.php?action=login">aqu&iacute;</a></b>.
+						</div>';
+    }
+    //echo $avatar;
+    //print_r($userFData);
     echo '<!-- .Barra Lateral -->
 			<aside class="bg-primary aside-sm';
    switch ($tipo) {
@@ -22,7 +37,7 @@ function getBar($tipo,$active){
 				<section class="vbox">
 					<header class="dker nav-bar">
 						<a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body"> <i class="icon-reorder"></i> </a>
-						<a href="#" class="nav-brand" data-toggle="fullscreen">Linekkit</a>
+						<a href="#" class="nav-brand" data-toggle="fullscreen"><img src="images/logo.png" style="width: 100%;"></a>
 						<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i class="icon-comment-alt"></i> </a>
 					</header>
 					<footer class="footer bg-gradient hidden-xs">
@@ -33,7 +48,7 @@ function getBar($tipo,$active){
 						<!-- user -->
 						<div class="bg-success nav-user hidden-xs pos-rlt">
 							<div class="nav-avatar pos-rlt">
-								<a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown"> <img src="images/avatar.jpg" alt="" class=""> <span class="caret caret-white"></span> </a>
+								<a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown"> <img src="'.$avatar.'" alt="" class=""> <span class="caret caret-white"></span> </a>
 								<ul class="dropdown-menu m-t-sm animated fadeInLeft">
 									<span class="arrow top">
 									</span>
@@ -164,10 +179,7 @@ function getBar($tipo,$active){
 						</nav>
 						<!-- / nav -->
 						<!-- note -->
-						<div class="bg-danger wrapper hidden-vertical animated rollIn text-sm">
-							<a href="#" data-dismiss="alert" class="pull-right m-r-n-sm m-t-n-sm"><i class="icon-close icon-remove "></i></a>
-							Heya, bienvenido a Linekkit, puedes empezar aqu&iacute;.
-						</div>
+						'.$msgFnotlogged.'
 						<!-- / note -->
 					</section>
 				</section>
