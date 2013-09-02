@@ -21,6 +21,7 @@ include_once("session.php");
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="css/app.v1.css">
 		<link rel="stylesheet" href="css/font.css" cache="false">
+        <link rel="stylesheet" href="css/lkcss.css">
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
 			</script>
@@ -30,7 +31,7 @@ include_once("session.php");
 			</script>
 		<![endif]-->
 	</head>
-	<body style="background-image:url(images/lineage_ii_seven_signs-wallpaper-1600x900.jpg) !important; background-size:cover !important;">
+	<body style=" background-image:url(images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size:cover !important;">
 		<section class="hbox stretch">
 			<?php
 include_once('barralateral.php');
@@ -40,13 +41,18 @@ include_once('barralateral.php');
 			<section id="content">
 				<section class="vbox">
 					<section class="scrollable wrapper">
+                    
+                    	<div class="row">
+                        <img src="images/logo.png" width="523" height="161"> 
+                        </div>
+                                                
 						<div class="row">
 							<div class="col-lg-8">
                             
                             
                             <div class="panel-group m-b" id="accordion2">
-									<div class="panel">
-										<div class="panel-heading">
+									<div class="panel fondo-transparente-negro borde-transparente-negro">
+										<div class="panel-heading fondo-transparente-negro">
 											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> o <?php echo $userdata['login']; ?> a L2 Linekkit. Aqu&iacute; comienza tu aventura!</strong> </a>
 										</div>
 										<div id="collapseOne" class="panel-collapse in">
@@ -58,12 +64,12 @@ include_once('barralateral.php');
 											</div>
 										</div>
 									</div>
-								</div>
+							  </div>
                             
                             <!-- Noticias -->
                             
-								<section class="panel">
-									<header class="panel-heading">
+								<section class="panel fondo-transparente-negro borde-transparente-negro">
+									<header class="panel-heading  fondo-transparente-negro borde-transparente-negro" >
 										<span class="badge bg-info pull-right">
 											32
 										</span>
@@ -116,12 +122,12 @@ include_once('barralateral.php');
                             
 								<section class="panel">
 									<form>
-										<textarea class="form-control input-lg no-border" rows="2" placeholder="What are you doing...">
+										<textarea class="form-control input-lg no-border" rows="2" placeholder="Publica algo en la comunidad...">
 										</textarea>
 									</form>
 									<footer class="panel-footer bg-light lter">
 										<button class="btn btn-info pull-right">
-											POST
+											PUBLICAR
 										</button>
 										<ul class="nav nav-pills">
 											<li>
@@ -325,7 +331,7 @@ include_once('barralateral.php');
 											</div>
 
 											
-										</div>
+									  </div>
 									</div>
 								</section>
                                 <!-- /Votos -->
@@ -435,7 +441,7 @@ include_once('barralateral.php');
 										</div>
 									</div>
 								</section>
-							</div>
+					  </div>
 						</div>
 					</section>
 				</section>
