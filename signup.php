@@ -52,7 +52,7 @@
 									¿Ya tienes una cuenta?
 								</small>
 							</p>
-							<a href="signin.html" class="btn btn-warning btn-block">Iniciar sesión</a>
+							<a href="signin.php" class="btn btn-warning btn-block">Iniciar sesión</a>
                 
                 </div>
                 </section>
@@ -64,36 +64,37 @@
 						<header class="panel-heading bg bg-primary text-center borde-transparente-negro">
 							Completa los datos de tu cuenta
 						</header>
-						<form action="index.php" class="panel-body" method="get" data-validate="parsley">
+						<form name="create" method="POST" action="./acm/index.php" class="panel-body" data-validate="parsley">
 							<div class="form-group">
 								<label class="control-label">
 									Elige un nombre para tu cuenta en el juego
 								</label>
-								<input type="text" placeholder="ej. Tu nombre o cuenta de otro juego" name="usuario" id="usuario" data-required="true" class="form-control">
+								<input type="text" placeholder="ej. Tu nombre o cuenta de otro juego" name="Luser" id="Luser" data-required="true" class="form-control">
 							</div>
                             <div class="form-group">
 								<label class="control-label">
 									Ingresa tu nombre de la comunidad (foros)
 								</label>
-								<input type="text" placeholder="ej. El mismo que el campo anterior o uno nuevo" name="usuarioForo" id="usuarioForo" data-required="true" class="form-control">
+								<input type="text" placeholder="ej. El mismo que el campo anterior o uno nuevo" name="Fuser" id="Fuser" data-required="true" class="form-control">
 							</div>
 							<div class="form-group">
 								<label class="control-label">
 									Tu dirección de email
 								</label>
-								<input type="email" id="email" name="email" data-required="true" placeholder="test@example.com" class="form-control" >
+								<input type="email" id="Lemail" name="Lemail" data-required="true" placeholder="test@example.com" class="form-control" >
 							</div>
 							<div class="form-group">
 								<label class="control-label">
 									Escribe una contraseña (y no se la digas a nadie)
 								</label>
-								<input type="password" id="password1" name="password1" data-required="true" placeholder="Contraseña" class="form-control" >
+								<input type="password" id="Lpwd" name="Lpwd" data-required="true" placeholder="Contraseña" class="form-control" >
 							</div>
                             <div class="form-group">
 								<label class="control-label">
 									Reescribe la contraseña
 								</label>
-								<input type="password" id="password2" name="password2" data-required="true" placeholder="Contraseña" class="form-control">
+								<input type="password" id="Lpwd2" name="Lpwd2" data-required="true" placeholder="Contraseña" class="form-control">
+                                <input type="hidden" name="action" value="registration">
 							</div>
                             <div class="form-group">
 								<label class="control-label">
@@ -103,7 +104,7 @@
                                 <div class="row m-n">
                                 
                                     <div class="col-lg-9" style="padding-left:0">
-                                    <input type="text" placeholder="ej. A1B2C3" data-required="true" class="form-control pull-left" name="captcha" id="captcha"> 
+                                    <input type="text" placeholder="ej. A1B2C3" data-required="true" class="form-control pull-left" name="Limage" id="Limage"> 
                                     </div>
                                     
                                     <div class="col-lg-3">                                <img src="./acm/img.php" id="L_image" width="90" class="pull-right" >
