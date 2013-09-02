@@ -8,7 +8,7 @@ date_default_timezone_set("America/Argentina/Buenos_Aires");
 require_once 'libs/mysql.inc.php';
 require_once 'libs/config.inc.php';
 $fakepcs=0;
-$MySQL = new SQL($hostL, $usernombre, $pass, "linekkitfreya20");
+$MySQL = new SQL($hostL, $usernombre, $pass, "linekkittest");
 
 function getStatusVar($loginport,$gameport,$ip,$db,$maxplayers){
    global $MySQL;

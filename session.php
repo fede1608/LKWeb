@@ -5,7 +5,7 @@
  * @copyright 2013
  */
 
-//include_once("analytics.php");
+include_once("analytics.php");
 
 session_start();
 define ('_ACM_VALID', 1);

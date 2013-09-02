@@ -54,7 +54,7 @@
                                         
                                         <div class="col-lg-9" style="padding-left:0">
                                         <?php require_once('status.php');
-                                            $vars=getStatusVar(2106,7778,"freya.linekkit.com","linekkitfreya20",400);//
+                                            $vars=getStatusVar(2106,7778,"freya.linekkit.com","linekkittest",400);//
                                          ?>
                                             <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
                                                 <div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="<?php echo $vars['playersonline']; ?> Players Online" style="width: <?php echo $vars['porcentaje']; ?>%">
