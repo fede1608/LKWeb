@@ -1,4 +1,16 @@
-<!DOCTYPE html>
+<?php
+define('IN_MYBB', NULL);
+require_once '../forum/global.php';
+require_once '../forum/MyBBIntegrator.php';
+$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config); 
+$forumpath = 'forum/';
+
+chdir($forumpath);
+require_once MYBB_ROOT."inc/class_parser.php";
+$parser = new postParser;
+chdir('../');
+include_once("session.php");
+?><!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -20,7 +32,8 @@
 	</head>
 	<body>
 		<section class="hbox stretch">
-			<?php include_once('barralateral.php');
+			<?php
+include_once('barralateral.php');
             getBar(1,1);//getbat(tipoDeBarra,<li>activo)
             ?>
 			<!-- .vbox -->
@@ -41,7 +54,7 @@
                             <div class="panel-group m-b" id="accordion2">
 									<div class="panel">
 										<div class="panel-heading">
-											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido a L2 Linekkit. Aqu&iacute; comienza tu aventura!</strong> </a>
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> o <?php echo $userdata['login']; ?> a L2 Linekkit. Aqu&iacute; comienza tu aventura!</strong> </a>
 										</div>
 										<div id="collapseOne" class="panel-collapse in">
 											<div class="panel-body text-sm">

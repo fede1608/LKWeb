@@ -8,7 +8,7 @@ define('IN_MYBB', NULL);
 require_once '../forum/global.php';
 require_once '../forum/MyBBIntegrator.php';
 require_once '../forum/inc/datahandlers/user.php';
-
+require_once '../libs/mysql.inc.php';
 
 
 class core {
@@ -29,9 +29,22 @@ class core {
 		MSG::add_valid(LANG::i18n('_logout'));
 		$this->index();
 	}
-
+    
+    public function loginForo() {
+        //mod by fede1608
+		
+		MSG::add_error(LANG::i18n('_wrong_auth'));
+		$host  = $_SERVER['HTTP_HOST'];
+        $uri   = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+        $extra = 'signinforum.php';
+        header("Location: http://$host$uri/$extra");
+        exit;
+        
+	}
+    
 	public function login() {
-
+        global $mybb, $db, $cache, $plugins, $lang, $config;
+        $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config);
 		if(empty($_POST['Luser']) || empty($_POST['Lpwd']))
 		{
 			MSG::add_error(LANG::i18n('_no_id_no_pwd'));
@@ -40,7 +53,25 @@ class core {
 			$this->secure_post();
 
 			if(!ACCOUNT::load()->auth($_POST['Luser'], $_POST['Lpwd'], @$_POST['Limage']))
+            {
 				MSG::add_error(LANG::i18n('_wrong_auth'));
+            }
+            else
+            {   
+                $mysqldb= new SQL("freya.linekkit.com:3306", "root", "overflow1021", "linekkitlogin");
+                $query = $mysqldb->execute('SELECT * FROM accounts WHERE login="'.$db->escape_string($_POST['Luser']).'"');
+                $useracm = $query[0];
+                    
+                    $MyBBI->logout();
+                    if(!$MyBBI->login($useracm['userForum'], $_POST['Lpwd'],'','')){
+                        //$this->loginForo();
+                        echo 'Not login '.$useracm['userForum'].' '.$_POST['Lpwd'].' '.$db->escape_string($_POST['Luser']).' '.$_POST['Luser'].' '.'SELECT * FROM accounts WHERE login="'.$db->escape_string($_POST['Luser']).'"';
+                    }else {echo 'login ok ';
+                    echo $mybb->user['username'];
+                    if ($MyBBI->isLoggedIn()) echo ' loggeado ok';}
+                    
+                   
+            }
 		}
 
 		$this->index();
