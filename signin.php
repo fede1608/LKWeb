@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<link rel="stylesheet" href="css/app.v1.css">
 		<link rel="stylesheet" href="css/font.css" cache="false">
+        <link rel="stylesheet" href="css/lkcss.css">
         <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
@@ -30,21 +31,22 @@
         }(document, 'script', 'facebook-jssdk'));</script>
          <!-- / Conexión con facebook -->
         
-        <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+        <section id="content" class="wrapper-md animated fadeInUp">
         <div class="row m-n">
                 <!-- Columna izquierda -->
                 <div class="col-lg-4 col-lg-offset-2 m-t-lg">
                 	<img src="images/logo.png" width="455" height="132">
                     <br>
                     <!-- .scrollable -->
-								<section class="panel">
-									<header class="panel-heading text-center">    
-											Bienvenido a Linekkit
-									</header>
+								<section class="panel fondo-transparente-negro borde-transparente-negro">
+                
+                                    <header class="panel-heading text-center fondo-transparente-negro borde-transparente-negro">    
+                                                                Bienvenido a Linekkit
+                                    </header>
                                     
-									<section class="panel-body">
+									<section class="panel-body letras-blancas">
                                     
-                                    <h1 style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px; color:rgb(54, 43, 43)">Inicia sesión con tu cuenta de <b>Linekkit</b> para acceder a tu perfil de jugador, ver tus estadísticas y ser parte de la comunidad</h1>
+                                    <h1 style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px;">Inicia sesión con tu cuenta de <b>Linekkit</b> para acceder a tu perfil de jugador, ver tus estadísticas y ser parte de la comunidad</h1>
                                     </section>
                                     
                                     <div class="row m-n">
@@ -71,13 +73,13 @@
 										</div>
                                         
                                         <div class="panel-body" style="padding-top:0; padding-bottom:5; text-align:center">
-                                    	<div class="fb-like" data-href="https://www.facebook.com/Linekkit" data-width="350" data-show-faces="false" data-send="true"></div>
+                                    	<div class="fb-like" data-href="https://www.facebook.com/Linekkit" data-width="360" data-colorscheme="dark" data-show-faces="false" data-send="true"></div>
                                     </div>
                                         
                                         <div class="btn-group btn-group-justified m-b" style="margin-bottom:15px">
                                                     <a class="btn btn-success btn-rounded"><i class="icon-comments"></i> Foros</a>
                                                     <a class="btn btn-gplus btn-rounded"> <i class="icon-cloud-download"></i> Descargas </a>
-                                                    <a class="btn btn-facebook btn-rounded"> <i class="icon-facebook"></i> Facebook </a>
+                                                    <a class="btn btn-facebook btn-rounded" href="https://www.facebook.com/Linekkit"> <i class="icon-facebook"></i> Facebook </a>
                                         </div>
                                     </section>
                                                                
@@ -88,8 +90,8 @@
                 
 	  			<!-- Columna derecha -->
 				<div class="col-lg-4 m-t-lg" style="margin-top:151px;">
-					<section class="panel">
-						<header class="panel-heading text-center">
+					<section class="panel fondo-transparente-negro borde-transparente-negro">
+						<header class="panel-heading text-center bg-primary borde-transparente-negro">
 							Iniciar sesión
 					  </header>
 						<form name="login" method="POST" action="./acm/index.php" class="panel-body" data-validate="parsley">
@@ -113,7 +115,7 @@
 							  </label>
 							</div>
 							<a href="#" class="pull-right m-t-xs"><small>¿Olvidaste tu contraseña?</small></a>
-							<button type="submit" class="btn btn-info">
+							<button type="submit" class="btn btn-warning">
 								Conectarse
 						  </button>
 							<div class="line line-dashed">
@@ -127,7 +129,7 @@
 									¿No tienes una cuenta?
 							  </small>
 							</p>
-							<a href="signup.php" class="btn btn-white btn-block">Crear una cuenta nueva</a>
+							<a href="signup.php" class="btn btn-gplus btn-block">Crear una cuenta nueva</a>
 						</form>
 					</section>
 				</div>
