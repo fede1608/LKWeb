@@ -34,7 +34,7 @@
         <section id="content" class="wrapper-md animated fadeInUp">
         <div class="row m-n">
                 <!-- Columna izquierda -->
-                <div class="col-lg-4 col-lg-offset-2 m-t-lg">
+                <div class="col-lg-4 col-lg-offset-2">
                 	<img src="images/logo.png" width="455" height="132">
                     <br>
                     <!-- .scrollable -->
@@ -89,7 +89,7 @@
                 <!-- /Columna izquierda -->
                 
 	  			<!-- Columna derecha -->
-				<div class="col-lg-4 m-t-lg" style="margin-top:151px;">
+				<div class="col-lg-4" style="margin-top:131px;">
 					<section class="panel fondo-transparente-negro borde-transparente-negro">
 						<header class="panel-heading text-center bg-primary borde-transparente-negro">
 							Iniciar sesión

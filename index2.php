@@ -30,7 +30,7 @@ include_once("session.php");
 			</script>
 		<![endif]-->
 	</head>
-	<body>
+	<body style="background-image:url(images/lineage_ii_seven_signs-wallpaper-1600x900.jpg) !important; background-size:cover !important;">
 		<section class="hbox stretch">
 			<?php
 include_once('barralateral.php');
@@ -39,14 +39,7 @@ include_once('barralateral.php');
 			<!-- .vbox -->
 			<section id="content">
 				<section class="vbox">
-					<header class="header bg-white b-b">
-						<p>
-                        <div class="text-center wrapper">
-							<img src="http://linekkit.com/enConstruccion/images/lk.png" height="200" alt="" style="height:35%;width:80%;margin-top: -3%;"/>
-
-						</p>
-					</header>
-					<section class="scrollable wrapper" style="top: 35%;">
+					<section class="scrollable wrapper">
 						<div class="row">
 							<div class="col-lg-8">
                             

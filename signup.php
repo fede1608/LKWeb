@@ -22,11 +22,11 @@
 	</head>
 	<body style="background-image:url(images/wallpaper_freya_d1920x1200.jpg) !important; background-size:cover !important;">
 
-		<section id="content" class="m-t-lg wrapper-md animated fadeInDown">
+		<section id="content" class="wrapper-md animated fadeInDown">
 			
 			<div class="row m-n">
                 <!-- Columna izquierda -->
-                <div class="col-lg-4 col-lg-offset-2 m-t-lg">
+                <div class="col-lg-4 col-lg-offset-2">
                 <img src="images/logo.png" width="455" height="132">
                 <br>
                 
@@ -59,7 +59,7 @@
                </div>                
                 <!-- /Columna izquierda -->
             	<!-- Columna derecha -->
-				<div class="col-lg-4 m-t-lg">
+				<div class="col-lg-4">
 					<section class="panel fondo-transparente-negro borde-transparente-negro" style="margin-top:66px;">
 						<header class="panel-heading bg bg-primary text-center borde-transparente-negro">
 							Completa los datos de tu cuenta
