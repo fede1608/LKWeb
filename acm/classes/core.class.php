@@ -65,10 +65,10 @@ class core {
                     $MyBBI->logout();
                     if(!$MyBBI->login($useracm['userForum'], $_POST['Lpwd'],'','')){
                         //$this->loginForo();
-                        echo 'Not login '.$useracm['userForum'].' '.$_POST['Lpwd'].' '.$db->escape_string($_POST['Luser']).' '.$_POST['Luser'].' '.'SELECT * FROM accounts WHERE login="'.$db->escape_string($_POST['Luser']).'"';
-                    }else {echo 'login ok ';
-                    echo $mybb->user['username'];
-                    if ($MyBBI->isLoggedIn()) echo ' loggeado ok';}
+                       echo '';
+                    }else {
+                        echo '';
+                    }
                     
                    
             }
@@ -159,59 +159,70 @@ class core {
 		//chdir('acm/');
 		// print_r($mybb);
 		// print_r($db);
-		$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config);
-		$infoUser	= array(
-			'username', 'password', 'password2', 'email', 'email2', 'referrer', 'timezone', 'language',
-			'profile_fields', 'allownotices', 'hideemail', 'subscriptionmethod', 
-			'receivepms', 'pmnotice', 'emailpmnotify', 'invisible', 'dstcorrection'
-		);
-		
-		$infoUser['username']=$_POST['Fuser'];
-		$infoUser['password']=$_POST['Lpwd'];
-		$infoUser['password2']=$_POST['Lpwd2'];
-		$infoUser['email']=$_POST['Lemail'];
-		$infoUser['email2']=$_POST['Lemail'];
-		$infoUser['referrer']=0;
-		$infoUser['timezone']=-3;
-		$infoUser['language']='espanol';
-		$infoUser['profile_fields']['fid3']='Desconocido';
-		$infoUser['profile_fields']['fid1']='Desconocido';
-		$infoUser['allownotices']=1;
-		$infoUser['hideemail']=0;
-		$infoUser['subscriptionmethod']=0;
-		$infoUser['receivepms']=1;
-		$infoUser['pmnotice']=2;
-		$infoUser['emailpmnotify']=0;
-		$infoUser['invisible']=0;
-		$infoUser['dstcorrection']=2;
-		
-
-		
-		$userhandler = new UserDataHandler("insert");
-		
-		$userhandler->set_data($infoUser);
-		
-		if(!$userhandler->validate_user())
-		{
-			echo 'ok6';
-			$errors = $userhandler->get_friendly_errors();
-			print_r($errors);
-			MSG::add_error(LANG::i18n('_REGISTER_ERROR'));
-			$this->show_create(true);
-			echo 'ok7';
-			//die('El Nombre de Usuario del foro ya esta utilizado.');	
-		}
-		else if(ACCOUNT::load()->create($_POST['Luser'], $_POST['Lpwd'], $_POST['Lpwd2'], $_POST['Lemail'], @$_POST['Limage'], $LCoins)) 
-		{
-		echo 'ok6';
-			//exito
-			$MyBBI->register($infoUser);
-			$this->show_login();
-		}else
-		{
-		echo 'ok6';
-			$this->show_create(true);
-		}
+        if(isset($_POST['Fuser'])){
+    		$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config);
+    		$infoUser	= array(
+    			'username', 'password', 'password2', 'email', 'email2', 'referrer', 'timezone', 'language',
+    			'profile_fields', 'allownotices', 'hideemail', 'subscriptionmethod', 
+    			'receivepms', 'pmnotice', 'emailpmnotify', 'invisible', 'dstcorrection'
+    		);
+    		
+    		$infoUser['username']=$_POST['Fuser'];
+    		$infoUser['password']=$_POST['Lpwd'];
+    		$infoUser['password2']=$_POST['Lpwd2'];
+    		$infoUser['email']=$_POST['Lemail'];
+    		$infoUser['email2']=$_POST['Lemail'];
+    		$infoUser['referrer']=0;
+    		$infoUser['timezone']=-3;
+    		$infoUser['language']='espanol';
+    		$infoUser['profile_fields']['fid3']='Desconocido';
+    		$infoUser['profile_fields']['fid1']='Desconocido';
+    		$infoUser['allownotices']=1;
+    		$infoUser['hideemail']=0;
+    		$infoUser['subscriptionmethod']=0;
+    		$infoUser['receivepms']=1;
+    		$infoUser['pmnotice']=2;
+    		$infoUser['emailpmnotify']=0;
+    		$infoUser['invisible']=0;
+    		$infoUser['dstcorrection']=2;
+    		
+    
+    		
+    		$userhandler = new UserDataHandler("insert");
+    		
+    		$userhandler->set_data($infoUser);
+    		
+    		if(!$userhandler->validate_user())
+    		{
+    			
+    			$errors = $userhandler->get_friendly_errors();
+    			print_r($errors);
+    			MSG::add_error(LANG::i18n('_REGISTER_ERROR'));
+    			$this->show_create(true);
+    			
+    			//die('El Nombre de Usuario del foro ya esta utilizado.');	
+    		}
+    		else if(ACCOUNT::load()->create($_POST['Luser'], $_POST['Lpwd'], $_POST['Lpwd2'], $_POST['Lemail'], @$_POST['Limage'], $LCoins,$_POST['Fuser'])) 
+    		{
+    		
+    			//exito
+    			$MyBBI->register($infoUser);
+    			$this->show_login();
+    		}else
+    		{
+    		
+    			$this->show_create(true);
+    		}
+        }else{
+            if(ACCOUNT::load()->create($_POST['Luser'], $_POST['Lpwd'], $_POST['Lpwd2'], $_POST['Lemail'], @$_POST['Limage'], $LCoins,'')) 
+    		{
+    			//exito
+    			$this->show_login();
+    		}else
+    		{
+    			$this->show_create(true);
+    		}
+        }
 	}
 
 	public function show_ack(){
