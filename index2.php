@@ -64,11 +64,10 @@ include_once('barralateral.php');
                                             <!-- Fila de arriba-->
                                             <div class="row m-b-lg">
                                             
-                                            	<div class="col-lg-7">
-                                           	    <img src="images/wizard.jpg" width="460" height="185"> 
-                                                </div>
+                                            	<div class="col-lg-4">
+                                       	        <img src="images/humanos.png" width="240" height="369"> </div>
                                                 
-                                                <div class="col-lg-5">
+                                                <div class="col-lg-8">
                                                 </div>
                                             
                                             </div>
