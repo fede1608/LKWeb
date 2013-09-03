@@ -22,6 +22,7 @@ include_once("session.php");
 		<link rel="stylesheet" href="css/app.v1.css">
 		<link rel="stylesheet" href="css/font.css" cache="false">
         <link rel="stylesheet" href="css/lkcss.css">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
 			</script>
@@ -43,7 +44,7 @@ include_once('barralateral.php');
 					<section class="scrollable wrapper">
                     
                     	<div class="row">
-                        <img src="images/logo.png" width="523" height="161"> 
+                        <img src="images/logo.png" width="450" height="127"> 
                         </div>
                                                 
 						<div class="row">
@@ -51,25 +52,258 @@ include_once('barralateral.php');
                             
                             
                             <div class="panel-group m-b" id="accordion2">
-									<div class="panel fondo-transparente-negro borde-transparente-negro">
-										<div class="panel-heading fondo-transparente-negro">
-											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> o <?php echo $userdata['login']; ?> a L2 Linekkit. Aqu&iacute; comienza tu aventura!</strong> </a>
+									<div class="panel fondo-transparente-negro-075 borde-transparente-negro">
+										<div class="panel-heading fondo-transparente-negro-075">
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
 										</div>
 										<div id="collapseOne" class="panel-collapse in">
-											<div class="panel-body text-sm">
-											<p>L2 Linekkit es un servidor de Lineage 2 Freya.</p>
-<p>El mismo cuenta con una gran comunidad de jugadores activos y un equipo de moderadores con amplios conocimientos sobre el juego que se encuentran a disposici&oacute;n de los usuarios tanto dentro del juego como en los foros.</p>
-<p>Linekkit se diferencia del resto de los servidores por ser un servidor bien equilibrado, dar lugar a una comunidad interesada por jugar &quot;en serio&quot; y poner al jugador como m&aacute;xima prioridad en su d&iacute;a a d&iacute;a.</p>
-<p>Todo esto se respalda, adem&aacute;s, con lo &uacute;ltimo en tecnolog&iacute;a de servidores para maximizar la experiencia de juego a la vez que la misma se expande al contar con un equipo de desarollo con una sola meta: convertir a Linekkit en el mejor servidor de Lineage 2 . Para acceder a la gu&iacute;a y a las descargas necesarias par conectarte a Linekkit, haz click <a href="./guia.php" style="display:inline;"> aqu&iacute;.</a>
+											
+                                            <div class="panel-body">
+                                            
+                                            <!-- Estadísticas principales-->
+                                            
+                                            <!-- Fila de arriba-->
+                                            <div class="row m-b-lg">
+                                            
+                                            	<div class="col-lg-4">
+                                       	        	<img src="images/humanos.png" width="240" height="369"> </div>
+                                                
+                                                <div class="col-lg-8" style="text-align:center;">
+                                                <div class="letras-blancas" >
+                                                	<h1 style="font-family:Alegreya SC; margin-top:0"><b>Personaje principal</b></h1>
+                                                    <h2 style="font-family:Alegreya SC;">
+                                                    	Nombre: Adenamon
+                                                        <br>
+                                                        Raza: Humano
+                                                        <br>
+                                                        Clase: Dark Avenger
+                                                    </h2>
+                                                    <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                    	Nivel
+                                                    <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
+                                                        <b>76</b>
+                                                    </h1>
+                                                </div>
+                                                	
+                                                    
+                                                </div>
+                                            
+                                            </div>
+                                            <!-- /Fila de arriba-->
+                                            
+                                            <!-- Fila de abajo-->
+                                            <div class="row">
+                                            
+                                                
+                                                
+                                                
+                                                <!-- Gráfico de barras: KILLS -->
+                                                <div class="col-lg-4">
+                                                
+                                                    <section class="panel no-borders">
+                                                        <header class="panel-heading bg-success lter">
+                                                            <span class="pull-right">
+                                                                Hoy
+                                                            </span>
+                                                            <span class="h4">
+                                                                7 KILLS
+                                                                <br>
+                                                                <small class="text-muted">
+                                                                    Esta semana
+                                                                </small>
+                                                            </span>
+                                                            <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                </div>
+                                                            <div class="m-t-lg"></div>
+                                                            
+                                                            </div>
+                                                        </header>
+                                                        <div class="panel-body">
+                                                            <div>
+                                                                <span class="text-muted">
+                                                                    Total de Kills:
+                                                                </span>
+                                                                <span class="h3 block">
+                                                                    25 Kills 
+                                                                </span>
+                                                            </div>
+                                                            <div class="row m-t-sm">
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Mínimo
+                                                                    </small>
+                                                                    <span>
+                                                                        0 Kills 
+                                                                    </span>
+                                                                </div>
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Promedio
+                                                                    </small>
+                                                                    <span>
+                                                                        1.25 Kills
+                                                                    </span>
+                                                                </div>
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Máximo
+                                                                    </small>
+                                                                    <span>
+                                                                        12 Kills
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>	
+                                                
+                                                </div>
+                                                <!-- / Gráfico de barras: KILLS -->
+                                                
+                                                <!-- Gráfico de barras: PKs -->
+                                                <div class="col-lg-4">
+                                                
+                                                    <section class="panel no-borders">
+                                                        <header class="panel-heading bg-danger lter">
+                                                            <span class="pull-right">
+                                                                Hoy
+                                                            </span>
+                                                            <span class="h4">
+                                                                7 PKs
+                                                                <br>
+                                                                <small class="text-muted">
+                                                                    Esta semana
+                                                                </small>
+                                                            </span>
+                                                            <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                </div>
+                                                            <div class="m-t-lg"></div>
+                                                            
+                                                            </div>
+                                                        </header>
+                                                        <div class="panel-body">
+                                                            <div>
+                                                                <span class="text-muted">
+                                                                    Total de PKs:
+                                                                </span>
+                                                                <span class="h3 block">
+                                                                    25 PKs 
+                                                                </span>
+                                                            </div>
+                                                            <div class="row m-t-sm">
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Mínimo
+                                                                    </small>
+                                                                    <span>
+                                                                        0 PKs 
+                                                                    </span>
+                                                                </div>
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Promedio
+                                                                    </small>
+                                                                    <span>
+                                                                        1.25 PKs
+                                                                    </span>
+                                                                </div>
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Máximo
+                                                                    </small>
+                                                                    <span>
+                                                                        12 PKs
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>	
+                                                
+                                                </div>
+                                                <!-- / Gráfico de barras: PKs -->
+                                                
+                                                <!-- Gráfico de barras: Heroes -->
+                                                <div class="col-lg-4">
+                                                
+                                                    <section class="panel no-borders">
+                                                        <header class="panel-heading bg-dark lter">
+                                                            <span class="pull-right">
+                                                                Hoy
+                                                            </span>
+                                                            <span class="h4">
+                                                                7 Puntos
+                                                                <br>
+                                                                <small class="text-muted">
+                                                                    Esta semana
+                                                                </small>
+                                                            </span>
+                                                            <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                </div>
+                                                            <div class="m-t-lg"></div>
+                                                            
+                                                            </div>
+                                                        </header>
+                                                        <div class="panel-body">
+                                                            <div>
+                                                                <span class="text-muted">
+                                                                    Total de puntos en Olys:
+                                                                </span>
+                                                                <span class="h3 block">
+                                                                    25 Puntos
+                                                                </span>
+                                                            </div>
+                                                            <div class="row m-t-sm">
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Mínimo
+                                                                    </small>
+                                                                    <span>
+                                                                        0 Puntos 
+                                                                    </span>
+                                                                </div>
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Promedio
+                                                                    </small>
+                                                                    <span>
+                                                                        1.25 Puntos
+                                                                    </span>
+                                                                </div>
+                                                                <div class="col-xs-4">
+                                                                    <small class="text-muted block">
+                                                                        Máximo
+                                                                    </small>
+                                                                    <span>
+                                                                        12 Puntos
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </section>	
+                                                
+                                                </div>
+                                                <!-- / Gráfico de barras: Heroes -->
+                                            </div>
+                                            
 											</div>
+                                            
 										</div>
-									</div>
+										<!-- / Fila de abajo-->
+                                        
+                                        <!-- / Estadísticas principales-->
+                                        
+                                    </div>
 							  </div>
                             
                             <!-- Noticias -->
                             
-								<section class="panel fondo-transparente-negro borde-transparente-negro">
-									<header class="panel-heading  fondo-transparente-negro borde-transparente-negro" >
+								<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+									<header class="panel-heading  fondo-transparente-negro-075 borde-transparente-negro" >
 										<span class="badge bg-info pull-right">
 											32
 										</span>
@@ -128,7 +362,7 @@ include_once('barralateral.php');
 									<footer class="panel-footer bg-light lter">
 										<button class="btn btn-info pull-right">
 											PUBLICAR
-										</button>
+									  </button>
 										<ul class="nav nav-pills">
 											<li>
 												<a href="#"><i class="icon-location-arrow"></i></a>
@@ -145,157 +379,10 @@ include_once('barralateral.php');
 										</ul>
 									</footer>
 								</section>
-								<div class="row">
-									<div class="col-lg-6 col-sm-6">
-										<section class="panel">
-											<div class="panel-body">
-												<div class="clearfix m-b">
-													<small class="text-muted pull-right">
-														5m ago
-													</small>
-													<a href="#" class="thumb-sm pull-left m-r"> <img src="images/avatar.jpg" class="img-circle"> </a>
-													<div class="clear">
-														<a href="#"><strong>Jonathan Omish</strong></a>
-														<small class="block text-muted">
-															San Francisco, USA
-														</small>
-													</div>
-												</div>
-												<p>
-													There are a few easy ways to quickly get started with Bootstrap...
-												</p>
-												<small class="">
-													<a href="#"><i class="icon-comment-alt"></i> Comments (25)</a>
-												</small>
-											</div>
-											<footer class="panel-footer pos-rlt">
-												<span class="arrow top">
-												</span>
-												<form class="pull-out">
-													<input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-												</form>
-											</footer>
-										</section>
-									</div>
-									<div class="col-lg-6 col-sm-6">
-										<section class="panel">
-											<div class="panel-body">
-												<div class="clearfix m-b">
-													<small class="text-muted pull-right">
-														1hr ago
-													</small>
-													<a href="#" class="thumb-sm pull-left m-r"> <img src="images/avatar_default.jpg" class="img-circle"> </a>
-													<div class="clear">
-														<a href="#"><strong>Mike Mcalidek</strong></a>
-														<small class="block text-muted">
-															Newyork, USA
-														</small>
-													</div>
-												</div>
-												<div class="pull-in bg-light clearfix m-b-n">
-													<p class="m-t-sm m-b text-center animated bounceInDown">
-														<i class="icon-map-marker text-danger icon-4x" data-toggle="tooltip" title="checked in at Newyork">
-														</i>
-													</p>
-												</div>
-											</div>
-											<footer class="panel-footer pos-rlt">
-												<span class="arrow top">
-												</span>
-												<form class="pull-out">
-													<input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-												</form>
-											</footer>
-										</section>
-									</div>
-								</div>
-								<section class="panel no-borders hbox">
-									<aside class="bg-info lter r-l text-center v-middle">
-										<div class="wrapper">
-											<i class="icon-dribbble icon-4x">
-											</i>
-											<p class="text-muted">
-												<em>
-													dribbble invitation
-												</em>
-											</p>
-										</div>
-									</aside>
-									<aside>
-										<div class="pos-rlt">
-											<span class="arrow left hidden-xs">
-											</span>
-											<div class="panel-body">
-												<div class="clearfix m-b">
-													<small class="text-muted pull-right">
-														2 days ago
-													</small>
-													<a href="#" class="thumb-sm pull-left m-r"> <img src="images/avatar.jpg" class="img-circle"> </a>
-													<div class="clear">
-														<a href="#"><strong>Jonathan Omish</strong></a>
-														<small class="block text-muted">
-															San Francisco, USA
-														</small>
-													</div>
-												</div>
-												<p>
-													Thank you for invite...
-												</p>
-												<small class="">
-													<a href="#"><i class="icon-comment-alt"></i> Comments (10)</a>
-												</small>
-											</div>
-											<footer class="panel-footer">
-												<form class="pull-out b-t">
-													<input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-												</form>
-											</footer>
-										</div>
-									</aside>
-								</section>
-								<section class="panel no-borders hbox">
-									<aside>
-										<div class="pos-rlt">
-											<span class="arrow right hidden-xs">
-											</span>
-											<div class="panel-body">
-												<div class="clearfix m-b">
-													<small class="text-muted pull-right">
-														2 days ago
-													</small>
-													<a href="#" class="thumb-sm pull-left m-r"> <img src="images/avatar.jpg" class="img-circle"> </a>
-													<div class="clear">
-														<a href="#"><strong>Jonathan Omish</strong></a>
-														<small class="block text-muted">
-															San Francisco, USA
-														</small>
-													</div>
-												</div>
-												<p>
-													Flat design is more popular today. Google, Microsoft, Apple...
-												</p>
-												<small class="">
-													<a href="#"><i class="icon-share"></i> Share (10)</a>
-												</small>
-											</div>
-											<footer class="panel-footer">
-												<form class="pull-out b-t">
-													<input type="text" class="form-control no-border input-lg text-sm" placeholder="Write a comment...">
-												</form>
-											</footer>
-										</div>
-									</aside>
-									<aside class="bg-primary clearfix lter r-r text-right v-middle">
-										<div class="wrapper h3 font-thin">
-											7 things you need to know about the flat design
-										</div>
-									</aside>
-								</section>
-								<div class="text-center m-b">
-									<i class="icon-spinner icon-spin">
-									</i>
-								</div>
+
 							</div>
+                            
+                            <!-- Panel de la derecha-->
                             
 							<?php include_once('status.php');
                             getStatus();//
@@ -335,64 +422,7 @@ include_once('barralateral.php');
 									</div>
 								</section>
                                 <!-- /Votos -->
-								<section class="panel no-borders">
-									<header class="panel-heading bg-success lter">
-										<span class="pull-right">
-											Friday
-										</span>
-										<span class="h4">
-											$540
-											<br>
-											<small class="text-muted">
-												+1.05(2.15%)
-											</small>
-										</span>
-										<div class="text-center padder m-b-n-sm m-t-sm">
-											<div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-											data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-											</div>
-											<div class="sparkline inline" data-type="bar" data-height="45" data-bar-width="6" data-bar-spacing="10" data-bar-color="#92cf5c">
-												9,9,11,10,11,10,12,10,9,10,11,9,8
-											</div>
-										</div>
-									</header>
-									<div class="panel-body">
-										<div>
-											<span class="text-muted">
-												Sales in June:
-											</span>
-											<span class="h3 block">
-												$2500.00
-											</span>
-										</div>
-										<div class="row m-t-sm">
-											<div class="col-xs-4">
-												<small class="text-muted block">
-													From market
-												</small>
-												<span>
-													$1500.00
-												</span>
-											</div>
-											<div class="col-xs-4">
-												<small class="text-muted block">
-													Referal
-												</small>
-												<span>
-													$600.00
-												</span>
-											</div>
-											<div class="col-xs-4">
-												<small class="text-muted block">
-													Affiliate
-												</small>
-												<span>
-													$400.00
-												</span>
-											</div>
-										</div>
-									</div>
-								</section>
+								
 								<section class="panel">
 									<div class="text-center wrapper">
 										<div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#f2f2f2','#fb6b5b']">
@@ -429,19 +459,7 @@ include_once('barralateral.php');
 										</li>
 									</ul>
 								</section>
-								<section class="panel clearfix">
-									<div class="panel-body">
-										<a href="#" class="thumb pull-left m-r"> <img src="images/avatar.jpg" class="img-circle"> </a>
-										<div class="clear">
-											<a href="#" class="text-info">@Mike Mcalidek <i class="icon-twitter"></i></a>
-											<small class="block text-muted">
-												2,415 followers / 225 tweets
-											</small>
-											<a href="#" class="btn btn-xs btn-success m-t-xs">Follow</a>
-										</div>
-									</div>
-								</section>
-					  </div>
+							 </div>
 						</div>
 					</section>
 				</section>
