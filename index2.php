@@ -22,6 +22,7 @@ include_once("session.php");
 		<link rel="stylesheet" href="css/app.v1.css">
 		<link rel="stylesheet" href="css/font.css" cache="false">
         <link rel="stylesheet" href="css/lkcss.css">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
 			</script>
@@ -65,9 +66,26 @@ include_once('barralateral.php');
                                             <div class="row m-b-lg">
                                             
                                             	<div class="col-lg-4">
-                                       	        <img src="images/humanos.png" width="240" height="369"> </div>
+                                       	        	<img src="images/humanos.png" width="240" height="369"> </div>
                                                 
-                                                <div class="col-lg-8">
+                                                <div class="col-lg-8" style="text-align:center;">
+                                                <div class="letras-blancas" >
+                                                	<h1 style="font-family:Alegreya SC; margin-top:0"><b>Personaje principal</b></h1>
+                                                    <h2 style="font-family:Alegreya SC;">
+                                                    	Nombre: Adenamon
+                                                        <br>
+                                                        Raza: Humano
+                                                        <br>
+                                                        Clase: Dark Avenger
+                                                    </h2>
+                                                    <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                    	Nivel
+                                                    <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
+                                                        <b>76</b>
+                                                    </h1>
+                                                </div>
+                                                	
+                                                    
                                                 </div>
                                             
                                             </div>
