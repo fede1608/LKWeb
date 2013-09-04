@@ -41,7 +41,7 @@ function getStatus(){
 	   </i>Online';
     else $loginstatus= '<i class="icon-globe" style="color: #FF0000;font-size: 16px;">
 	   </i>Offline';
-   echo '<!-- .Estado del Servidor --><div class="col-lg-4">
+   echo '<!-- .Estado del Servidor -->
 								<section class="panel bg-info lter no-borders">
 									<div class="panel-body">
 										<a class="pull-right" href="#"><i class="icon-laptop"></i></a>
@@ -85,7 +85,7 @@ function getStatus(){
                                         </div>
                                     </footer>
 								</section>
-                                <!-- /Estado del Servidor -->';
+                            <!-- /Estado del Servidor -->';
 }
 
 ?>

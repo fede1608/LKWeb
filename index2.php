@@ -32,8 +32,20 @@ include_once("session.php");
 			</script>
 		<![endif]-->
 	</head>
-	<body style=" background-image:url(images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size:cover !important;">
-		<section class="hbox stretch">
+	<body style="background-image:url(images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size:cover !important;">
+		
+        <!-- API de Facebook -->
+        <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=438576089566191";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+		<!-- / API de Facebook -->
+        
+        <section class="hbox stretch">
 			<?php
 include_once('barralateral.php');
             getBar(1,1);//getbat(tipoDeBarra,<li>activo)
@@ -56,246 +68,463 @@ include_once('barralateral.php');
 										<div class="panel-heading fondo-transparente-negro-075">
 											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
 										</div>
-										<div id="collapseOne" class="panel-collapse in">
-											
-                                            <div class="panel-body">
-                                            
-                                            <!-- Estadísticas principales-->
-                                            
-                                            <!-- Fila de arriba-->
-                                            <div class="row m-b-lg">
-                                            
-                                            	<div class="col-lg-4">
-                                       	        	<img src="images/humanos.png" width="240" height="369"> </div>
-                                                
-                                                <div class="col-lg-8" style="text-align:center;">
-                                                <div class="letras-blancas" >
-                                                	<h1 style="font-family:Alegreya SC; margin-top:0"><b>Personaje principal</b></h1>
-                                                    <h2 style="font-family:Alegreya SC;">
-                                                    	Nombre: Adenamon
-                                                        <br>
-                                                        Raza: Humano
-                                                        <br>
-                                                        Clase: Dark Avenger
-                                                    </h2>
-                                                    <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                    	Nivel
-                                                    <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
-                                                        <b>76</b>
-                                                    </h1>
-                                                </div>
-                                                	
-                                                    
-                                                </div>
-                                            
-                                            </div>
-                                            <!-- /Fila de arriba-->
-                                            
-                                            <!-- Fila de abajo-->
-                                            <div class="row">
-                                            
-                                                
-                                                
-                                                
-                                                <!-- Gráfico de barras: KILLS -->
-                                                <div class="col-lg-4">
-                                                
-                                                    <section class="panel no-borders">
-                                                        <header class="panel-heading bg-success lter">
-                                                            <span class="pull-right">
-                                                                Hoy
-                                                            </span>
-                                                            <span class="h4">
-                                                                7 KILLS
-                                                                <br>
-                                                                <small class="text-muted">
-                                                                    Esta semana
-                                                                </small>
-                                                            </span>
-                                                            <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                </div>
-                                                            <div class="m-t-lg"></div>
-                                                            
-                                                            </div>
-                                                        </header>
-                                                        <div class="panel-body">
-                                                            <div>
-                                                                <span class="text-muted">
-                                                                    Total de Kills:
-                                                                </span>
-                                                                <span class="h3 block">
-                                                                    25 Kills 
-                                                                </span>
-                                                            </div>
-                                                            <div class="row m-t-sm">
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Mínimo
-                                                                    </small>
-                                                                    <span>
-                                                                        0 Kills 
-                                                                    </span>
-                                                                </div>
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Promedio
-                                                                    </small>
-                                                                    <span>
-                                                                        1.25 Kills
-                                                                    </span>
-                                                                </div>
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Máximo
-                                                                    </small>
-                                                                    <span>
-                                                                        12 Kills
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>	
-                                                
-                                                </div>
-                                                <!-- / Gráfico de barras: KILLS -->
-                                                
-                                                <!-- Gráfico de barras: PKs -->
-                                                <div class="col-lg-4">
-                                                
-                                                    <section class="panel no-borders">
-                                                        <header class="panel-heading bg-danger lter">
-                                                            <span class="pull-right">
-                                                                Hoy
-                                                            </span>
-                                                            <span class="h4">
-                                                                7 PKs
-                                                                <br>
-                                                                <small class="text-muted">
-                                                                    Esta semana
-                                                                </small>
-                                                            </span>
-                                                            <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                </div>
-                                                            <div class="m-t-lg"></div>
-                                                            
-                                                            </div>
-                                                        </header>
-                                                        <div class="panel-body">
-                                                            <div>
-                                                                <span class="text-muted">
-                                                                    Total de PKs:
-                                                                </span>
-                                                                <span class="h3 block">
-                                                                    25 PKs 
-                                                                </span>
-                                                            </div>
-                                                            <div class="row m-t-sm">
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Mínimo
-                                                                    </small>
-                                                                    <span>
-                                                                        0 PKs 
-                                                                    </span>
-                                                                </div>
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Promedio
-                                                                    </small>
-                                                                    <span>
-                                                                        1.25 PKs
-                                                                    </span>
-                                                                </div>
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Máximo
-                                                                    </small>
-                                                                    <span>
-                                                                        12 PKs
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>	
-                                                
-                                                </div>
-                                                <!-- / Gráfico de barras: PKs -->
-                                                
-                                                <!-- Gráfico de barras: Heroes -->
-                                                <div class="col-lg-4">
-                                                
-                                                    <section class="panel no-borders">
-                                                        <header class="panel-heading bg-dark lter">
-                                                            <span class="pull-right">
-                                                                Hoy
-                                                            </span>
-                                                            <span class="h4">
-                                                                7 Puntos
-                                                                <br>
-                                                                <small class="text-muted">
-                                                                    Esta semana
-                                                                </small>
-                                                            </span>
-                                                            <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                </div>
-                                                            <div class="m-t-lg"></div>
-                                                            
-                                                            </div>
-                                                        </header>
-                                                        <div class="panel-body">
-                                                            <div>
-                                                                <span class="text-muted">
-                                                                    Total de puntos en Olys:
-                                                                </span>
-                                                                <span class="h3 block">
-                                                                    25 Puntos
-                                                                </span>
-                                                            </div>
-                                                            <div class="row m-t-sm">
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Mínimo
-                                                                    </small>
-                                                                    <span>
-                                                                        0 Puntos 
-                                                                    </span>
-                                                                </div>
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Promedio
-                                                                    </small>
-                                                                    <span>
-                                                                        1.25 Puntos
-                                                                    </span>
-                                                                </div>
-                                                                <div class="col-xs-4">
-                                                                    <small class="text-muted block">
-                                                                        Máximo
-                                                                    </small>
-                                                                    <span>
-                                                                        12 Puntos
-                                                                    </span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>	
-                                                
-                                                </div>
-                                                <!-- / Gráfico de barras: Heroes -->
-                                            </div>
-                                            
-											</div>
-                                            
-										</div>
-										<!-- / Fila de abajo-->
+										
+                                        <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
                                         
-                                        <!-- / Estadísticas principales-->
+                                                <div class="panel-body no-border">
+                                                    <div class="carousel slide auto panel-body no-border" id="c-slide">
+                                                            <ol class="carousel-indicators out">
+                                                                    <li data-target="#c-slide" data-slide-to="0" class="">
+                                                                    </li>
+                                                                    <li data-target="#c-slide" data-slide-to="1" class="active">
+                                                                    </li>
+                                                                    <li data-target="#c-slide" data-slide-to="2" class="">
+                                                                    </li>
+                                                            </ol>
+                                                            <div class="carousel-inner">
+                                                                    <div class="item active">
+                                                                            <div class="panel-body no-border">
+                                                                                    <div class="row m-b-lg">
+                                                                                            <div class="col-lg-4">
+                                                                                                    <img src="images/humanos.png" width="240" height="369">
+                                                                                            </div>
+                                                                                            <div class="col-lg-8" style="text-align:center;">
+                                                                                                    <div class="letras-blancas">
+                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                    <b>
+                                                                                                                            Personaje principal
+                                                                                                                    </b>
+                                                                                                            </h1>
+                                                                                                            <h2 style="font-family:Alegreya SC;">
+                                                                                                                    Nombre: Adenamon
+                                                                                                                    <br>
+                                                                                                                    Raza: Humano
+                                                                                                                    <br>
+                                                                                                                    Clase: Dark Avenger
+                                                                                                            </h2>
+                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                    Nivel
+                                                                                                            </h1>
+                                                                                                            <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
+                                                                                                                    <b>
+                                                                                                                            76
+                                                                                                                    </b>
+                                                                                                            </h1>
+                                                                                                    </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-success lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            7 KILLS
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de Kills:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    25 Kills
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Mínimo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            0 Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            1.25 Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            12 Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-danger lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            7 PKs
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de PKs:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    25 PKs
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Mínimo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            0 PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            1.25 PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            12 PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-dark lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            7 Puntos
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de puntos en Olys:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    25 Puntos
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Mínimo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            0 Puntos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            1.25 Puntos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            12 Puntos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                    </div>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="item">
+                                                                            <div class="panel-body no-border">
+                                                                                    <div class="row m-b-lg">
+                                                                                            <div class="col-lg-4">
+                                                                                                    <img src="images/elfos.png" width="240" height="369">
+                                                                                            </div>
+                                                                                            <div class="col-lg-7" style="text-align:center;">
+                                                                                                    <div class="letras-blancas">
+                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                    <b>
+                                                                                                                            Personaje secundario
+                                                                                                                    </b>
+                                                                                                            </h1>
+                                                                                                            <h2 style="font-family:Alegreya SC;">
+                                                                                                                    Nombre: HelloKity
+                                                                                                                    <br>
+                                                                                                                    Raza: Elfo
+                                                                                                                    <br>
+                                                                                                                    Clase: Spellsinger
+                                                                                                            </h2>
+                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                    Nivel
+                                                                                                            </h1>
+                                                                                                            <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
+                                                                                                                    <b>
+                                                                                                                            41
+                                                                                                                    </b>
+                                                                                                            </h1>
+                                                                                                    </div>
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-success lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            7 KILLS
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                                                                                    <canvas style="display: inline-block; width: 147px; height: 65px; vertical-align: top;" width="147" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de Kills:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    25 Kills
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Mínimo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            0 Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            1.25 Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            12 Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-danger lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            7 PKs
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                                                                                    <canvas style="display: inline-block; width: 147px; height: 65px; vertical-align: top;" width="147" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de PKs:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    25 PKs
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Mínimo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            0 PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            1.25 PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            12 PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-dark lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            7 Puntos
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
+                                                                                                                                    <canvas style="display: inline-block; width: 147px; height: 65px; vertical-align: top;" width="147" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de puntos en Olys:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    25 Puntos
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Mínimo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            0 Puntos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            1.25 Puntos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            12 Puntos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                    </div>
+                                                                            </div>
+                                                                    </div>
+                                                            </div>
+                                                            <a class="left carousel-control" href="#c-slide" data-slide="prev"> <i class="icon-angle-left"></i> </a>
+                                                            <a class="right carousel-control" href="#c-slide" data-slide="next"> <i class="icon-angle-right"></i> </a>
+                                                    </div>
+                                            </div>
+                                        
+                                        </div>
                                         
                                     </div>
 							  </div>
@@ -353,75 +582,48 @@ include_once('barralateral.php');
 									</section>
 								</section>
 								<!-- /Noticias -->
-                            
-								<section class="panel">
-									<form>
-										<textarea class="form-control input-lg no-border" rows="2" placeholder="Publica algo en la comunidad...">
-										</textarea>
-									</form>
-									<footer class="panel-footer bg-light lter">
-										<button class="btn btn-info pull-right">
-											PUBLICAR
-									  </button>
-										<ul class="nav nav-pills">
-											<li>
-												<a href="#"><i class="icon-location-arrow"></i></a>
-											</li>
-											<li>
-												<a href="#"><i class="icon-camera"></i></a>
-											</li>
-											<li>
-												<a href="#"><i class="icon-facetime-video"></i></a>
-											</li>
-											<li>
-												<a href="#"><i class="icon-microphone"></i></a>
-											</li>
-										</ul>
-									</footer>
-								</section>
 
-							</div>
+							</div>   
                             
                             <!-- Panel de la derecha-->
-                            
-							<?php include_once('status.php');
-                            getStatus();//
-                            ?>
+                            <div class="col-lg-4">
+                                                        
                                 <!-- Votos -->
-                                <section class="panel clearfix">
-									<div class="panel-body">
+                                <section class="panel clearfix borde-transparente-negro" style="background-color:transparent">
+									<div class="panel-body fondo-transparente-negro-075 borde-transparente-negro" >
 										
 										<div class="clear">
-											<a href="#" class="text-info">Ayudanos con tu Voto!</a><a class="pull-right" href="#"><i class="icon-thumbs-up"></i></a>
-											<small class="block text-muted">
-												
-											</small>
-                                            <div class="pull-in bg-light clearfix m-b-n">
-											     <p class="m-t-sm m-b text-center animated bounceInDown">
-                                                    <a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank"><img src="http://linekkit.com/images/hopzone.png" alt="Votar por Linekkit" >
-                                                    </a>
-                                                </p>
+											
+                                            <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Ayudanos a ser más</h2>
+                                            
+                                            <div class="pull-in clearfix m-b-n">
+											     <div class="m-t-sm m-b text-center animated bounceInDown">
+                                                 	
+                                                    <div class="row">
+                                                    <a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank"><img src="http://linekkit.com/images/hopzone.png" alt="Votar por Linekkit" ></a>
+                                                    </div>
+                                                    
+                                                    <div class="row m-t-sm m-b-lg">
+                                                    <a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers"><img src="http://linekkit.com/images/topzone.png" alt="Votar por Linekkit" ></a>
+                                                    </div>
+                                                    
+                                                    <!-- Sección de Facebook-->
+                                                    <div class="row">
+                                                    	<div class="fb-like-box" data-href="https://www.facebook.com/Linekkit" data-width="292" data-height="300" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>                                                   </div>
+                                                    
+                                                </div>
 											</div>
 										</div>
 									</div>
 								</section>
-                                <section class="panel clearfix">
-									<div class="panel-body">
-                                <div class="clear">
-											<a href="#" class="text-info">Ayudanos con tu Voto!</a><a class="pull-right" href="#"><i class="icon-thumbs-up"></i></a>
-											
-                                            <div class="pull-in bg-light clearfix m-b-n">
-											     <p class="m-t-sm m-b text-center animated bounceInDown">
-                                                    <a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers"><img src="http://linekkit.com/images/topzone.png" alt="Votar por Linekkit" >
-                                                    </a>
-                                                </p>
-											</div>
-
-											
-									  </div>
-									</div>
-								</section>
-                                <!-- /Votos -->
+                                <!-- /Votos -->     
+                                
+                                <section>
+									<?php 
+                                        include_once('status.php');
+                                        getStatus();
+                                    ?>
+                                </section>                      
 								
 								<section class="panel">
 									<div class="text-center wrapper">
@@ -460,6 +662,8 @@ include_once('barralateral.php');
 									</ul>
 								</section>
 							 </div>
+                             <!-- / Panel de la derecha-->
+                             
 						</div>
 					</section>
 				</section>
