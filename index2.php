@@ -64,7 +64,7 @@ include_once('barralateral.php');
                             
                             
                             <div class="panel-group m-b" id="accordion2">
-									<div class="panel fondo-transparente-negro-075 borde-transparente-negro">
+									<div class="panel no-border" style="background-color:rgba(0,0,0,0);">
 										<div class="panel-heading fondo-transparente-negro-075">
 											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
 										</div>

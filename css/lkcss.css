@@ -23,3 +23,7 @@
 {
 	background-color: rgba(0,0,0,0.75);
 }
+.fondo-transparente-000
+{
+	background-color: rgba(0,0,0,0) !important;
+}

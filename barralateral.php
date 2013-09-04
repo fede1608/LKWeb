@@ -22,7 +22,7 @@ function getBar($tipo,$active){
     //echo $avatar;
     //print_r($userFData);
     echo '<!-- .Barra Lateral -->
-			<aside class="bg-primary aside-sm';
+			<aside class="fondo-transparente-negro-075 aside-sm'; //Nota: Requiere los CSS lkcss.css cargados en la pagina
    switch ($tipo) {
     case 1: default:
     break;
