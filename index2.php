@@ -60,7 +60,7 @@ include_once('barralateral.php');
                         </div>
                                                 
 						<div class="row">
-							<div class="col-lg-8">
+							<div class="col-lg-9">
                             
                             
                             <div class="panel-group m-b" id="accordion2">
@@ -111,6 +111,15 @@ include_once('barralateral.php');
                                                                                                                     </b>
                                                                                                             </h1>
                                                                                                     </div>
+                                                                                                    
+                                                                                                    <!-- Barra de XP-->
+                                                                                                    <div class="row m-n">
+                                                                                                            <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
+                                                                                                                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="40% restante para nivel 77" style="width: 60%">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                    </div>
+                                                                                                    <!-- / Barra de XP-->
                                                                                             </div>
                                                                                     </div>
                                                                                     <div class="row">
@@ -306,7 +315,7 @@ include_once('barralateral.php');
                                                                                             <div class="col-lg-4">
                                                                                                     <img src="images/elfos.png" width="240" height="369">
                                                                                             </div>
-                                                                                            <div class="col-lg-7" style="text-align:center;">
+                                                                                            <div class="col-lg-8" style="text-align:center;">
                                                                                                     <div class="letras-blancas">
                                                                                                             <h1 style="font-family:Alegreya SC; margin-top:0">
                                                                                                                     <b>
@@ -329,6 +338,15 @@ include_once('barralateral.php');
                                                                                                                     </b>
                                                                                                             </h1>
                                                                                                     </div>
+                                                                                                    
+                                                                                                    <!-- Barra de XP-->
+                                                                                                    <div class="row m-n">
+                                                                                                            <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
+                                                                                                                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="65% restante para nivel 42" style="width: 35%">
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                    </div>
+                                                                                                    <!-- / Barra de XP-->
                                                                                             </div>
                                                                                     </div>
                                                                                     <div class="row">
@@ -586,7 +604,7 @@ include_once('barralateral.php');
 							</div>   
                             
                             <!-- Panel de la derecha-->
-                            <div class="col-lg-4">
+                            <div class="col-lg-3">
                                                         
                                 <!-- Votos -->
                                 <section class="panel clearfix borde-transparente-negro" style="background-color:transparent">
@@ -594,7 +612,7 @@ include_once('barralateral.php');
 										
 										<div class="clear">
 											
-                                            <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Ayudanos a ser más</h2>
+                                            <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Apoya a Linekkit</h2>
                                             
                                             <div class="pull-in clearfix m-b-n">
 											     <div class="m-t-sm m-b text-center animated bounceInDown">
@@ -609,7 +627,7 @@ include_once('barralateral.php');
                                                     
                                                     <!-- Sección de Facebook-->
                                                     <div class="row">
-                                                    	<div class="fb-like-box" data-href="https://www.facebook.com/Linekkit" data-width="292" data-height="300" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>                                                   </div>
+                                                    	<div class="fb-like-box" data-href="https://www.facebook.com/Linekkit" data-width="260" data-height="300" data-colorscheme="dark" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>                                                   </div>
                                                     
                                                 </div>
 											</div>
