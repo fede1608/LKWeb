@@ -67,7 +67,7 @@ function getBar($tipo,$active){
 										<a href="docs.html">Help</a>
 									</li>
 									<li>
-										<a href="signin.php">Logout</a>
+										<a href="/acm/?action=loggout">Logout</a>
 									</li>
 								</ul>
 								<div class="visible-xs m-t m-b">

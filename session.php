@@ -4,10 +4,7 @@
  * @author fede1
  * @copyright 2013
  */
-function islogged(){
-if(isset($_SESSION['acm'])) return true;
-return false;
-}
+
 
 include_once("analytics.php");
 
@@ -34,10 +31,14 @@ require './acm/classes/world.class.php';
 require './acm/classes/character.class.php';
 require './acm/classes/mysql.class.php';
 
-if(islogged()){
+if(isacmlogged()){
 $data=unserialize($_SESSION['acm']);
 $userdata= get_object_vars($data);
 };
 
+function isacmlogged(){
+    if(isset($_SESSION['acm'])) return true;
+    return false;
+}
 
 ?>

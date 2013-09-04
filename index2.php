@@ -10,6 +10,12 @@ require_once MYBB_ROOT."inc/class_parser.php";
 $parser = new postParser;
 chdir('../');
 include_once("session.php");
+if(!isacmlogged()){
+    echo '<script language="javascript">
+			window.top.location="signin.php"
+			</script>';
+    exit();
+}
 ?><!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -19,8 +25,12 @@ include_once("session.php");
 		</title>
 		<meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link rel="stylesheet" href="css/app.v1.css">
-		<link rel="stylesheet" href="css/font.css" cache="false">
+        <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+          <link rel="stylesheet" href="css/animate.css" type="text/css" />
+          <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+          <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
+          <link rel="stylesheet" href="css/plugin.css" type="text/css" />
+          <link rel="stylesheet" href="css/app.css" type="text/css" />
         <link rel="stylesheet" href="css/lkcss.css">
         <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
@@ -44,10 +54,10 @@ include_once("session.php");
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 		<!-- / API de Facebook -->
-        
+
         <section class="hbox stretch">
 			<?php
-include_once('barralateral.php');
+            include_once('barralateral.php');
             getBar(1,1);//getbat(tipoDeBarra,<li>activo)
             ?>
 			<!-- .vbox -->
@@ -74,468 +84,254 @@ include_once('barralateral.php');
                                                 <div class="panel-body no-border">
                                                     <div class="carousel slide auto panel-body no-border" id="c-slide">
                                                             <ol class="carousel-indicators out">
-                                                                    <li data-target="#c-slide" data-slide-to="0" class="">
-                                                                    </li>
-                                                                    <li data-target="#c-slide" data-slide-to="1" class="active">
-                                                                    </li>
-                                                                    <li data-target="#c-slide" data-slide-to="2" class="">
-                                                                    </li>
+                                                            <?php   include_once 'statsfeed.php';
+                                                                    $stats=getStats($userdata['login']); 
+                                                                    $con=0;
+                                                                    foreach($stats as $stat){
+                                                                        echo '<li data-target="#c-slide" data-slide-to="'.$con.'" '.($con==0?'class="active"':'').' >
+                                                                    </li>';
+                                                                    $con++;
+                                                                    }        
+                                                            ?>
+
                                                             </ol>
                                                             <div class="carousel-inner">
-                                                                    <div class="item active">
-                                                                            <div class="panel-body no-border">
-                                                                                    <div class="row m-b-lg">
-                                                                                            <div class="col-lg-4">
-                                                                                                    <img src="images/humanos.png" width="240" height="369">
-                                                                                            </div>
-                                                                                            <div class="col-lg-8" style="text-align:center;">
-                                                                                                    <div class="letras-blancas">
-                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                    <b>
-                                                                                                                            Personaje principal
-                                                                                                                    </b>
-                                                                                                            </h1>
-                                                                                                            <h2 style="font-family:Alegreya SC;">
-                                                                                                                    Nombre: Adenamon
-                                                                                                                    <br>
-                                                                                                                    Raza: Humano
-                                                                                                                    <br>
-                                                                                                                    Clase: Dark Avenger
-                                                                                                            </h2>
-                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                    Nivel
-                                                                                                            </h1>
-                                                                                                            <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
-                                                                                                                    <b>
-                                                                                                                            76
-                                                                                                                    </b>
-                                                                                                            </h1>
-                                                                                                    </div>
-                                                                                                    
-                                                                                                    <!-- Barra de XP-->
-                                                                                                    <div class="row m-n">
-                                                                                                            <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
-                                                                                                                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="40% restante para nivel 77" style="width: 60%">
+                                                                    <?php  
+                                                                    $con=0;
+                                                                    foreach($stats as $stat){
+                                                                    $porcen=floor(($stat['prevexp']/$stat['nextexp'])*100);
+                                                                    $left=$stat['nextexp']-$stat['exp'];
+                                                                    
+                                                                    echo '<div class="item '.($con==0?'active':'').'">
+                                                                        <div class="panel-body no-border">
+                                                                                <div class="row m-b-lg">
+                                                                                        <div class="col-lg-4">
+                                                                                                <img src="images/'.$stat['race'].'.png" width="240" height="369">
+                                                                                        </div>
+                                                                                        <div class="col-lg-8" style="text-align:center;">
+                                                                                                <div class="letras-blancas">
+                                                                                                        <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                <b>
+                                                                                                                        Personaje N°'.($con+1).'
+                                                                                                                </b>
+                                                                                                        </h1>
+                                                                                                        <h2 style="font-family:Alegreya SC;">
+                                                                                                                Nombre: '.$stat['name'].'
+                                                                                                                <br>
+                                                                                                                Raza: '.$stat['race'].'
+                                                                                                                <br>
+                                                                                                                Clase: '.$stat['class'].'
+                                                                                                        </h2>
+                                                                                                        <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                Nivel
+                                                                                                        </h1>
+                                                                                                        <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-35px">
+                                                                                                                <b>
+                                                                                                                        '.$stat['level'].'
+                                                                                                                </b>
+                                                                                                        </h1>
+                                                                                                </div>
+                                                                                                
+                                                                                                <!-- Barra de XP-->
+                                                                                                <div class="row m-n"><b>'.$stat['exp'].'/'.$stat['nextexp'].'</b>
+                                                                                                        <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
+                                                                                                            <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%">
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                </div>
+                                                                                                <!-- / Barra de XP-->
+                                                                                        </div>
+                                                                                </div>
+                                                                                <div class="row">
+                                                                                        <div class="col-lg-4">
+                                                                                                <section class="panel no-borders">
+                                                                                                        <header class="panel-heading bg-success lter">
+                                                                                                                <span class="pull-right">
+                                                                                                                        Hoy
+                                                                                                                </span>
+                                                                                                                <span class="h4">
+                                                                                                                        '.$stat[1]['semana'].' KILLS
+                                                                                                                        <br>
+                                                                                                                        <small class="text-muted">
+                                                                                                                                Esta semana
+                                                                                                                        </small>
+                                                                                                                </span>
+                                                                                                                <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                        <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                        data-spot-radius="3" data-data="'.$stat[1]['stringdias'].'">
+                                                                                                                                <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                </canvas>
+                                                                                                                        </div>
+                                                                                                                        <div class="m-t-lg">
+                                                                                                                        </div>
                                                                                                                 </div>
-                                                                                                            </div>
-                                                                                                    </div>
-                                                                                                    <!-- / Barra de XP-->
-                                                                                            </div>
-                                                                                    </div>
-                                                                                    <div class="row">
-                                                                                            <div class="col-lg-4">
-                                                                                                    <section class="panel no-borders">
-                                                                                                            <header class="panel-heading bg-success lter">
-                                                                                                                    <span class="pull-right">
-                                                                                                                            Hoy
-                                                                                                                    </span>
-                                                                                                                    <span class="h4">
-                                                                                                                            7 KILLS
-                                                                                                                            <br>
-                                                                                                                            <small class="text-muted">
-                                                                                                                                    Esta semana
-                                                                                                                            </small>
-                                                                                                                    </span>
-                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
-                                                                                                                                    </canvas>
-                                                                                                                            </div>
-                                                                                                                            <div class="m-t-lg">
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </header>
-                                                                                                            <div class="panel-body">
-                                                                                                                    <div>
-                                                                                                                            <span class="text-muted">
-                                                                                                                                    Total de Kills:
-                                                                                                                            </span>
-                                                                                                                            <span class="h3 block">
-                                                                                                                                    25 Kills
-                                                                                                                            </span>
-                                                                                                                    </div>
-                                                                                                                    <div class="row m-t-sm">
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Mínimo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            0 Kills
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Promedio
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            1.25 Kills
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Máximo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            12 Kills
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </div>
-                                                                                                    </section>
-                                                                                            </div>
-                                                                                            <div class="col-lg-4">
-                                                                                                    <section class="panel no-borders">
-                                                                                                            <header class="panel-heading bg-danger lter">
-                                                                                                                    <span class="pull-right">
-                                                                                                                            Hoy
-                                                                                                                    </span>
-                                                                                                                    <span class="h4">
-                                                                                                                            7 PKs
-                                                                                                                            <br>
-                                                                                                                            <small class="text-muted">
-                                                                                                                                    Esta semana
-                                                                                                                            </small>
-                                                                                                                    </span>
-                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
-                                                                                                                                    </canvas>
-                                                                                                                            </div>
-                                                                                                                            <div class="m-t-lg">
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </header>
-                                                                                                            <div class="panel-body">
-                                                                                                                    <div>
-                                                                                                                            <span class="text-muted">
-                                                                                                                                    Total de PKs:
-                                                                                                                            </span>
-                                                                                                                            <span class="h3 block">
-                                                                                                                                    25 PKs
-                                                                                                                            </span>
-                                                                                                                    </div>
-                                                                                                                    <div class="row m-t-sm">
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Mínimo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            0 PKs
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Promedio
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            1.25 PKs
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Máximo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            12 PKs
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </div>
-                                                                                                    </section>
-                                                                                            </div>
-                                                                                            <div class="col-lg-4">
-                                                                                                    <section class="panel no-borders">
-                                                                                                            <header class="panel-heading bg-dark lter">
-                                                                                                                    <span class="pull-right">
-                                                                                                                            Hoy
-                                                                                                                    </span>
-                                                                                                                    <span class="h4">
-                                                                                                                            7 Puntos
-                                                                                                                            <br>
-                                                                                                                            <small class="text-muted">
-                                                                                                                                    Esta semana
-                                                                                                                            </small>
-                                                                                                                    </span>
-                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
-                                                                                                                                    </canvas>
-                                                                                                                            </div>
-                                                                                                                            <div class="m-t-lg">
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </header>
-                                                                                                            <div class="panel-body">
-                                                                                                                    <div>
-                                                                                                                            <span class="text-muted">
-                                                                                                                                    Total de puntos en Olys:
-                                                                                                                            </span>
-                                                                                                                            <span class="h3 block">
-                                                                                                                                    25 Puntos
-                                                                                                                            </span>
-                                                                                                                    </div>
-                                                                                                                    <div class="row m-t-sm">
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Mínimo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            0 Puntos
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Promedio
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            1.25 Puntos
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Máximo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            12 Puntos
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </div>
-                                                                                                    </section>
-                                                                                            </div>
-                                                                                    </div>
-                                                                            </div>
-                                                                    </div>
-                                                                    <div class="item">
-                                                                            <div class="panel-body no-border">
-                                                                                    <div class="row m-b-lg">
-                                                                                            <div class="col-lg-4">
-                                                                                                    <img src="images/elfos.png" width="240" height="369">
-                                                                                            </div>
-                                                                                            <div class="col-lg-8" style="text-align:center;">
-                                                                                                    <div class="letras-blancas">
-                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                    <b>
-                                                                                                                            Personaje secundario
-                                                                                                                    </b>
-                                                                                                            </h1>
-                                                                                                            <h2 style="font-family:Alegreya SC;">
-                                                                                                                    Nombre: HelloKity
-                                                                                                                    <br>
-                                                                                                                    Raza: Elfo
-                                                                                                                    <br>
-                                                                                                                    Clase: Spellsinger
-                                                                                                            </h2>
-                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                    Nivel
-                                                                                                            </h1>
-                                                                                                            <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-20px">
-                                                                                                                    <b>
-                                                                                                                            41
-                                                                                                                    </b>
-                                                                                                            </h1>
-                                                                                                    </div>
-                                                                                                    
-                                                                                                    <!-- Barra de XP-->
-                                                                                                    <div class="row m-n">
-                                                                                                            <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
-                                                                                                                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="65% restante para nivel 42" style="width: 35%">
+                                                                                                        </header>
+                                                                                                        <div class="panel-body">
+                                                                                                                <div>
+                                                                                                                        <span class="text-muted">
+                                                                                                                                Total de Kills:
+                                                                                                                        </span>
+                                                                                                                        <span class="h3 block">
+                                                                                                                                '.$stat[1]['total'].' Kills
+                                                                                                                        </span>
                                                                                                                 </div>
-                                                                                                            </div>
-                                                                                                    </div>
-                                                                                                    <!-- / Barra de XP-->
-                                                                                            </div>
-                                                                                    </div>
-                                                                                    <div class="row">
-                                                                                            <div class="col-lg-4">
-                                                                                                    <section class="panel no-borders">
-                                                                                                            <header class="panel-heading bg-success lter">
-                                                                                                                    <span class="pull-right">
-                                                                                                                            Hoy
-                                                                                                                    </span>
-                                                                                                                    <span class="h4">
-                                                                                                                            7 KILLS
-                                                                                                                            <br>
-                                                                                                                            <small class="text-muted">
-                                                                                                                                    Esta semana
-                                                                                                                            </small>
-                                                                                                                    </span>
-                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                                                                                    <canvas style="display: inline-block; width: 147px; height: 65px; vertical-align: top;" width="147" height="65">
-                                                                                                                                    </canvas>
-                                                                                                                            </div>
-                                                                                                                            <div class="m-t-lg">
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </header>
-                                                                                                            <div class="panel-body">
-                                                                                                                    <div>
-                                                                                                                            <span class="text-muted">
-                                                                                                                                    Total de Kills:
-                                                                                                                            </span>
-                                                                                                                            <span class="h3 block">
-                                                                                                                                    25 Kills
-                                                                                                                            </span>
-                                                                                                                    </div>
-                                                                                                                    <div class="row m-t-sm">
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Mínimo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            0 Kills
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Promedio
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            1.25 Kills
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Máximo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            12 Kills
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </div>
-                                                                                                    </section>
-                                                                                            </div>
-                                                                                            <div class="col-lg-4">
-                                                                                                    <section class="panel no-borders">
-                                                                                                            <header class="panel-heading bg-danger lter">
-                                                                                                                    <span class="pull-right">
-                                                                                                                            Hoy
-                                                                                                                    </span>
-                                                                                                                    <span class="h4">
-                                                                                                                            7 PKs
-                                                                                                                            <br>
-                                                                                                                            <small class="text-muted">
-                                                                                                                                    Esta semana
-                                                                                                                            </small>
-                                                                                                                    </span>
-                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                                                                                    <canvas style="display: inline-block; width: 147px; height: 65px; vertical-align: top;" width="147" height="65">
-                                                                                                                                    </canvas>
-                                                                                                                            </div>
-                                                                                                                            <div class="m-t-lg">
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </header>
-                                                                                                            <div class="panel-body">
-                                                                                                                    <div>
-                                                                                                                            <span class="text-muted">
-                                                                                                                                    Total de PKs:
-                                                                                                                            </span>
-                                                                                                                            <span class="h3 block">
-                                                                                                                                    25 PKs
-                                                                                                                            </span>
-                                                                                                                    </div>
-                                                                                                                    <div class="row m-t-sm">
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Mínimo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            0 PKs
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Promedio
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            1.25 PKs
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Máximo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            12 PKs
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </div>
-                                                                                                    </section>
-                                                                                            </div>
-                                                                                            <div class="col-lg-4">
-                                                                                                    <section class="panel no-borders">
-                                                                                                            <header class="panel-heading bg-dark lter">
-                                                                                                                    <span class="pull-right">
-                                                                                                                            Hoy
-                                                                                                                    </span>
-                                                                                                                    <span class="h4">
-                                                                                                                            7 Puntos
-                                                                                                                            <br>
-                                                                                                                            <small class="text-muted">
-                                                                                                                                    Esta semana
-                                                                                                                            </small>
-                                                                                                                    </span>
-                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                            data-spot-radius="3" data-data="[220,210,200,325,250,320,345,250,250,250,400,380]">
-                                                                                                                                    <canvas style="display: inline-block; width: 147px; height: 65px; vertical-align: top;" width="147" height="65">
-                                                                                                                                    </canvas>
-                                                                                                                            </div>
-                                                                                                                            <div class="m-t-lg">
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </header>
-                                                                                                            <div class="panel-body">
-                                                                                                                    <div>
-                                                                                                                            <span class="text-muted">
-                                                                                                                                    Total de puntos en Olys:
-                                                                                                                            </span>
-                                                                                                                            <span class="h3 block">
-                                                                                                                                    25 Puntos
-                                                                                                                            </span>
-                                                                                                                    </div>
-                                                                                                                    <div class="row m-t-sm">
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Mínimo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            0 Puntos
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Promedio
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            1.25 Puntos
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                            <div class="col-xs-4">
-                                                                                                                                    <small class="text-muted block">
-                                                                                                                                            Máximo
-                                                                                                                                    </small>
-                                                                                                                                    <span>
-                                                                                                                                            12 Puntos
-                                                                                                                                    </span>
-                                                                                                                            </div>
-                                                                                                                    </div>
-                                                                                                            </div>
-                                                                                                    </section>
-                                                                                            </div>
-                                                                                    </div>
-                                                                            </div>
-                                                                    </div>
+                                                                                                                <div class="row m-t-sm">
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        D&iacute;as Jugados
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat['diastotales'].' D&iacute;as
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        Promedio
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat[1]['promedio'].' Kills
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        Máximo
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat[1]['max'].' Kills
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </section>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4">
+                                                                                                <section class="panel no-borders">
+                                                                                                        <header class="panel-heading bg-danger lter">
+                                                                                                                <span class="pull-right">
+                                                                                                                        Hoy
+                                                                                                                </span>
+                                                                                                                <span class="h4">
+                                                                                                                        '.$stat[2]['semana'].' PKs
+                                                                                                                        <br>
+                                                                                                                        <small class="text-muted">
+                                                                                                                                Esta semana
+                                                                                                                        </small>
+                                                                                                                </span>
+                                                                                                                <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                        <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                        data-spot-radius="3" data-data="'.$stat[2]['stringdias'].'">
+                                                                                                                                <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                </canvas>
+                                                                                                                        </div>
+                                                                                                                        <div class="m-t-lg">
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </header>
+                                                                                                        <div class="panel-body">
+                                                                                                                <div>
+                                                                                                                        <span class="text-muted">
+                                                                                                                                Total de PKs:
+                                                                                                                        </span>
+                                                                                                                        <span class="h3 block">
+                                                                                                                                '.$stat[2]['total'].' PKs
+                                                                                                                        </span>
+                                                                                                                </div>
+                                                                                                                <div class="row m-t-sm">
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        D&iacute;as Jugados
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat['diastotales'].' D&iacute;as
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        Promedio
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat[2]['promedio'].' PKs
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        M&aacute;ximo
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat[2]['max'].' PKs
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </section>
+                                                                                        </div>
+                                                                                        <div class="col-lg-4">
+                                                                                                <section class="panel no-borders">
+                                                                                                        <header class="panel-heading bg-dark lter">
+                                                                                                                <span class="pull-right">
+                                                                                                                        Hoy
+                                                                                                                </span>
+                                                                                                                <span class="h4">
+                                                                                                                        '.$stat[3]['semana'].' Puntos
+                                                                                                                        <br>
+                                                                                                                        <small class="text-muted">
+                                                                                                                                Esta semana
+                                                                                                                        </small>
+                                                                                                                </span>
+                                                                                                                <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                        <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                        data-spot-radius="3" data-data="'.$stat[3]['stringdias'].'">
+                                                                                                                                <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                </canvas>
+                                                                                                                        </div>
+                                                                                                                        <div class="m-t-lg">
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </header>
+                                                                                                        <div class="panel-body">
+                                                                                                                <div>
+                                                                                                                        <span class="text-muted">
+                                                                                                                                Total de puntos de Experiencia:
+                                                                                                                        </span>
+                                                                                                                        <span class="h3 block">
+                                                                                                                                '.$stat[3]['total'].' Puntos
+                                                                                                                        </span>
+                                                                                                                </div>
+                                                                                                                <div class="row m-t-sm">
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        D&iacute;as Jugados
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat['diastotales'].' D&iacute;as
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        Promedio
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat[3]['promedio'].' Ptos
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                        <div class="col-xs-4">
+                                                                                                                                <small class="text-muted block">
+                                                                                                                                        Máximo
+                                                                                                                                </small>
+                                                                                                                                <span>
+                                                                                                                                        '.$stat[3]['max'].' Ptos
+                                                                                                                                </span>
+                                                                                                                        </div>
+                                                                                                                </div>
+                                                                                                        </div>
+                                                                                                </section>
+                                                                                        </div>
+                                                                                </div>
+                                                                        </div>
+                                                                    </div>';
+                                                                    $con++;
+                                                                    }
+                                                                    ?>
                                                             </div>
                                                             <a class="left carousel-control" href="#c-slide" data-slide="prev"> <i class="icon-angle-left"></i> </a>
                                                             <a class="right carousel-control" href="#c-slide" data-slide="next"> <i class="icon-angle-right"></i> </a>
@@ -689,11 +485,25 @@ include_once('barralateral.php');
 			</section>
 			<!-- /.vbox -->
 		</section>
-		<script src="css/app.v1.js">
-		</script>
-		<!-- Bootstrap -->
-		<!-- Sparkline Chart -->
-		<!-- App -->
+        
+        <script src="js/jquery.min.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.js"></script>
+        <!-- Sparkline Chart -->
+        <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
+        <!-- App -->
+        <script src="js/app.js"></script>
+        <script src="js/app.plugin.js"></script>
+        <script src="js/app.data.js"></script>  
+		
+        <!--  fix carousel canvas -->
+        <script type="text/javascript">
+        $('#c-slide').on('slid.bs.carousel', function () {
+            $.sparkline_display_visible();
+        });
+        </script>
+        <!--  /fix carousel canvas -->
+
 	</body>
 
 </html>
