@@ -76,7 +76,7 @@ if(!isacmlogged()){
                             <div class="panel-group m-b" id="accordion2">
 									<div class="panel no-border" style="background-color:rgba(0,0,0,0);">
 										<div class="panel-heading fondo-transparente-negro-075">
-											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
+											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  //echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
 										</div>
 										
                                         <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
@@ -135,7 +135,7 @@ if(!isacmlogged()){
                                                                                                 <!-- Barra de XP-->
                                                                                                 <div class="row m-n"><b>'.$stat['exp'].'/'.$stat['nextexp'].'</b>
                                                                                                         <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
-                                                                                                            <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%">
+                                                                                                            <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%;color: #000;">'.$porcen.'%
                                                                                                             </div>
                                                                                                         </div>
                                                                                                 </div>
@@ -294,7 +294,7 @@ if(!isacmlogged()){
                                                                                                                                 Total de puntos de Experiencia:
                                                                                                                         </span>
                                                                                                                         <span class="h3 block">
-                                                                                                                                '.$stat[3]['total'].' Puntos
+                                                                                                                                '.$stat[3]['total'].' Ptos
                                                                                                                         </span>
                                                                                                                 </div>
                                                                                                                 <div class="row m-t-sm">

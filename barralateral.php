@@ -13,7 +13,7 @@ function getBar($tipo,$active){
         $userFData=$MyBBI->getUser();
         $avatar='forum/'.$userFData['avatar'];
     }else{
-        $avatar='images/default.jpg';
+        $avatar='images/avatar_default.jpg';
         $msgFnotlogged='<div class="bg-danger wrapper hidden-vertical animated rollIn text-sm">
 							<a href="#" data-dismiss="alert" class="pull-right m-r-n-sm m-t-n-sm"><i class="icon-close icon-remove "></i></a>
 							Heya, no has iniciado sesi&oacuten en el foro, por favor loggea <b><a href="foro.php?page=/member.php?action=login">aqu&iacute;</a></b>.

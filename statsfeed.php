@@ -122,7 +122,7 @@ function getStats($account){
         }
         $str='['.$str;        
         
-        $obj[$cantpj][3]['total']=$suma[2]['SUM(cant)'];
+        $obj[$cantpj][3]['total']=$charid['exp'];
         $obj[$cantpj][3]['stringdias']=$str;
         $obj[$cantpj][3]['promedio']=ceil($suma[2]['SUM(cant)']/$suma[2]['COUNT(*)']);;
         $obj[$cantpj][3]['max']=$max[2]['MAX(cant)'];
