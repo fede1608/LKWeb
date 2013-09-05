@@ -99,7 +99,7 @@ if(!isacmlogged()){
                                                                     <?php  
                                                                     $con=0;
                                                                     foreach($stats as $stat){
-                                                                    $porcen=floor(($stat['prevexp']/$stat['nextexp'])*100);
+                                                                    $porcen=floor((($stat['exp']-$stat['prevexp'])/($stat['nextexp']-$stat['prevexp']))*100);
                                                                     $left=$stat['nextexp']-$stat['exp'];
                                                                     
                                                                     echo '<div class="item '.($con==0?'active':'').'">

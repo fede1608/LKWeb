@@ -21,7 +21,8 @@ include_once 'session.php';
 			</script>
 		<![endif]-->
 	</head>
-	<body>
+	<body style="background-image: url(http://linekkit.com/images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size: cover !important;">
+ 
 		<section class="hbox stretch">
 			<?php include_once('barralateral.php');
             getBar(3,7);//getbat(tipoDeBarra,<li>activo)
