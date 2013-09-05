@@ -16,6 +16,7 @@ include_once 'session.php';
 		<link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
 		<link rel="stylesheet" href="css/plugin.css" type="text/css" />
 		<link rel="stylesheet" href="css/app.css" type="text/css" />
+		<link rel="stylesheet" href="css/lkcss.css">
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
 			</script>
