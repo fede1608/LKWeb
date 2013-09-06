@@ -291,15 +291,15 @@ $(document).ready(function() {
 	$('[data-ride="datatables"]').each(function() {
 		var oTable = $(this).dataTable( {
 			"bProcessing": true,
-			"sAjaxSource": "js/data/datatable.json",
+			"sAjaxSource": "pkjson.php",
 			"sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
 			"sPaginationType": "full_numbers",
 			"aoColumns": [
-				{ "mData": "engine" },
-				{ "mData": "browser" },
-				{ "mData": "platform" },
-				{ "mData": "version" },
-				{ "mData": "grade" }
+				{ "mData": "puesto" },
+				{ "mData": "name" },
+				{ "mData": "cant" },
+				{ "mData": "clan" },
+				{ "mData": "sth" }
 			]
 		} );
 	});

@@ -56,7 +56,7 @@ function getBar($tipo,$active){
 										<a href="#">Settings</a>
 									</li>
 									<li>
-										<a href="profile.html">Profile</a>
+										<a href="profile.php">Profile</a>
 									</li>
 									<li>
 										<a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
