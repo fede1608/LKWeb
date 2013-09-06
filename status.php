@@ -34,13 +34,13 @@ function getStatus(){
     $tmp = $online + ($fakepcs);
     $percent = ceil($tmp / $maxplayers *100);
     if($fgame) $gamestatus='<i class="icon-globe" style="color: #119922;font-size: 16px;">
-                                            		</i>Online';
+                                            		</i>On';
     else $gamestatus= '<i class="icon-globe" style="color: #FF0000;font-size: 16px;">
-                                            		</i>Offline';
+                                            		</i>Off';
     if($flogin) $loginstatus='<i class="icon-globe" style="color: #119922;font-size: 16px;">
-	   </i>Online';
+	   </i>On';
     else $loginstatus= '<i class="icon-globe" style="color: #FF0000;font-size: 16px;">
-	   </i>Offline';
+	   </i>Off';
    echo '<!-- .Estado del Servidor -->
 								<section class="panel fondo-transparente-negro-075 lter no-borders">
 									<div class="panel-body">
@@ -58,7 +58,7 @@ function getStatus(){
 										<div class="row">
                                             <div class="col-xs-4">
                                             	<small class="text-muted block">
-                                            		GameServer
+                                            		Game
                                             	</small>
                                             	<span>
                                             		'.$gamestatus.'
@@ -66,7 +66,7 @@ function getStatus(){
                                             </div>
                                             <div class="col-xs-4">
                                             	<small class="text-muted block">
-                                            		Players On
+                                            		Players
                                             	</small>
                                             	<span>
                                             		'.$tmp.'
@@ -74,7 +74,7 @@ function getStatus(){
                                             </div>
                                             <div class="col-xs-4">
                                             	<small class="text-muted block">
-                                            		LoginServer
+                                            		Login
                                             	</small>
                                             	<span>
                                             		'.$loginstatus.'
