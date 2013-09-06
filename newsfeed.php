@@ -7,7 +7,7 @@
     date_default_timezone_set("America/Argentina/Buenos_Aires");
     require_once 'libs/mysql.inc.php';
 	require_once 'libs/config.inc.php';
-    $MySQL = new SQL($host, $usernombre, $pass, "noticias");
+    $MySQL = new SQL($host, $usernombre, $pass, $dbnoticias);
     function getNews($cant,$pagina){
         global $MySQL;
         $limitI=$cant*($pagina -1);

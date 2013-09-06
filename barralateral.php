@@ -56,7 +56,7 @@ function getBar($tipo,$active){
 										<a href="#">Settings</a>
 									</li>
 									<li>
-										<a href="profile.html">Profile</a>
+										<a href="profile.php">Profile</a>
 									</li>
 									<li>
 										<a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
@@ -135,7 +135,7 @@ function getBar($tipo,$active){
 											<a href="list.html">List groups</a>
 										</li>
 										<li>
-											<a href="table.html">Table</a>
+											<a href="tasks.html">Tasks</a>
 										</li>
 										<li>
 											<a href="form.html">Form</a>
@@ -164,7 +164,7 @@ function getBar($tipo,$active){
 									<a href="mail.html"> <b class="badge bg-primary pull-right">3</b> <i class="icon-envelope-alt"></i> <span>Mail</span> </a>
 								</li>
 								<li '.($active==4?'class="active"':'').'>
-									<a href="tasks.html"> <i class="icon-tasks"></i> <span>Tasks</span> </a>
+									<a href="stats.php"> <i class="icon-tasks"></i> <span>Stats</span> </a>
 								</li>
 								<li '.($active==5?'class="active"':'').'>
 									<a href="notes.html"> <i class="icon-pencil"></i> <span>Notes</span> </a>
