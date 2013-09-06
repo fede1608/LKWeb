@@ -42,7 +42,7 @@ if(!isacmlogged()){
 			</script>
 		<![endif]-->
 	</head>
-	<body style="background-image:url(images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size:cover !important;">
+	<body style="background-image:url(images/bg-raid-boss.jpg) !important; background-size:cover !important;">
 		
         <!-- API de Facebook -->
         <div id="fb-root"></div>
@@ -71,7 +71,7 @@ if(!isacmlogged()){
                         
                         <div class="panel-group m-b" id="accordion10">
                             <div class="panel no-border fondo-transparente-negro-075">
-                                <div class="panel-heading fondo-transparente-negro-075">
+                                <div class="panel-heading fondo-transparente-000">
                                     <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
                                     	<strong>Top jugadores de hoy</strong>
                                     </a>
@@ -543,7 +543,7 @@ if(!isacmlogged()){
 										<span class="badge bg-info pull-right">
 											32
 										</span>
-										News
+										Últimas noticias
 									</header>
                                     
 									<section class="panel-body">
@@ -574,13 +574,13 @@ if(!isacmlogged()){
 												</div>
 												<a href="#" class="h4">'.$noti['titulo'].'</a>
                                                 <small class="block text-muted">
-															By '.$noti[autor].'
+															Por '.$noti[autor].'
 												</small>
 												<small class="block m-t-sm">
 													'.$noti['contenido'].'
 												</small>
 											</div>
-										</article><div class="line pull-in">
+										</article><div class="line pull-in linea-azul-1">
 										</div>';
                                                 }
                                             

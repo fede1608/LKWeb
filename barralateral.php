@@ -3,6 +3,8 @@
 /**
  * @author fede1
  * @copyright 2013
+ *
+ *Nota: Requiere los CSS lkcss.css cargados en la pagina
  */
 
 function getBar($tipo,$active){
@@ -46,7 +48,7 @@ function getBar($tipo,$active){
 					</footer>
 					<section>
 						<!-- user -->
-						<div class="bg-success nav-user hidden-xs pos-rlt">
+						<div class="fondo-solido-azul-1 nav-user hidden-xs pos-rlt">
 							<div class="nav-avatar pos-rlt">
 								<a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown"> <img src="'.$avatar.'" alt="" class=""> <span class="caret caret-white"></span> </a>
 								<ul class="dropdown-menu m-t-sm animated fadeInLeft">

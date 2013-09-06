@@ -25,10 +25,19 @@
 }
 .fondo-transparente-000
 {
-	background-color: rgba(0,0,0,0) !important;
+	background-color: rgba(0,0,0,0);
 }
 .fondo-solido-rojo-1
 {
 	background-color:#C22E1D;
 	color:#FFF;
+}
+.fondo-solido-azul-1
+{
+	background-color:#004397;
+	color: #FFF;	
+}
+.linea-azul-1
+{
+	border-top:1px solid #434369;
 }
