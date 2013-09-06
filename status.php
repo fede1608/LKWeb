@@ -42,12 +42,10 @@ function getStatus(){
     else $loginstatus= '<i class="icon-globe" style="color: #FF0000;font-size: 16px;">
 	   </i>Offline';
    echo '<!-- .Estado del Servidor -->
-								<section class="panel bg-info lter no-borders">
+								<section class="panel fondo-transparente-negro-075 lter no-borders">
 									<div class="panel-body">
 										<a class="pull-right" href="#"><i class="icon-laptop"></i></a>
-										<span class="h4">
-											Estado del Servidor x10
-										</span>
+										<h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Estado del servidor x10</h2>
 										<div class="text-center padder m-t">
 											<div class="progress progress-sm progress-striped active">
 												<div class="progress-bar progress-bar-success" data-toggle="tooltip" data-original-title="'.$tmp.' Players Online" style="width: '.$percent.'%">
@@ -55,7 +53,7 @@ function getStatus(){
 										</div>
                                         
 									</div>
-									<footer class="panel-footer lt">
+									<footer class="panel-footer lt fondo-transparente-negro-075">
                                    <div class="text-center"> Status</div>
 										<div class="row">
                                             <div class="col-xs-4">

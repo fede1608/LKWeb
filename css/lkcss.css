@@ -41,3 +41,7 @@
 {
 	border-top:1px solid #434369;
 }
+.no-padding-top
+{
+	padding-top:0;
+}

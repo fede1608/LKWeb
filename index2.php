@@ -274,8 +274,8 @@ if(!isacmlogged()){
                                             
                                             <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
                                             
-                                                    <div class="panel-body no-border">
-                                                        <div class="carousel slide auto panel-body no-border" id="c-slide">
+                                                    <div class="panel-body no-border" style="padding-top:0;">
+                                                        <div class="carousel slide auto panel-body no-border" style="padding-top:0;" id="c-slide">
                                                                 <ol class="carousel-indicators out">
                                                                 <?php   include_once 'statsfeed.php';
                                                                         $stats=getStats($userdata['login']); 
@@ -572,7 +572,7 @@ if(!isacmlogged()){
 														'.date('M',$noti['fecha']).'
 													</small>
 												</div>
-												<a href="#" class="h4">'.$noti['titulo'].'</a>
+												<a href="#" class="h4 text-center letras-blancas" style="font-family:Alegreya SC;">'.$noti['titulo'].'</a>
                                                 <small class="block text-muted">
 															Por '.$noti[autor].'
 												</small>
