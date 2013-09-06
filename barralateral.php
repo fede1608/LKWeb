@@ -8,7 +8,7 @@
  */
 
 function getBar($tipo,$active){
-    global $mybb, $MyBBI;
+    global $mybb, $MyBBI,$userdata;
     $flogged=$MyBBI->isLoggedIn();
     $msgFnotlogged='';
     if($flogged){
@@ -73,7 +73,7 @@ function getBar($tipo,$active){
 									</li>
 								</ul>
 								<div class="visible-xs m-t m-b">
-									<a href="#" class="h3">John.Smith</a>
+									<a href="#" class="h3">'.$userdata['login'].'</a>
 									<p>
 										<i class="icon-map-marker">
 										</i>

@@ -6,11 +6,12 @@
  */
 require_once 'libs/mysql.inc.php';
 require_once 'libs/config.inc.php';
-include_once 'datachars.php';
+include_once 'datachars.php'; 
+$MySQLLK = new SQL($hostL, $usernombre, $pass, $dbgame);
+$MySQLMK = new SQL($host, $usernombre, $pass, $dbnoticias);  
 function getStats($account){
-  global $usernombre,$pass,$race,$class,$level,$hostL,$host,$dbgame,$dbnoticias;
-    $MySQLLK = new SQL($hostL, $usernombre, $pass, $dbgame);
-    $MySQLMK = new SQL($host, $usernombre, $pass, $dbnoticias);  
+  global $race,$class,$level,$MySQLLK,$MySQLMK;
+
     
     $charsid=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp FROM characters WHERE account_name="'.$account.'"');
 //    echo 'SELECT charId,race,classId FROM characters WHERE account_name="'.$account.'"';
@@ -133,4 +134,18 @@ function getStats($account){
 return $obj;
 }
 
+function getRaceStats(){
+    global $MySQLLK,$MySQLMK;
+    $races=$MySQLLK->execute('SELECT race,COUNT(race) as cantidad FROM characters  GROUP BY race ORDER BY cantidad DESC');
+    $back='';
+    for($i=0;$i<=5;$i++){
+        $obj[$i]['cant']=isset($races[$i]['cantidad'])?($races[$i]['cantidad']):0;
+        $obj[$i]['race']=isset($races[$i]['race'])?($races[$i]['race']):-1;
+        $back.=$obj[$i]['cant'];
+        if($i!=5)$back.=',';
+    }
+    $obj['str']=$back;
+    return $obj;
+
+}
 ?>

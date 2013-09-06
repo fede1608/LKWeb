@@ -162,6 +162,35 @@ if(!isacmlogged()){
                   </section>
                 </div>
                 <div class="col-sm-6">
+                <section class="panel">
+                
+									<div class="text-center wrapper">
+                                    
+										<div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA']">
+											<?php   include_once 'statsfeed.php';
+                                                    include_once 'datachars.php';
+                                                    $stats=getRaceStats(); 
+                                                    echo $stats['str']; ?>
+										</div>
+									</div>
+									<ul class="list-group list-group-flush no-radius alt">
+										<?php 
+                                        for($i=0;$i<=5;$i++){
+                                            echo '<li class="list-group-item">
+    											<span class="pull-right">
+    												'.$stats[$i]['cant'].'
+    											</span>
+    											<span class="label bg-success">
+    												'.$i.'
+    											</span>
+    											'.$race[$stats[$i]['race']].'
+    										</li>';
+                                        }
+                                        ?>
+                                        
+                                        
+									</ul>
+								</section>
                   <section class="panel">
                     <header class="panel-heading">Stats</header>
                     <table class="table table-striped m-b-none text-sm">
@@ -511,7 +540,7 @@ if(!isacmlogged()){
             <div class="tab-pane" id="datatable3">
               <section class="panel">
                 <header class="panel-heading">
-                  Top PVP
+                  Top Online
                   <i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i> 
                 </header>
                 <div class="table-responsive">
