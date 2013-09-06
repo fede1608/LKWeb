@@ -49,7 +49,9 @@ if(!isacmlogged()){
 			<section id="content">
 				<section class="vbox">
 					<section class="scrollable wrapper">
-                    
+                                 	<div class="col-lg-12 row m-b-lg">
+                        <img src="../images/logo.png" width="450" height="127"> 
+                        </div>
                     	<div class="col-lg-12 row m-b-lg">
 						<div class="panel-group m-b" id="accordion2">
                                         <div class="panel no-border" style="background-color:rgba(0,0,0,0);">
