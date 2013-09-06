@@ -113,7 +113,7 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 					echo '<div class="panel no-border" style="background-color:rgba(0,0,0,0);"><div class="panel-heading fondo-transparente-negro-075">
                     <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapse'.$i.'"> 
 				            <strong>'.$titulo.'</strong> </a></div>
-					   <div id="collapse'.$i.'" class="panel-collapse collapse fondo-transparente-negro-075"><h3>'.$titulo.'</h3>';
+					   <div id="collapse'.$i.'" class="panel-collapse collapse fondo-transparente-negro-075"><div class="panel-body text-sm"><h3>'.$titulo.'</h3>';
 					echo "<h3 style=\"font-size: 12px;color: #4A4A4A;\">".$costinfo."</h3>";
 				?>
 				<h3 style="font-size: 15px;color: #C1763C;">
@@ -166,6 +166,7 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 			</form>
 			</div>
             </div>
+             </div>
 					<?php } ?>	
 						
 						
