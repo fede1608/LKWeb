@@ -65,285 +65,478 @@ if(!isacmlogged()){
 				<section class="vbox">
 					<section class="scrollable wrapper">
                     
-                    	<div class="row">
+                    	<div class="col-lg-12 row m-b-lg">
                         <img src="images/logo.png" width="450" height="127"> 
                         </div>
+                        
+                        <div class="panel-group m-b" id="accordion10">
+                            <div class="panel no-border fondo-transparente-negro-075">
+                                <div class="panel-heading fondo-transparente-negro-075">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
+                                    	<strong>Top jugadores de hoy</strong>
+                                    </a>
+                                </div>
+                                
+                                <div id="collapseTop" class="panel-collapse in">
+                             
+                             		<!-- Margen superior-->
+                             		<div class="row m-t-lg"></div>
+                             
+                                    <!-- Columna 1 -->  		
+                                    <div class="col-lg-4">
+                                        <!-- TOP PK-->
+                                        <section class="panel fondo-solido-rojo-1 no-borders">
+                                          <div class="row">
+                                            <div class="col-xs-6">
+                                              <div class="wrapper">
+                                                <p>All time sales</p>
+                                                <p class="h2 font-bold">32.5%</p>
+                                                <div class="progress progress-xs progress-striped active m-b-sm">
+                                                  <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
+                                                </div>
+                                                <div class="text-sm">of visitors purchased this item.</div>
+                                              </div>
+                                            </div>
+                                            <div class="col-xs-6 wrapper text-center">
+                                              <div class="inline m-t-sm">
+                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
+                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
+                          							<div class="thumb-lg">
+                           								<img src="images/avatar.jpg" class="img-circle">
+                          							</div>
+                        						  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <!-- / TOP PK-->
+                                        
+                                        <!-- TOP PK-->
+                                        <section class="panel fondo-solido-rojo-1 no-borders">
+                                          <div class="row">
+                                            <div class="col-xs-6">
+                                              <div class="wrapper">
+                                                <p>All time sales</p>
+                                                <p class="h2 font-bold">32.5%</p>
+                                                <div class="progress progress-xs progress-striped active m-b-sm">
+                                                  <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
+                                                </div>
+                                                <div class="text-sm">of visitors purchased this item.</div>
+                                              </div>
+                                            </div>
+                                            <div class="col-xs-6 wrapper text-center">
+                                              <div class="inline m-t-sm">
+                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
+                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
+                          							<div class="thumb-lg">
+                           								<img src="images/avatar.jpg" class="img-circle">
+                          							</div>
+                        						  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <!-- / TOP PK-->
+                                        
+                                    </div>
+                                    <!-- / Columna 1 -->
+                                    
+                                    <!-- Columna 2 -->
+                                    <div class="col-lg-4">
+                                        <!-- TOP PVP-->
+                                        <section class="panel bg-success no-borders">
+                                          <div class="row">
+                                            <div class="col-xs-6">
+                                              <div class="wrapper">
+                                                <p>Mejor jugador <strong>Player Vs. Player (PVP)</strong></p>
+                                                <p class="h2 font-bold">81 Kills</p>
+                                                <p class="h4 font-bold">JugadorMegamanX</p>
+                                              </div>
+                                            </div>
+                                            <div class="col-xs-6 wrapper text-center">
+                                              <div class="inline m-t-sm">
+                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
+                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
+                          							<div class="thumb-lg">
+                           								<img src="images/avatar.jpg" class="img-circle">
+                          							</div>
+                        						  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <!-- / TOP PK-->
+                                        
+                                        <!-- TOP PK-->
+                                        <section class="panel fondo-solido-rojo-1 no-borders">
+                                          <div class="row">
+                                            <div class="col-xs-6">
+                                              <div class="wrapper">
+                                                <p>Mejor jugador <strong>Player Killer (PK)</strong></p>
+                                                <p class="h2 font-bold">64 Kills</p>
+                                                <p class="h4 font-bold">JugadorMegamanX</p>
+                                              </div>
+                                            </div>
+                                            <div class="col-xs-6 wrapper text-center">
+                                              <div class="inline m-t-sm">
+                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
+                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
+                          							<div class="thumb-lg">
+                           								<img src="images/avatar.jpg" class="img-circle">
+                          							</div>
+                        						  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <!-- / TOP PK-->
+                                        
+                                    </div>
+                                    <!-- / Columna 2 -->
+                                    
+                                    <!-- Columna 3 -->
+                                    <div class="col-lg-4">
+                                        <!-- TOP A DEFINIR 2-->
+                                        <section class="panel bg-primary no-borders">
+                                          <div class="row">
+                                            <div class="col-xs-6">
+                                              <div class="wrapper">
+                                                <p>All time sales</p>
+                                                <p class="h2 font-bold">32.5%</p>
+                                                <div class="progress progress-xs progress-striped active m-b-sm">
+                                                  <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
+                                                </div>
+                                                <div class="text-sm">of visitors purchased this item.</div>
+                                              </div>
+                                            </div>
+                                            <div class="col-xs-6 wrapper text-center">
+                                              <div class="inline m-t-sm">
+                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
+                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
+                          							<div class="thumb-lg">
+                           								<img src="images/avatar.jpg" class="img-circle">
+                          							</div>
+                        						  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <!-- / TOP PK-->
+                                        
+                                        <!-- Acceso a donación-->
+                                        <section class="panel bg-warning no-borders">
+                                          <div class="row">
+                                            <div class="col-xs-6">
+                                              <div class="wrapper letras-negras">
+                                                <p>Potencia tu experiencia de juego</p>
+                                                <p class="h2 font-bold letras-negras">DONACION</p>
+                                                <div class="text-sm">y alcanzá los tops de Linekkit antes que nadie</div>
+                                              </div>
+                                            </div>
+                                            <div class="col-xs-6 wrapper text-center">
+                                              <div class="inline m-t-sm">
+                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
+                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
+                          							<div class="thumb-lg">
+                           								<img src="images/reward_donacion.jpg" width="320" height="320" class="img-circle">
+                          							</div>
+                        						  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </section>
+                                        <!-- / TOP PK-->
+                                        
+                                    </div> 
+                                    <!-- / Columna 3 -->
+                                    
+                                    <!-- Margen inferior-->
+                             		<div class="row m-b-lg"></div>
+                                    
+                               </div>
+                           </div>    
+                        </div>	
                                                 
 						<div class="row">
 							<div class="col-lg-9">
-                            
-                            
-                            <div class="panel-group m-b" id="accordion2">
-									<div class="panel no-border" style="background-color:rgba(0,0,0,0);">
-										<div class="panel-heading fondo-transparente-negro-075">
-											<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  //echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
-										</div>
-										
-                                        <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
-                                        
-                                                <div class="panel-body no-border">
-                                                    <div class="carousel slide auto panel-body no-border" id="c-slide">
-                                                            <ol class="carousel-indicators out">
-                                                            <?php   include_once 'statsfeed.php';
-                                                                    $stats=getStats($userdata['login']); 
-                                                                    $con=0;
-                                                                    foreach($stats as $stat){
-                                                                        echo '<li data-target="#c-slide" data-slide-to="'.$con.'" '.($con==0?'class="active"':'').' >
-                                                                    </li>';
-                                                                    $con++;
-                                                                    }        
-                                                            ?>
-
-                                                            </ol>
-                                                            <div class="carousel-inner">
-                                                                    <?php  
-                                                                    $con=0;
-                                                                    foreach($stats as $stat){
-                                                                    $porcen=floor((($stat['exp']-$stat['prevexp'])/($stat['nextexp']-$stat['prevexp']))*100);
-                                                                    $left=$stat['nextexp']-$stat['exp'];
-                                                                    
-                                                                    echo '<div class="item '.($con==0?'active':'').'">
-                                                                        <div class="panel-body no-border">
-                                                                                <div class="row m-b-lg">
-                                                                                        <div class="col-lg-4">
-                                                                                                <img src="images/'.$stat['race'].'.png" width="240" height="369">
-                                                                                        </div>
-                                                                                        <div class="col-lg-8" style="text-align:center;">
-                                                                                                <div class="letras-blancas">
-                                                                                                        <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                <b>
-                                                                                                                        Personaje N°'.($con+1).'
-                                                                                                                </b>
-                                                                                                        </h1>
-                                                                                                        <h2 style="font-family:Alegreya SC;">
-                                                                                                                Nombre: '.$stat['name'].'
-                                                                                                                <br>
-                                                                                                                Raza: '.$stat['race'].'
-                                                                                                                <br>
-                                                                                                                Clase: '.$stat['class'].'
-                                                                                                        </h2>
-                                                                                                        <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                Nivel
-                                                                                                        </h1>
-                                                                                                        <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-35px">
-                                                                                                                <b>
-                                                                                                                        '.$stat['level'].'
-                                                                                                                </b>
-                                                                                                        </h1>
-                                                                                                </div>
-                                                                                                
-                                                                                                <!-- Barra de XP-->
-                                                                                                <div class="row m-n"><b>'.$stat['exp'].'/'.$stat['nextexp'].'</b>
-                                                                                                        <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
-                                                                                                            <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%;color: #000;">'.$porcen.'%
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                </div>
-                                                                                                <!-- / Barra de XP-->
-                                                                                        </div>
-                                                                                </div>
-                                                                                <div class="row">
-                                                                                        <div class="col-lg-4">
-                                                                                                <section class="panel no-borders">
-                                                                                                        <header class="panel-heading bg-success lter">
-                                                                                                                <span class="pull-right">
-                                                                                                                        Hoy
-                                                                                                                </span>
-                                                                                                                <span class="h4">
-                                                                                                                        '.$stat[1]['semana'].' KILLS
-                                                                                                                        <br>
-                                                                                                                        <small class="text-muted">
-                                                                                                                                Esta semana
-                                                                                                                        </small>
-                                                                                                                </span>
-                                                                                                                <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                        <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                        data-spot-radius="3" data-data="'.$stat[1]['stringdias'].'">
-                                                                                                                                <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
-                                                                                                                                </canvas>
-                                                                                                                        </div>
-                                                                                                                        <div class="m-t-lg">
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </header>
-                                                                                                        <div class="panel-body">
-                                                                                                                <div>
-                                                                                                                        <span class="text-muted">
-                                                                                                                                Total de Kills:
-                                                                                                                        </span>
-                                                                                                                        <span class="h3 block">
-                                                                                                                                '.$stat[1]['total'].' Kills
-                                                                                                                        </span>
-                                                                                                                </div>
-                                                                                                                <div class="row m-t-sm">
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        D&iacute;as Jugados
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat['diastotales'].' D&iacute;as
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        Promedio
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat[1]['promedio'].' Kills
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        Máximo
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat[1]['max'].' Kills
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </div>
-                                                                                                </section>
-                                                                                        </div>
-                                                                                        <div class="col-lg-4">
-                                                                                                <section class="panel no-borders">
-                                                                                                        <header class="panel-heading bg-danger lter">
-                                                                                                                <span class="pull-right">
-                                                                                                                        Hoy
-                                                                                                                </span>
-                                                                                                                <span class="h4">
-                                                                                                                        '.$stat[2]['semana'].' PKs
-                                                                                                                        <br>
-                                                                                                                        <small class="text-muted">
-                                                                                                                                Esta semana
-                                                                                                                        </small>
-                                                                                                                </span>
-                                                                                                                <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                        <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                        data-spot-radius="3" data-data="'.$stat[2]['stringdias'].'">
-                                                                                                                                <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
-                                                                                                                                </canvas>
-                                                                                                                        </div>
-                                                                                                                        <div class="m-t-lg">
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </header>
-                                                                                                        <div class="panel-body">
-                                                                                                                <div>
-                                                                                                                        <span class="text-muted">
-                                                                                                                                Total de PKs:
-                                                                                                                        </span>
-                                                                                                                        <span class="h3 block">
-                                                                                                                                '.$stat[2]['total'].' PKs
-                                                                                                                        </span>
-                                                                                                                </div>
-                                                                                                                <div class="row m-t-sm">
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        D&iacute;as Jugados
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat['diastotales'].' D&iacute;as
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        Promedio
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat[2]['promedio'].' PKs
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        M&aacute;ximo
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat[2]['max'].' PKs
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </div>
-                                                                                                </section>
-                                                                                        </div>
-                                                                                        <div class="col-lg-4">
-                                                                                                <section class="panel no-borders">
-                                                                                                        <header class="panel-heading bg-dark lter">
-                                                                                                                <span class="pull-right">
-                                                                                                                        Hoy
-                                                                                                                </span>
-                                                                                                                <span class="h4">
-                                                                                                                        '.$stat[3]['semana'].' Puntos
-                                                                                                                        <br>
-                                                                                                                        <small class="text-muted">
-                                                                                                                                Esta semana
-                                                                                                                        </small>
-                                                                                                                </span>
-                                                                                                                <div class="text-center padder m-b-n-sm m-t-sm">
-                                                                                                                        <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
-                                                                                                                        data-spot-radius="3" data-data="'.$stat[3]['stringdias'].'">
-                                                                                                                                <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
-                                                                                                                                </canvas>
-                                                                                                                        </div>
-                                                                                                                        <div class="m-t-lg">
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </header>
-                                                                                                        <div class="panel-body">
-                                                                                                                <div>
-                                                                                                                        <span class="text-muted">
-                                                                                                                                Total de puntos de Experiencia:
-                                                                                                                        </span>
-                                                                                                                        <span class="h3 block">
-                                                                                                                                '.$stat[3]['total'].' Ptos
-                                                                                                                        </span>
-                                                                                                                </div>
-                                                                                                                <div class="row m-t-sm">
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        D&iacute;as Jugados
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat['diastotales'].' D&iacute;as
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        Promedio
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat[3]['promedio'].' Ptos
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                        <div class="col-xs-4">
-                                                                                                                                <small class="text-muted block">
-                                                                                                                                        Máximo
-                                                                                                                                </small>
-                                                                                                                                <span>
-                                                                                                                                        '.$stat[3]['max'].' Ptos
-                                                                                                                                </span>
-                                                                                                                        </div>
-                                                                                                                </div>
-                                                                                                        </div>
-                                                                                                </section>
-                                                                                        </div>
-                                                                                </div>
-                                                                        </div>
-                                                                    </div>';
-                                                                    $con++;
-                                                                    }
-                                                                    ?>
-                                                            </div>
-                                                            <a class="left carousel-control" href="#c-slide" data-slide="prev"> <i class="icon-angle-left"></i> </a>
-                                                            <a class="right carousel-control" href="#c-slide" data-slide="next"> <i class="icon-angle-right"></i> </a>
-                                                    </div>
+                                                                                                                
+                                <div class="panel-group m-b" id="accordion2">
+                                        <div class="panel no-border" style="background-color:rgba(0,0,0,0);">
+                                            <div class="panel-heading fondo-transparente-negro-075">
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  //echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
                                             </div>
-                                        
+                                            
+                                            <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
+                                            
+                                                    <div class="panel-body no-border">
+                                                        <div class="carousel slide auto panel-body no-border" id="c-slide">
+                                                                <ol class="carousel-indicators out">
+                                                                <?php   include_once 'statsfeed.php';
+                                                                        $stats=getStats($userdata['login']); 
+                                                                        $con=0;
+                                                                        foreach($stats as $stat){
+                                                                            echo '<li data-target="#c-slide" data-slide-to="'.$con.'" '.($con==0?'class="active"':'').' >
+                                                                        </li>';
+                                                                        $con++;
+                                                                        }        
+                                                                ?>
+    
+                                                                </ol>
+                                                                <div class="carousel-inner">
+                                                                        <?php  
+                                                                        $con=0;
+                                                                        foreach($stats as $stat){
+                                                                        $porcen=floor((($stat['exp']-$stat['prevexp'])/($stat['nextexp']-$stat['prevexp']))*100);
+                                                                        $left=$stat['nextexp']-$stat['exp'];
+                                                                        
+                                                                        echo '<div class="item '.($con==0?'active':'').'">
+                                                                            <div class="panel-body no-border">
+                                                                                    <div class="row m-b-lg">
+                                                                                            <div class="col-lg-4">
+                                                                                                    <img src="images/'.$stat['race'].'.png" width="240" height="369">
+                                                                                            </div>
+                                                                                            <div class="col-lg-8" style="text-align:center;">
+                                                                                                    <div class="letras-blancas">
+                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                    <b>
+                                                                                                                            Personaje N°'.($con+1).'
+                                                                                                                    </b>
+                                                                                                            </h1>
+                                                                                                            <h2 style="font-family:Alegreya SC;">
+                                                                                                                    Nombre: '.$stat['name'].'
+                                                                                                                    <br>
+                                                                                                                    Raza: '.$stat['race'].'
+                                                                                                                    <br>
+                                                                                                                    Clase: '.$stat['class'].'
+                                                                                                            </h2>
+                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
+                                                                                                                    Nivel
+                                                                                                            </h1>
+                                                                                                            <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-35px">
+                                                                                                                    <b>
+                                                                                                                            '.$stat['level'].'
+                                                                                                                    </b>
+                                                                                                            </h1>
+                                                                                                    </div>
+                                                                                                    
+                                                                                                    <!-- Barra de XP-->
+                                                                                                    <div class="row m-n"><b>'.$stat['exp'].'/'.$stat['nextexp'].'</b>
+                                                                                                            <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
+                                                                                                                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%;color: #000;">'.$porcen.'%
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                    </div>
+                                                                                                    <!-- / Barra de XP-->
+                                                                                            </div>
+                                                                                    </div>
+                                                                                    <div class="row">
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-success lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            '.$stat[1]['semana'].' KILLS
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="'.$stat[1]['stringdias'].'">
+                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de Kills:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    '.$stat[1]['total'].' Kills
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            D&iacute;as Jugados
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat['diastotales'].' D&iacute;as
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat[1]['promedio'].' Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat[1]['max'].' Kills
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-danger lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            '.$stat[2]['semana'].' PKs
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="'.$stat[2]['stringdias'].'">
+                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de PKs:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    '.$stat[2]['total'].' PKs
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            D&iacute;as Jugados
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat['diastotales'].' D&iacute;as
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat[2]['promedio'].' PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            M&aacute;ximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat[2]['max'].' PKs
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                            <div class="col-lg-4">
+                                                                                                    <section class="panel no-borders">
+                                                                                                            <header class="panel-heading bg-dark lter">
+                                                                                                                    <span class="pull-right">
+                                                                                                                            Hoy
+                                                                                                                    </span>
+                                                                                                                    <span class="h4">
+                                                                                                                            '.$stat[3]['semana'].' Puntos
+                                                                                                                            <br>
+                                                                                                                            <small class="text-muted">
+                                                                                                                                    Esta semana
+                                                                                                                            </small>
+                                                                                                                    </span>
+                                                                                                                    <div class="text-center padder m-b-n-sm m-t-sm">
+                                                                                                                            <div class="sparkline" data-type="line" data-resize="true" data-height="65" data-width="100%" data-line-width="2" data-line-color="#fff" data-spot-color="#fff" data-fill-color="" data-highlight-line-color="#fff"
+                                                                                                                            data-spot-radius="3" data-data="'.$stat[3]['stringdias'].'">
+                                                                                                                                    <canvas style="display: inline-block; width: 148px; height: 65px; vertical-align: top;" width="148" height="65">
+                                                                                                                                    </canvas>
+                                                                                                                            </div>
+                                                                                                                            <div class="m-t-lg">
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </header>
+                                                                                                            <div class="panel-body">
+                                                                                                                    <div>
+                                                                                                                            <span class="text-muted">
+                                                                                                                                    Total de puntos de Experiencia:
+                                                                                                                            </span>
+                                                                                                                            <span class="h3 block">
+                                                                                                                                    '.$stat[3]['total'].' Ptos
+                                                                                                                            </span>
+                                                                                                                    </div>
+                                                                                                                    <div class="row m-t-sm">
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            D&iacute;as Jugados
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat['diastotales'].' D&iacute;as
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Promedio
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat[3]['promedio'].' Ptos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                            <div class="col-xs-4">
+                                                                                                                                    <small class="text-muted block">
+                                                                                                                                            Máximo
+                                                                                                                                    </small>
+                                                                                                                                    <span>
+                                                                                                                                            '.$stat[3]['max'].' Ptos
+                                                                                                                                    </span>
+                                                                                                                            </div>
+                                                                                                                    </div>
+                                                                                                            </div>
+                                                                                                    </section>
+                                                                                            </div>
+                                                                                    </div>
+                                                                            </div>
+                                                                        </div>';
+                                                                        $con++;
+                                                                        }
+                                                                        ?>
+                                                                </div>
+                                                                <a class="left carousel-control" href="#c-slide" data-slide="prev"> <i class="icon-angle-left"></i> </a>
+                                                                <a class="right carousel-control" href="#c-slide" data-slide="next"> <i class="icon-angle-right"></i> </a>
+                                                        </div>
+                                                </div>
+                                            
+                                            </div>
+                                            
                                         </div>
-                                        
-                                    </div>
-							  </div>
+                                  </div>
                             
-                            <!-- Noticias -->
+                            	<!-- Noticias -->
                             
 								<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
 									<header class="panel-heading  fondo-transparente-negro-075 borde-transparente-negro" >
