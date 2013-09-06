@@ -37,6 +37,11 @@
 	background-color:#004397;
 	color: #FFF;	
 }
+.fondo-solido-azul-2
+{
+	background-color:#3E4DBD;
+	color: #FFF;	
+}
 .linea-azul-1
 {
 	border-top:1px solid #434369;
@@ -44,4 +49,9 @@
 .no-padding-top
 {
 	padding-top:0;
+}
+.fondo-solido-naranja-1
+{
+	background-color:#EB6106;
+	color:#000;
 }
