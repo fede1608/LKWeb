@@ -290,20 +290,54 @@ $(document).ready(function() {
 	// datatable
 	$('[data-ride="datatables"]').each(function() {
 		var oTable = $(this).dataTable( {
+			"bAutoWidth": false,
 			"bProcessing": true,
-			"sAjaxSource": "pkjson.php",
+			"sAjaxSource": "statsjson.php?type=pk",
 			"sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
 			"sPaginationType": "full_numbers",
 			"aoColumns": [
 				{ "mData": "puesto" },
 				{ "mData": "name" },
 				{ "mData": "cant" },
-				{ "mData": "clan" },
-				{ "mData": "sth" }
+				{ "mData": "clan" }
+			]
+		} );
+	});
+	// datatable2
+	$('[data-ride="datatables2"]').each(function() {
+		var oTable = $(this).dataTable( {
+			"bAutoWidth": false,
+			"bProcessing": true,
+			"sAjaxSource": "statsjson.php?type=pvp",
+			"sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+			"sPaginationType": "full_numbers",
+			"aoColumns": [
+				{ "mData": "puesto" },
+				{ "mData": "name" },
+				{ "mData": "cant" },
+				{ "mData": "clan" }
+			]
+		} );
+	});
+		// datatable2
+	$('[data-ride="datatables3"]').each(function() {
+		var oTable = $(this).dataTable( {
+			"bAutoWidth": false,
+			"bProcessing": true,
+			"sAjaxSource": "statsjson.php?type=time",
+			"sDom": "<'row'<'col-sm-6'l><'col-sm-6'f>r>t<'row'<'col-sm-6'i><'col-sm-6'p>>",
+			"sPaginationType": "full_numbers",
+			"aoColumns": [
+				{ "mData": "puesto" },
+				{ "mData": "name" },
+				{ "mData": "cant" },
+				{ "mData": "clan" }
 			]
 		} );
 	});
 
+	
+	
 	// select2 
    	if ($.fn.select2) {
         $("#select2-option").select2();

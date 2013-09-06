@@ -11,8 +11,8 @@
 date_default_timezone_set("America/Argentina/Buenos_Aires");
 require_once 'libs/mysql.inc.php';
 require_once 'libs/config.inc.php';
-$MySQL = new SQL("freya.linekkit.com:3306", $usernombre, $pass, "linekkittest");
-$MySQL2 = new SQL("localhost:3306", $usernombre, $pass, "noticias");
+$MySQL = new SQL($hostL, $usernombre, $pass, $dbgame);
+$MySQL2 = new SQL($host, $usernombre, $pass,$dbnoticias);
 $pjs=$MySQL->execute('SELECT account_name,charId,char_name,pvpkills,pkkills,exp FROM characters WHERE 1');
 //$statspj=$MySQL2->execute('SELECT * FROM dailystats WHERE charID=');
 $date=date('ymd');

@@ -8,9 +8,9 @@ require_once 'libs/mysql.inc.php';
 require_once 'libs/config.inc.php';
 include_once 'datachars.php';
 function getStats($account){
-  global $usernombre,$pass,$race,$class,$level;
-    $MySQLLK = new SQL("freya.linekkit.com:3306", $usernombre, $pass, "linekkittest");
-    $MySQLMK = new SQL("localhost:3306", $usernombre, $pass, "noticias");  
+  global $usernombre,$pass,$race,$class,$level,$hostL,$host,$dbgame,$dbnoticias;
+    $MySQLLK = new SQL($hostL, $usernombre, $pass, $dbgame);
+    $MySQLMK = new SQL($host, $usernombre, $pass, $dbnoticias);  
     
     $charsid=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp FROM characters WHERE account_name="'.$account.'"');
 //    echo 'SELECT charId,race,classId FROM characters WHERE account_name="'.$account.'"';
