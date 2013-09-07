@@ -69,6 +69,19 @@ if(!isacmlogged()){
                         <img src="images/logo.png" width="450" height="127"> 
                         </div>
                         
+ 				       <?php if (isset($_GET['error'])) {
+					require_once './acm/language/spanish.php'; ?>
+					<div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                    <i class="icon-ban-circle"></i> <?php echo $vm[$_GET['error']];?> </div>
+					 <?php };?>
+					 <?php if (isset($_GET['valid'])) {
+					 require_once './acm/language/spanish.php';?>
+					 <div class="alert alert-success">
+                     <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                     <i class="icon-ok-sign"></i> <?php echo $vm[$_GET['valid']];?> </div>
+					 <?php };?>  
+                        
                         <div class="panel-group m-b" id="accordion10">
                             <div class="panel no-border fondo-transparente-negro-075">
                                 <div class="panel-heading fondo-transparente-000">

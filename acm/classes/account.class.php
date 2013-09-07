@@ -389,11 +389,11 @@ class account{
 		if(!$this->is_logged())			// Check if user is logged
 			return false;
 		
-		if($this->ip != $_SERVER['REMOTE_ADDR']){	// Check if user ip is the same than the first time
-			MSG::add_error(LANG::i18n('_logout'));
-			$this->loggout();
-			return false;
-		}
+		//if($this->ip != $_SERVER['REMOTE_ADDR']){	// Check if user ip is the same than the first time
+//			MSG::add_error(LANG::i18n('_logout'));
+//			$this->loggout();
+//			return false;
+//		}
 
 		$account = $this->load();
 
@@ -404,11 +404,11 @@ class account{
 
 		DEBUG::add('Verify if the user is correctly logged');
 
-		if(MYSQL::g()->result($sql) != 1)	{	// Check if user session data are right
-			MSG::add_error(LANG::i18n('_logout'));
-			$this->loggout();
-			return false;
-		}
+	//	if(MYSQL::g()->result($sql) != 1)	{	// Check if user session data are right
+//			MSG::add_error(LANG::i18n('_logout'));
+//			$this->loggout();
+//			return false;
+//		}
 
 		return true;
 	}

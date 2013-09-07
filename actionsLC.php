@@ -79,11 +79,15 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 
 				<?php if (isset($_GET['error'])) {
 					require_once './acm/language/spanish.php'; ?>
-					 <div class="error" style="margin: 0px;width: 80%;margin-left: 70px;"><div class="error_container"><?php echo $vm[$_GET['error']];?></div></div>
+					<div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                    <i class="icon-ban-circle"></i> <?php echo $vm[$_GET['error']];?></div>
 					 <?php };?>
 					 <?php if (isset($_GET['valid'])) {
 					 require_once './acm/language/spanish.php';?>
-					 <div class="valid" style="margin: 0px;width: 80%;margin-left: 70px;"><div class="valid_container"><?php echo $vm[$_GET['valid']];?></div></div>
+					 <div class="alert alert-success">
+                     <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                     <i class="icon-ok-sign"></i><?php echo $vm[$_GET['valid']];?></div>
 					 <?php };?>
 						
 						
@@ -93,9 +97,10 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
                                             
                                                 
 			<?php
-				$dc=false;
-				$nn=false;
+
 				for($i=1;$i<=3;$i++){
+                $dc=false;
+				$nn=false;
 					switch ($i)
 					{
 						case 1: $titulo="Asignar Donator Coins";
@@ -155,7 +160,7 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 				<br>
 				
 				<input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
-				<input type="hidden" name="opcion" value="<?php echo $aid; ?>">
+				<input type="hidden" name="opcion" value="<?php echo $i; ?>">
 				
 				<br>
 				<hr class="clear">
