@@ -49,8 +49,7 @@
                                     </header>
                                     
 									<section class="panel-body letras-blancas">
-                                    
-                                    <h1 style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px;">Inicia sesión con tu cuenta de <b>Linekkit</b> para acceder a tu perfil de jugador, ver tus estadísticas y ser parte de la comunidad</h1>
+                                    <h1 style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px; font-size: 27px;">Inicia sesión con tu cuenta de <b>Linekkit</b> para acceder a tu perfil de jugador, ver tus estadísticas y ser parte de la comunidad</h1><h3 style="text-align:center; font-family:Alegreya SC">Exp x10|SP x10|Drop x7|Adena x10</h3><h4 style="text-align:center; font-family:Alegreya SC">Spoil x7 | Party x1.5 | Raid drop x3 | Quest drop x3 | Quest Exp/SP reward x2 | DualBox por PC  </h4>
                                     </section>
                                     
                                     <div class="row m-n">
@@ -140,6 +139,12 @@
                 <!-- / Columna derecha -->
 			</div>
 		</section>
+        <div class="row m-n"><div class="col-lg-4 col-lg-offset-2" style="
+        "><a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank" class="pull-right
+        "><img src="http://linekkit.com/images/hopzone.png" alt="Votar por Linekkit"></a></div><div class="col-lg-4" style="
+        "><a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers" class="pull-left"><img src="http://linekkit.com/images/topzone.png" alt="Votar por Linekkit"></a>
+        
+        </div></div>
 		<!-- footer -->
 		<footer id="footer">
 			<div class="text-center padder clearfix">
