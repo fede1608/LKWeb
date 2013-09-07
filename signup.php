@@ -33,7 +33,20 @@
                 <div class="col-lg-4 col-lg-offset-2">
                 <img src="images/logo.png" width="455" height="132">
                 <br>
-                
+
+                <?php if (isset($_GET['error'])) {
+				require_once './acm/language/spanish.php'; ?>
+				<div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                <i class="icon-ban-circle"></i> <?php echo $vm[$_GET['error']];?> </div>
+				 <?php };?>
+				 <?php if (isset($_GET['valid'])) {
+				 require_once './acm/language/spanish.php';?>
+				 <div class="alert alert-success">
+                 <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                 <i class="icon-ok-sign"></i> <?php echo $vm[$_GET['valid']];?> </div>
+				 <?php };?> 
+                 
                 <!-- Panel de la izquierda-->
                 
                 <section class="panel fondo-transparente-negro borde-transparente-negro">
@@ -77,9 +90,9 @@
 							</div>
                             <div class="form-group">
 								<label class="control-label">
-									Ingresa tu nombre de la comunidad (foros)
+									Ingresa tu nombre de la comunidad (foros)<i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="Se recomienda ingresar un nombre diferente al de tu cuenta por cuestiones de Seguridad." data-original-title="" title=""></i>
 								</label>
-								<input type="text" placeholder="ej. El mismo que el campo anterior o uno nuevo" name="Fuser" id="Fuser" data-required="true" class="form-control">
+								<input type="text" placeholder="ej. Dejar en blanco si ya tenes una cuenta en el foro" name="Fuser" id="Fuser"  class="form-control">
 							</div>
 							<div class="form-group">
 								<label class="control-label">
@@ -147,8 +160,10 @@
 		</footer>
 		<!-- / footer -->
   <!-- Bootstrap -->
+  <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <!-- app -->
+  <script src="js/parsley/parsley.min.js" cache="false"></script>
   <script src="js/app.js"></script>
   <script src="js/app.plugin.js"></script>
   <script src="js/app.data.js"></script>

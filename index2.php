@@ -9,6 +9,7 @@ chdir($forumpath);
 require_once MYBB_ROOT."inc/class_parser.php";
 $parser = new postParser;
 chdir('../');
+include_once 'statsfeed.php'; 
 include_once("session.php");
 if(!isacmlogged()){
     echo '<script language="javascript">
@@ -91,7 +92,7 @@ if(!isacmlogged()){
                                 </div>
                                 
                                 <div id="collapseTop" class="panel-collapse in">
-                             <?php  include_once 'statsfeed.php'; 
+                             <?php  
                                     $todayStats=getTodayTops();
                              ?>
                              		<!-- Margen superior-->
@@ -165,7 +166,7 @@ if(!isacmlogged()){
                                               <div class="wrapper">
                                                 <p>Mejor jugador <strong>Player Vs. Player (PVP)</strong></p>
                                                 <p class="h2 font-bold"><?php echo $todayStats[2]['cant']; ?> Kills</p>
-                                                <p class="h4 font-bold"><?php echo $todayStats[2]['pj']; ?></p>
+                                                <p class="h4 font-bold"><?php echo $todayStats[2]['pj'].'</p> Level '.$todayStats[2]['lvl']; ?>
                                               </div>
                                             </div>
                                             <div class="col-xs-6 wrapper text-center">
@@ -190,7 +191,7 @@ if(!isacmlogged()){
                                               <div class="wrapper">
                                                 <p>Mejor jugador <strong>Player Killer (PK)</strong></p>
                                                 <p class="h2 font-bold"><?php echo $todayStats[1]['cant']; ?> Kills</p>
-                                                <p class="h4 font-bold"><?php echo $todayStats[1]['pj']; ?></p>
+                                                <p class="h4 font-bold"><?php echo $todayStats[1]['pj'].'</p> Level '.$todayStats[1]['lvl']; ?>
                                               </div>
                                             </div>
                                             <div class="col-xs-6 wrapper text-center">
@@ -287,7 +288,7 @@ if(!isacmlogged()){
                                                     <div class="panel-body no-border" style="padding-top:0;">
                                                         <div class="carousel slide auto panel-body no-border" style="padding-top:0;" id="c-slide">
                                                                 <ol class="carousel-indicators out">
-                                                                <?php   include_once 'statsfeed.php';
+                                                                <?php   
                                                                         $stats=getStats($userdata['login']); 
                                                                         $con=0;
                                                                         foreach($stats as $stat){
@@ -647,13 +648,13 @@ if(!isacmlogged()){
                                 <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Seven Signs</h2>
 									<div class="text-center wrapper">
 										<div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#3E4DBD','#EB6106']">
-											28000,23200
+											<?php $seven=get7SStats(); echo $seven['dawn'].','.$seven['dusk']; ?>
 										</div>
 									</div>
 									<ul class="list-group list-group-flush no-radius alt">
 										<li class="list-group-item fondo-transparente-000 linea-azul-1">
 											<span class="pull-right">
-												28,000
+												<?php echo $seven['dawn']; ?>
 											</span>
 											<span class="label fondo-solido-azul-2">
 												1
@@ -662,7 +663,7 @@ if(!isacmlogged()){
 										</li>
 										<li class="list-group-item fondo-transparente-000 linea-azul-1">
 											<span class="pull-right">
-												23,200
+												<?php echo $seven['dusk']; ?>
 											</span>
 											<span class="label fondo-solido-naranja-1">
 												2

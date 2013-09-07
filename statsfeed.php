@@ -151,6 +151,16 @@ function getRaceStats(){
 
 function get7SStats(){
     global $MySQLLK,$MySQLMK;
+    $SS=$MySQLLK->execute('SELECT `dawn_festival_score`+`dawn_stone_score` as dawn,`dusk_festival_score`+`dusk_stone_score` as dusk FROM `seven_signs_status`');
+    if(isset($SS[0])){
+        $obj['dawn']=$SS[0]['dawn'];
+        $obj['dusk']=$SS[0]['dusk'];
+    }else
+    {
+        $obj['dawn']=1;
+        $obj['dusk']=1;
+    }
+    return $obj;
 }
 
 function getTodayTops(){
