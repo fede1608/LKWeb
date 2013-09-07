@@ -58,7 +58,7 @@ if(!isacmlogged()){
         <section class="hbox stretch">
 			<?php
             include_once('barralateral.php');
-            getBar(1,1);//getbat(tipoDeBarra,<li>activo)
+            getBar(1,1);//getbar(tipoDeBarra,<li>activo)
             ?>
 			<!-- .vbox -->
 			<section id="content">
@@ -98,7 +98,7 @@ if(!isacmlogged()){
                                     <!-- Columna 1 -->  		
                                     <div class="col-lg-4">
                                         <!-- TOP PK-->
-                                        <section class="panel fondo-solido-rojo-1 no-borders">
+                                        <section class="panel fondo-solido-azul-1 no-borders">
                                           <div class="row">
                                             <div class="col-xs-6">
                                               <div class="wrapper">
@@ -115,18 +115,16 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" class="img-circle">
+                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
-                                        </section>
                                         <!-- / TOP PK-->
                                         
                                         <!-- TOP PK-->
-                                        <section class="panel fondo-solido-rojo-1 no-borders">
                                           <div class="row">
                                             <div class="col-xs-6">
                                               <div class="wrapper">
@@ -143,7 +141,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" class="img-circle">
+                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
@@ -173,7 +171,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" class="img-circle">
+                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
@@ -181,7 +179,7 @@ if(!isacmlogged()){
                                             </div>
                                           </div>
                                         </section>
-                                        <!-- / TOP PK-->
+                                        <!-- / TOP PVP -->
                                         
                                         <!-- TOP PK-->
                                         <section class="panel fondo-solido-rojo-1 no-borders">
@@ -198,7 +196,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" class="img-circle">
+                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
@@ -213,17 +211,14 @@ if(!isacmlogged()){
                                     
                                     <!-- Columna 3 -->
                                     <div class="col-lg-4">
-                                        <!-- TOP A DEFINIR 2-->
+                                        <!-- TOP más eventos-->
                                         <section class="panel bg-primary no-borders">
                                           <div class="row">
                                             <div class="col-xs-6">
                                               <div class="wrapper">
-                                                <p>All time sales</p>
-                                                <p class="h2 font-bold">32.5%</p>
-                                                <div class="progress progress-xs progress-striped active m-b-sm">
-                                                  <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
-                                                </div>
-                                                <div class="text-sm">of visitors purchased this item.</div>
+                                                <p>Jugador con más <strong>eventos ganados</strong></p>
+                                                <p class="h2 font-bold">8 <span class="h3 font-bold">Victorias</span></p>
+                                                <p class="h4 font-bold">JugadorMegamanX</p>
                                               </div>
                                             </div>
                                             <div class="col-xs-6 wrapper text-center">
@@ -231,7 +226,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" class="img-circle">
+                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
@@ -239,7 +234,7 @@ if(!isacmlogged()){
                                             </div>
                                           </div>
                                         </section>
-                                        <!-- / TOP PK-->
+                                        <!-- / TOP más eventos-->
                                         
                                         <!-- Acceso a donación-->
                                         <section class="panel bg-warning no-borders">
@@ -256,7 +251,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/reward_donacion.jpg" width="320" height="320" class="img-circle">
+                           								<img src="images/reward_donacion.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
@@ -264,7 +259,7 @@ if(!isacmlogged()){
                                             </div>
                                           </div>
                                         </section>
-                                        <!-- / TOP PK-->
+                                        <!-- / Acceso a donación-->
                                         
                                     </div> 
                                     <!-- / Columna 3 -->
@@ -645,39 +640,32 @@ if(!isacmlogged()){
                                     ?>
                                 </section>                      
 								
-								<section class="panel">
+								<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+                                
+                                <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Seven Signs</h2>
 									<div class="text-center wrapper">
-										<div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#f2f2f2','#fb6b5b']">
-											25000,23200,15000
+										<div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#3E4DBD','#EB6106']">
+											28000,23200
 										</div>
 									</div>
 									<ul class="list-group list-group-flush no-radius alt">
-										<li class="list-group-item">
+										<li class="list-group-item fondo-transparente-000 linea-azul-1">
 											<span class="pull-right">
-												25,000
+												28,000
 											</span>
-											<span class="label bg-success">
+											<span class="label fondo-solido-azul-2">
 												1
 											</span>
-											.inc company
+											 <span class="m-l-xs">Priest of Dawn</span>
 										</li>
-										<li class="list-group-item">
+										<li class="list-group-item fondo-transparente-000 linea-azul-1">
 											<span class="pull-right">
 												23,200
 											</span>
-											<span class="label bg-danger">
+											<span class="label fondo-solido-naranja-1">
 												2
 											</span>
-											Gamecorp
-										</li>
-										<li class="list-group-item">
-											<span class="pull-right">
-												15,000
-											</span>
-											<span class="label bg-light">
-												3
-											</span>
-											Neosoft company
+											 <span class="m-l-xs">Priest of Dusk</span>
 										</li>
 									</ul>
 								</section>
