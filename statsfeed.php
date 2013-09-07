@@ -148,4 +148,24 @@ function getRaceStats(){
     return $obj;
 
 }
+
+function get7SStats(){
+    global $MySQLLK,$MySQLMK;
+}
+
+function getTodayTops(){
+    global $race,$class,$MySQLLK,$MySQLMK;
+    $fecha=date('ymd');
+    for($i=1;$i<=3;$i++){
+        $result=$MySQLMK->execute('SELECT `charId`,cant FROM dailystats WHERE fecha='.$fecha.' AND tipo='.$i.' ORDER BY `cant` DESC LIMIT 1');
+        $obj[$i]['cant']=$result[0]['cant'];
+        $char=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp FROM characters WHERE charId='.$result[0]['charId'].'');
+        $obj[$i]['pj']=$char[0]['char_name'];
+        $obj[$i]['race']=$race[$char[0]['race']];
+        $obj[$i]['lvl']=$char[0]['level'];
+        $obj[$i]['class']=$class[$char[0]['classId']];
+    }
+    return $obj;
+}
+    
 ?>

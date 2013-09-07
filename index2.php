@@ -91,7 +91,9 @@ if(!isacmlogged()){
                                 </div>
                                 
                                 <div id="collapseTop" class="panel-collapse in">
-                             
+                             <?php  include_once 'statsfeed.php'; 
+                                    $todayStats=getTodayTops();
+                             ?>
                              		<!-- Margen superior-->
                              		<div class="row m-t-lg"></div>
                              
@@ -162,8 +164,8 @@ if(!isacmlogged()){
                                             <div class="col-xs-6">
                                               <div class="wrapper">
                                                 <p>Mejor jugador <strong>Player Vs. Player (PVP)</strong></p>
-                                                <p class="h2 font-bold">81 Kills</p>
-                                                <p class="h4 font-bold">JugadorMegamanX</p>
+                                                <p class="h2 font-bold"><?php echo $todayStats[2]['cant']; ?> Kills</p>
+                                                <p class="h4 font-bold"><?php echo $todayStats[2]['pj']; ?></p>
                                               </div>
                                             </div>
                                             <div class="col-xs-6 wrapper text-center">
@@ -171,7 +173,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
+                           								<img src="images/<?php echo $todayStats[2]['race']; ?>.png" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
@@ -187,8 +189,8 @@ if(!isacmlogged()){
                                             <div class="col-xs-6">
                                               <div class="wrapper">
                                                 <p>Mejor jugador <strong>Player Killer (PK)</strong></p>
-                                                <p class="h2 font-bold">64 Kills</p>
-                                                <p class="h4 font-bold">JugadorMegamanX</p>
+                                                <p class="h2 font-bold"><?php echo $todayStats[1]['cant']; ?> Kills</p>
+                                                <p class="h4 font-bold"><?php echo $todayStats[1]['pj']; ?></p>
                                               </div>
                                             </div>
                                             <div class="col-xs-6 wrapper text-center">
@@ -196,7 +198,7 @@ if(!isacmlogged()){
                                                 <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
                                                   <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
                           							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
+                           								<img src="images/<?php echo $todayStats[1]['race']; ?>.png" style="width:128px !important; height:128px !important;" class="img-circle">
                           							</div>
                         						  </div>
                                                 </div>
