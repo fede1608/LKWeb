@@ -160,6 +160,9 @@ function get7SStats(){
         $obj['dawn']=1;
         $obj['dusk']=1;
     }
+    if(($obj['dawn']==$obj['dawn'])&&($obj['dawn']==0))
+        $obj['dawn']=$obj['dusk']=1;
+    
     return $obj;
 }
 

@@ -146,7 +146,7 @@
         
         </div></div>
 		<!-- footer -->
-		<footer id="footer">
+		<footer id="footer" style="margin-top: 10px;">
 			<div class="text-center padder clearfix">
 				<p>
 					<small>

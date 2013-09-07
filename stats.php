@@ -33,13 +33,14 @@ if(!isacmlogged()){
   <link rel="stylesheet" href="css/plugin.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />
   <link rel="stylesheet" href="css/lkcss.css"/>
+  <link href="http://fonts.googleapis.com/css?family=Alegreya+SC" rel="stylesheet" type="text/css">
   <!--[if lt IE 9]>
     <script src="js/ie/respond.min.js" cache="false"></script>
     <script src="js/ie/html5.js" cache="false"></script>
     <script src="js/ie/fix.js" cache="false"></script>
   <![endif]-->
 </head>
-<body style="background-image:url(images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size:cover !important;">
+<body style="background-image:url(images/bg-raid-boss.jpg) !important; background-size:cover !important;">
 		
   <section class="hbox stretch">
 			<?php
@@ -49,7 +50,7 @@ if(!isacmlogged()){
     <!-- .vbox -->
     <section id="content">
       <section class="vbox">
-        <header class="header bg-success bg-gradient">
+        <header class="header bg-gradient fondo-transparente-negro-075">
           <ul class="nav nav-tabs">
             <li class="active"><a href="#static" data-toggle="tab">Static table</a></li>
             <!--<li class=""><a href="#datagrid" data-toggle="tab">Datagrid</a></li>-->
@@ -161,29 +162,30 @@ if(!isacmlogged()){
                     </table>
                   </section>
                 </div>
-                <div class="col-sm-6">
-                <section class="panel">
-                
-									<div class="text-center wrapper">
-                                    
+                <div class="col-sm-4">
+                <section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+                                    <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Razas</h2>
+									<div class="text-center wrapper ">
+                                        
 										<div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA']">
 											<?php   include_once 'statsfeed.php';
                                                     include_once 'datachars.php';
                                                     $stats=getRaceStats(); 
-                                                    echo $stats['str']; ?>
+                                                    echo $stats['str']; 
+                                                    $arrayColor = array('#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA');?>
 										</div>
 									</div>
 									<ul class="list-group list-group-flush no-radius alt">
 										<?php 
                                         for($i=0;$i<=5;$i++){
-                                            echo '<li class="list-group-item">
-    											<span class="pull-right">
+                                            echo '<li class="list-group-item fondo-transparente-000 linea-azul-1">
+    											<span class="pull-right" >
     												'.$stats[$i]['cant'].'
     											</span>
-    											<span class="label bg-success">
+    											<span class="label bg-success" style="background-color:'.$arrayColor[$i].';">
     												'.$i.'
     											</span>
-    											'.$race[$stats[$i]['race']].'
+    											<span class="m-l-xs">'.$race[$stats[$i]['race']].'</span>
     										</li>';
                                         }
                                         ?>
@@ -191,7 +193,7 @@ if(!isacmlogged()){
                                         
 									</ul>
 								</section>
-                  <section class="panel">
+                  <section class="panel fondo-transparente-negro-075 borde-transparente-negro">
                     <header class="panel-heading">Stats</header>
                     <table class="table table-striped m-b-none text-sm">
                       <thead>
