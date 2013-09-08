@@ -111,18 +111,20 @@ if(mysql_select_db($dbgame,$conexion)) {
 	switch ($opcion) {
 		//Asignar Donator Coins cambiando Linekkit coins
 		case 1:
-			if($cantidadcoins>0) { if ($recoplasactuales >= $cantidadcoins) {
-				//Falta hacer que chequee si ya tiene Donator coins, si tiene, que le agregue sino que le dé de 0
-				agregarDonatorCoins($ownerid,$cantidadcoins,$conexion);
-				descontarRecoPlas($nombredeusuario,$cantidadcoins,$recoplasactuales,$conexion);
-				fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha asignado ".$cantidadcoins." Donator coins al pj ".$pjseleccionado." LCoins: ".$recoplasactuales."  IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip(). " Host: ".gethostbyaddr($_SERVER['REMOTE_ADDR']));
-				fputs($archivo,"\n");
-				exito("coins_yes");
-			} }
-		else{
-			echo 'No tenés suficientes Linekkit Coins';
-			error("nocoins");
+			if($cantidadcoins>0) {
+				if ($recoplasactuales >= $cantidadcoins) {
+					//Falta hacer que chequee si ya tiene Donator coins, si tiene, que le agregue sino que le dé de 0
+					agregarDonatorCoins($ownerid,$cantidadcoins,$conexion);
+					descontarRecoPlas($nombredeusuario,$cantidadcoins,$recoplasactuales,$conexion);
+					fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha asignado ".$cantidadcoins." Donator coins al pj ".$pjseleccionado." LCoins: ".$recoplasactuales."  IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip(). " Host: ".gethostbyaddr(getip()));
+					fputs($archivo,"\n");
+					exito("coins_yes");
+				} else{
+					echo 'No tenés suficientes Linekkit Coins';
+					error("nocoins");
+				}
 			}
+		
 		break;
 		//Cambiar nombre de PJ
 		case 2:
@@ -132,7 +134,7 @@ if(mysql_select_db($dbgame,$conexion)) {
 						if (preg_match("/^[a-zA-Z0-9]+$/",$nuevonombre)){
 						mysql_query("UPDATE characters SET char_name='$nuevonombre' WHERE char_name='$pjseleccionado'",$conexion);
 						descontarRecoPlas($nombredeusuario,15,$recoplasactuales,$conexion);
-						fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha cambiado el nick del pj ".$pjseleccionado." a ".$nuevonombre." LCoins: ".$recoplasactuales." IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip());
+						fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha cambiado el nick del pj ".$pjseleccionado." a ".$nuevonombre." LCoins: ".$recoplasactuales." IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip(). " Host: ".gethostbyaddr(getip()));
 						fputs($archivo,"\n");
 						exito("_character_name_yes");//echo 'El cambio de nombre se concretó correctamente';			
 						} else error("REGWARN_UNAME2");
@@ -158,7 +160,7 @@ if(mysql_select_db($dbgame,$conexion)) {
 				else {
 					if ($sexo == 0) {
 						mysql_query("UPDATE characters SET sex=1 WHERE (char_name = '$pjseleccionado')",$conexion);
-						fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha cambiado el sexo del pj ".$pjseleccionado." a mujer. LCoins: ".$recoplasactuales."  IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip());
+						fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha cambiado el sexo del pj ".$pjseleccionado." a mujer. LCoins: ".$recoplasactuales."  IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip(). " Host: ".gethostbyaddr(getip()));
 						fputs($archivo,"\n");
 						exito("_character_sex_yes");
 					}
