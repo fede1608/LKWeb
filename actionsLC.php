@@ -17,6 +17,11 @@ if(!isacmlogged()){
 			</script>';
     exit();
 }
+ require_once 'libs/mysql.inc.php';
+require_once 'libs/config.inc.php';
+$MySQLL = new SQL($hostL, $usernombre, $pass, $dblogin);
+$MySQL2 = new SQL($hostL, $usernombre, $pass, $dbgame);
+$tablecharacters='characters';
 ?><!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -64,14 +69,16 @@ if(!isacmlogged()){
                                         <div class="panel no-border" style="background-color:rgba(0,0,0,0);">
                                             <div class="panel-heading fondo-transparente-negro-075">
                                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Panel de Usuario -  <?php  //echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> </strong> </a>
+                                                <h3 style="font-size: 15px;color: #C1763C;">
+                                				Linekkit coins disponibles: 
+                                				<?php 
+                                				$registro=$MySQLL->execute("SELECT coins FROM ".$dblogin.".accounts WHERE login='".$userdata['login']."'");
+                                				echo $registro[0]['coins'];
+                                				?>
+                                				</h3>
 												<div id="collapseOne" class="panel-collapse in">
  <?php
- require_once 'libs/mysql.inc.php';
-require_once 'libs/config.inc.php';
-$MySQLL = new SQL($hostL, $usernombre, $pass, $dblogin);
 
-$MySQL2 = new SQL($hostL, $usernombre, $pass, $dbgame);
-$tablecharacters='characters';
 $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; // para algo servía el puto operador trinario :?
 
 ?>
@@ -97,7 +104,8 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
                                             
                                                 
 			<?php
-
+                $chars = $MySQL2->execute("SELECT * FROM `". $tablecharacters ."` WHERE account_name=\"".$userdata['login']."\"");
+                
 				for($i=1;$i<=3;$i++){
                 $dc=false;
 				$nn=false;
@@ -115,26 +123,27 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 						$costinfo="15 Linekkit Coins";
 						break;
 					}
+                    if($aid==$i){
+                        $collapsed1='';
+                        $collapsed2=' in ';
+                    }else{
+                        $collapsed1='collapsed';
+                        $collapsed2=' collapse ';
+                    }
 					echo '<div class="panel no-border" style="background-color:rgba(0,0,0,0);"><div class="panel-heading fondo-transparente-negro-075">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapse'.$i.'"> 
+                    <a class="accordion-toggle '.$collapsed1.'" data-toggle="collapse" data-parent="#accordion3" href="#collapse'.$i.'"> 
 				            <strong>'.$titulo.'</strong> </a></div>
-					   <div id="collapse'.$i.'" class="panel-collapse collapse fondo-transparente-negro-075"><div class="panel-body text-sm"><h3>'.$titulo.'</h3>';
-					echo "<h3 style=\"font-size: 12px;color: #4A4A4A;\">".$costinfo."</h3>";
+					   <div id="collapse'.$i.'" class="panel-collapse '.$collapsed2.' fondo-transparente-negro-075"><div class="panel-body text-sm"><h3>'.$titulo.'</h3>';
+					echo "<div class=\"col-lg-4 col-lg-offset-4\"><h3 style=\"font-size: 12px;color: #4A4A4A;\">".$costinfo."</h3>";
 				?>
-				<h3 style="font-size: 15px;color: #C1763C;">
-				Linekkit coins disponibles: 
-				<?php 
-				$registro=$MySQLL->execute("SELECT coins FROM ".$dblogin.".accounts WHERE login='".$userdata['login']."'");
-				echo $registro[0]['coins'];
-				?>
-				</h3>
-				<form name="agregar" method="POST" action="./cambiodepuntos.php" style="margin-top: 0px;margin-left: 220px;">
+				
+				<form name="agregar" method="POST" action="./cambiodepuntos.php" class="panel-body" >
 				<br>
 				<br>
 				<label>Elegir Personaje:</label> <br>
 				<?php
-					$chars = $MySQL2->execute("SELECT * FROM `". $tablecharacters ."` WHERE account_name=\"".$userdata['login']."\"");
-					echo "<span class=\"field\"><select id=\"pjseleccionado\"style=\"margin-left: 20px;\" name=\"pjseleccionado\">";
+					
+					echo "<span class=\"field\"><select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
 					foreach ($chars as $char){
 					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
 					}
@@ -147,13 +156,13 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 				?>
 				<br>
 				<label>Cantidad de Linekkit Coins:</label>
-				<br><span class="field"><input type="text" id="cantidadcoins" name="cantidadcoins" value="0"style="width:90px"></span>
+				<br><span class="field"><input type="text" id="cantidadcoins" name="cantidadcoins" value="0" class="form-control"></span>
 				<?php } 
 				if($nn){
 				?>
 				<br>
 				<label>Nuevo Nombre:</label>
-				<br><span class="field"><input type="text" id="nuevonombre" name="nuevonombre" value="Player"style="width:90px"></span>
+				<br><span class="field"><input type="text" id="nuevonombre" name="nuevonombre" value="Player" class="form-control"></span>
 				<?php } ?>
 				
 				
@@ -163,15 +172,18 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 				<input type="hidden" name="opcion" value="<?php echo $i; ?>">
 				
 				<br>
-				<hr class="clear">
+				
 				<br>
-				<input type="button" onclick="document.location='./acm/index.php?action=acc_serv'" class="button" value="Atras">
-				<br>
-				<input class="button" type="submit" value="Crear">
+				<input type="button" onclick="document.location='./acm/index.php?action=acc_serv'" class="btn btn-info" value="Atras">
+				
+				<input type="submit" value="Crear" class="btn btn-success">
 			</form>
 			</div>
             </div>
              </div>
+             
+             </div>
+             
 					<?php } ?>	
 						
 						
