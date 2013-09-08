@@ -9,6 +9,7 @@ require_once 'libs/config.inc.php';
 include_once 'datachars.php'; 
 $MySQLLK = new SQL($hostL, $usernombre, $pass, $dbgame);
 $MySQLMK = new SQL($host, $usernombre, $pass, $dbnoticias);  
+
 function getStats($account){
   global $race,$class,$level,$MySQLLK,$MySQLMK;
 
