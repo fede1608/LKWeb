@@ -1,4 +1,6 @@
 <?php
+include_once 'statsfeed.php'; 
+$todayStats=getTodayTops();
 define('IN_MYBB', NULL);
 require_once 'forum/global.php';
 require_once 'forum/MyBBIntegrator.php';
@@ -9,7 +11,7 @@ chdir($forumpath);
 require_once MYBB_ROOT."inc/class_parser.php";
 $parser = new postParser;
 chdir('../');
-include_once 'statsfeed.php'; 
+
 include_once("session.php");
 if(!isacmlogged()){
     echo '<script language="javascript">
@@ -92,9 +94,7 @@ if(!isacmlogged()){
                                 </div>
                                 
                                 <div id="collapseTop" class="panel-collapse in">
-                             <?php  
-                                    $todayStats=getTodayTops();
-                             ?>
+
                              		<!-- Margen superior-->
                              		<div class="row m-t-lg"></div>
                              
