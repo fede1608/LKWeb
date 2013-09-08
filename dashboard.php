@@ -1,9 +1,33 @@
+<?php
+
+
+define('IN_MYBB', NULL);
+require_once 'forum/global.php';
+require_once 'forum/MyBBIntegrator.php';
+$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config); 
+$forumpath = 'forum/';
+
+chdir($forumpath);
+require_once MYBB_ROOT."inc/class_parser.php";
+$parser = new postParser;
+chdir('../');
+include_once 'statsfeed.php'; 
+include_once("session.php");
+
+if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
+   print_r($MyBBI->isSuperAdmin(0));
+    //echo '<script language="javascript">
+	//		window.top.location="signin.php"
+	//		</script>';
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Web Application | todo</title>
-  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <title>Admin | Overflow Development Team</title>
+  <meta name="description" content="Admin" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
   <link rel="stylesheet" href="css/animate.css" type="text/css" />
@@ -11,6 +35,7 @@
   <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
   <link rel="stylesheet" href="css/plugin.css" type="text/css" />
   <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/lkcss.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="js/ie/respond.min.js" cache="false"></script>
     <script src="js/ie/html5.js" cache="false"></script>
@@ -19,131 +44,17 @@
 </head>
 <body>
   <section class="hbox stretch">
-    <!-- .aside -->
-    <aside class="bg-success dker aside-sm nav-vertical" id="nav">
-      <section class="vbox">
-        <header class="bg-black nav-bar">
-          <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body">
-            <i class="icon-reorder"></i>
-          </a>
-          <a href="#" class="nav-brand" data-toggle="fullscreen">todo</a>
-          <a class="btn btn-link visible-xs" data-toggle="collapse" data-target=".navbar-collapse">
-            <i class="icon-comment-alt"></i>
-          </a>
-        </header>
-        <footer class="footer bg-gradient hidden-xs">
-          <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-sm btn-link m-r-n-xs pull-right">
-            <i class="icon-off"></i>
-          </a>
-          <a href="#nav" data-toggle="class:nav-vertical" class="btn btn-sm btn-link m-l-n-sm">
-            <i class="icon-reorder"></i>
-          </a>
-        </footer>
-        <section>
-          <!-- nav -->
-          <nav class="nav-primary hidden-xs">
-            <ul class="nav">
-              <li>
-                <a href="index.html">
-                  <i class="icon-eye-open"></i>
-                  <span>Discover</span>
-                </a>
-              </li>              
-              <li class="dropdown-submenu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="icon-beaker"></i>
-                  <span>UI kit</span>
-                </a>
-                <ul class="dropdown-menu">                
-                  <li>
-                    <a href="buttons.html">Buttons</a>
-                  </li>
-                  <li>
-                    <a href="icons.html">
-                      <b class="badge pull-right">302</b>Icons
-                    </a>
-                  </li>
-                  <li>
-                    <a href="grid.html">Grid</a>
-                  </li>
-                  <li>
-                    <a href="widgets.html">
-                      <b class="badge bg-primary pull-right">8</b>Widgets
-                    </a>
-                  </li>
-                  <li>
-                    <a href="components.html">
-                      <b class="badge pull-right">18</b>Components
-                    </a>
-                  </li>
-                  <li>
-                    <a href="list.html">List groups</a>
-                  </li>
-                  <li>
-                    <a href="table.html">Table</a>
-                  </li>
-                  <li>
-                    <a href="form.html">Form</a>
-                  </li>
-                  <li>
-                    <a href="chart.html">Chart</a>
-                  </li>
-                  <li>
-                    <a href="calendar.html">Fullcalendar</a>
-                  </li>
-                  <li>
-                    <a href="profile.html">Profile</a>
-                  </li>
-                  <li>
-                    <a href="signin.html">Signin page</a>
-                  </li>
-                  <li>
-                    <a href="signup.html">Signup page</a>
-                  </li>
-                  <li>
-                    <a href="404.html">404 page</a>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <a href="mail.html">
-                  <b class="badge bg-primary pull-right">3</b>
-                  <i class="icon-envelope-alt"></i>
-                  <span>Mail</span>
-                </a>
-              </li>
-              <li>
-                <a href="tasks.html">
-                  <i class="icon-tasks"></i>
-                  <span>Tasks</span>
-                </a>
-              </li>
-              <li>
-                <a href="notes.html">
-                  <i class="icon-pencil"></i>
-                  <span>Notes</span>
-                </a>
-              </li>
-              <li>
-                <a href="timeline.html">
-                  <i class="icon-time"></i>
-                  <span>Timeline</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
-          <!-- / nav -->
-        </section>
-      </section>
-    </aside>
-    <!-- /.aside -->
+    <?php
+            include_once('barralateral.php');
+            getBar(1,9);//getbar(tipoDeBarra,<li>activo)
+            ?>
     <!-- .vbox -->
     <section id="content">
       <section class="vbox">
         <header class="header bg-black navbar navbar-inverse">
           <div class="collapse navbar-collapse pull-in">
             <ul class="nav navbar-nav m-l-n">
-              <li class="active"><a href="#">Dashboard</a></li>
+              <li class="active"><a href="#">Overflow Development Team Hiper Mega Red Enterprises</a></li>
               <li><a href="blog.html">Blog</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
@@ -204,16 +115,18 @@
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <span class="thumb-sm avatar pull-left m-t-n-xs m-r-xs">
-                    <img src="images/avatar.jpg">
+                    <img src="<?php 
+                    $fuser=$MyBBI->getUser();
+                    echo 'forum/'.$fuser['avatar']; ?>">
                   </span>
-                  John.Smith <b class="caret"></b>
+                  <?php echo $mybb->user['username']; ?><b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu animated fadeInLeft">
                   <li>
                     <a href="#">Settings</a>
                   </li>
                   <li>
-                    <a href="profile.html">Profile</a>
+                    <a href="profile.php">Profile</a>
                   </li>
                   <li>
                     <a href="#">

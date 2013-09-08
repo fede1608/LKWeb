@@ -55,7 +55,26 @@ else{$oid=obtenerOID();
 }
 
 //-----------Fin de funciones---------------
+session_start();
+if(isacmlogged()){
+$data=unserialize($_SESSION['acm']);
+$userdata= get_object_vars($data);
+};
+
+function isacmlogged(){
+    if(isset($_SESSION['acm'])) return true;
+    return false;
+}
+
+if(!isacmlogged()){
+    echo '<script language="javascript">
+			window.top.location="signin.php"
+			</script>';
+    exit();
+}
 include_once 'libs/config.inc.php';
+include_once 'libs/mysql.inc.php';
+$MySQLLK = new SQL($hostL, $usernombre, $pass, $dbgame);
 //Conexión a DBs
 $conexion=mysql_connect($hostL,$usernombre,$pass) or
 	die("Ups, hubo problemas técnicos tipo 1, probá más tarde");
@@ -69,11 +88,12 @@ if(mysql_select_db($dbgame,$conexion)) {
 
 	//Asignar el REQUEST a variables
 
-	$pjseleccionado= (empty($_REQUEST['pjseleccionado'])) ? die("Error empty pj seleccionado") : $_REQUEST['pjseleccionado']; 
-	$cantidadcoins=(empty($_REQUEST['cantidadcoins']) )? 0 : $_REQUEST['cantidadcoins'];
-	$nombredeusuario=(empty($_REQUEST['nombredeusuario'])) ? die("Error empty nom de usuario") : $_REQUEST['nombredeusuario'];
-	$nuevonombre=(empty($_REQUEST['nuevonombre'])) ? "" : $_REQUEST['nuevonombre'];
-	$opcion=(empty($_REQUEST['opcion'])) ? "" : $_REQUEST['opcion'];
+	$pjseleccionado= (empty($_POST['pjseleccionado'])) ? die("Error empty pj seleccionado") : $_POST['pjseleccionado']; 
+	$cantidadcoins=(empty($_POST['cantidadcoins']) )? 0 : $_POST['cantidadcoins'];
+	$nombredeusuario=(empty($_POST['nombredeusuario'])) ? die("Error empty nom de usuario") : $userdata['login'];
+	$nuevonombre=(empty($_POST['nuevonombre'])) ? "" : $_POST['nuevonombre'];
+	$opcion=(empty($_POST['opcion'])) ? "" : $_POST['opcion'];
+	$ps=(empty($_POST['packpremium']) )? 0 : $_POST['packpremium'];
 	
 	$pjseleccionado=anti_injection($pjseleccionado);
 	$cantidadcoins=anti_injection($cantidadcoins);
@@ -90,7 +110,7 @@ if(mysql_select_db($dbgame,$conexion)) {
 	$sexo=$reg['sex'];
 	$ownerid=$reg['charId'];
 	$online=$reg['online'];
-	if(strtolower($reg['account_name'])!=strtolower($nombredeusuario)) die("Error Acountname distinto de nombre de usuario");
+	if(strtolower($reg['account_name'])!=strtolower($nombredeusuario)&&$opcion!=4) die("Error Acountname distinto de nombre de usuario");
 	//Busco cantidad de Recoplas actuales
 
 	$registro=mysql_query("SELECT coins FROM linekkitlogin.accounts WHERE login='$nombredeusuario'",$conexion);
@@ -179,6 +199,51 @@ if(mysql_select_db($dbgame,$conexion)) {
 			//echo 'No tenés suficientes Linekkit Coins';
 			error("nocoins");}
 		break;
+		case 4:
+			$service='';
+			switch($ps){
+				case 1:	
+				$cost=120;
+				if ($recoplasactuales >= $cost) {
+					$time=30*24*60*60*1000;
+					$service=' 1 mes ';
+				}else error("nocoins");
+				break;
+				case 2:	
+				$cost=70;
+				if ($recoplasactuales >= $cost) {
+					$time=15*24*60*60*1000;
+					$service=' 15 dias ';
+				}else error("nocoins");
+				break;
+				case 3:	
+				$cost=40;
+				if ($recoplasactuales >= $cost) {
+					$time=7*24*60*60*1000;
+					$service=' 7 dias ';
+				}else error("nocoins");
+				break;
+				default:
+				error("_premium_no");
+				die('error ps switch');
+				break;
+			}
+			$now=time()*1000;
+			$premiumservice=$MySQLLK->execute('SELECT * FROM  `account_premium` WHERE  `account_name` =  "'.$nombredeusuario.'"');
+			if(!isset($premiumservice[0])){
+				error("_premium_no");
+				exit();
+			}
+			if($premiumservice[0]['premium_service']){
+				$MySQLLK->execute('UPDATE `account_premium` SET `enddate`=enddate+'.$time.' WHERE `account_name`="'.$nombredeusuario.'"');
+			}else{
+				$MySQLLK->execute('UPDATE `account_premium` SET premium_service=1,`enddate`='.($time+$now).' WHERE `account_name`="'.$nombredeusuario.'"');
+			}
+			descontarRecoPlas($nombredeusuario,$cost,$recoplasactuales,$conexion);
+			fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha asignado ".$service." de Premium Service . LCoins: ".$recoplasactuales."  IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip(). " Host: ".gethostbyaddr(getip()));
+			fputs($archivo,"\n");
+			exito("_premium_yes");
+			break;
 		default:
 			echo 'No elegiste opción';
 			

@@ -27,6 +27,13 @@ function getBar($tipo,$active){
     }
     //echo $avatar;
     //print_r($userFData);
+    $adminli='';
+    if(($MyBBI2->isLoggedIn())&&($MyBBI2->isSuperAdmin())){
+        $adminli='<li '.($active==9?'class="active"':'').'>
+									<a href="dashboard.php"> <i class="icon-dollar"></i> <span>Admin Section</span> </a>
+								</li>';
+    }
+    
     echo '<!-- .Barra Lateral -->
 			<aside class="fondo-transparente-negro-075 aside-sm'; //Nota: Requiere los CSS lkcss.css cargados en la pagina
    switch ($tipo) {
@@ -114,13 +121,33 @@ function getBar($tipo,$active){
 						</div>
 						<!-- / user -->
 						<!-- nav -->
-						<nav class="nav-primary hidden-xs">
+						<nav class="nav-primary hidden-xs dropup">
 							<ul class="nav">
 								<li '.($active==1?'class="active"':'').'>
 									<a href="index2.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
-								<li class="dropdown-submenu" '.($active==2?'class="active"':'').'>
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-beaker"></i> <span>UI kit</span> </a>
+								
+								<li '.($active==3?'class="active"':'').'>
+									<a href="ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
+								</li>
+								<li '.($active==4?'class="active"':'').'>
+									<a href="stats.php"> <i class="icon-tasks"></i> <span>Stats</span> </a>
+								</li>
+								<li '.($active==5?'class="active"':'').'>
+									<a href="donar.php"> <i class="icon-thumbs-up"></i> <span>Donar</span> </a>
+								</li>
+								<li '.($active==6?'class="active"':'').'>
+									<a href="noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
+								</li>
+                                <li '.($active==7?'class="active"':'').'>
+									<a href="foro.php"> <i class="icon-book"></i> <span>Foro</span> </a>
+								</li>
+                                <li '.($active==8?'class="active"':'').'>
+									<a href="descargas.php"> <i class="icon-cloud-download"></i> <span>Descargas</span> </a>
+								</li>
+                                '.$adminli.'
+                                <li class="dropdown-submenu" '.($active==2?'class="active"':'').'>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-beaker"></i> <span>M&aacute;s</span> </a>
 									<ul class="dropdown-menu">
 										<li>
 											<a href="buttons.html">Buttons</a>
@@ -161,25 +188,16 @@ function getBar($tipo,$active){
 										<li>
 											<a href="signup.php">Signup page</a>
 										</li>
+                                        <li>
+											<a href="mail.html">Mail</a>
+										</li>
+                                        <li>
+											<a href="notes.html">Notes</a>
+										</li>
 										<li>
 											<a href="404.html">404 page</a>
 										</li>
 									</ul>
-								</li>
-								<li '.($active==3?'class="active"':'').'>
-									<a href="mail.html"> <b class="badge bg-primary pull-right">3</b> <i class="icon-envelope-alt"></i> <span>Mail</span> </a>
-								</li>
-								<li '.($active==4?'class="active"':'').'>
-									<a href="stats.php"> <i class="icon-tasks"></i> <span>Stats</span> </a>
-								</li>
-								<li '.($active==5?'class="active"':'').'>
-									<a href="notes.html"> <i class="icon-pencil"></i> <span>Notes</span> </a>
-								</li>
-								<li '.($active==6?'class="active"':'').'>
-									<a href="noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
-								</li>
-                                <li '.($active==7?'class="active"':'').'>
-									<a href="foro.php"> <i class="icon-book"></i> <span>Foro</span> </a>
 								</li>
 							</ul>
 						</nav>

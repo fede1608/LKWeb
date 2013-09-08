@@ -79,7 +79,7 @@ $tablecharacters='characters';
 												<div id="collapseOne" class="panel-collapse in">
  <?php
 
-$aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; // para algo servía el puto operador trinario :?
+$aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>4) ? 1 : $_GET['id']; // para algo servía el puto operador trinario :?
 
 ?>
 	
@@ -106,21 +106,32 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 			<?php
                 $chars = $MySQL2->execute("SELECT * FROM `". $tablecharacters ."` WHERE account_name=\"".$userdata['login']."\"");
                 
-				for($i=1;$i<=3;$i++){
+				for($i=1;$i<=4;$i++){
                 $dc=false;
 				$nn=false;
+                $ps=false;
+                $comment2='';
 					switch ($i)
 					{
-						case 1: $titulo="Asignar Donator Coins";
+						case 1: 
+                        $titulo="Asignar Donator Coins";
 						$costinfo="1 Linekkit Coin = 1 Donator Coin";
 						$dc=true;
 						break;
-						case 2: $titulo="Cambiar nombre de Personaje";
+						case 2: 
+                        $titulo="Cambiar nombre de Personaje";
 						$costinfo="15 Linekkit Coins";
 						$nn=true;
 						break;
-						case 3: $titulo="Cambiar sexo de Personaje";
+						case 3: 
+                        $titulo="Cambiar sexo de Personaje";
 						$costinfo="15 Linekkit Coins";
+						break;
+                        case 4: 
+                        $titulo="Convertirse en Premium";
+                        $comment2='';
+						$costinfo="<p>Premium Rates: Exp x12  SP x12 Drop x9 Spoil x9</p><p>120 LC/1 Mes, 70LC/15 Dias, 40LC/7 Dias</p;";
+                        $ps=true;
 						break;
 					}
                     if($aid==$i){
@@ -139,11 +150,10 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 				
 				<form name="agregar" method="POST" action="./cambiodepuntos.php" class="panel-body" >
 				<br>
-				<br>
-				<label>Elegir Personaje:</label> <br>
+				
 				<?php
-					
-					echo "<span class=\"field\"><select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+					if(!$ps){
+					echo "<br><label>Elegir Personaje:</label> <br><span class=\"field\"><select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
 					foreach ($chars as $char){
 					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
 					}
@@ -152,6 +162,7 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 										echo "<option value='".$char['char_name']."'>Lx20 - ".$char['char_name']."</option>";
 					} */
 					echo "</select><br>";
+                    }
 				if($dc){	
 				?>
 				<br>
@@ -163,6 +174,17 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>3) ? 1 : $_GET['id']; //
 				<br>
 				<label>Nuevo Nombre:</label>
 				<br><span class="field"><input type="text" id="nuevonombre" name="nuevonombre" value="Player" class="form-control"></span>
+				<?php } 
+                if($ps){
+                ?><br>
+				<label>Elegir Pack Premium(Son acumulables):</label>
+                
+				<br><span class="field"><select id="packpremium" name="packpremium" class="form-control">
+                <option value='1'> Premium Rates x 1 Mes</option>
+                <option value='2'> Premium Rates x 15 D&iacute;as</option>
+                <option value='3'> Premium Rates x 7 D&iacute;as</option>
+                </select></span>
+                <input type="hidden" name="pjseleccionado" value="--">
 				<?php } ?>
 				
 				
