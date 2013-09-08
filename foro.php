@@ -26,7 +26,7 @@ include_once 'session.php';
 			</script>
 		<![endif]-->
 	</head>
-	<body style="background-image: url(http://linekkit.com/images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size: cover !important;">
+		<body style="background-image:url(images/bg-raid-boss.jpg) !important; background-size:cover !important;">
  
 		<section class="hbox stretch">
 			<?php include_once('barralateral.php');
@@ -34,7 +34,7 @@ include_once 'session.php';
             ?>
 			<!-- .vbox -->
 			<section id="content">
-				<iframe src="http://www.linekkit.com/forum<?php echo $_GET['page']; ?>" width="100%" height=100%></iframe>
+				<iframe src="http://www.linekkit.com/forum<?php echo $_GET['page']; ?>" width="100%" height="100%" style="border:0px;></iframe>
                 </section>
 			<!-- /.vbox -->
 		</section>

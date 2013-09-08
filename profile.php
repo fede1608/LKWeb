@@ -44,7 +44,7 @@ if($flogged){
     <script src="js/ie/fix.js" cache="false"></script>
   <![endif]-->
 </head>
-<body style="background-image:url(images/dragon-wallpaper-lineage-2-1920x1080.jpg) !important; background-size:cover !important;">
+	<body style="background-image:url(images/bg-raid-boss.jpg) !important; background-size:cover !important;">
   <section class="hbox stretch">
    			<?php
             include_once('barralateral.php');
