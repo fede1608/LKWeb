@@ -21,7 +21,7 @@ if(!isacmlogged()){
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Web Application | todo</title>
+  <title>Estadísticas | Linekkit</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
@@ -52,11 +52,11 @@ if(!isacmlogged()){
       <section class="vbox">
         <header class="header bg-gradient fondo-transparente-negro-075">
           <ul class="nav nav-tabs">
-            <li class="active"><a href="#static" data-toggle="tab">Static table</a></li>
+            <li class="active"><a href="#static" data-toggle="tab">Vista General</a></li>
             <!--<li class=""><a href="#datagrid" data-toggle="tab">Datagrid</a></li>-->
             <li class=""><a href="#datatable" data-toggle="tab">PK Kills</a></li>
 			<li class=""><a href="#datatable2" data-toggle="tab">PVP Kills</a></li>
-            <li class=""><a href="#datatable3" data-toggle="tab">Online Time</a></li>
+            <li class=""><a href="#datatable3" data-toggle="tab">Tiempo Online</a></li>
           </ul>
         </header>
         <section class="scrollable wrapper">
@@ -69,24 +69,260 @@ if(!isacmlogged()){
               <div class="row"> 
                 
                 <!-- Primera columna-->
-                <div class="col-sm-3">
+                <div class="col-sm-4">
+                	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+                                    <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; font-size:72px">Global</h1>
+									
+									<ul class="list-group list-group-flush no-radius alt">
+										<li class="list-group-item fondo-transparente-000 m-t-lg no-border linea-azul-1">
+										  <span class=" col-xs-3 label fondo-solido-rojo-1" style="font-size:36px">
+												1
+										  </span>
+                                            
+                                          <div class="col-xs-9">
+                                                <div class="row">
+                                                	<span class="h2 m-l-xs letras-blancas">Batman</span>
+                                                </div>
+                                                <div class="row">
+                                                	<span class="h4 m-l-xs letras-blancas">999999</span>
+                                                </div>
+                                             
+                                             </div>
+                                             
+									  </li>
+                                        <div class="row"></div>
+										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
+											<span class="  col-xs-2 label fondo-solido-azul-1 letras-blancas" style="font-size:24px; ">
+												2
+											</span>
+											 
+                                             <div class="col-xs-10">
+                                                <div class="row">
+                                                	<span class="h4 m-l-xs letras-blancas">Iron Man</span>
+                                                </div>
+                                                <div class="row">
+                                                	<span class="h5 m-l-xs letras-blancas">999999</span>
+                                                </div>
+                                             
+                                             </div>
+										</li>
+                                        <div class="row"></div>
+										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
+											<span class="  col-xs-1 label letras-negras" style="font-size:18px; background-color:#FFA838">
+												3
+											</span>
+											 
+                                             <div class="col-xs-10">
+                                                <div class="row">
+                                                	<span class="h5 m-l-xs letras-blancas">Capitán América</span>
+                                                </div>
+                                                <div class="row">
+                                                	<span class="h6 m-l-xs letras-blancas">999999</span>
+                                                </div>
+                                             
+                                             </div>
+										</li>
+                                        <div class="row"></div>
+                                      <li class="list-group-item fondo-transparente-000 m-t-lg linea-azul-1">
+											<span class="pull-right letras-blancas">
+												1234567
+											</span>
+											<span class="label bg-warning letras-negras">
+												4
+										</span>
+											 <span class="m-l-xs letras-blancas">Hulk</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												123456
+										  </span>
+											<span class="label bg-warning letras-negras">
+												5
+										  </span>
+											 <span class="m-l-xs letras-blancas">Flash</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-warning letras-negras">
+												6
+										  </span>
+											 <span class="m-l-xs letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-warning letras-negras">
+												7
+										  </span>
+											 <span class="m-l-xs letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-warning letras-negras">
+												8
+										  </span>
+											 <span class="m-l-xs letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-primary">
+												9
+										  </span>
+											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-primary ">
+												10
+										  </span>
+											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
+										</li>
+									</ul>
+                                        
+                                        
+									</ul>
+								</section>
                 </div>
                 <!-- / Primera columna-->
                 
                 <!-- Segunda columna-->
-                <div class="col-sm-3">
+                <div class="col-sm-4">
+                	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+                                    <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; font-size:72px">Top PVP</h1>
+									
+									<ul class="list-group list-group-flush no-radius alt">
+										<li class="list-group-item fondo-transparente-000 m-t-lg no-border linea-azul-1">
+										  <span class=" col-xs-3 label fondo-solido-rojo-1" style="font-size:36px">
+												1
+										  </span>
+                                            
+                                          <div class="col-xs-9">
+                                                <div class="row">
+                                                	<span class="h2 m-l-xs letras-blancas">Batman</span>
+                                                </div>
+                                                <div class="row">
+                                                	<span class="h4 m-l-xs letras-blancas">999999</span>
+                                                </div>
+                                             
+                                             </div>
+                                             
+									  </li>
+                                        <div class="row"></div>
+										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
+											<span class="  col-xs-2 label fondo-solido-azul-1 letras-blancas" style="font-size:24px; ">
+												2
+											</span>
+											 
+                                             <div class="col-xs-10">
+                                                <div class="row">
+                                                	<span class="h4 m-l-xs letras-blancas">Iron Man</span>
+                                                </div>
+                                                <div class="row">
+                                                	<span class="h5 m-l-xs letras-blancas">999999</span>
+                                                </div>
+                                             
+                                             </div>
+										</li>
+                                        <div class="row"></div>
+										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
+											<span class="  col-xs-1 label letras-negras" style="font-size:18px; background-color:#FFA838">
+												3
+											</span>
+											 
+                                             <div class="col-xs-10">
+                                                <div class="row">
+                                                	<span class="h5 m-l-xs letras-blancas">Capitán América</span>
+                                                </div>
+                                                <div class="row">
+                                                	<span class="h6 m-l-xs letras-blancas">999999</span>
+                                                </div>
+                                             
+                                             </div>
+										</li>
+                                        <div class="row"></div>
+                                      <li class="list-group-item fondo-transparente-000 m-t-lg linea-azul-1">
+											<span class="pull-right letras-blancas">
+												1234567
+											</span>
+											<span class="label bg-warning letras-negras">
+												4
+										</span>
+											 <span class="m-l-xs letras-blancas">Hulk</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												123456
+										  </span>
+											<span class="label bg-warning letras-negras">
+												5
+										  </span>
+											 <span class="m-l-xs letras-blancas">Flash</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-warning letras-negras">
+												6
+										  </span>
+											 <span class="m-l-xs letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-warning letras-negras">
+												7
+										  </span>
+											 <span class="m-l-xs letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-warning letras-negras">
+												8
+										  </span>
+											 <span class="m-l-xs letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-primary">
+												9
+										  </span>
+											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
+										</li>
+                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
+											<span class="pull-right letras-blancas">
+												12345
+										  </span>
+											<span class="label bg-primary ">
+												10
+										  </span>
+											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
+										</li>
+									</ul>
+                                        
+                                        
+									</ul>
+								</section>
                 </div>
                 <!-- / Segunda columna-->
                 
                 <!-- Tercera columna-->
-                <div class="col-sm-3">
-                </div>
-                <!-- / Tercera columna-->
-                
-                <!-- Cuarta columna-->
-                <div class="col-sm-3">
-                
-                <section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+                <div class="col-sm-4">
+                	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
                                     <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Razas</h2>
 									<div class="text-center wrapper ">
                                         
@@ -116,12 +352,70 @@ if(!isacmlogged()){
                                         
 									</ul>
 								</section>
-                  
-                			</div>
-                            <!-- / Cuarta columna-->
-              
+                </div>
+                <!-- / Tercera columna-->
+                
               </div>
               <!--/  Primera fila-->
+              
+              <div class="row"></div>
+              
+              <!-- SEGUNDA FILA -->
+              
+              <!-- Primera columna-->
+              <div class="col-sm-6">
+              	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+                	
+                    <!-- Primera columna-->
+                    <div class="col-sm-6 fondo-transparente-negro-075">
+                    
+                        <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Razas</h2>
+                        <div class="text-center wrapper ">
+                        
+                            <div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA']">
+                                                <?php   include_once 'statsfeed.php';
+                                                        include_once 'datachars.php';
+                                                        $stats=getRaceStats(); 
+                                                        echo $stats['str']; 
+                                                        $arrayColor = array('#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA');?>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!-- / Primera columna -->
+                    
+                    <!-- Segunda columna-->
+                    <div class="col-sm-6 fondo-transparente-negro-075">
+					
+                        <ul class="list-group list-group-flush no-radius alt">
+                                            <?php 
+                                            for($i=0;$i<=5;$i++){
+                                                echo '<li class="list-group-item fondo-transparente-000 linea-azul-1">
+                                                    <span class="pull-right" >
+                                                        '.$stats[$i]['cant'].'
+                                                    </span>
+                                                    <span class="label bg-success" style="background-color:'.$arrayColor[$i].';">
+                                                        '.$i.'
+                                                    </span>
+                                                    <span class="m-l-xs">'.$race[$stats[$i]['race']].'</span>
+                                                </li>';
+                                            }
+                                            ?>
+                                            
+                                            
+                        </ul>
+                    </div>
+                    <!-- / Segunda columna-->
+                    
+				</section>
+              
+              </div>
+              <!-- / Primera columna-->
+              
+              <!-- Segunda columna-->
+              <div class="col-sm-6">
+              </div>
+              <!-- / Segunda columna-->
               
             </div>
             <!-- / Pestaña 1 -->
