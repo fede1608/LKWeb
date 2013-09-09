@@ -41,49 +41,62 @@
         <div class="row m-n text-center">
         	<img src="images/logo.png" width="523" height="161">
         </div>
-        <div class="row m-n">
-        <h1 class="letras-blancas" style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px; font-size: 36px;">
-        Vuelve el servidor de Lineage 2 Freya líder de América Latina<br>
-         Vuelve Linekkit<br> 
-         <b>Volvés vos</b><br><br>
-        Apertura: Miércoles 18/09/13, a las 20:00 Hs (ARG)
-        <br>
         
-        <span style="font-size:18px">
-XP x10 | SP x10 | Drop x7 | Spoil x7 | Adena x10 | Party x1.5 | Raid drop x3 | Quest drop x3 | DualBox (hasta 2 clientes por PC)
-		<br>
-¿Querés saber más? La comunidad y nuestro equipo te esperan en el foro
-        </span>
+        <div class="col-lg-1"></div>
         
-        </h1>
-        </div>
-        
-        <section>
-        <div class="row">
-            <div class="col-lg-12">
-            	<div class="col-lg-3"></div>
-                <div class="col-lg-2">
-                    <a href="http://linekkit.com/forum/" class="btn btn-warning btn-block m-b-sm letras-negras"><i class="icon-group pull-left"></i><b>Foro</b></a>
-                </div>
-                <div class="col-lg-2">
-                    <a href="http://linekkit.com/forum/showthread.php?tid=27&pid=90#pid90" class="btn btn-gplus btn-block m-b-sm"><i class="icon-gears pull-left"></i><b>Beta público</b></a>
-                </div>
-                <div class="col-lg-2">
-                    <a href="https://www.facebook.com/Linekkit" class="btn btn-facebook btn-block m-b-sm"><i class="icon-facebook pull-left"></i><b>Facebook</b></a>
-                </div>
-                <div class="col-lg-3"></div>
+        <div class="col-lg-10 fondo-transparente-negro borde-transparente-negro">
+            <div class="row m-n">
+            <h1 class="letras-blancas" style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px; font-size: 36px;">
+            Vuelve el servidor de Lineage 2 Freya líder de América Latina<br>
+             Vuelve Linekkit<br> 
+             <b>Volvés vos</b><br><br>
+            Apertura: Miércoles 18/09/13, a las 20:00 Hs (ARG)
+            <br>
+            
+            <span style="font-size:18px">
+    XP x10 | SP x10 | Drop x7 | Spoil x7 | Adena x10 | Party x1.5 | Raid drop x3 | Quest drop x3 | DualBox (hasta 2 clientes por PC)
+            <br>
+    ¿Querés saber más? La comunidad y nuestro equipo te esperan en el foro
+            </span>
+            
+            </h1>
             </div>
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="col-lg-3"></div>
+                    <div class="col-lg-2">
+                        <a href="http://linekkit.com/forum/" class="btn btn-warning btn-block m-b-sm letras-negras"><i class="icon-group pull-left"></i><b>Foro</b></a>
+                    </div>
+                    <div class="col-lg-2">
+                        
+                        <!-- BORRAR SOLO ESTO AL TERMINAR LA BETA -->
+                        <a href="http://linekkit.com/forum/showthread.php?tid=27&pid=90#pid90" class="btn btn-gplus btn-block m-b-sm"><i class="icon-gears pull-left"></i><b>Beta público</b></a>
+                        <!-- / BORRAR SOLO ESTO AL TERMINAR LA BETA -->
+                        
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="https://www.facebook.com/Linekkit" class="btn btn-facebook btn-block m-b-sm"><i class="icon-facebook pull-left"></i><b>Facebook</b></a>
+                    </div>
+                    <div class="col-lg-3"></div>
+                </div>
+            </div>
+        
         </div>
-        </section>
         
+        <div class="col-lg-1"></div>
+
+        <div class="row m-n">
         
-		</section>
-        <div class="row m-n"><div class="col-lg-4 col-lg-offset-2" style="
-        "><a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank" class="pull-right
-        "><img src="http://linekkit.com/images/hopzone.png" alt="Votar por Linekkit"></a></div><div class="col-lg-4" style="
-        "><a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers" class="pull-left"><img src="http://linekkit.com/images/topzone.png" alt="Votar por Linekkit"></a>
+            <div class="col-lg-4 col-lg-offset-2 m-t-xs" style="
+            "><a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank" class="pull-right
+            "><img src="http://linekkit.com/images/hopzone.png" alt="Votar por Linekkit"></a>
+            </div>
+            <div class="col-lg-4 m-t-xs" style="
+            "><a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers" class="pull-left"><img src="http://linekkit.com/images/topzone.png" alt="Votar por Linekkit"></a>
+           	</div>
         
-        </div></div>
+        </div>
 		<!-- footer -->
 		<footer id="footer" style="margin-top: 10px;">
 			<div class="text-center padder clearfix">
