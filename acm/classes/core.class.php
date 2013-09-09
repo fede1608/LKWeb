@@ -452,6 +452,7 @@ class core {
 		$items[] = array('id' => 4, 'name' => LANG::i18n('_change_coins'), 'link' =>"../actionsLC.php?id=1");
 		$items[] = array('id' => 5, 'name' => LANG::i18n('_character_name'),'link' => "../actionsLC.php?id=2");
 		$items[] = array('id' => 6, 'name' => LANG::i18n('_character_sex'), 'link' =>"../actionsLC.php?id=3");
+		$items[] = array('id' => 7, 'name' => LANG::i18n('_premium_service'), 'link' =>"../actionsLC.php?id=4");
 		
 		//end
 		SmartyObject::getInstance()->assign('items', $items);

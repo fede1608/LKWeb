@@ -14,11 +14,15 @@ chdir('../');
 include_once 'statsfeed.php'; 
 include_once("session.php");
 
+require_once 'libs/mysql.inc.php';
+require_once 'libs/config.inc.php';
+$MySQLEco = new SQL($host, $usernombre, $pass, "economia");
+
 if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
    print_r($MyBBI->isSuperAdmin(0));
-    //echo '<script language="javascript">
-	//		window.top.location="signin.php"
-	//		</script>';
+    echo '<script language="javascript">
+			window.top.location="signin.php"
+			</script>';
     exit();
 }
 ?>
@@ -193,8 +197,8 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                       <section class="vbox">
                         <header class="header bg-light dk">
                           <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1" data-toggle="tab">Trade Market</a></li>
-                            <li class=""><a href="#tab2" data-toggle="tab">Events</a></li>
+                            <li class="active"><a href="#tab1" data-toggle="tab">Estadisticas</a></li>
+                            <li class=""><a href="#tab2" data-toggle="tab">Donaciones</a></li>
                             <li class=""><a href="#tab3" data-toggle="tab">Interaction</a></li>
                           </ul>
                         </header>
@@ -230,216 +234,24 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                             </div>
                             <div class="tab-pane" id="tab2">
                               <ul class="list-group m-b-none m list-group-lg list-group-sp">
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">3 minuts ago</small>
-                                    <strong class="block">Drew Wllon</strong>
-                                    <small>Wellcome and play this web application template ... </small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">1 hour ago</small>
-                                    <strong class="block">Jonathan George</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">2 hours ago</small>
-                                    <strong class="block">Josh Long</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">1 day ago</small>
-                                    <strong class="block">Jack Dorsty</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">3 days ago</small>
-                                    <strong class="block">Morgen Kntooh</strong>
-                                    <small>Mobile first web app for startup...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">Jun 21</small>
-                                    <strong class="block">Yoha Omish</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">May 10</small>
-                                    <strong class="block">Gole Lido</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">Jan 2</small>
-                                    <strong class="block">Jonthan Snow</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item" href="#email-content" data-toggle="class:show">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">3 minuts ago</small>
-                                    <strong class="block">Drew Wllon</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec sodales nisi nec sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">1 hour ago</small>
-                                    <strong class="block">Jonathan George</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">2 hours ago</small>
-                                    <strong class="block">Josh Long</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">1 day ago</small>
-                                    <strong class="block">Jack Dorsty</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">3 days ago</small>
-                                    <strong class="block">Morgen Kntooh</strong>
-                                    <small>Mobile first web app for startup...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">Jun 21</small>
-                                    <strong class="block">Yoha Omish</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">May 10</small>
-                                    <strong class="block">Gole Lido</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">Jan 2</small>
-                                    <strong class="block">Jonthan Snow</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item" href="#email-content" data-toggle="class:show">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">3 minuts ago</small>
-                                    <strong class="block">Drew Wllon</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec sodales nisi nec sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">1 hour ago</small>
-                                    <strong class="block">Jonathan George</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">2 hours ago</small>
-                                    <strong class="block">Josh Long</strong>
-                                    <small>Vestibulum ullamcorper sodales nisi nec...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar_default.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">1 day ago</small>
-                                    <strong class="block">Jack Dorsty</strong>
-                                    <small>Morbi nec nunc condimentum...</small>
-                                  </a>
-                                </li>
-                                <li class="list-group-item">
-                                  <a href="#" class="thumb-sm pull-left m-r-sm">
-                                    <img src="images/avatar.jpg" class="img-circle">
-                                  </a>
-                                  <a href="#" class="clear">
-                                    <small class="pull-right">3 days ago</small>
-                                    <strong class="block">Morgen Kntooh</strong>
-                                    <small>Mobile first web app for startup...</small>
-                                  </a>
-                                </li>
+                              
+                              <?php
+                              $res=$MySQLEco->execute('SELECT d.`descripcion` as descripcion,d.`id` as id,d.`valor` as valor,d.`fecha` as fecha,c.cur as currency,s.name as server,sp.name as sistema FROM `donaciones` as d, currency as c,servidores as s, sistemasdepago as sp WHERE d.`currency`=c.id AND d.`servidor`=s.id AND d.`sistema`=sp.id ORDER BY d.fecha DESC ');
+                              foreach($res as $r){
+                                  echo '
+                                    <li class="list-group-item">
+                                      <a href="#" class="thumb-sm pull-left m-r-sm">
+                                        <img src="images/avatar_default.jpg" class="img-circle">
+                                      </a>
+                                      <a href="#" class="clear">
+                                        <small class="pull-right">'.date('d/m/y H:i',$r['fecha']).'</small>
+                                        <strong class="block">'.$r['server'].'</strong>
+                                        <small>'.$r['descripcion'].' '.$r['currency'].' '.$r['valor'].' '.$r['sistema'].'</small>
+                                      </a>
+                                    </li>';
+                                }
+                                ?>
+                                
                               </ul>
                             </div>                            
                             <div class="tab-pane" id="tab3">
