@@ -206,7 +206,12 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                           <div class="tab-content">
                             <div class="tab-pane active" id="tab1">
                               <div class="wrapper">
-                                <div id="hero-area" class="graph"></div>
+                              <h1>Por dia</h1>
+                                <div id="donacion-area-dia" class="graph"></div>
+                                <h1>Por semana</h1>
+                                <div id="donacion-area-semana" class="graph"></div>
+                                <h1>Por mes</h1>
+                                <div id="donacion-area-mes" class="graph"></div>
                                 <div class="row m-t-lg">
                                   <div class="col-sm-6">
                                     <section class="panel">
@@ -335,6 +340,8 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
   <script src="js/app.js"></script>
   <script src="js/app.plugin.js"></script>
   <script src="js/app.data.js"></script>
+  
+
 
   <!-- Sparkline Chart -->
   <script src="js/charts/sparkline/jquery.sparkline.min.js"></script>
@@ -343,5 +350,219 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
   <!-- Morris -->
   <script src="js/charts/morris/raphael-min.js" cache="false"></script>
   <script src="js/charts/morris/morris.min.js" cache="false"></script>
+    <script type="text/javascript">
+<?php
+$round_numerator = 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
+//$round_numerator = 60 * 60 or to the nearest hour
+//$round_numerator = 60 * 60 * 24 or to the nearest day
+$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator )+(3*60 * 24);
+$diasatras = $rounded_time - 9*24*60*60;
+$resserv=$MySQLEco->execute('SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$diasatras.' ORDER BY d.fecha,d.servidor, d.currency');
+$cont=0;
+for($i=9;$i>=0;$i--){
+    $dia=$rounded_time-($i*$round_numerator);
+    $diasiguiente=$rounded_time-(($i-1)*$round_numerator);
+    $dataarea[$i]['period']=date('Y-m-d',$dia);
+    $dataarea[$i][0]=0;
+    $dataarea[$i][1]=0;
+    
+    //if(!isset($resserv[$cont])) break;
+    while(($resserv[$cont]['fecha']>$dia)&&($resserv[$cont]['fecha']<$diasiguiente)){
+        $cant=$resserv[$cont]['valor'];
+        switch($resserv[$cont]['currency']){
+            case 0:
+            break;
+            case 1:
+            $cant*=5.70;
+            break;
+            case 2:
+            $cant*=7.65;
+            break;
+        }
+        $dataarea[$i][$resserv[$cont]['servidor']]+=$cant;
+        $cont++;
+    }    
+}
+
+echo "	
+			var buildArea2 = function(){
+		Morris.Area({
+			element: 'donacion-area-dia',
+			data: [";  
+for($i=9;$i>0;$i--){
+    echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."},";
+}
+echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."}";
+echo "],
+			xkey: 'period',
+			ykeys: ['minekkit', 'linekkit'],
+			xLabels: 'day',
+			labels: ['Minekkit Server', 'Linekkit Server'],			
+			hideHover: 'auto',
+			lineWidth: 2,
+			pointSize: 4,
+			lineColors: ['#59dbbf', '#aeb6cb'],
+			fillOpacity: 0.5,
+			smooth: true,
+		});
+	};
+
+	$('#tab1 #donacion-area-dia').each(function(){
+		buildArea2();
+		/*var morrisResizes;
+		$(window).resize(function(e) {
+			clearTimeout(morrisResizes);
+			morrisResizes = setTimeout(function(){
+				$('.graph').html('');
+				buildArea2();
+			}, 5500);
+		});*/
+	});
+
+	";
+    $round_numerator = 7 * 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
+//$round_numerator = 60 * 60 or to the nearest hour
+//$round_numerator = 60 * 60 * 24 or to the nearest day
+$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator )+(3*60 * 24);
+$semanasatras = $rounded_time - 9*7*24*60*60;
+$resserv=$MySQLEco->execute('SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$semanasatras.' ORDER BY d.fecha,d.servidor, d.currency');
+//echo 'SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$semanasatras.' ORDER BY d.fecha,d.servidor, d.currency';
+//print_r($resserv);
+$cont=0;
+for($i=9;$i>=0;$i--){
+    $semana=$rounded_time-($i*$round_numerator);
+    $semanasiguiente=$rounded_time-(($i-1)*$round_numerator);
+    $dataarea[$i]['period']=date('Y',$semana).' W'.date('W',$semana);
+    $dataarea[$i][0]=0;
+    $dataarea[$i][1]=0;
+    
+    //if(!isset($resserv[$cont])) break;
+	//echo '('.$resserv[$cont]['fecha'].'>'.$semana.')&&('.$resserv[$cont]['fecha'].'<'.$semanasiguiente.')';
+    while(($resserv[$cont]['fecha']>$semana)&&($resserv[$cont]['fecha']<$semanasiguiente)){
+	//echo "while $cont <br>";
+        $cant=$resserv[$cont]['valor'];
+        switch($resserv[$cont]['currency']){
+            case 0:
+            break;
+            case 1:
+            $cant*=5.70;
+            break;
+            case 2:
+            $cant*=7.65;
+            break;
+        }
+        $dataarea[$i][$resserv[$cont]['servidor']]+=$cant;
+        $cont++;
+    }    
+}
+
+echo "	
+			var buildArea3 = function(){
+		Morris.Area({
+			element: 'donacion-area-semana',
+			data: [";  
+for($i=9;$i>0;$i--){
+    echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."},";
+}
+echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."}";
+echo "],
+			xkey: 'period',
+			ykeys: ['minekkit', 'linekkit'],
+			xLabels: 'day',
+			labels: ['Minekkit Server', 'Linekkit Server'],			
+			hideHover: 'auto',
+			lineWidth: 2,
+			pointSize: 4,
+			lineColors: ['#59dbbf', '#aeb6cb'],
+			fillOpacity: 0.5,
+			smooth: true,
+		});
+	};
+
+	$('#tab1 #donacion-area-semana').each(function(){
+		buildArea3();
+		/*var morrisResizes;
+		$(window).resize(function(e) {
+			clearTimeout(morrisResizes);
+			morrisResizes = setTimeout(function(){
+				$('.graph').html('');
+				buildArea3();
+			}, 5500);
+		});*/
+	});
+    ";
+ $round_numerator = 30 * 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
+//$round_numerator = 60 * 60 or to the nearest hour
+//$round_numerator = 60 * 60 * 24 or to the nearest day
+$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator )+(3*60 * 24);
+$semanasatras = $rounded_time - 9*30*24*60*60;
+$resserv=$MySQLEco->execute('SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$semanasatras.' ORDER BY d.fecha,d.servidor, d.currency');
+//echo 'SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$semanasatras.' ORDER BY d.fecha,d.servidor, d.currency';
+//print_r($resserv);
+$cont=0;
+for($i=9;$i>=0;$i--){
+    $mes=$rounded_time-($i*$round_numerator);
+    $messiguiente=$rounded_time-(($i-1)*$round_numerator);
+    $dataarea[$i]['period']=date('Y-m',$mes);
+    $dataarea[$i][0]=0;
+    $dataarea[$i][1]=0;
+    
+    //if(!isset($resserv[$cont])) break;
+	//echo '('.$resserv[$cont]['fecha'].'>'.$semana.')&&('.$resserv[$cont]['fecha'].'<'.$semanasiguiente.')';
+    while(($resserv[$cont]['fecha']>$mes)&&($resserv[$cont]['fecha']<$messiguiente)){
+	//echo "while $cont <br>";
+        $cant=$resserv[$cont]['valor'];
+        switch($resserv[$cont]['currency']){
+            case 0:
+            break;
+            case 1:
+            $cant*=5.70;
+            break;
+            case 2:
+            $cant*=7.65;
+            break;
+        }
+        $dataarea[$i][$resserv[$cont]['servidor']]+=$cant;
+        $cont++;
+    }    
+}
+
+echo "	
+			var buildArea4 = function(){
+		Morris.Area({
+			element: 'donacion-area-mes',
+			data: [";  
+for($i=9;$i>0;$i--){
+    echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."},";
+}
+echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."}";
+echo "],
+			xkey: 'period',
+			ykeys: ['minekkit', 'linekkit'],
+			xLabels: 'month',
+			labels: ['Minekkit Server', 'Linekkit Server'],			
+			hideHover: 'auto',
+			lineWidth: 2,
+			pointSize: 4,
+			lineColors: ['#59dbbf', '#aeb6cb'],
+			fillOpacity: 0.5,
+			smooth: true,
+		});
+	};
+
+	$('#tab1 #donacion-area-mes').each(function(){
+		buildArea4();
+	/*	var morrisResizes;
+		$(window).resize(function(e) {
+			clearTimeout(morrisResizes);
+			morrisResizes = setTimeout(function(){
+				$('.graph').html('');
+				buildArea4();
+			}, 5500);
+		});*/
+	});
+    ";
+ ?>
+</script>
 </body>
 </html>
