@@ -43,21 +43,38 @@
         </div>
         <div class="row m-n">
         <h1 class="letras-blancas" style=" text-align:center; font-family:Alegreya SC; margin-top:0; margin-bottom:14px; font-size: 36px;">
-        Vuelve el servidor de Lineage 2 Freya líder de América Latina.<br> Vuelve Linekkit.<br> <b>Volvés vos.</b> <br><br>
+        Vuelve el servidor de Lineage 2 Freya líder de América Latina<br>
+         Vuelve Linekkit<br> 
+         <b>Volvés vos</b><br><br>
         Apertura: Miércoles 18/09/13, a las 20:00 Hs (ARG)
         <br>
         
         <span style="font-size:18px">
 XP x10 | SP x10 | Drop x7 | Spoil x7 | Adena x10 | Party x1.5 | Raid drop x3 | Quest drop x3 | DualBox (hasta 2 clientes por PC)
 		<br>
-¿Querés saber más? La comunidad y nuestro equipo te esperan en el foro <br>
-<a class="letras-blancas" style="font-size:36px" href="http://linekkit.com/forum/index.php">
-Visitar el foro</a>
-		<br>
+¿Querés saber más? La comunidad y nuestro equipo te esperan en el foro
         </span>
         
         </h1>
         </div>
+        
+        <section>
+        <div class="row">
+            <div class="col-lg-12">
+            	<div class="col-lg-3"></div>
+                <div class="col-lg-2">
+                    <a href="http://linekkit.com/forum/" class="btn btn-warning btn-block m-b-sm letras-negras"><i class="icon-group pull-left"></i><b>Foro</b></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="http://linekkit.com/forum/showthread.php?tid=27&pid=90#pid90" class="btn btn-gplus btn-block m-b-sm"><i class="icon-gears pull-left"></i><b>Beta público</b></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="https://www.facebook.com/Linekkit" class="btn btn-facebook btn-block m-b-sm"><i class="icon-facebook pull-left"></i><b>Facebook</b></a>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+        </section>
         
         
 		</section>
