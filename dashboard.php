@@ -501,8 +501,8 @@ $resserv=$MySQLEco->execute('SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$s
 //print_r($resserv);
 $cont=0;
 for($i=9;$i>=0;$i--){
-    $mes=$rounded_time-($i*$round_numerator);
-    $messiguiente=$rounded_time-(($i-1)*$round_numerator);
+    $mes= mktime(0,0,0,intval(date('m',time()-($i*$round_numerator))),1,intval(date('Y',time()-($i*$round_numerator))));//$rounded_time-($i*$round_numerator);
+    $messiguiente=mktime(0,0,0,intval(date('m',time()-(($i-1)*$round_numerator))),1,intval(date('Y',time()-(($i-1)*$round_numerator))));
     $dataarea[$i]['period']=date('Y-m',$mes);
     $dataarea[$i][0]=0;
     $dataarea[$i][1]=0;
