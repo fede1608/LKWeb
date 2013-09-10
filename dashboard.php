@@ -154,29 +154,52 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
             <header class="header">
               <div class="row b-b">
                 <div class="col-sm-4">
-                  <h3 class="m-t m-b-none">Dashboard</h3>
-                  <p class="block text-muted">Welcome to application</p>
+                  <h3 class="m-t m-b-none">Admin Section</h3>
+                  <p class="block text-muted">Panel de Administrador</p>
                 </div>
                 <div class="col-sm-8">
                   <div class="clearfix m-t-lg m-b-sm pull-right pull-none-xs">
-                    <div class="pull-left">                  
+                     <?php
+                              $ganancias=$MySQLEco->execute('SELECT currency,sum(valor) as suma FROM `donaciones` Group BY `currency`');
+                              $ganpeso=floor($ganancias[0]['suma']*100)/100;
+                              $gandolar=floor($ganancias[1]['suma']*100)/100;
+                              $gastos=$MySQLEco->execute('SELECT currency,sum(costo) as suma FROM `gastos` Group BY `currency`');
+                              $gastopeso=floor($gastos[0]['suma']*100)/100;
+                              $gastodolar=floor($gastos[1]['suma']*100)/100;
+                     ?>
+                    <div class="pull-left m-l-lg">
                       <div class="pull-left m-r-xs">
-                        <span class="block">Users <span class="badge up bg-danger">+5</span></span>                    
-                        <span class="h4">432k</span>
+                        <span class="block">Ingresos(ARS)</span>                    
+                        <span class="h4">$ <?php echo $ganpeso; ?></span>
+                        <i class="icon-level-up text-success"></i>
+                      </div>
+                      <div class="pull-left m-r-xs">
+                        <span class="block">Ingresos(USD)</span>                    
+                        <span class="h4">USD <?php echo $gandolar; ?></span>
+                        <i class="icon-level-up text-success"></i>
+                      </div>
+                      <div class="pull-left m-r-xs">
+                        <span class="block">Gastos(ARS)</span>                    
+                        <span class="h4">$ <?php echo $gastopeso; ?></span>
+                        <i class="icon-level-up text-success"></i>
+                      </div>
+                      <div class="pull-left m-r-xs">
+                        <span class="block">Gastos(USD)</span>                    
+                        <span class="h4">USD <?php echo $gastodolar; ?></span>
+                        <i class="icon-level-up text-success"></i>
+                      </div>
+                      <div class="pull-left m-r-xs">
+                        <span class="block">Neto(ARS)</span>                    
+                        <span class="h4">$ <?php echo ($ganpeso-$gastopeso); ?></span>
+                        <i class="icon-level-up text-success"></i>
+                      </div>
+                      <div class="pull-left m-r-xs">
+                        <span class="block">Neto(USD)</span>                    
+                        <span class="h4">USD <?php echo ($gandolar-$gastodolar); ?></span>
                         <i class="icon-level-up text-success"></i>
                       </div>
                       <div class="clear">
                         <div class="sparkline inline" data-type="bar" data-height="35" data-bar-width="4" data-bar-spacing="2" data-stacked-bar-color="['#afcf6f', '#eee']">5:5,8:4,12:5,10:6,11:7,12:2,8:6</div>
-                      </div>
-                    </div>
-                    <div class="pull-left m-l-lg">
-                      <div class="pull-left m-r-xs">
-                        <span class="block">Profit</span>                    
-                        <span class="h4">$4k</span>
-                        <i class="icon-level-down text-danger"></i>
-                      </div>
-                      <div class="clear">
-                        <div class="sparkline inline" data-type="bar" data-height="35" data-bar-width="4" data-bar-spacing="2" data-bar-color="#fb6b5b">6,5,8,9,6,3,5</div>
                       </div>
                     </div>
                   </div>
@@ -199,7 +222,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                           <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1" data-toggle="tab">Estadisticas</a></li>
                             <li class=""><a href="#tab2" data-toggle="tab">Donaciones</a></li>
-                            <li class=""><a href="#tab3" data-toggle="tab">Interaction</a></li>
+                            <li class=""><a href="#tab3" data-toggle="tab">Gastos</a></li>
                           </ul>
                         </header>
                         <section class="scrollable">
@@ -246,12 +269,13 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                                   echo '
                                     <li class="list-group-item">
                                       <a href="#" class="thumb-sm pull-left m-r-sm">
-                                        <img src="images/avatar_default.jpg" class="img-circle">
+                                        <img src="images/logo/'.$r['server'].'.png" class="img-circle">
                                       </a>
                                       <a href="#" class="clear">
                                         <small class="pull-right">'.date('d/m/y H:i',$r['fecha']).'</small>
-                                        <strong class="block">'.$r['server'].'</strong>
-                                        <small>'.$r['descripcion'].' '.$r['currency'].' '.$r['valor'].' '.$r['sistema'].'</small>
+                                        <strong class="block">'.$r['descripcion'].'</strong>
+                                        <small>'.$r['server'].' - '.$r['sistema'].'</small>
+                                        <strong><small class="pull-right"> '.$r['currency'].' '.$r['valor'].' </small></strong>
                                       </a>
                                     </li>';
                                 }
@@ -260,9 +284,27 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                               </ul>
                             </div>                            
                             <div class="tab-pane" id="tab3">
-                              <div class="text-center wrapper">
-                                <i class="icon-spinner icon-spin icon-large"></i>
-                              </div>
+                              <ul class="list-group m-b-none m list-group-lg list-group-sp">
+                              
+                              <?php
+                              $res=$MySQLEco->execute('SELECT d.`descripcion` as descripcion,d.`id` as id,d.`costo` as valor,d.`fecha` as fecha,c.cur as currency,sp.name as sistema FROM `gastos` as d, currency as c,sistemasdepago as sp WHERE d.`currency`=c.id AND d.`metododepago`=sp.id ORDER BY d.fecha DESC ');
+                              foreach($res as $r){
+                                  echo '
+                                    <li class="list-group-item">
+                                      <a href="#" class="thumb-sm pull-left m-r-sm">
+                                        <img src="images/avatar_default.jpg" class="img-circle">
+                                      </a>
+                                      <a href="#" class="clear">
+                                        <small class="pull-right">'.date('d/m/y H:i',$r['fecha']).'</small>
+                                        <strong class="block">'.$r['descripcion'].'</strong>
+                                        <small>'.$r['sistema'].' </small>
+                                        <strong><small class="pull-right"> '.$r['currency'].' '.$r['valor'].' </small></strong>
+                                      </a>
+                                    </li>';
+                                }
+                                ?>
+                                
+                              </ul>
                             </div>
                           </div>
                         </section>
