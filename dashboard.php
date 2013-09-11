@@ -206,10 +206,11 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                 </div>
               </div>
               <div class="wrapper bg-light pull-in b-b font-bold">
-                <a href="#" class="m-r"><i class="icon-bar-chart icon-2x icon-muted  v-middle"></i> Analysis</a>
-                <a href="#" class="m-r"><span class="badge up m-r-n bg-danger">4</span><i class="icon-envelope icon-2x icon-muted  v-middle"></i> Message</a>
-                <a href="#" class="m-r"><i class="icon-calendar icon-2x icon-muted  v-middle"></i> My Calendar</a>
-                <a href="#"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
+                <a href="analysis.php" target="search_iframe" class="m-r"><i class="icon-bar-chart icon-2x icon-muted  v-middle"></i> Analysis</a>
+                <a href="agregarLC.php" target="search_iframe" class="m-r"><i class="icon-gbp icon-2x icon-muted  v-middle"></i> Dar LCs</a>
+                <a href="http://minekkit.com/agregarrecoplas.php" target="search_iframe" class="m-r"><i class="icon-renminbi icon-2x icon-muted  v-middle"></i> Dar Recoplas</a>
+                <a href="http://minekkit.com/agregarCupon.php" target="search_iframe" class="m-r"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
+                <a href="agregarnoticia.php" target="search_iframe"><i class="icon-list icon-2x icon-muted  v-middle"></i> Noticias</a>
               </div>
             </header>
             <section>
@@ -217,98 +218,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                 <section>
                   <section  class="hbox stretch">
                     <aside>
-                      <section class="vbox">
-                        <header class="header bg-light dk">
-                          <ul class="nav nav-tabs">
-                            <li class="active"><a href="#tab1" data-toggle="tab">Estadisticas</a></li>
-                            <li class=""><a href="#tab2" data-toggle="tab">Donaciones</a></li>
-                            <li class=""><a href="#tab3" data-toggle="tab">Gastos</a></li>
-                          </ul>
-                        </header>
-                        <section class="scrollable">
-                          <div class="tab-content">
-                            <div class="tab-pane active" id="tab1">
-                              <div class="wrapper">
-                              <h1>Por dia</h1>
-                                <div id="donacion-area-dia" class="graph"></div>
-                                <h1>Por semana</h1>
-                                <div id="donacion-area-semana" class="graph"></div>
-                                <h1>Por mes</h1>
-                                <div id="donacion-area-mes" class="graph"></div>
-                                <div class="row m-t-lg">
-                                  <div class="col-sm-6">
-                                    <section class="panel">
-                                      <header class="panel-heading">Composite</header>
-                                      <div class="text-center clearfix">
-                                        <div class="m-t-lg padder">
-                                          <div class="sparkline" data-type="line" data-resize="true" data-height="100" data-width="100%" data-line-width="1" data-line-color="#dddddd" data-spot-color="#afcf6f" data-fill-color="" data-highlight-line-color="#eee" data-spot-radius="4" data-data="[330,250,200,325,350,380,250,320,345,450,250,250]"></div>
-                                          <div class="sparkline inline" data-type="bar" data-height="57" data-bar-width="6" data-bar-spacing="10" data-bar-color="#a4d55d">5,8,12,10,11,12,8,9,6,7,8,6,10,7</div>
-                                        </div>
-                                      </div>
-                                      <footer class="panel-footer text-sm">Check more data</footer>
-                                    </section>
-                                  </div>
-                                  <div class="col-sm-6">
-                                    <section class="panel">
-                                      <header class="panel-heading">Stacked</header>
-                                      <div class="panel-body text-center">
-                                        <div class="sparkline inline" data-type="bar" data-height="160" data-bar-width="12" data-bar-spacing="10" data-stacked-bar-color="['#afcf6f', '#eee']">5:5,8:4,12:5,10:6,11:7,12:2,8:6,9:3,5:5,4:9</div>
-                                        <ul class="list-inline text-muted axis"><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ul>
-                                      </div>
-                                    </section>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="tab-pane" id="tab2">
-                              <ul class="list-group m-b-none m list-group-lg list-group-sp">
-                              
-                              <?php
-                              $res=$MySQLEco->execute('SELECT d.`descripcion` as descripcion,d.`id` as id,d.`valor` as valor,d.`fecha` as fecha,c.cur as currency,s.name as server,sp.name as sistema FROM `donaciones` as d, currency as c,servidores as s, sistemasdepago as sp WHERE d.`currency`=c.id AND d.`servidor`=s.id AND d.`sistema`=sp.id ORDER BY d.fecha DESC ');
-                              foreach($res as $r){
-                                  echo '
-                                    <li class="list-group-item">
-                                      <a href="#" class="thumb-sm pull-left m-r-sm">
-                                        <img src="images/logo/'.$r['server'].'.png" class="img-circle">
-                                      </a>
-                                      <a href="#" class="clear">
-                                        <small class="pull-right">'.date('d/m/y H:i',$r['fecha']).'</small>
-                                        <strong class="block">'.$r['descripcion'].'</strong>
-                                        <small>'.$r['server'].' - '.$r['sistema'].'</small>
-                                        <strong><small class="pull-right"> '.$r['currency'].' '.$r['valor'].' </small></strong>
-                                      </a>
-                                    </li>';
-                                }
-                                ?>
-                                
-                              </ul>
-                            </div>                            
-                            <div class="tab-pane" id="tab3">
-                              <ul class="list-group m-b-none m list-group-lg list-group-sp">
-                              
-                              <?php
-                              $res=$MySQLEco->execute('SELECT d.`descripcion` as descripcion,d.`id` as id,d.`costo` as valor,d.`fecha` as fecha,c.cur as currency,sp.name as sistema FROM `gastos` as d, currency as c,sistemasdepago as sp WHERE d.`currency`=c.id AND d.`metododepago`=sp.id ORDER BY d.fecha DESC ');
-                              foreach($res as $r){
-                                  echo '
-                                    <li class="list-group-item">
-                                      <a href="#" class="thumb-sm pull-left m-r-sm">
-                                        <img src="images/avatar_default.jpg" class="img-circle">
-                                      </a>
-                                      <a href="#" class="clear">
-                                        <small class="pull-right">'.date('d/m/y H:i',$r['fecha']).'</small>
-                                        <strong class="block">'.$r['descripcion'].'</strong>
-                                        <small>'.$r['sistema'].' </small>
-                                        <strong><small class="pull-right"> '.$r['currency'].' '.$r['valor'].' </small></strong>
-                                      </a>
-                                    </li>';
-                                }
-                                ?>
-                                
-                              </ul>
-                            </div>
-                          </div>
-                        </section>
-                      </section>
+                      <iframe src="analysis.php" width="100%" height="100%" name="search_iframe" frameborder="application/x-zip-compressed"></iframe>
                     </aside>
                     <aside class="b-l aside-lg">
                       <section class="vbox">
@@ -359,6 +269,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                               </div>
                             </div>
                           </div>
+                          
                         </section>
                       </section>                      
                     </aside>

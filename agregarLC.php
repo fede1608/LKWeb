@@ -1,4 +1,56 @@
+<?php
 
+/**
+ * @author fede1
+ * @copyright 2013
+ */
+ define('IN_MYBB', NULL);
+require_once 'forum/global.php';
+require_once 'forum/MyBBIntegrator.php';
+$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config); 
+$forumpath = 'forum/';
+
+chdir($forumpath);
+require_once MYBB_ROOT."inc/class_parser.php";
+$parser = new postParser;
+chdir('../');
+include_once 'statsfeed.php'; 
+include_once("session.php");
+
+require_once 'libs/mysql.inc.php';
+require_once 'libs/config.inc.php';
+
+
+if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
+   print_r($MyBBI->isSuperAdmin(0));
+    echo '<script language="javascript">
+			window.top.location="signin.php"
+			</script>';
+    exit();
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Admin | Overflow Development Team</title>
+  <meta name="description" content="Admin" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="css/font.css" type="text/css" cache="false" />
+  <link rel="stylesheet" href="css/plugin.css" type="text/css" />
+  <link rel="stylesheet" href="css/app.css" type="text/css" />
+  <link rel="stylesheet" href="css/lkcss.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="js/ie/respond.min.js" cache="false"></script>
+    <script src="js/ie/html5.js" cache="false"></script>
+    <script src="js/ie/fix.js" cache="false"></script>
+  <![endif]-->
+</head>
+<body>
+<section class="vbox">
 <?php
 include_once 'libs/config.inc.php';
 if(isset($_POST['user'])){
@@ -38,22 +90,22 @@ $query = "SELECT *  FROM `accounts` WHERE `login` = \"".$_POST['user']."\"";
 }else echo "Has ingresado mal algo, fijate.";
 }elseif(!$_POST['pass']=="linekkitrlz") echo "No eres Admin capo. Tu IP ha sido Registrada, serás inmediatamente Banneado del Servidor por intento de Hack.";
 }else{ ?>
-<h1>Agregar Recoplas</h1>
-<form name="agregar" method="POST" action="./agregarLC.php" style="margin-top: 0px;margin-left: 220px;">
-				<br>
-				<br>
-				<label>Nombre:</label><br><span class="field"><input type="text" id="user" name="user" value="Username"style="width:300px"></span>
-				<br><label>AdminPass:</label><br><span class="field"><input type="password" id="pass" name="pass" value="password"style="width:300px"></span>
-				<br><label>Linekkit Coins:</label><br><span class="field"><input type="text" id="reco" name="reco" value="Recoplas"style="width:300px"></span>
-				<br>
+<div class="col-lg-4 col-lg-offset-4">
+<h1>Agregar Linekkit Coins</h1>
+<form name="agregar" method="POST" action="./agregarLC.php" style="margin-top: 0px;margin-left: 220px;" class="panel-body">
+				
+				<label>Nombre:</label><br><span class="field"><input class="form-control" type="text" id="user" name="user" value="Username"style="width:300px"></span>
+				<label>AdminPass:</label><br><span class="field"><input class="form-control" type="password" id="pass" name="pass" value="password"style="width:300px"></span>
+				<label>Linekkit Coins:</label><br><span class="field"><input class="form-control" type="text" id="reco" name="reco" value="Linekkit Coins"style="width:300px"></span>
 				
 				
-				<br>
+				
+				
 				<hr class="clear">
-				<br>
-				<input type="button" onclick="document.location='./index.php'" class="button" value="Atras">
-				<br>
-				<input class="button" type="submit" value="Crear">
+				
+				<input type="button" onclick="document.location='./index.php'" class=" btn btn-info" value="Atras">
+				
+				<input class=" btn btn-success" type="submit" value="Crear">
 </form>
 <?php
 };
