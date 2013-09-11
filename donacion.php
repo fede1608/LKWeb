@@ -196,8 +196,8 @@ if(!isacmlogged()){
                             <h5 class="letras-blancas" style="text-align:center; font-family:Alegreya SC">
                             Comunicate con nosotros para donar por estos métodos
                             </h5>
-                            <a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="icon-facebook pull-left"></i><b>MP Facebook</b></a>
-                            <a href="#" class="btn btn-warning btn-block m-b-sm letras-negras"><i class="icon-group pull-left"></i><b>Post en foro</b></a>
+                            <a href="https://www.facebook.com/Linekkit" class="btn btn-facebook btn-block m-b-sm"><i class="icon-facebook pull-left"></i><b>MP Facebook</b></a>
+                            <a href="http://linekkit.com/forum/newthread.php?fid=4" class="btn btn-warning btn-block m-b-sm letras-negras"><i class="icon-group pull-left"></i><b>Post en foro</b></a>
                             </section>
                         </div>
                         <!-- / Columna derecha -->
