@@ -210,7 +210,8 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                 <a href="agregarLC.php" target="search_iframe" class="m-r"><i class="icon-gbp icon-2x icon-muted  v-middle"></i> Dar LCs</a>
                 <a href="http://minekkit.com/agregarrecoplas.php" target="search_iframe" class="m-r"><i class="icon-renminbi icon-2x icon-muted  v-middle"></i> Dar Recoplas</a>
                 <a href="http://minekkit.com/agregarCupon.php" target="search_iframe" class="m-r"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
-                <a href="agregarnoticia.php" target="search_iframe"><i class="icon-list icon-2x icon-muted  v-middle"></i> Noticias</a>
+                <a href="agregarnoticia.php" target="search_iframe" class="m-r"><i class="icon-list icon-2x icon-muted  v-middle"></i> Noticias</a>
+                <a href="agregargasto.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Gasto</a>
               </div>
             </header>
             <section>

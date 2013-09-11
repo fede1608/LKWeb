@@ -8,4 +8,5 @@ $database = 'linekkitlogin';
 $dblogin = 'linekkitlogin';
 $dbgame = 'linekkittest';
 $dbnoticias= 'noticias';
+$dbeconomia= 'economia';
 ?>
