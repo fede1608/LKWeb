@@ -1,3 +1,14 @@
+<?php
+
+include_once("session.php");
+if(!isacmlogged()){
+    echo '<script language="javascript">
+			window.top.location="signin.php"
+			</script>';
+    exit();
+    die();
+}
+?>
 <div class="modal-dialog">
   <div class="modal-content">
     <div class="modal-header">
@@ -29,7 +40,9 @@
                             <i class="icon-level-up"></i>+0
                           </td>
                           <td>
-                          <a href="modalMP.php" data-toggle="ajaxModal" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
+                          <form id="mp15" target="MercadoPago" action="https://www.mercadopago.com/mla/buybutton" method="post" style="margin-bottom:0"> <!--<input class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0" type="submit" value="Donar">--><a  href="javascript:void()" onclick="document.getElementById('mp15').submit();" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a> <input type="hidden" name="acc_id" value="528004574"> <input type="hidden" name="url_cancel" value="http://linekkit.com/donar.php"> <input type="hidden" name="item_id" value="1"> <input type="hidden" name="name" value="LinekkitCoins-15:<?php echo $userdata['login']; ?>"> <input type="hidden" name="currency" value="ARG"> <input type="hidden" name="price" value="15.0"> <input type="hidden" name="url_process" value="http://linekkit.com/index.php"> <input type="hidden" name="url_succesfull" value="http://linekkit.com/index.php?valid=donar"> <input type="hidden" name="shipping_cost" value=""> <input type="hidden" name="enc" value="qvsQojJJwjeOQYGtEWTVQFLEPCU%3D"> <input type="hidden" name="ship_cost_mode" value=""> <input type="hidden" name="op_retira" value=""> <input type="hidden" name="extra_part" value="1234"> </form>
+                            
+                          
                           </td>
                         </tr>
                         <tr>                    
@@ -39,7 +52,8 @@
                             <i class="icon-level-up"></i>+2
                           </td>
                            <td>
-                          <a href="modalMP.php" data-toggle="ajaxModal" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
+                           <form id="mp27" target="MercadoPago" action="https://www.mercadopago.com/mla/buybutton" method="post" style="margin-bottom:0">  <input type="hidden" name="acc_id" value="528004574"> <input type="hidden" name="url_cancel" value="http://linekkit.com/donar.php"> <input type="hidden" name="item_id" value="1"> <input type="hidden" name="name" value="LinekkitCoins-27:<?php echo $userdata['login']; ?>"> <input type="hidden" name="currency" value="ARG"> <input type="hidden" name="price" value="25.0"> <input type="hidden" name="url_process" value="http://minekkit.no-ip.org/recompensas.php"> <input type="hidden" name="url_succesfull" value="http://linekkit.com/index.php?valid=donar"> <input type="hidden" name="shipping_cost" value=""> <input type="hidden" name="enc" value="qvsQojJJwjeOQYGtEWTVQFLEPCU%3D"> <input type="hidden" name="ship_cost_mode" value=""> <input type="hidden" name="op_retira" value=""> <input type="hidden" name="extra_part" value="1234"> </form>
+                          <a  href="javascript:void()" onclick="document.getElementById('mp27').submit();" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
                           </td>
                         </tr>
                         <tr>                    
@@ -49,7 +63,9 @@
                             <i class="icon-level-up"></i>+5
                           </td>
                            <td>
-                          <a href="modalMP.php" data-toggle="ajaxModal" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
+                           <form id="mp55" target="MercadoPago" action="https://www.mercadopago.com/mla/buybutton" method="post" style="margin-bottom:0"> <input type="hidden" name="acc_id" value="528004574"> <input type="hidden" name="url_cancel" value="http://linekkit.com/donar.php"> <input type="hidden" name="item_id" value="1"> <input type="hidden" name="name" value="LinekkitCoins-55:<?php echo $userdata['login']; ?>"> <input type="hidden" name="currency" value="ARG"> <input type="hidden" name="price" value="50.0"> <input type="hidden" name="url_process" value="http://minekkit.no-ip.org/recompensas.php"> <input type="hidden" name="url_succesfull" value="http://linekkit.com/index.php?valid=donar"> <input type="hidden" name="shipping_cost" value=""> <input type="hidden" name="enc" value="qvsQojJJwjeOQYGtEWTVQFLEPCU%3D"> <input type="hidden" name="ship_cost_mode" value=""> <input type="hidden" name="op_retira" value=""> <input type="hidden" name="extra_part" value="1234"> </form>
+
+                          <a  href="javascript:void()" onclick="document.getElementById('mp55').submit();" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
                           </td>
                         </tr>
                         <tr>                    
@@ -59,7 +75,9 @@
                             <i class="icon-level-up"></i>+20
                           </td>
                            <td>
-                          <a href="modalMP.php" data-toggle="ajaxModal" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
+                           <form id="mp120" target="MercadoPago" action="https://www.mercadopago.com/mla/buybutton" method="post" style="margin-bottom:0;">  <input type="hidden" name="acc_id" value="528004574"> <input type="hidden" name="url_cancel" value="http://linekkit.com/donar.php"> <input type="hidden" name="item_id" value="1"> <input type="hidden" name="name" value="LinekkitCoins-120:<?php echo $userdata['login']; ?>"> <input type="hidden" name="currency" value="ARG"> <input type="hidden" name="price" value="100.0"> <input type="hidden" name="url_process" value="http://minekkit.no-ip.org/recompensas.php"> <input type="hidden" name="url_succesfull" value="http://linekkit.com/index.php?valid=donar"> <input type="hidden" name="shipping_cost" value=""> <input type="hidden" name="enc" value="qvsQojJJwjeOQYGtEWTVQFLEPCU%3D"> <input type="hidden" name="ship_cost_mode" value=""> <input type="hidden" name="op_retira" value=""> <input type="hidden" name="extra_part" value="1234"> </form>
+
+                          <a  href="javascript:void()" onclick="document.getElementById('mp120').submit();" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
                           </td>
                         </tr>
                         <tr>                    
@@ -69,21 +87,26 @@
                             <i class="icon-level-up"></i>+50
                           </td>
                            <td>
-                          <a href="modalMP.php" data-toggle="ajaxModal" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
-                          </td>
+                           <form id="mp250" target="MercadoPago" action="https://www.mercadopago.com/mla/buybutton" method="post" style="margin-bottom:0">  <input type="hidden" name="acc_id" value="528004574"> <input type="hidden" name="url_cancel" value="http://linekkit.com/donar.php"> <input type="hidden" name="item_id" value="1"> <input type="hidden" name="name" value="LinekkitCoins-250:<?php echo $userdata['login']; ?>"> <input type="hidden" name="currency" value="ARG"> <input type="hidden" name="price" value="200.0"> <input type="hidden" name="url_process" value="http://minekkit.no-ip.org/recompensas.php"> <input type="hidden" name="url_succesfull" value="http://linekkit.com/index.php?valid=donar"> <input type="hidden" name="shipping_cost" value=""> <input type="hidden" name="enc" value="qvsQojJJwjeOQYGtEWTVQFLEPCU%3D"> <input type="hidden" name="ship_cost_mode" value=""> <input type="hidden" name="op_retira" value=""> <input type="hidden" name="extra_part" value="1234"> </form>
+
+                          <a  href="javascript:void()" onclick="document.getElementById('mp250').submit();" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>                          </td>
                         </tr>
                       </tbody>
                     </table>                    
                   </section>
                   
                   <div class="row"></div>
+                  <form  target="MercadoPago" action="https://www.mercadopago.com/mla/buybutton" method="post">
                   <div class="input-group m-b">
                       <span class="input-group-addon">Donación libre: $</span>
-                      <input type="text" class="form-control">
+                         <input type="hidden" name="acc_id" value="528004574"> <input type="hidden" name="url_cancel" value="http://linekkit.com/donar.php"> <input type="hidden" name="item_id" value="1"> <input type="hidden" name="name" value="LinekkitCoins-Libre:<?php echo $userdata['login']; ?>"> <input type="hidden" name="currency" value="ARG"> 
+                      <input type="text" class="form-control" name="price" value="10.0">                       
                       <span class="input-group-btn">
-                            <button class="btn btn-white" type="button">Donar</button>
+                            <button class="btn btn-white" type="submit">Donar</button>
                           </span>
-                  </div>
+                          <input type="hidden" name="url_process" value="http://linekkit.com/"> <input type="hidden" name="url_succesfull" value="http://linekkit.com/index.php?valid=donar"> <input type="hidden" name="shipping_cost" value=""> <input type="hidden" name="enc" value="qvsQojJJwjeOQYGtEWTVQFLEPCU%3D"> <input type="hidden" name="ship_cost_mode" value=""> <input type="hidden" name="op_retira" value=""> <input type="hidden" name="extra_part" value="1234">  </center>
+
+                  </div></form>
                   <div style="text-align:center">
                   Donación libre: $1 = 1 LC. No incluye bonus.
                   </div>

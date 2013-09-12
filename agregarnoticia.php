@@ -79,9 +79,9 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
 				
 				<hr class="clear">
 				
-				<input class=" btn btn-info" type="button" onclick="document.location='./index.php'" value="Atras">
+				<input class="btn btn-info" type="button" onclick="document.location='./index.php'" value="Atras">
 				
-				<input class=" btn btn-success" type="submit" value="Crear">
+				<input class="btn btn-success" type="submit" value="Crear">
 			</form>
             </div>
 			<?php } ?>	
