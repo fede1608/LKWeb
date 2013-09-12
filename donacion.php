@@ -79,7 +79,7 @@ if(!isacmlogged()){
                         <!-- Columna izquierda -->
                         <div class="col-lg-5">
                             <!-- .scrollable -->
-                                        <section class="panel fondo-transparente-negro borde-transparente-negro">
+                                        <section class="panel fondo-transparente-negro-075 borde-transparente-negro">
                         
                                             <header class="panel-heading text-center fondo-solido-rojo-1 borde-transparente-negro">    
                                                                         <b>Método MercadoPago</b>
@@ -134,7 +134,7 @@ if(!isacmlogged()){
                         <!-- Columna central -->
                         <div class="col-lg-5">
                             <!-- .scrollable -->
-                                        <section class="panel fondo-transparente-negro borde-transparente-negro">
+                                        <section class="panel fondo-transparente-negro-075 borde-transparente-negro">
                         
                                             <header class="panel-heading text-center fondo-solido-azul-1 borde-transparente-negro">    
                                                                         <b>Método PayPal</b>
@@ -185,7 +185,7 @@ if(!isacmlogged()){
                     
                     <!-- Columna derecha -->
                         <div class="col-lg-2">
-                            <section class="panel fondo-transparente-negro borde-transparente-negro">
+                            <section class="panel fondo-transparente-negro-075 borde-transparente-negro">
                                 <header class="panel-heading text-center bg-warning borde-transparente-negro letras-negras">
                                     <b>Otros métodos</b>
                               </header>
