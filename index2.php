@@ -99,173 +99,185 @@ if(!isacmlogged()){
                              		<div class="row m-t-lg"></div>
                              
                                     <!-- Columna 1 -->  		
-                                    <div class="col-lg-4">
-                                        <!-- TOP PK-->
-                                        <section class="panel fondo-solido-azul-1 no-borders">
-                                          <div class="row">
-                                            <div class="col-xs-6">
-                                              <div class="wrapper">
-                                                <p>All time sales</p>
-                                                <p class="h2 font-bold">32.5%</p>
-                                                <div class="progress progress-xs progress-striped active m-b-sm">
-                                                  <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
-                                                </div>
-                                                <div class="text-sm">of visitors purchased this item.</div>
-                                              </div>
-                                            </div>
-                                            <div class="col-xs-6 wrapper text-center">
-                                              <div class="inline m-t-sm">
-                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
-                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
-                          							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
-                          							</div>
-                        						  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        <!-- / TOP PK-->
+                                    <div class="col-lg-12">
+                                        <!-- TOP mejores jugadores-->
+                                        <section class="panel fondo-solido-azul-3 no-borders">
+                                        <div class="row wrapper" style="padding-bottom:0">
+                                        <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0"><b>Los mejores jugadores de hoy</b></h2>
                                         
-                                        <!-- TOP PK-->
-                                          <div class="row">
-                                            <div class="col-xs-6">
-                                              <div class="wrapper">
-                                                <p>All time sales</p>
-                                                <p class="h2 font-bold">32.5%</p>
-                                                <div class="progress progress-xs progress-striped active m-b-sm">
-                                                  <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="32.5%" style="width: 32.5%"></div>
+                                        </div>
+                                        
+                                        <div class="row linea-azul-1"></div>
+                                        
+                                        <div class="row  wrapper-lg">
+                                            <div class="col-xs-1" style="width:14%">
+                                                <div class="row text-center">
+                                                    <i class="icon-trophy" style="font-size:122px; color:rgb(255, 194, 0);"></i>
                                                 </div>
-                                                <div class="text-sm">of visitors purchased this item.</div>
-                                              </div>
-                                            </div>
-                                            <div class="col-xs-6 wrapper text-center">
-                                              <div class="inline m-t-sm">
-                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
-                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
-                          							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
-                          							</div>
-                        						  </div>
+                                                <div class="row text-center">
+                                                <b>Mejores puntajes</b>
                                                 </div>
-                                              </div>
+                                            
+                                            
                                             </div>
-                                          </div>
+                                            <div class="col-xs-11" style="width:86%">
+                                            
+                                            	<!-- #1 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star"></i> 1</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #1 -->
+                                                
+                                                <!-- #2 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 2</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #2 -->
+                                                
+                                                <!-- #3 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 3</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #3 -->
+                                                
+                                                
+                                                <!-- #4 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 4</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #4 -->
+                                                
+                                                
+                                                <!-- #5 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 5</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #5 -->
+                                                
+                                                <!-- #6 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 6</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #6 -->
+                                                
+                                                <!-- #7 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 7</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #7 -->
+                                                
+                                                
+                                            
+                                            </div>
+                                        </div>
+                                        
+
+                                          <div class="row linea-azul-1"></div>                                                                                
                                         </section>
-                                        <!-- / TOP PK-->
+                                        <!-- / TOP mejores jugadores-->
                                         
                                     </div>
                                     <!-- / Columna 1 -->
                                     
-                                    <!-- Columna 2 -->
-                                    <div class="col-lg-4">
-                                        <!-- TOP PVP-->
-                                        <section class="panel bg-success no-borders">
-                                          <div class="row">
-                                            <div class="col-xs-6">
-                                              <div class="wrapper">
-                                                <p>Mejor jugador <strong>Player Vs. Player (PVP)</strong></p>
-                                                <p class="h2 font-bold"><?php echo $todayStats[2]['cant']; ?> Kills</p>
-                                                <p class="h4 font-bold"><?php echo $todayStats[2]['pj'].'</p> Level '.$todayStats[2]['lvl']; ?>
-                                              </div>
-                                            </div>
-                                            <div class="col-xs-6 wrapper text-center">
-                                              <div class="inline m-t-sm">
-                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
-                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
-                          							<div class="thumb-lg">
-                           								<img src="images/<?php echo $todayStats[2]['race']; ?>.png" style="width:128px !important; height:128px !important;" class="img-circle">
-                          							</div>
-                        						  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </section>
-                                        <!-- / TOP PVP -->
-                                        
-                                        <!-- TOP PK-->
-                                        <section class="panel fondo-solido-rojo-1 no-borders">
-                                          <div class="row">
-                                            <div class="col-xs-6">
-                                              <div class="wrapper">
-                                                <p>Mejor jugador <strong>Player Killer (PK)</strong></p>
-                                                <p class="h2 font-bold"><?php echo $todayStats[1]['cant']; ?> Kills</p>
-                                                <p class="h4 font-bold"><?php echo $todayStats[1]['pj'].'</p> Level '.$todayStats[1]['lvl']; ?>
-                                              </div>
-                                            </div>
-                                            <div class="col-xs-6 wrapper text-center">
-                                              <div class="inline m-t-sm">
-                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
-                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
-                          							<div class="thumb-lg">
-                           								<img src="images/<?php echo $todayStats[1]['race']; ?>.png" style="width:128px !important; height:128px !important;" class="img-circle">
-                          							</div>
-                        						  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </section>
-                                        <!-- / TOP PK-->
-                                        
-                                    </div>
-                                    <!-- / Columna 2 -->
                                     
-                                    <!-- Columna 3 -->
-                                    <div class="col-lg-4">
-                                        <!-- TOP más eventos-->
-                                        <section class="panel bg-primary no-borders">
-                                          <div class="row">
-                                            <div class="col-xs-6">
-                                              <div class="wrapper">
-                                                <p>Jugador con más <strong>eventos ganados</strong></p>
-                                                <p class="h2 font-bold">8 <span class="h3 font-bold">Victorias</span></p>
-                                                <p class="h4 font-bold">JugadorMegamanX</p>
-                                              </div>
-                                            </div>
-                                            <div class="col-xs-6 wrapper text-center">
-                                              <div class="inline m-t-sm">
-                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
-                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
-                          							<div class="thumb-lg">
-                           								<img src="images/avatar.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
-                          							</div>
-                        						  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </section>
-                                        <!-- / TOP más eventos-->
-                                        
-                                        <!-- Acceso a donación-->
-                                        <section class="panel bg-warning no-borders">
-                                          <div class="row">
-                                            <div class="col-xs-6">
-                                              <div class="wrapper letras-negras">
-                                                <p>Potencia tu experiencia de juego</p>
-                                                <p class="h2 font-bold letras-negras">DONACION</p>
-                                                <div class="text-sm">y alcanzá los tops de Linekkit antes que nadie</div>
-                                              </div>
-                                            </div>
-                                            <div class="col-xs-6 wrapper text-center">
-                                              <div class="inline m-t-sm">
-                                                <div class="easypiechart" data-percent="32.5" data-line-width="8" data-bar-color="#ffffff" data-track-Color="#c79d43" data-scale-Color="false" data-size="100">
-                                                  <div class="easypiechart" data-percent="75" data-line-width="5" data-loop="false" data-bar-color="#92cf5c" data-track-Color="#f5f5f5" data-scale-Color="false" data-size="150">
-                          							<div class="thumb-lg">
-                           								<img src="images/reward_donacion.jpg" style="width:128px !important; height:128px !important;" class="img-circle">
-                          							</div>
-                        						  </div>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </section>
-                                        <!-- / Acceso a donación-->
-                                        
-                                    </div> 
-                                    <!-- / Columna 3 -->
                                     
                                     <!-- Margen inferior-->
                              		<div class="row m-b-lg"></div>
