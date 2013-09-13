@@ -179,6 +179,12 @@ function getTodayTops(){
         $obj[$i]['lvl']=$char[0]['level'];
         $obj[$i]['class']=$class[$char[0]['classId']];
     }
+    $event=$MySQLLK->execute('SELECT c.char_name as player,c.level,c.race,c.classId,sum(n.`wins`) as suma FROM `nexus_stats_global` as n,characters as c  WHERE n.`player`=c.charId GROUP BY n.`player` ORDER BY suma DESC LIMIT 1');
+    $obj[4]['cant']=$event[0]['suma'];
+    $obj[4]['pj']=$event[0]['player'];
+    $obj[4]['race']=$race[$event[0]['race']];
+    $obj[4]['lvl']=$event[0]['level'];
+    $obj[4]['class']=$class[$event[0]['classId']];
     return $obj;
 }
     
