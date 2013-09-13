@@ -9,7 +9,7 @@
         <div class="col-sm-12">
                   <section class="panel">
                     <header class="panel-heading">
-                      <span class="label bg-danger pull-right">Descuento activo: 20%</span>
+                      <!--<span class="label bg-danger pull-right">Descuento extra activo: 0%</span>-->
                       <b>Paquetes de donación con bonus</b>
                     </header>
                     <table class="table table-striped m-b-none text-sm"  style="vertical-align:middle;">

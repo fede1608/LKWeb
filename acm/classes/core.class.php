@@ -9,6 +9,7 @@ require_once '../forum/global.php';
 require_once '../forum/MyBBIntegrator.php';
 require_once '../forum/inc/datahandlers/user.php';
 require_once '../libs/mysql.inc.php';
+require_once '../libs/config.inc.php';
 
 
 class core {
@@ -25,6 +26,9 @@ class core {
 	}
 
 	public function loggout() {
+	   global $mybb, $db, $cache, $plugins, $lang, $config;
+       $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config);
+       $MyBBI->logout();
 		ACCOUNT::load()->loggout();
 		MSG::add_valid(LANG::i18n('_logout'));
 		$this->index();
@@ -43,7 +47,7 @@ class core {
 	}
     
 	public function login() {
-        global $mybb, $db, $cache, $plugins, $lang, $config;
+        global $mybb, $db, $cache, $plugins, $lang, $config,$pass,$dblogin;
         $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config);
 		if(empty($_POST['Luser']) || empty($_POST['Lpwd']))
 		{
@@ -58,7 +62,7 @@ class core {
             }
             else
             {   
-                $mysqldb= new SQL("freya.linekkit.com:3306", "root", "overflow1021", "linekkitlogin");
+                $mysqldb= new SQL("freya.linekkit.com:3306", "root", $pass, $dblogin);
                 $query = $mysqldb->execute('SELECT * FROM accounts WHERE login="'.$db->escape_string($_POST['Luser']).'"');
                 $useracm = $query[0];
                     
@@ -159,7 +163,7 @@ class core {
 		//chdir('acm/');
 		// print_r($mybb);
 		// print_r($db);
-        if(isset($_POST['Fuser'])){
+        if((isset($_POST['Fuser']))&&($_POST['Fuser']!='')){
     		$MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config);
     		$infoUser	= array(
     			'username', 'password', 'password2', 'email', 'email2', 'referrer', 'timezone', 'language',
