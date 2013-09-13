@@ -96,26 +96,29 @@ if(!isacmlogged()){
                                 <div id="collapseTop" class="panel-collapse in">
 
                              		<!-- Margen superior-->
-                             		<div class="row m-t-lg"></div>
+                             		<div class="row"></div>
                              
                                     <!-- Columna 1 -->  		
                                     <div class="col-lg-12">
-                                        <!-- TOP mejores jugadores-->
-                                        <section class="panel fondo-solido-azul-3 no-borders">
+                                        
+                                        
+                                        <section class="panel fondo-transparente-000 borde-transparente-negro no-borders">
                                         <div class="row wrapper" style="padding-bottom:0">
-                                        <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0"><b>Los mejores jugadores de hoy</b></h2>
+                                        <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0"><b>Los mejores jugadores de hoy</b></h1>
                                         
                                         </div>
                                         
                                         <div class="row linea-azul-1"></div>
                                         
+                                        <!-- TOP mejores jugadores-->
                                         <div class="row  wrapper-lg">
+                                            
                                             <div class="col-xs-1" style="width:14%">
                                                 <div class="row text-center">
                                                     <i class="icon-trophy" style="font-size:122px; color:rgb(255, 194, 0);"></i>
                                                 </div>
-                                                <div class="row text-center">
-                                                <b>Mejores puntajes</b>
+                                                <div class="row text-center letras-blancas">
+                                                	<b>Mejores puntajes</b>
                                                 </div>
                                             
                                             
@@ -133,7 +136,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -153,7 +156,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -173,7 +176,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -194,7 +197,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -215,7 +218,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -235,7 +238,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -255,7 +258,7 @@ if(!isacmlogged()){
                                                     <div class="row" style="padding-left:38px;">
                                                         <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
-                                                    <div class="row text-center">
+                                                    <div class="row text-center letras-blancas">
                                                         JugadorMegamanXX
                                                         <br>
                                                         123456789 Puntos
@@ -269,10 +272,180 @@ if(!isacmlogged()){
                                             </div>
                                         </div>
                                         
+										<!-- / TOP mejores jugadores-->
+                                        
+                                        <div class="row linea-azul-1"></div>   
+                                        
+                                        <!-- TOP PVP -->
+                                        <div class="col-xs-6">
+                                        <div class="row  wrapper-lg" style="padding-right:0">
+                                            
+                                            <div class="col-xs-2" style="width:22%">
+                                                <div class="row">
+                                                    <i class="icon-trophy" style="font-size:102px; color:rgb(197, 197, 197);"></i>
+                                                </div>
+                                                <div class="row text-center letras-blancas">
+                                                	<b>Mejores PVP</b>
+                                                </div>
+                                            
+                                            
+                                            </div>
+                                            <div class="col-xs-10" style="width:78%">
+                                            
+                                            	<!-- #1 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4" style="width:38%"></div>
+                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star"></i> 1</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:48px;">
+                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        21 Kills
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #1 -->
+                                                
+                                                <!-- #2 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4" style="width:38%"></div>
+                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 2</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:48px;">
+                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        12 Kills
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #2 -->
+                                                
+                                                <!-- #3 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4" style="width:38%"></div>
+                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 3</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:48px;">
+                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        8 Kills
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #3 -->
+                                                                                                
+                                                
+                                            
+                                            </div>
+                                        </div>
 
-                                          <div class="row linea-azul-1"></div>                                                                                
+                                        </div>
+                                        <!-- / TOP PVP-->
+                                        
+                                        <!-- TOP PK -->
+                                        <div class="col-xs-6">
+                                        <div class="row  wrapper-lg" style="padding-left:0">
+                                            
+                                            <div class="col-xs-2" style="width:22%">
+                                                <div class="row">
+                                                    <i class="icon-trophy" style="font-size:102px; color:rgb(192, 69, 0);"></i>
+                                                </div>
+                                                <div class="row text-center letras-blancas">
+                                                	<b>Mejores PK</b>
+                                                </div>
+                                            
+                                            
+                                            </div>
+                                            <div class="col-xs-10" style="width:78%">
+                                            
+                                            	<!-- #1 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4" style="width:38%"></div>
+                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star"></i> 1</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:48px;">
+                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        21 Kills
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #1 -->
+                                                
+                                                <!-- #2 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4" style="width:38%"></div>
+                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 2</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:48px;">
+                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        12 Kills
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #2 -->
+                                                
+                                                <!-- #3 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4" style="width:38%"></div>
+                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 3</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:48px;">
+                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        8 Kills
+                                                    </div>
+                                                
+                                                </div>
+                                                <!-- / #3 -->
+                                                                                                
+                                                
+                                            
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                        <!-- / TOP PK-->
+                                                                                    
                                         </section>
-                                        <!-- / TOP mejores jugadores-->
+                                        
                                         
                                     </div>
                                     <!-- / Columna 1 -->
