@@ -209,7 +209,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                 <a href="analysis.php" target="search_iframe" class="m-r"><i class="icon-bar-chart icon-2x icon-muted  v-middle"></i> Analysis</a>
                 <a href="agregarLC.php" target="search_iframe" class="m-r"><i class="icon-gbp icon-2x icon-muted  v-middle"></i> Dar LCs</a>
                 <a href="http://minekkit.com/agregarrecoplas.php" target="search_iframe" class="m-r"><i class="icon-renminbi icon-2x icon-muted  v-middle"></i> Dar Recoplas</a>
-                <a href="http://minekkit.com/agregarCupon.php" target="search_iframe" class="m-r"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>
+                <!--<a href="http://minekkit.com/agregarCupon.php" target="search_iframe" class="m-r"><i class="icon-cog icon-2x icon-muted  v-middle"></i> Settings</a>-->
                 <a href="agregarnoticia.php" target="search_iframe" class="m-r"><i class="icon-list icon-2x icon-muted  v-middle"></i> Noticias</a>
                 <a href="agregargasto.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Gasto</a>
               </div>
@@ -236,36 +236,50 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                             <div class="panel">
                               <div class="panel-heading">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                                  Collapsible Group Item #1
+                                  Minekkit Resourses
                                 </a>
                               </div>
-                              <div id="collapseOne" class="panel-collapse in">
+                              <div id="collapseOne" class="panel-collapse collapse">
                                 <div class="panel-body text-sm">
-                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt.
+                                  <a href="http://minekkit.com/Sets.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Set</a><br />
+                                  <a href="http://minekkit.com/Tools.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Tool</a><br />
+                                  <a href="http://minekkit.com/agregarCupon.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Cupon</a><br />
+                                  <a href="http://minekkit.com/agregarItem.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Item</a><br />
+                                  <a href="http://minekkit.com/agregarAlPack.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Add Al Pack</a><br />
+                                  <a href="http://minekkit.com/vermultis.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Ver Multis</a><br />
                                 </div>
                               </div>
                             </div>
                             <div class="panel">
                               <div class="panel-heading">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                                  Collapsible Group Item #2
+                                  Minekkit Logs
                                 </a>
                               </div>
                               <div id="collapseTwo" class="panel-collapse collapse">
                                 <div class="panel-body text-sm">
-                                  Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                   <a href="http://minekkit.com/Logs/" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Ver Carpeta</a><br />
+                                  <a href="http://minekkit.com/Logs/AgregarCuponLogs.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i>Agregar Cupon Logs</a><br />
+                                  <a href="http://minekkit.com/Logs/AgregarLogs.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Agregar Logs</a><br />
+                                  <a href="http://minekkit.com/Logs/Paygol.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Paygol Logs</a> <br /> 
+                                   <a href="http://minekkit.com/Logs/RedeemLogs.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Redeem Logs</a><br />
+                                  <a href="http://minekkit.com/Logs/SetsLogs.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Sets Logs</a><br />
+                                  <a href="http://minekkit.com/Logs/WebShopLogs.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> WebShop Logs</a><br />
+                                  <a href="http://minekkit.com/Logs/WebShopDebugLogs.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> WebShop Debug Logs</a><br />
                                 </div>
                               </div>
                             </div>
                             <div class="panel">
                               <div class="panel-heading">
                                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                                  Collapsible Group Item #3
+                                  Linekkit 
                                 </a>
                               </div>
                               <div id="collapseThree" class="panel-collapse collapse">
                                 <div class="panel-body text-sm">
-                                  Sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                                 <a href="Logs/" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Carpeta</a><br />
+                                 <a href="Logs/LogsCambioDePuntos.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Cambio De Puntos Logs</a><br />
+
                                 </div>
                               </div>
                             </div>
