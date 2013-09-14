@@ -155,7 +155,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
                                                         <i class="icon-star-half-full"></i> 2</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
@@ -180,7 +180,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
                                                         <i class="icon-star-half-full"></i> 3</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
@@ -206,7 +206,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
                                                         <i class="icon-star-empty"></i> 4</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
@@ -232,7 +232,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
                                                         <i class="icon-star-empty"></i> 5</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
@@ -257,7 +257,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
                                                         <i class="icon-star-empty"></i> 6</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
@@ -282,7 +282,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
                                                         <i class="icon-star-empty"></i> 7</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
@@ -357,7 +357,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-3 label bg-warning" style="font-size:12px;">
                                                         <i class="icon-star-half-full"></i> 2</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
@@ -382,7 +382,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-3 label fondo-solido-azul-1" style="font-size:12px;">
                                                         <i class="icon-star-empty"></i> 3</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
@@ -456,7 +456,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-3 label bg-warning" style="font-size:12px;">
                                                         <i class="icon-star-half-full"></i> 2</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
@@ -481,7 +481,7 @@ if(!isacmlogged()){
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <span class="col-xs-3 label fondo-solido-azul-1" style="font-size:12px;">
                                                         <i class="icon-star-empty"></i> 3</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
