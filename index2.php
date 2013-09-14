@@ -499,26 +499,39 @@ if(!isacmlogged()){
                                                                                             </div>
                                                                                             <div class="col-lg-8" style="text-align:center;">
                                                                                                     <div class="letras-blancas">
-                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                    <b>
-                                                                                                                            Personaje N°'.($con+1).'
-                                                                                                                    </b>
-                                                                                                            </h1>
-                                                                                                            <h2 style="font-family:Alegreya SC;">
-                                                                                                                    Nombre: '.$stat['name'].'
-                                                                                                                    <br>
-                                                                                                                    Raza: '.$stat['race'].'
-                                                                                                                    <br>
-                                                                                                                    Clase: '.$stat['class'].'
-                                                                                                            </h2>
-                                                                                                            <h1 style="font-family:Alegreya SC; margin-top:0">
-                                                                                                                    Nivel
-                                                                                                            </h1>
-                                                                                                            <h1 style="font-family:Alegreya SC; font-size:128px; margin-top:-35px">
-                                                                                                                    <b>
-                                                                                                                            '.$stat['level'].'
-                                                                                                                    </b>
-                                                                                                            </h1>
+                                                                       
+                                                                                                            <div class="row">
+																											
+																												<h2 class="m-t-none m-b-none"  style="font-family:Alegreya SC;">
+																														Nombre: '.$stat['name'].'
+																														<br>
+																														Raza: '.$stat['race'].'
+																														<br>
+																														Clase: '.$stat['class'].'
+																												</h2>
+																												
+																											</div>
+																											
+																											<div class="m-t-lg col-xs-12 row">
+																										
+																												<div class="col-xs-4">
+																													<div class=" bg-warning img-rounded">
+																														<h1 class="letras-negras" style="font-family:Alegreya SC; margin-top:0">
+																																Nivel
+																														</h1>
+																														<h1 class="letras-negras" style="font-family:Alegreya SC; font-size:128px; margin-top:-35px">
+																																<b>
+																																		'.$stat['level'].'
+																																</b>
+																														</h1>
+																													</div>
+																												</div>
+																												
+																												<div class="col-xs-8">
+																												TEST TEST TEST
+																												</div>
+																											
+																											</div>
                                                                                                     </div>
                                                                                                     
                                                                                                     <!-- Barra de XP-->
