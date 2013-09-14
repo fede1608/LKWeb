@@ -88,8 +88,8 @@ if(!isacmlogged()){
                         <div class="panel-group m-b" id="accordion10">
                             <div class="panel no-border fondo-transparente-negro-075">
                                 <div class="panel-heading fondo-transparente-000">
-                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
-                                    	<strong>Top jugadores de hoy</strong>
+                                    <a class="accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
+                                    	<strong>Minimizar</strong>
                                     </a>
                                 </div>
                                 
@@ -103,8 +103,8 @@ if(!isacmlogged()){
                                         
                                         
                                         <section class="panel fondo-transparente-000 borde-transparente-negro no-borders">
-                                        <div class="row wrapper" style="padding-bottom:0">
-                                        <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0"><b>Los mejores jugadores de hoy</b></h1>
+                                        <div class="row wrapper" style="padding-bottom:0; padding-top:0">
+                                        <h1 class="text-center" style="font-family:Alegreya SC; margin-top:0; color:rgb(243, 194, 0);"><b>Los mejores jugadores de hoy</b></h1>
                                         
                                         </div>
                                         
@@ -115,7 +115,7 @@ if(!isacmlogged()){
                                             
                                             <div class="col-xs-1" style="width:14%">
                                                 <div class="row text-center">
-                                                    <i class="icon-trophy" style="font-size:122px; color:rgb(255, 194, 0);"></i>
+                                                    <img class="img-rounded" src="images/emblem_1.jpg" width="150" height="150">
                                                 </div>
                                                 <div class="row text-center letras-blancas">
                                                 	<b>Mejores puntajes</b>
@@ -141,6 +141,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #1 -->
@@ -161,6 +166,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <div style="margin-top:11px"></div>
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #2 -->
@@ -181,6 +191,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #3 -->
@@ -202,6 +217,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #4 -->
@@ -223,6 +243,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #5 -->
@@ -243,6 +268,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #6 -->
@@ -263,6 +293,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         123456789 Puntos
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #7 -->
@@ -282,7 +317,7 @@ if(!isacmlogged()){
                                             
                                             <div class="col-xs-2" style="width:22%">
                                                 <div class="row">
-                                                    <i class="icon-trophy" style="font-size:102px; color:rgb(197, 197, 197);"></i>
+                                                <img class="img-rounded" src="images/emblem_2.jpg" width="120" height="120"> 
                                                 </div>
                                                 <div class="row text-center letras-blancas">
                                                 	<b>Mejores PVP</b>
@@ -308,6 +343,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         21 Kills
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #1 -->
@@ -328,6 +368,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         12 Kills
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #2 -->
@@ -348,6 +393,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         8 Kills
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #3 -->
@@ -366,7 +416,7 @@ if(!isacmlogged()){
                                             
                                             <div class="col-xs-2" style="width:22%">
                                                 <div class="row">
-                                                    <i class="icon-trophy" style="font-size:102px; color:rgb(192, 69, 0);"></i>
+                                                    <img class="img-rounded" src="images/emblem_4.jpg" width="120" height="120">
                                                 </div>
                                                 <div class="row text-center letras-blancas">
                                                 	<b>Mejores PK</b>
@@ -392,6 +442,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         21 Kills
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #1 -->
@@ -412,6 +467,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         12 Kills
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #2 -->
@@ -432,6 +492,11 @@ if(!isacmlogged()){
                                                         <br>
                                                         8 Kills
                                                     </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
                                                 
                                                 </div>
                                                 <!-- / #3 -->
@@ -465,7 +530,7 @@ if(!isacmlogged()){
                                 <div class="panel-group m-b" id="accordion2">
                                         <div class="panel no-border" style="background-color:rgba(0,0,0,0);">
                                             <div class="panel-heading fondo-transparente-negro-075">
-                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Bienvenido <?php  //echo $mybb->user['username']; ?> <?php echo $userdata['login']; ?> a L2 Linekkit</strong> </a>
+                                                <a class="accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Minimizar</strong> </a>
                                             </div>
                                             
                                             <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
@@ -515,7 +580,12 @@ if(!isacmlogged()){
 																											<div class="m-t-lg col-xs-12 row">
 																										
 																												<div class="col-xs-4">
-																													<div class=" bg-warning img-rounded">
+																													
+																													<!-- Premium -->
+																													<img class="m-b-xs img-rounded" src="images/premium.jpg" style="width:100%;">
+																													<!-- / Premium -->																													
+																													<img class="img-rounded" src="images/warrior.jpg" style="width:100%">
+																													<div class="m-t-xs bg-warning img-rounded">
 																														<h1 class="letras-negras" style="font-family:Alegreya SC; margin-top:0">
 																																Nivel
 																														</h1>
@@ -525,23 +595,43 @@ if(!isacmlogged()){
 																																</b>
 																														</h1>
 																													</div>
+																													
+																											
 																												</div>
 																												
-																												<div class="col-xs-8">
-																												TEST TEST TEST
+																												<div class="col-xs-8" style="font-family:Alegreya SC; font-size:16px; text-align:left;">
+																												Tiempo jugado: 00:00 Hs
+																												<br>
+																												Estrellas Completas: 3
+																												<br>
+																												Medias Estrellas: 5
+																												<br>
+																												Estrellas: 24
+																												<br>
+																												Eventos ganados: 12
+																												<br>
+																												Experiencia por minuto: 12
+																												<br>
+																												Karma: 0
+																												<br>
+																												Fecha de creación: 00/00/00
+																												
+																												<!-- Barra de XP-->
+																												<div class="row m-n m-t-xs letras-blancas text-center"><b>'.$stat['exp'].'/'.$stat['nextexp'].' EXP</b>
+																														<div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
+																															<div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%;color: #000;">'.$porcen.'%
+																															</div>
+																														</div>
+																												</div>
+																												<!-- / Barra de XP-->
+																												
+																												
 																												</div>
 																											
 																											</div>
                                                                                                     </div>
                                                                                                     
-                                                                                                    <!-- Barra de XP-->
-                                                                                                    <div class="row m-n"><b>'.$stat['exp'].'/'.$stat['nextexp'].'</b>
-                                                                                                            <div class=" progress m-t-sm progress-striped active" style="margin-bottom:0;margin-top:0">
-                                                                                                                <div class="progress-bar progress-bar-warning" data-toggle="tooltip" data-original-title="'.$left.' puntos restantes para alcanzar el nivel '.($stat['level']+1).'" style="width: '.$porcen.'%;color: #000;">'.$porcen.'%
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                    </div>
-                                                                                                    <!-- / Barra de XP-->
+                                                                                                    
                                                                                             </div>
                                                                                     </div>
                                                                                     <div class="row">
@@ -749,9 +839,6 @@ if(!isacmlogged()){
                             
 								<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
 									<header class="panel-heading  fondo-transparente-negro-075 borde-transparente-negro" >
-										<span class="badge bg-info pull-right">
-											32
-										</span>
 										Últimas noticias
 									</header>
                                     
