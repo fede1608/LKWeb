@@ -37,7 +37,7 @@ function binarySearch($key, $collection, $start, $end){
 	if($start >= $end) return -1;
 	if($collection[$pivot]['id'] > $key){
 		return binarySearch($key, $collection, $start, $pivot - 1);
-	} else if ($collection[$pivot] < $subscriber){
+	} else if ($collection[$pivot]['id'] < $key){
 		return binarySearch($key, $collection, $pivot + 1, $end);
 	} else {
 		return $pivot;
