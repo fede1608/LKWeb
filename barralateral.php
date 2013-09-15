@@ -156,16 +156,16 @@ function getBar($tipo,$active){
 									<a href="ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
 								</li>
 								<li '.($active==4?'class="active"':'').'>
-									<a href="stats.php"> <i class="icon-tasks"></i> <span>Stats</span> </a>
+									<a href="stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>
 								<li '.($active==5?'class="active"':'').'>
-									<a href="donar.php"> <i class="icon-thumbs-up"></i> <span>Donar</span> </a>
+									<a href="donacion.php"> <i class="icon-thumbs-up"></i> <span>Donar</span> </a>
 								</li>
 								<li '.($active==6?'class="active"':'').'>
 									<a href="noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
 								</li>
                                 <li '.($active==7?'class="active"':'').'>
-									<a href="foro.php"> <i class="icon-book"></i> <span>Foro</span> </a>
+									<a href="foro.php"> <i class="icon-group"></i> <span>Foro</span> </a>
 								</li>
                                 <li '.($active==8?'class="active"':'').'>
 									<a href="descargas.php"> <i class="icon-cloud-download"></i> <span>Descargas</span> </a>

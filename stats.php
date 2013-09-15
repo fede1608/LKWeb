@@ -738,10 +738,10 @@ if(!isacmlogged()){
               
               <!-- Primera columna-->
               <div class="col-sm-6">
-              	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
+              	<section class="row panel fondo-transparente-negro-075 borde-transparente-negro">
                 	
                     <!-- Primera columna-->
-                    <div class="col-sm-6 fondo-transparente-negro-075">
+                    <div class="col-sm-6">
                     
                         <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Razas</h2>
                         <div class="text-center wrapper ">
@@ -759,9 +759,9 @@ if(!isacmlogged()){
                     <!-- / Primera columna -->
                     
                     <!-- Segunda columna-->
-                    <div class="col-sm-6 fondo-transparente-negro-075">
+                    <div class="col-sm-6">
 					
-                        <ul class="list-group list-group-flush no-radius alt">
+                        <ul class="list-group list-group-flush no-borders no-radius alt m-t-xs letras-blancas">
                                             <?php 
                                             for($i=0;$i<=5;$i++){
                                                 echo '<li class="list-group-item fondo-transparente-000 linea-azul-1">
@@ -786,10 +786,55 @@ if(!isacmlogged()){
               </div>
               <!-- / Primera columna-->
               
-              <!-- Segunda columna-->
+              <!-- Primera columna-->
               <div class="col-sm-6">
+              	<section class="row panel fondo-transparente-negro-075 borde-transparente-negro">
+					
+                    <!-- Primera columna-->
+                    <div class="col-sm-6">
+                    
+                        <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Clanes</h2>
+                        <div class="text-center wrapper ">
+                        
+                            <div class="sparkline inline" data-type="pie" data-height="150" data-slice-colors="['#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA']">
+                                                <?php   include_once 'statsfeed.php';
+                                                        include_once 'datachars.php';
+                                                        $stats=getRaceStats(); 
+                                                        echo $stats['str']; 
+                                                        $arrayColor = array('#acdb83','#56B3FC','#fb6b5b','#FFA838','#F0E88F','#E5A3FA');?>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <!-- / Primera columna -->
+                    
+                    <!-- Segunda columna-->
+                    <div class="col-sm-6">
+					
+                        <ul class="list-group list-group-flush no-borders no-radius alt m-t-xs letras-blancas">
+                                            <?php 
+                                            for($i=0;$i<=5;$i++){
+                                                echo '<li class="list-group-item fondo-transparente-000 linea-azul-1">
+                                                    <span class="pull-right" >
+                                                        '.$stats[$i]['cant'].'
+                                                    </span>
+                                                    <span class="label bg-success" style="background-color:'.$arrayColor[$i].';">
+                                                        '.$i.'
+                                                    </span>
+                                                    <span class="m-l-xs">'.$race[$stats[$i]['race']].'</span>
+                                                </li>';
+                                            }
+                                            ?>
+                                            
+                                            
+                        </ul>
+                    </div>
+                    <!-- / Segunda columna-->
+                    
+				</section>
+              
               </div>
-              <!-- / Segunda columna-->
+              <!-- / Primera columna-->
               
             </div>
             <!-- / Pestaña 1 -->
