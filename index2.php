@@ -369,17 +369,17 @@ if(!isacmlogged()){
 																												</div>
 																												
 																												<div class="col-xs-8" style="font-family:Alegreya SC; font-size:16px; text-align:left;">
-																												Tiempo jugado: 0'.floor($stat['tiempoonline']/3600).':'.floor((($stat['tiempoonline']/3600)-floor($stat['tiempoonline']/3600))*60).' Hs
+																												Tiempo jugado: '.$stat['tiempoonline'].' Hs
 																												<br>
-																												Estrellas Completas: 3
+																												Estrellas Completas: '.$stat['full'].'
 																												<br>
-																												Medias Estrellas: 5
+																												Medias Estrellas: '.$stat['half'].'
 																												<br>
-																												Estrellas: 24
+																												Estrellas: '.$stat['stars'].'
 																												<br>
-																												Eventos ganados: 12
+																												Eventos ganados: '.$stat['events'].'
 																												<br>
-																												Experiencia por minuto: '.floor($stat[3]['promedio']/(60*24)).'
+																												Experiencia por minuto: '.floor($stat[3]['total']/ceil($stat['onlinetime']/60)).'
 																												<br>
 																												Karma: '.$stat['karma'].'
 																												<br>

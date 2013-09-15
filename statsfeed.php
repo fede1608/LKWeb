@@ -26,19 +26,27 @@ function getStats($account){
         $diaspvp=$MySQLMK->execute('SELECT * FROM dailystats WHERE charId='.$charid['charId'].' AND tipo=2 ORDER BY fecha DESC LIMIT 7');
         $diasxp=$MySQLMK->execute('SELECT * FROM dailystats WHERE charId='.$charid['charId'].' AND tipo=3 ORDER BY fecha DESC LIMIT 7');
         $max=$MySQLMK->execute('SELECT tipo,MAX(cant) FROM dailystats WHERE charId='.$charid['charId'].' GROUP BY tipo');
-       
+        $stars=$MySQLMK->execute('SELECT * FROM stars WHERE charId='.$charid['charId']);
 //        $nextexp=$charid['exp'];
 //        for($e=1;$e<=85;$e++){
 //            if (($charid['exp']<$level[$e])&& ($nextexp!=$charid['exp'])) $nextexp=$level[$e];
 //        }
-        
+        $obj[$cantpj]['events']=$suma[3]['SUM(cant)'];
+        $obj[$cantpj]['half']=isset($stars[0]['halfStars'])?$stars[0]['halfStars']:0;
+        $obj[$cantpj]['full']=isset($stars[0]['fullStars'])?$stars[0]['fullStars']:0;
+        $obj[$cantpj]['stars']=$obj[$cantpj]['full']+$obj[$cantpj]['half']*0.5;
         
         $obj[$cantpj]['name']=$charid['char_name'];
         $obj[$cantpj]['level']=$charid['level'];
         $obj[$cantpj]['exp']=$charid['exp'];
         $obj[$cantpj]['karma']=$charid['karma'];
         $obj[$cantpj]['creado']=floor($charid['createTime']/1000);
-        $obj[$cantpj]['tiempoonline']=$charid['onlinetime'];
+        
+        $horas=floor($charid['onlinetime']/3600);
+        $minutos=ceil((($charid['onlinetime']/3600)-$horas)*60);
+        
+        $obj[$cantpj]['onlinetime']=($charid['onlinetime']);
+        $obj[$cantpj]['tiempoonline']=($horas<10?('0'.$horas):$horas).':'.($minutos<10?('0'.$minutos):$minutos);
         $obj[$cantpj]['premium']=$premiumacc[0]['premium_service'];
         $obj[$cantpj]['nextexp']=$level[$charid['level']+1];
         $obj[$cantpj]['prevexp']=$level[$charid['level']];
