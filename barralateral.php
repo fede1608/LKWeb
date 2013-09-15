@@ -18,12 +18,53 @@ function getBar($tipo,$active){
     if($flogged){
         $userFData=$MyBBI2->getUser();
         $avatar='forum/'.$userFData['avatar'];
+        $msgs=$MyBBI2->getPrivateMessagesOfUser($mybb->user['uid']);
+        //print_r($msgs);
+        $unread=0;
+        foreach($msgs['Bandeja de entrada'] as $msg){
+            if ($msg['status']==0){
+                $unread++;
+                if($unread<=2){
+                    $unreadmsgtitle[$unread]='<a href="foro.php?page=/private.php?action=read%26pmid='.$msg['pmid'].'" class="media list-group-item"> <span class="media-body block m-b-none"> '.$msg['subject'].'<br> <small class="text-muted">'.date('d M y',$msg['dateline']).'</small> </span> </a>';
+                    }
+                }
+        }
+        $mensajes= '<header class="panel-heading">
+			<strong>
+				Tenes
+				<span class="count-n">
+					'.$unread.'
+				</span>
+				Mensajes sin leer
+			</strong>
+		</header>
+		<div class="list-group">
+			'.$unreadmsgtitle[1].' '.$unreadmsgtitle[2].'		</div>
+		<footer class="panel-footer text-sm">
+			<a href="foro.php?page=/private.php" class="pull-right"><i class="icon-cog"></i></a>
+			<a href="foro.php?page=/private.php">Leer todos los mensajes</a>
+		</footer>';
     }else{
         $avatar='images/avatar_default.jpg';
         $msgFnotlogged='<div class="bg-danger wrapper hidden-vertical animated rollIn text-sm">
 							<a href="#" data-dismiss="alert" class="pull-right m-r-n-sm m-t-n-sm"><i class="icon-close icon-remove "></i></a>
 							Heya, no has iniciado sesi&oacuten en el foro, por favor loggea <b><a href="foro.php?page=/member.php?action=login">aqu&iacute;</a></b>.
 						</div>';
+  		$mensajes= '<header class="panel-heading">
+			<strong>
+				No has loggeado al 
+				<span class="count-n">
+					foro
+				</span>
+				
+			</strong>
+		</header>
+		<div class="list-group">
+				</div>
+		<footer class="panel-footer text-sm">
+			<a href="foro.php?page=/member.php?action=login" class="pull-right"><i class="icon-cog"></i></a>
+			<a href="foro.php?page=/member.php?action=login">Loggea aquí</a>
+		</footer>';
     }
     //echo $avatar;
     //print_r($userFData);
@@ -66,14 +107,14 @@ function getBar($tipo,$active){
 									<span class="arrow top">
 									</span>
 									<li>
-										<a href="acm/index.php?action=acc_serv">Settings</a>
+										<a href="acm/index.php?action=acc_serv">Panel de Usuario</a>
 									</li>
 									<li>
-										<a href="profile.php">Profile</a>
+										<a href="profile.php">Perfil de Cuenta</a>
 									</li>
-									<li>
+									<!--<li>
 										<a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
-									</li>
+									</li>-->
 									<li class="divider">
 									</li>
 									<li>
@@ -88,33 +129,17 @@ function getBar($tipo,$active){
 									<p>
 										<i class="icon-map-marker">
 										</i>
-										London, UK
+										Linekkit
 									</p>
 								</div>
 							</div>
 							<div class="nav-msg">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="badge badge-white count-n">2</b> </a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="badge badge-white count-n">'.($tipo==1?$userdata['login']:'').'</b> </a>
 								<section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
 									<div class="arrow left">
 									</div>
 									<section class="panel bg-white">
-										<header class="panel-heading">
-											<strong>
-												You have
-												<span class="count-n">
-													2
-												</span>
-												notifications
-											</strong>
-										</header>
-										<div class="list-group">
-											<a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="images/avatar.jpg" alt="John said" class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br> <small class="text-muted">28 Aug 13</small> </span> </a>
-											<a href="#" class="media list-group-item"> <span class="media-body block m-b-none"> 1.0 initial released<br> <small class="text-muted">27 Aug 13</small> </span> </a>
-										</div>
-										<footer class="panel-footer text-sm">
-											<a href="#" class="pull-right"><i class="icon-cog"></i></a>
-											<a href="#">See all the notifications</a>
-										</footer>
+										'.$mensajes.'
 									</section>
 								</section>
 							</div>
