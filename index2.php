@@ -326,84 +326,38 @@ if(!isacmlogged()){
                                             
                                             </div>
                                             <div class="col-xs-10" style="width:78%">
-                                            
-                                            	<!-- #1 -->
+                                            <?php
+                                            $conttop=1;
+                                            foreach($todayStats[2] as $todayStatspvp){
+                                                switch($conttop){case 1: $star='icon-star';break;case 2: $star='icon-star-half-full';break;case 3: $star='icon-star-empty';break;};
+                                            echo	'<!-- #'.$conttop.' -->
                                                 <div class="thumb-lg">
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4" style="width:38%"></div>
                                                         <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
-                                                        <i class="icon-star"></i> 1</span>
+                                                        <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
-                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                        <img src="images/'.$todayStatspvp['race'].'.png" style="width:64px !important; height:70px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
+                                                        '.$todayStatspvp['pj'].'
                                                         <br>
-                                                        21 Kills
+                                                        '.$todayStatspvp['cant'].' Kills
                                                     </div>
                                                     <!-- Premium-->
                                                     <div class="row text-center letras-blancas" style="height:11px">
-                                                    
+                                                    '.($todayStatspvp['premium']?'<img src="images/mini_premium.png" width="75" height="11">':'').' 
                                                     </div>
                                                     <!-- / Premium-->
                                                 
                                                 </div>
-                                                <!-- / #1 -->
-                                                
-                                                <!-- #2 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label bg-warning" style="font-size:12px;">
-                                                        <i class="icon-star-half-full"></i> 2</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:48px;">
-                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        12 Kills
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    <img src="images/mini_premium.png" width="75" height="11"> 
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #2 -->
-                                                
-                                                <!-- #3 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label fondo-solido-azul-1" style="font-size:12px;">
-                                                        <i class="icon-star-empty"></i> 3</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:48px;">
-                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        8 Kills
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                     
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #3 -->
-                                                                                                
-                                                
-                                            
+                                                <!-- / #1 -->';
+                                                $conttop++;
+                                                }
+                                              ?>  
+
                                             </div>
                                         </div>
 
@@ -426,80 +380,37 @@ if(!isacmlogged()){
                                             </div>
                                             <div class="col-xs-10" style="width:78%">
                                             
-                                            	<!-- #1 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label fondo-solido-rojo-1" style="font-size:12px;">
-                                                        <i class="icon-star"></i> 1</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:48px;">
-                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        21 Kills
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #1 -->
-                                                
-                                                <!-- #2 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4" style="width:38%"></div>
-                                                        <span class="col-xs-3 label bg-warning" style="font-size:12px;">
-                                                        <i class="icon-star-half-full"></i> 2</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:48px;">
-                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        12 Kills
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                     
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #2 -->
-                                                
-                                                <!-- #3 -->
+                                            <?php
+                                            $conttop=1;
+                                            foreach($todayStats[1] as $todayStatspk){
+                                                switch($conttop){case 1: $star='icon-star';break;case 2: $star='icon-star-half-full';break;case 3: $star='icon-star-empty';break;};
+                                            echo	'<!-- #'.$conttop.' -->
                                                 <div class="thumb-lg">
                                                 
                                                 	<div class="row m-b-xs">
                                                     	<div class="col-xs-4" style="width:38%"></div>
                                                         <span class="col-xs-3 label fondo-solido-azul-1" style="font-size:12px;">
-                                                        <i class="icon-star-empty"></i> 3</span>
+                                                        <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
-                                                        <img src="images/avatar.jpg" style="width:64px !important; height:64px !important;" class="img-rounded">
+                                                        <img src="images/'.$todayStatspk['race'].'.png" style="width:64px !important; height:70px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
+                                                        '.$todayStatspk['pj'].'
                                                         <br>
-                                                        8 Kills
+                                                        '.$todayStatspk['cant'].' Kills
                                                     </div>
                                                     <!-- Premium-->
                                                     <div class="row text-center letras-blancas" style="height:11px">
-                                                     
+                                                    '.($todayStatspk['premium']?'<img src="images/mini_premium.png" width="75" height="11">':'').' 
                                                     </div>
                                                     <!-- / Premium-->
                                                 
                                                 </div>
-                                                <!-- / #3 -->
+                                                <!-- / #1 -->';
+                                                $conttop++;
+                                                }
+                                              ?>  
                                                                                                 
                                                 
                                             
