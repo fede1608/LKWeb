@@ -9,7 +9,7 @@ require_once 'forum/global.php';
 require_once 'forum/MyBBIntegrator.php';
 $MyBBI = new MyBBIntegrator($mybb, $db, $cache, $plugins, $lang, $config); 
 $forumpath = 'forum/';
-
+date_default_timezone_set("America/Argentina/Buenos_Aires");
 chdir($forumpath);
 require_once MYBB_ROOT."inc/class_parser.php";
 $parser = new postParser;

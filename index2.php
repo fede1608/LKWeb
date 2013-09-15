@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("America/Argentina/Buenos_Aires");
 include_once 'statsfeed.php'; 
 $todayStats=getTodayTops();
 define('IN_MYBB', NULL);
@@ -125,182 +126,39 @@ if(!isacmlogged()){
                                             </div>
                                             <div class="col-xs-11" style="width:86%">
                                             
-                                            	<!-- #1 -->
+                                                                                        <?php
+                                            $conttop=1;
+                                            foreach($todayStats[5] as $todayStatsptosgral){
+                                                switch($conttop){case 1: $star='icon-star';break;case 2:case 3: $star='icon-star-half-full';break;case 4:case 5:case 6: case 7: $star='icon-star-empty';break;};
+                                            echo	'<!-- #'.$conttop.' -->
                                                 <div class="thumb-lg">
                                                 
                                                 	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
-                                                        <i class="icon-star"></i> 1</span>
+                                                    	<div class="col-xs-4" ></div>
+                                                        <span class="col-xs-3 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                        <img src="images/'.$todayStatsptosgral['race'].'.png" style="width:84px !important; height:100px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
+                                                        '.$todayStatsptosgral['pj'].'
                                                         <br>
-                                                        123456789 Puntos
+                                                        '.$todayStatsptosgral['cant'].' Puntos
                                                     </div>
                                                     <!-- Premium-->
                                                     <div class="row text-center letras-blancas" style="height:11px">
-                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    '.($todayStatsptosgral['premium']?'<img src="images/mini_premium.png" width="75" height="11">':'').' 
                                                     </div>
                                                     <!-- / Premium-->
                                                 
                                                 </div>
-                                                <!-- / #1 -->
-                                                
-                                                <!-- #2 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
-                                                        <i class="icon-star-half-full"></i> 2</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        123456789 Puntos
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    <div style="margin-top:11px"></div>
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #2 -->
-                                                
-                                                <!-- #3 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
-                                                        <i class="icon-star-half-full"></i> 3</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        123456789 Puntos
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #3 -->
-                                                
-                                                
-                                                <!-- #4 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
-                                                        <i class="icon-star-empty"></i> 4</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        123456789 Puntos
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #4 -->
-                                                
-                                                
-                                                <!-- #5 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
-                                                        <i class="icon-star-empty"></i> 5</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        123456789 Puntos
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    <img src="images/mini_premium.png" width="75" height="11"> 
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #5 -->
-                                                
-                                                <!-- #6 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
-                                                        <i class="icon-star-empty"></i> 6</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        123456789 Puntos
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                     
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #6 -->
-                                                
-                                                <!-- #7 -->
-                                                <div class="thumb-lg">
-                                                
-                                                	<div class="row m-b-xs">
-                                                    	<div class="col-xs-4"></div>
-                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
-                                                        <i class="icon-star-empty"></i> 7</span>
-                                                    </div>
-                                                    <div class="row" style="padding-left:38px;">
-                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
-                                                    </div>
-                                                    <div class="row text-center letras-blancas">
-                                                        JugadorMegamanXX
-                                                        <br>
-                                                        123456789 Puntos
-                                                    </div>
-                                                    <!-- Premium-->
-                                                    <div class="row text-center letras-blancas" style="height:11px">
-                                                    
-                                                    </div>
-                                                    <!-- / Premium-->
-                                                
-                                                </div>
-                                                <!-- / #7 -->
+                                                <!-- / #1 -->';
+                                                $conttop++;
+                                                }
+                                              ?>  
+
+                                            	
                                                 
                                                 
                                             
