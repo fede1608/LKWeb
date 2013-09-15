@@ -14,20 +14,13 @@ function getStats($account){
   global $race,$class,$level,$MySQLLK,$MySQLMK;
 
     
-    $charsid=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp FROM characters WHERE account_name="'.$account.'"');
-//    echo 'SELECT charId,race,classId FROM characters WHERE account_name="'.$account.'"';
-//    print_r( $charsid);
-    
-    //$condicion='(';
+    $charsid=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp,karma,createTime,onlinetime FROM characters WHERE account_name="'.$account.'"');
+    $premiumacc=$MySQLLK->execute('SELECT * FROM account_premium WHERE account_name="'.$account.'"');
+
+    //$obj['premium']=$premiumacc[0]['premium_service'];
     $cantpj=0;
     foreach($charsid as $charid){
-        
-//        if($condicion!='(') $condicion.=' OR ';
-//        $condicion.='charId='.$charid['charId'];
-//    }
-//    $condicion.=')';
-
-    
+            
         $suma=$MySQLMK->execute('SELECT tipo,SUM(cant),COUNT(*) FROM dailystats WHERE charId='.$charid['charId'].' GROUP BY tipo');
         $diaspk=$MySQLMK->execute('SELECT * FROM dailystats WHERE charId='.$charid['charId'].' AND tipo=1 ORDER BY fecha DESC LIMIT 7');
         $diaspvp=$MySQLMK->execute('SELECT * FROM dailystats WHERE charId='.$charid['charId'].' AND tipo=2 ORDER BY fecha DESC LIMIT 7');
@@ -43,6 +36,10 @@ function getStats($account){
         $obj[$cantpj]['name']=$charid['char_name'];
         $obj[$cantpj]['level']=$charid['level'];
         $obj[$cantpj]['exp']=$charid['exp'];
+        $obj[$cantpj]['karma']=$charid['karma'];
+        $obj[$cantpj]['creado']=floor($charid['createTime']/1000);
+        $obj[$cantpj]['tiempoonline']=$charid['onlinetime'];
+        $obj[$cantpj]['premium']=$premiumacc[0]['premium_service'];
         $obj[$cantpj]['nextexp']=$level[$charid['level']+1];
         $obj[$cantpj]['prevexp']=$level[$charid['level']];
         $obj[$cantpj]['race']=$race[$charid['race']];

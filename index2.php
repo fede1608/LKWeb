@@ -88,8 +88,8 @@ if(!isacmlogged()){
                         <div class="panel-group m-b" id="accordion10">
                             <div class="panel no-border fondo-transparente-negro-075">
                                 <div class="panel-heading fondo-transparente-000">
-                                    <a class="accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
-                                    	<strong>Minimizar</strong>
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
+                                    <strong>Tops del d&iacute;a</strong>	<strong class="pull-right">Minimizar</strong>
                                     </a>
                                 </div>
                                 
@@ -441,7 +441,7 @@ if(!isacmlogged()){
                                 <div class="panel-group m-b" id="accordion2">
                                         <div class="panel no-border" style="background-color:rgba(0,0,0,0);">
                                             <div class="panel-heading fondo-transparente-negro-075">
-                                                <a class="accordion-toggle pull-right" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Minimizar</strong> </a>
+                                                <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne"> <strong>Personajes</strong>	<strong class="pull-right">Minimizar</strong> </a>
                                             </div>
                                             
                                             <div id="collapseOne" class="panel-collapse in fondo-transparente-negro-075">
@@ -493,9 +493,9 @@ if(!isacmlogged()){
 																												<div class="col-xs-4">
 																													
 																													<!-- Premium -->
-																													<img class="m-b-xs img-rounded" src="images/premium.jpg" style="width:100%;">
+																													'.($stat['premium']==1?'<img class="m-b-xs img-rounded" src="images/premium.jpg" style="width:100%;">':'').'
 																													<!-- / Premium -->																													
-																													<img class="img-rounded" src="images/warrior.jpg" style="width:100%">
+																													<!--<img class="img-rounded" src="images/warrior.jpg" style="width:100%">-->
 																													<div class="m-t-xs bg-warning img-rounded">
 																														<h1 class="letras-negras" style="font-family:Alegreya SC; margin-top:0">
 																																Nivel
@@ -511,7 +511,7 @@ if(!isacmlogged()){
 																												</div>
 																												
 																												<div class="col-xs-8" style="font-family:Alegreya SC; font-size:16px; text-align:left;">
-																												Tiempo jugado: 00:00 Hs
+																												Tiempo jugado: 0'.floor($stat['tiempoonline']/3600).':'.floor((($stat['tiempoonline']/3600)-floor($stat['tiempoonline']/3600))*60).' Hs
 																												<br>
 																												Estrellas Completas: 3
 																												<br>
@@ -521,11 +521,11 @@ if(!isacmlogged()){
 																												<br>
 																												Eventos ganados: 12
 																												<br>
-																												Experiencia por minuto: 12
+																												Experiencia por minuto: '.floor($stat[3]['promedio']/(60*24)).'
 																												<br>
-																												Karma: 0
+																												Karma: '.$stat['karma'].'
 																												<br>
-																												Fecha de creación: 00/00/00
+																												Fecha de creaci&oacute;n: '.date('d/m/y',$stat['creado']).'
 																												
 																												<!-- Barra de XP-->
 																												<div class="row m-n m-t-xs letras-blancas text-center"><b>'.$stat['exp'].'/'.$stat['nextexp'].' EXP</b>

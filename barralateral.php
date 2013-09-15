@@ -63,7 +63,7 @@ function getBar($tipo,$active){
 				</div>
 		<footer class="panel-footer text-sm">
 			<a href="foro.php?page=/member.php?action=login" class="pull-right"><i class="icon-cog"></i></a>
-			<a href="foro.php?page=/member.php?action=login">Loggea aquí</a>
+			<a href="foro.php?page=/member.php?action=login">Loggea aqu&iacute;</a>
 		</footer>';
     }
     //echo $avatar;
