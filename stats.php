@@ -1,4 +1,6 @@
 <?php
+include_once 'statsfeed.php'; 
+$todayStats=getTodayTops();
 define('IN_MYBB', NULL);
 require_once 'forum/global.php';
 require_once 'forum/MyBBIntegrator.php';
@@ -9,6 +11,7 @@ chdir($forumpath);
 require_once MYBB_ROOT."inc/class_parser.php";
 $parser = new postParser;
 chdir('../');
+
 include_once("session.php");
 if(!isacmlogged()){
     echo '<script language="javascript">
@@ -67,384 +70,664 @@ if(!isacmlogged()){
               
               <!-- Primera fila-->
               <div class="row"> 
+              
+              <section class="scrollable wrapper">
+                                       	                       
+ 				       <?php if (isset($_GET['error'])) {
+					require_once './acm/language/spanish.php'; ?>
+					<div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                    <i class="icon-ban-circle"></i> <?php echo $vm[$_GET['error']];?> </div>
+					 <?php };?>
+					 <?php if (isset($_GET['valid'])) {
+					 require_once './acm/language/spanish.php';?>
+					 <div class="alert alert-success">
+                     <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                     <i class="icon-ok-sign"></i> <?php echo $vm[$_GET['valid']];?> </div>
+					 <?php };?>
+              
+              <div class="panel-group m-b" id="accordion10">
                 
-                <!-- Primera columna-->
-                <div class="col-sm-4">
-                	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
-                                    <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; font-size:72px">Global</h1>
-									
-									<ul class="list-group list-group-flush no-radius alt">
-										<li class="list-group-item fondo-transparente-000 m-t-lg no-border linea-azul-1">
-										  <span class=" col-xs-3 label fondo-solido-rojo-1" style="font-size:36px">
-												1
-										  </span>
+               <div class="panel no-border fondo-transparente-negro-075">
+                                <div class="panel-heading fondo-transparente-000">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion10" href="#collapseTop"> 
+                                    <strong></strong>	<strong class="pull-right">Minimizar</strong>
+                                    </a>
+                                </div>
+                                
+                                <div id="collapseTop" class="panel-collapse in">
+
+                             		<!-- Margen superior-->
+                             		<div class="row"></div>
+                             
+                                    <!-- Columna 1 -->  		
+                                    <div class="col-lg-12">
+                                        
+                                        
+                                        <section class="panel fondo-transparente-000 borde-transparente-negro no-borders">
+                                        <div class="row wrapper" style="padding-bottom:0; padding-top:0">
+                                        <h1 class="text-center letras-doradas" style="font-family:Alegreya SC; margin-top:0;"><b>Los mejores jugadores de Linekkit</b></h1>
+                                        
+                                        </div>
+                                        
+                                        <div class="row linea-dorada-1"></div>
+                                        
+                                        <!-- TOP mejores jugadores-->
+                                        <div class="row  wrapper-lg">
                                             
-                                          <div class="col-xs-9">
-                                                <div class="row">
-                                                	<span class="h2 m-l-xs letras-blancas">Batman</span>
+                                            <div class="col-xs-1" style="width:14%">
+                                                <div class="row text-center">
+                                                    <img class="img-rounded" src="images/emblem_1.jpg" width="150" height="150">
                                                 </div>
-                                                <div class="row">
-                                                	<span class="h4 m-l-xs letras-blancas">999999</span>
+                                                <div class="row text-center letras-blancas">
+                                                	<b>Mejores puntajes</b>
                                                 </div>
-                                             
-                                             </div>
-                                             
-									  </li>
-                                        <div class="row"></div>
-										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
-											<span class="  col-xs-2 label fondo-solido-azul-1 letras-blancas" style="font-size:24px; ">
-												2
-											</span>
-											 
-                                             <div class="col-xs-10">
-                                                <div class="row">
-                                                	<span class="h4 m-l-xs letras-blancas">Iron Man</span>
-                                                </div>
-                                                <div class="row">
-                                                	<span class="h5 m-l-xs letras-blancas">999999</span>
-                                                </div>
-                                             
-                                             </div>
-										</li>
-                                        <div class="row"></div>
-										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
-											<span class="  col-xs-1 label letras-negras" style="font-size:18px; background-color:#FFA838">
-												3
-											</span>
-											 
-                                             <div class="col-xs-10">
-                                                <div class="row">
-                                                	<span class="h5 m-l-xs letras-blancas">Capitán América</span>
-                                                </div>
-                                                <div class="row">
-                                                	<span class="h6 m-l-xs letras-blancas">999999</span>
-                                                </div>
-                                             
-                                             </div>
-										</li>
-                                        <div class="row"></div>
-                                      <li class="list-group-item fondo-transparente-000 m-t-lg linea-azul-1">
-											<span class="pull-right letras-blancas">
-												1234567
-											</span>
-											<span class="label bg-warning letras-negras">
-												4
-										</span>
-											 <span class="m-l-xs letras-blancas">Hulk</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												123456
-										  </span>
-											<span class="label bg-warning letras-negras">
-												5
-										  </span>
-											 <span class="m-l-xs letras-blancas">Flash</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												6
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												7
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												8
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-primary">
-												9
-										  </span>
-											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-primary ">
-												10
-										  </span>
-											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
-										</li>
-									</ul>
-                                        
-                                        
-									</ul>
-								</section>
-                </div>
-                <!-- / Primera columna-->
-                
-                <!-- Segunda columna-->
-                <div class="col-sm-4">
-                	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
-                                    <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; font-size:72px">Top PVP</h1>
-									
-									<ul class="list-group list-group-flush no-radius alt">
-										<li class="list-group-item fondo-transparente-000 m-t-lg no-border linea-azul-1">
-										  <span class=" col-xs-3 label fondo-solido-rojo-1" style="font-size:36px">
-												1
-										  </span>
                                             
-                                          <div class="col-xs-9">
-                                                <div class="row">
-                                                	<span class="h2 m-l-xs letras-blancas">Batman</span>
-                                                </div>
-                                                <div class="row">
-                                                	<span class="h4 m-l-xs letras-blancas">999999</span>
-                                                </div>
-                                             
-                                             </div>
-                                             
-									  </li>
-                                        <div class="row"></div>
-										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
-											<span class="  col-xs-2 label fondo-solido-azul-1 letras-blancas" style="font-size:24px; ">
-												2
-											</span>
-											 
-                                             <div class="col-xs-10">
-                                                <div class="row">
-                                                	<span class="h4 m-l-xs letras-blancas">Iron Man</span>
-                                                </div>
-                                                <div class="row">
-                                                	<span class="h5 m-l-xs letras-blancas">999999</span>
-                                                </div>
-                                             
-                                             </div>
-										</li>
-                                        <div class="row"></div>
-										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
-											<span class="  col-xs-1 label letras-negras" style="font-size:18px; background-color:#FFA838">
-												3
-											</span>
-											 
-                                             <div class="col-xs-10">
-                                                <div class="row">
-                                                	<span class="h5 m-l-xs letras-blancas">Capitán América</span>
-                                                </div>
-                                                <div class="row">
-                                                	<span class="h6 m-l-xs letras-blancas">999999</span>
-                                                </div>
-                                             
-                                             </div>
-										</li>
-                                        <div class="row"></div>
-                                      <li class="list-group-item fondo-transparente-000 m-t-lg linea-azul-1">
-											<span class="pull-right letras-blancas">
-												1234567
-											</span>
-											<span class="label bg-warning letras-negras">
-												4
-										</span>
-											 <span class="m-l-xs letras-blancas">Hulk</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												123456
-										  </span>
-											<span class="label bg-warning letras-negras">
-												5
-										  </span>
-											 <span class="m-l-xs letras-blancas">Flash</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												6
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												7
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												8
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-primary">
-												9
-										  </span>
-											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-primary ">
-												10
-										  </span>
-											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
-										</li>
-									</ul>
-                                        
-                                        
-									</ul>
-								</section>
-                </div>
-                <!-- / Segunda columna-->
-                
-                <!-- Tercera columna-->
-                <div class="col-sm-4">
-                	<section class="panel fondo-transparente-negro-075 borde-transparente-negro">
-                                    <h1 class="text-center letras-blancas" style="font-family:Alegreya SC; font-size:72px">Top PK</h1>
-									
-									<ul class="list-group list-group-flush no-radius alt">
-										<li class="list-group-item fondo-transparente-000 m-t-lg no-border linea-azul-1">
-										  <span class=" col-xs-3 label fondo-solido-rojo-1" style="font-size:36px">
-												1
-										  </span>
                                             
-                                          <div class="col-xs-9">
-                                                <div class="row">
-                                                	<span class="h2 m-l-xs letras-blancas">Batman</span>
+                                            </div>
+                                            <div class="col-xs-11" style="width:86%">
+                                            
+                                            	<!-- #1 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star"></i> 1</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
                                                 </div>
-                                                <div class="row">
-                                                	<span class="h4 m-l-xs letras-blancas">999999</span>
+                                                <!-- / #1 -->
+                                                
+                                                <!-- #2 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 2</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <div style="margin-top:11px"></div>
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
                                                 </div>
-                                             
-                                             </div>
-                                             
-									  </li>
-                                        <div class="row"></div>
-										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
-											<span class="  col-xs-2 label fondo-solido-azul-1 letras-blancas" style="font-size:24px; ">
-												2
-											</span>
-											 
-                                             <div class="col-xs-10">
-                                                <div class="row">
-                                                	<span class="h4 m-l-xs letras-blancas">Iron Man</span>
+                                                <!-- / #2 -->
+                                                
+                                                <!-- #3 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 3</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
                                                 </div>
-                                                <div class="row">
-                                                	<span class="h5 m-l-xs letras-blancas">999999</span>
+                                                <!-- / #3 -->
+                                                
+                                                
+                                                <!-- #4 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 4</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
                                                 </div>
-                                             
-                                             </div>
-										</li>
-                                        <div class="row"></div>
-										<li class="list-group-item fondo-transparente-000 no-border linea-azul-1 m-t-xs">
-											<span class="  col-xs-1 label letras-negras" style="font-size:18px; background-color:#FFA838">
-												3
-											</span>
-											 
-                                             <div class="col-xs-10">
-                                                <div class="row">
-                                                	<span class="h5 m-l-xs letras-blancas">Capitán América</span>
+                                                <!-- / #4 -->
+                                                
+                                                
+                                                <!-- #5 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 5</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
                                                 </div>
-                                                <div class="row">
-                                                	<span class="h6 m-l-xs letras-blancas">999999</span>
+                                                <!-- / #5 -->
+                                                
+                                                <!-- #6 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 6</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
                                                 </div>
-                                             
-                                             </div>
-										</li>
-                                        <div class="row"></div>
-                                      <li class="list-group-item fondo-transparente-000 m-t-lg linea-azul-1">
-											<span class="pull-right letras-blancas">
-												1234567
-											</span>
-											<span class="label bg-warning letras-negras">
-												4
-										</span>
-											 <span class="m-l-xs letras-blancas">Hulk</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												123456
-										  </span>
-											<span class="label bg-warning letras-negras">
-												5
-										  </span>
-											 <span class="m-l-xs letras-blancas">Flash</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												6
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												7
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-warning letras-negras">
-												8
-										  </span>
-											 <span class="m-l-xs letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-primary">
-												9
-										  </span>
-											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
-										</li>
-                                        <li class="list-group-item fondo-transparente-000 linea-azul-1">
-											<span class="pull-right letras-blancas">
-												12345
-										  </span>
-											<span class="label bg-primary ">
-												10
-										  </span>
-											 <span class="m-l-xs letras-blancas letras-blancas">Superman</span>
-										</li>
-									</ul>
+                                                <!-- / #6 -->
+                                                
+                                                <!-- #7 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 7</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #7 -->
+                                                
+                                                
+                                            
+                                            </div>
+                                        </div>
+                                        
+										<!-- / TOP mejores jugadores-->
+                                        
+                                         <div class="row linea-dorada-1"></div>
+                                        
+                                        <!-- TOP PVP -->
+                                        <div class="row  wrapper-lg">
+                                            
+                                            <div class="col-xs-1" style="width:14%">
+                                                <div class="row text-center">
+                                                    <img class="img-rounded" src="images/emblem_2.jpg" width="150" height="150">
+                                                </div>
+                                                <div class="row text-center letras-blancas">
+                                                	<b>Mejores PVP</b>
+                                                </div>
+                                            
+                                            
+                                            </div>
+                                            <div class="col-xs-11" style="width:86%">
+                                            
+                                            	<!-- #1 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star"></i> 1</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #1 -->
+                                                
+                                                <!-- #2 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 2</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <div style="margin-top:11px"></div>
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #2 -->
+                                                
+                                                <!-- #3 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 3</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #3 -->
+                                                
+                                                
+                                                <!-- #4 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 4</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #4 -->
+                                                
+                                                
+                                                <!-- #5 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 5</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #5 -->
+                                                
+                                                <!-- #6 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 6</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #6 -->
+                                                
+                                                <!-- #7 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 7</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #7 -->
+                                                
+                                                
+                                            
+                                            </div>
+                                        </div>
+                                        
+										<!-- / TOP PVP-->
+                                        
+                                         <div class="row linea-dorada-1"></div>
+                                        
+                                        <!-- TOP PK-->
+                                        <div class="row  wrapper-lg">
+                                            
+                                            <div class="col-xs-1" style="width:14%">
+                                                <div class="row text-center">
+                                                    <img class="img-rounded" src="images/emblem_4.jpg" width="150" height="150">
+                                                </div>
+                                                <div class="row text-center letras-blancas">
+                                                	<b>Mejores PK</b>
+                                                </div>
+                                            
+                                            
+                                            </div>
+                                            <div class="col-xs-11" style="width:86%">
+                                            
+                                            	<!-- #1 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-rojo-1" style="font-size:12px;">
+                                                        <i class="icon-star"></i> 1</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #1 -->
+                                                
+                                                <!-- #2 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 2</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <div style="margin-top:11px"></div>
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #2 -->
+                                                
+                                                <!-- #3 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-half-full"></i> 3</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #3 -->
+                                                
+                                                
+                                                <!-- #4 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 4</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #4 -->
+                                                
+                                                
+                                                <!-- #5 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label bg-warning letras-negras" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 5</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    <img src="images/mini_premium.png" width="75" height="11"> 
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #5 -->
+                                                
+                                                <!-- #6 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 6</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                     
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #6 -->
+                                                
+                                                <!-- #7 -->
+                                                <div class="thumb-lg">
+                                                
+                                                	<div class="row m-b-xs">
+                                                    	<div class="col-xs-4"></div>
+                                                        <span class="col-xs-4 label fondo-solido-azul-1" style="font-size:12px;">
+                                                        <i class="icon-star-empty"></i> 7</span>
+                                                    </div>
+                                                    <div class="row" style="padding-left:38px;">
+                                                        <img src="images/avatar.jpg" style="width:84px !important; height:84px !important;" class="img-rounded">
+                                                    </div>
+                                                    <div class="row text-center letras-blancas">
+                                                        JugadorMegamanXX
+                                                        <br>
+                                                        123456789 Puntos
+                                                    </div>
+                                                    <!-- Premium-->
+                                                    <div class="row text-center letras-blancas" style="height:11px">
+                                                    
+                                                    </div>
+                                                    <!-- / Premium-->
+                                                
+                                                </div>
+                                                <!-- / #7 -->
+                                                
+                                                
+                                            
+                                            </div>
+                                        </div>
+                                        
+										<!-- / TOP PK-->
+                                                                                    
+                                        </section>
                                         
                                         
-									</ul>
-								</section>
-                </div>
-                <!-- / Tercera columna-->
+                                    </div>
+                                    <!-- / Columna 1 -->
+                                    
+                                    
+                                    
+                                    <!-- Margen inferior-->
+                             		<div class="row m-b-lg"></div>
+                                    
+                               </div>
+                           </div>
+                           
+                   </div>
                 
               </div>
               <!--/  Primera fila-->
