@@ -202,7 +202,7 @@ function getBar($tipo,$active){
 						<nav class="nav-primary hidden-xs dropup">
 							<ul class="nav">
 								<li '.($active==1?'class="active"':'').'>
-									<a href="index2.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
+									<a href="index.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
 								
 								<li '.($active==3?'class="active"':'').'>
