@@ -29,7 +29,7 @@ GLOBAL $opcion;
 	}
 function exito($msg){
 			echo "<script language=\"JavaScript\">";
-			echo "self.location=\"./index2.php?valid=".$msg."\";";
+			echo "self.location=\"./index.php?valid=".$msg."\";";
 			echo "</script>";
 	}
 function obtenerOID(){
