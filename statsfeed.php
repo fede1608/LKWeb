@@ -206,5 +206,40 @@ function getTodayTops(){
 //    $obj[4]['class']=$class[$event[0]['classId']];
     return $obj;
 }
+
+function getGeneralTops(){
+    global $race,$class,$MySQLLK,$MySQLMK;
+    
+    for($i=1;$i<=2;$i++){
+        $result=$MySQLMK->execute('SELECT d.`charId`,sum(d.cant) as cant FROM dailystats as d WHERE tipo='.$i.' GROUP BY charId  ORDER BY `cant` DESC LIMIT 7');
+        for($j=1;$j<=7;$j++){
+            $obj[$i][$j]['cant']=$result[$j-1]['cant'];
+            $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
+            $obj[$i][$j]['pj']=$char[0]['char_name'];
+            $obj[$i][$j]['race']=$race[$char[0]['race']];
+            $obj[$i][$j]['lvl']=$char[0]['level'];
+            $obj[$i][$j]['class']=$class[$char[0]['classId']];
+            $obj[$i][$j]['premium']=$char[0]['premium_service'];
+        }
+    }
+    $i=5;
+    $result=$MySQLMK->execute('SELECT d.`charId`,sum(d.cant) as cant FROM dailystats as d WHERE tipo='.$i.' GROUP BY charId  ORDER BY `cant` DESC LIMIT 7');
+    for($j=1;$j<=7;$j++){
+        $obj[$i][$j]['cant']=$result[$j-1]['cant'];
+        $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
+        $obj[$i][$j]['pj']=$char[0]['char_name'];
+        $obj[$i][$j]['race']=$race[$char[0]['race']];
+        $obj[$i][$j]['lvl']=$char[0]['level'];
+        $obj[$i][$j]['class']=$class[$char[0]['classId']];
+        $obj[$i][$j]['premium']=$char[0]['premium_service'];
+    }
+    //$event=$MySQLLK->execute('SELECT c.char_name as player,c.level,c.race,c.classId,sum(n.`wins`) as suma FROM `nexus_stats_global` as n,characters as c  WHERE n.`player`=c.charId GROUP BY n.`player` ORDER BY suma DESC LIMIT 1');
+   // $obj[4]['cant']=$event[0]['suma'];
+//    $obj[4]['pj']=$event[0]['player'];
+//    $obj[4]['race']=$race[$event[0]['race']];
+//    $obj[4]['lvl']=$event[0]['level'];
+//    $obj[4]['class']=$class[$event[0]['classId']];
+    return $obj;
+}
     
 ?>

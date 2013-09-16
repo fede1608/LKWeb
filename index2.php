@@ -325,6 +325,11 @@ if(!isacmlogged()){
                                                                 </ol>
                                                                 <div class="carousel-inner">
                                                                         <?php  
+                                                                        if(!isset($stats[0]))
+                                                                            echo '<div class="item active">                                                                <div class="panel-body no-border"><div class="alert alert-info">
+                                                                            <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+                                                                            <i class="icon-info-sign"></i><strong>Hey!</strong> No has creado ningun personaje todav&iacute;a!<a href="#" class="alert-link"> Crea un personaje para poder ver las estad&iacute;sticas generales!</a></div>
+                                                                            </div></div>';
                                                                         $con=0;
                                                                         foreach($stats as $stat){
                                                                         $porcen=floor((($stat['exp']-$stat['prevexp'])/($stat['nextexp']-$stat['prevexp']))*100);
