@@ -118,7 +118,7 @@ if(!isacmlogged()){
 			                    <div class="panel-body text-sm">
                                 <ul>
 			                    <li>1- Primero necesit&aacute;s tener una cuenta en el servidor, que si est&aacute;s leyendo esta es la misma con la que tuviste que loguear en la web.</li>
-                                <li>2- Tener el cliente Lineage II Freya instalado. Pod&eacute;s ver fuentes para descargarlo en el siguiente link.</li>
+                                <li>2- Tener el cliente Lineage II Freya instalado. Pod&eacute;s ver fuentes para descargarlo en el siguiente <a href="/descargas.php" target="_blank">LINK</a>.</li>
                                 <li>3- Descargar los ARCHIVOS necesarios para jugar en Linekkit.</li>
                                 <li>3- Ir a la carpeta ra&iacute;z de Lineage II (por lo general es C:\Archivos de programa\NCSoft\Lineage II).</li>
                                 <li>4- Renombrar (cambiar el nombre) del system que tengas. Ponele systemRenombrado (por ejemplo) y extra&eacute; los archivos que descargaste en el punto 3 dentro de la carpeta ra&iacute;z de Lineage II.</li>
@@ -235,7 +235,7 @@ if(!isacmlogged()){
 			                  </div>
 			                  <div id="faq9" class="panel-collapse collapse">
 			                    <div class="panel-body text-sm">
-			                     Es un programa que tiene por objetivo mejorar el "rendimiento" de tu conexi&oacute;n logrando as&iacute; que se reduzca un poco la sensaci&oacute;n del ping. El mismo fue creado por un jugador de WoW y se encuentra disponible &uacute;nicamente para Windows. Para m&aacute;s informaci&oacute;n, visit&aacute; el siguiente<a href="http://linekkit.com/foro.php?page=/private.php?action=read%26pmid=484" target="_blank">LINK</a>.
+			                     Es un programa que tiene por objetivo mejorar el "rendimiento" de tu conexi&oacute;n logrando as&iacute; que se reduzca un poco la sensaci&oacute;n del ping. El mismo fue creado por un jugador de WoW y se encuentra disponible &uacute;nicamente para Windows. Para m&aacute;s informaci&oacute;n, visit&aacute; el siguiente <a href="/forum/showthread.php?tid=112" target="_blank">LINK</a>.
                                 </div>
 			                  </div>
 			                </div>
