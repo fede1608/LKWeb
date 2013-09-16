@@ -17,7 +17,7 @@ function getBar($tipo,$active){
     $msgFnotlogged='';
     if($flogged){
         $userFData=$MyBBI2->getUser();
-        $avatar='forum/'.$userFData['avatar'];
+        $avatar='forum/'.($userFData['avatar']==''?'images/night/on.gif':$userFData['avatar']);
         $msgs=$MyBBI2->getPrivateMessagesOfUser($mybb->user['uid']);
         //print_r($msgs);
         $unread=0;
@@ -72,7 +72,60 @@ function getBar($tipo,$active){
     if(($MyBBI2->isLoggedIn())&&($MyBBI2->isSuperAdmin())){
         $adminli='<li '.($active==9?'class="active"':'').'>
 									<a href="dashboard.php"> <i class="icon-dollar"></i> <span>Admin Section</span> </a>
-								</li>';
+								</li>
+                 <li class="dropdown-submenu" >
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-beaker"></i> <span>M&aacute;s</span> </a>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="buttons.html">Buttons</a>
+						</li>
+						<li>
+							<a href="icons.html"> <b class="badge pull-right">302</b>Icons </a>
+						</li>
+						<li>
+							<a href="grid.html">Grid</a>
+						</li>
+						<li>
+							<a href="widgets.html"> <b class="badge bg-primary pull-right">8</b>Widgets </a>
+						</li>
+						<li>
+							<a href="components.html"> <b class="badge pull-right">18</b>Components </a>
+						</li>
+						<li>
+							<a href="list.html">List groups</a>
+						</li>
+						<li>
+							<a href="tasks.html">Tasks</a>
+						</li>
+						<li>
+							<a href="form.html">Form</a>
+						</li>
+						<li>
+							<a href="chart.html">Chart</a>
+						</li>
+						<li>
+							<a href="calendar.html">Fullcalendar</a>
+						</li>
+						<li>
+							<a href="profile.html">Profile</a>
+						</li>
+						<li>
+							<a href="signin.php">Signin page</a>
+						</li>
+						<li>
+							<a href="signup.php">Signup page</a>
+						</li>
+                        <li>
+							<a href="mail.html">Mail</a>
+						</li>
+                        <li>
+							<a href="notes.html">Notes</a>
+						</li>
+						<li>
+							<a href="404.html">404 page</a>
+						</li>
+					</ul>
+				</li>';
     }
     
     echo '<!-- .Barra Lateral -->
@@ -109,17 +162,17 @@ function getBar($tipo,$active){
 									<li>
 										<a href="acm/index.php?action=acc_serv">Panel de Usuario</a>
 									</li>
-									<li>
+									<!--<li>
 										<a href="profile.php">Perfil de Cuenta</a>
-									</li>
+									</li>-->
 									<!--<li>
 										<a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
 									</li>-->
 									<li class="divider">
 									</li>
-									<li>
+									<!--<li>
 										<a href="docs.html">Help</a>
-									</li>
+									</li>-->
 									<li>
 										<a href="/acm/?action=loggout">Logout</a>
 									</li>
@@ -134,7 +187,7 @@ function getBar($tipo,$active){
 								</div>
 							</div>
 							<div class="nav-msg">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="badge badge-white count-n">'.($tipo==1?$userdata['login']:'').'</b> </a>
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="badge badge-white count-n">'.($tipo==1?substr($userdata['login'],0,9):'').'</b> </a>
 								<section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
 									<div class="arrow left">
 									</div>
@@ -152,15 +205,15 @@ function getBar($tipo,$active){
 									<a href="index2.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
 								
-								<li '.($active==3?'class="active"':'').'>
+								<!--<li '.($active==3?'class="active"':'').'>
 									<a href="ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
-								</li>
+								</li>-->
 								<li '.($active==4?'class="active"':'').'>
 									<a href="stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>
-								<li '.($active==5?'class="active"':'').'>
+								<!--<li '.($active==5?'class="active"':'').'>
 									<a href="donacion.php"> <i class="icon-thumbs-up"></i> <span>Donar</span> </a>
-								</li>
+								</li>-->
 								<li '.($active==6?'class="active"':'').'>
 									<a href="noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
 								</li>
@@ -171,59 +224,7 @@ function getBar($tipo,$active){
 									<a href="descargas.php"> <i class="icon-cloud-download"></i> <span>Descargas</span> </a>
 								</li>
                                 '.$adminli.'
-                                <li class="dropdown-submenu" '.($active==2?'class="active"':'').'>
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-beaker"></i> <span>M&aacute;s</span> </a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="buttons.html">Buttons</a>
-										</li>
-										<li>
-											<a href="icons.html"> <b class="badge pull-right">302</b>Icons </a>
-										</li>
-										<li>
-											<a href="grid.html">Grid</a>
-										</li>
-										<li>
-											<a href="widgets.html"> <b class="badge bg-primary pull-right">8</b>Widgets </a>
-										</li>
-										<li>
-											<a href="components.html"> <b class="badge pull-right">18</b>Components </a>
-										</li>
-										<li>
-											<a href="list.html">List groups</a>
-										</li>
-										<li>
-											<a href="tasks.html">Tasks</a>
-										</li>
-										<li>
-											<a href="form.html">Form</a>
-										</li>
-										<li>
-											<a href="chart.html">Chart</a>
-										</li>
-										<li>
-											<a href="calendar.html">Fullcalendar</a>
-										</li>
-										<li>
-											<a href="profile.html">Profile</a>
-										</li>
-										<li>
-											<a href="signin.php">Signin page</a>
-										</li>
-										<li>
-											<a href="signup.php">Signup page</a>
-										</li>
-                                        <li>
-											<a href="mail.html">Mail</a>
-										</li>
-                                        <li>
-											<a href="notes.html">Notes</a>
-										</li>
-										<li>
-											<a href="404.html">404 page</a>
-										</li>
-									</ul>
-								</li>
+                                
 							</ul>
 						</nav>
 						<!-- / nav -->
@@ -273,22 +274,22 @@ function getBarSinForo($tipo,$active){
 								<ul class="dropdown-menu m-t-sm animated fadeInLeft">
 									<span class="arrow top">
 									</span>
-									<li>
-										<a href="../acm/index.php?action=acc_serv">Settings</a>
+                                    <li>
+										<a href="index.php?action=acc_serv">Panel de Usuario</a>
 									</li>
-									<li>
-										<a href="../profile.php">Profile</a>
-									</li>
-									<li>
+									<!--<li>
+										<a href="profile.php">Perfil de Cuenta</a>
+									</li>-->
+									<!--<li>
 										<a href="#"> <span class="badge bg-danger pull-right">3</span> Notifications </a>
-									</li>
+									</li>-->
 									<li class="divider">
 									</li>
+									<!--<li>
+										<a href="docs.html">Help</a>
+									</li>-->
 									<li>
-										<a href="../docs.html">Help</a>
-									</li>
-									<li>
-										<a href="..//acm/?action=loggout">Logout</a>
+										<a href="index.php?action=loggout">Logout</a>
 									</li>
 								</ul>
 								<div class="visible-xs m-t m-b">
@@ -296,35 +297,14 @@ function getBarSinForo($tipo,$active){
 									<p>
 										<i class="icon-map-marker">
 										</i>
-										London, UK
+										Linekkit
 									</p>
 								</div>
 							</div>
 							<div class="nav-msg">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="badge badge-white count-n">2</b> </a>
-								<section class="dropdown-menu m-l-sm pull-left animated fadeInRight">
-									<div class="arrow left">
-									</div>
-									<section class="panel bg-white">
-										<header class="panel-heading">
-											<strong>
-												You have
-												<span class="count-n">
-													2
-												</span>
-												notifications
-											</strong>
-										</header>
-										<div class="list-group">
-											<a href="#" class="media list-group-item"> <span class="pull-left thumb-sm"> <img src="images/avatar.jpg" alt="John said" class="img-circle"> </span> <span class="media-body block m-b-none"> Use awesome animate.css<br> <small class="text-muted">28 Aug 13</small> </span> </a>
-											<a href="#" class="media list-group-item"> <span class="media-body block m-b-none"> 1.0 initial released<br> <small class="text-muted">27 Aug 13</small> </span> </a>
-										</div>
-										<footer class="panel-footer text-sm">
-											<a href="#" class="pull-right"><i class="icon-cog"></i></a>
-											<a href="#">See all the notifications</a>
-										</footer>
-									</section>
-								</section>
+								<a href="#" class="dropdown-toggle" > <b class="badge badge-white count-n">2</b> </a>
+								
+								
 							</div>
 						</div>
 						<!-- / user -->
@@ -334,67 +314,24 @@ function getBarSinForo($tipo,$active){
 								<li '.($active==1?'class="active"':'').'>
 									<a href="../index2.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
-								<li class="dropdown-submenu" '.($active==2?'class="active"':'').'>
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-beaker"></i> <span>UI kit</span> </a>
-									<ul class="dropdown-menu">
-										<li>
-											<a href="../buttons.html">Buttons</a>
-										</li>
-										<li>
-											<a href="../icons.html"> <b class="badge pull-right">302</b>Icons </a>
-										</li>
-										<li>
-											<a href="../grid.html">Grid</a>
-										</li>
-										<li>
-											<a href="../widgets.html"> <b class="badge bg-primary pull-right">8</b>Widgets </a>
-										</li>
-										<li>
-											<a href="../components.html"> <b class="badge pull-right">18</b>Components </a>
-										</li>
-										<li>
-											<a href="../list.html">List groups</a>
-										</li>
-										<li>
-											<a href="../tasks.html">Tasks</a>
-										</li>
-										<li>
-											<a href="../form.html">Form</a>
-										</li>
-										<li>
-											<a href="../chart.html">Chart</a>
-										</li>
-										<li>
-											<a href="../calendar.html">Fullcalendar</a>
-										</li>
-										<li>
-											<a href="../profile.html">Profile</a>
-										</li>
-										<li>
-											<a href="../signin.php">Signin page</a>
-										</li>
-										<li>
-											<a href="../signup.php">Signup page</a>
-										</li>
-										<li>
-											<a href="../404.html">404 page</a>
-										</li>
-									</ul>
-								</li>
-								<li '.($active==3?'class="active"':'').'>
-									<a href="../mail.html"> <b class="badge bg-primary pull-right">3</b> <i class="icon-envelope-alt"></i> <span>Mail</span> </a>
-								</li>
+								
+								<!--<li '.($active==3?'class="active"':'').'>
+									<a href="../ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
+								</li>-->
 								<li '.($active==4?'class="active"':'').'>
-									<a href="../stats.php"> <i class="icon-tasks"></i> <span>Stats</span> </a>
+									<a href="../stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>
-								<li '.($active==5?'class="active"':'').'>
-									<a href="../notes.html"> <i class="icon-pencil"></i> <span>Notes</span> </a>
-								</li>
+								<!--<li '.($active==5?'class="active"':'').'>
+									<a href="../donacion.php"> <i class="icon-thumbs-up"></i> <span>Donar</span> </a>
+								</li>-->
 								<li '.($active==6?'class="active"':'').'>
 									<a href="../noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
 								</li>
                                 <li '.($active==7?'class="active"':'').'>
-									<a href="../foro.php"> <i class="icon-book"></i> <span>Foro</span> </a>
+									<a href="../foro.php"> <i class="icon-group"></i> <span>Foro</span> </a>
+								</li>
+                                <li '.($active==8?'class="active"':'').'>
+									<a href="../descargas.php"> <i class="icon-cloud-download"></i> <span>Descargas</span> </a>
 								</li>
 							</ul>
 						</nav>
