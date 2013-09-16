@@ -80,8 +80,8 @@
                                     </div>
                                         
                                         <div class="btn-group btn-group-justified m-b" style="margin-bottom:15px">
-                                                    <a class="btn btn-success btn-rounded"><i class="icon-comments"></i> Foros</a>
-                                                    <a class="btn btn-gplus btn-rounded"> <i class="icon-cloud-download"></i> Descargas </a>
+                                                    <a class="btn btn-success btn-rounded" href="/forum"><i class="icon-comments"></i> Foros</a>
+                                                    <a class="btn btn-gplus btn-rounded" href="descargas_offline.php"> <i class="icon-cloud-download"></i> Descargas </a>
                                                     <a class="btn btn-facebook btn-rounded" href="https://www.facebook.com/Linekkit"> <i class="icon-facebook"></i> Facebook </a>
                                         </div>
                                     </section>
@@ -121,30 +121,40 @@
 							<button type="submit" class="btn btn-warning">
 								Conectarse
 						  </button>
-							<div class="line line-dashed">
+							<div class="line line-dashed" style="margin-bottom: 4px">
 							</div>
-							<a href="#" class="btn btn-facebook btn-block m-b-sm"><i class="icon-facebook pull-left"></i>Iniciar sesión con Facebook</a>
-							<a href="#" class="btn btn-twitter btn-block"><i class="icon-twitter pull-left"></i>Iniciar sesión con Twitter</a>
-							<div class="line line-dashed">
-							</div>
+							
 							<p class="text-muted text-center">
 								<small>
 									¿No tienes una cuenta?
 							  </small>
 							</p>
 							<a href="signup.php" class="btn btn-gplus btn-block">Crear una cuenta nueva</a>
+							<div class="line line-dashed">
+							</div>
+							<div class="row">
+								<div clas="row">
+									<h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0; margin-bottom: 5px">Apoya a Linekkit</h2>
+								</div>
+								<div class="col-xs-6">
+									<a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank" class="pull-right">
+        								<img src="http://linekkit.com/images/hopzone.png" style="width: 100%;" alt="Votar por Linekkit">
+        							</a>
+								</div>
+								<div class="col-xs-6">
+									<a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers" class="pull-left">
+        								<img src="http://linekkit.com/images/topzone.png" style="width: 100%;" alt="Votar por Linekkit">
+        							</a>
+								</div>
+							</div>
+							
 						</form>
 					</section>
 				</div>
                 <!-- / Columna derecha -->
 			</div>
 		</section>
-        <div class="row m-n"><div class="col-lg-4 col-lg-offset-2" style="
-        "><a href="http://vgw.hopzone.net/site/vote/95232/1" target="_blank" class="pull-right
-        "><img src="http://linekkit.com/images/hopzone.png" alt="Votar por Linekkit"></a></div><div class="col-lg-4" style="
-        "><a rel="nofollow" target="_blank" href="http://l2topzone.com/vote.php?id=9744" title="Lineage 2 Servers" class="pull-left"><img src="http://linekkit.com/images/topzone.png" alt="Votar por Linekkit"></a>
-        
-        </div></div>
+    </div>
 		<!-- footer -->
 		<footer id="footer" style="margin-top: 10px;">
 			<div class="text-center padder clearfix">
