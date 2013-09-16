@@ -442,10 +442,10 @@ class account{
 	public function forgot_pwd($login, $email, $img = null)
 	{
 
-		// if(!$this->verif_img($img)) {
-			// MSG::add_error(LANG::i18n('_image_control'));
-			// return false;
-		// }
+		 if(!$this->verif_img($img)) {
+			 MSG::add_error(LANG::i18n('_image_control'));
+			 return false;
+		 }
 		
 		DEBUG::add('Check if there are a login name match with an email');
 		

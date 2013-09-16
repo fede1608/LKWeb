@@ -15,8 +15,13 @@ chdir('../');
 
 include_once("session.php");
 if(!isacmlogged()){
+    $else='';
+    if (isset($_GET['error'])) 
+        $else.="?error=".$_GET['error'];
+    if (isset($_GET['valid'])) 
+        $else.="?valid=".$_GET['valid'];		
     echo '<script language="javascript">
-			window.top.location="signin.php"
+			window.top.location="signin.php'.$else.'"
 			</script>';
     exit();
 }
