@@ -51,7 +51,7 @@ if(!isacmlogged()){
         <section class="hbox stretch">
 			<?php
             include_once('barralateral.php');
-            getBar(1,1);//getbar(tipoDeBarra,<li>activo)
+            getBar(1,8);//getbar(tipoDeBarra,<li>activo)
             ?>
 			<!-- .vbox -->
 			<section id="content" class="wrapper-md animated fadeInUp">
