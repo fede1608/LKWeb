@@ -17,6 +17,7 @@ include_once 'session.php';
 		<link rel="stylesheet" href="css/plugin.css" type="text/css" />
 		<link rel="stylesheet" href="css/app.css" type="text/css" />
 		<link rel="stylesheet" href="css/lkcss.css">
+        <link href='http://fonts.googleapis.com/css?family=Alegreya+SC' rel='stylesheet' type='text/css'>
 		<!--[if lt IE 9]>
 			<script src="js/ie/respond.min.js" cache="false">
 			</script>
@@ -37,10 +38,10 @@ include_once 'session.php';
 				<section class="vbox">
 					<footer class="footer bg-light dker bg-gradient">
 						<p>
-							Noticias
+							Promociones y ofertas: No hay ninguna promción en este momento
 						</p>
 					</footer>
-					<section class="bg-light lter">
+					<section class="fondo-transparente-negro lter">
 						<section class="hbox stretch">
 							<!-- .aside -->
 							<aside>
@@ -49,14 +50,11 @@ include_once 'session.php';
 										<div class="timeline">
 											<article class="timeline-item active">
 												<div class="timeline-caption">
-													<div class="panel bg-success lter no-borders">
-														<div class="panel-body">
-															<span class="timeline-icon">
-																<i class="icon-info-sign time-icon bg-success">
-																</i>
-															</span>
-															<span class="timeline-date">
-																Noticias
+													<div class="panel bg-warning lter no-borders letras-negras">
+														<div class="m-t-xs m-b-xs m-l-xs m-r-xs">
+															<span class="timeline-date" style="margin-bottom:0px">
+																<h1 class="text-center letras-negras" style="font-family:Alegreya SC; margin-top:8px;"><b>
+	                             								Últimas noticias</b></h1>
 															</span>
 															
 														</div>
@@ -81,14 +79,14 @@ include_once 'session.php';
 															<span class="arrow left">
 															</span>
 															<span class="timeline-icon">
-																<i class="icon-phone time-icon bg-primary">
+																<i class="icon-file-text time-icon bg-primary">
 																</i>
 															</span>
-															<span class="timeline-date">'.date('d/m/Y g:ia',$noti['fecha']).
+															<span class="timeline-date letras-blancas">'.date('d/m/Y g:ia',$noti['fecha']).
                                                     '</span>
 															<h5>
 															<span>
-																	By '.$noti[autor].'</span>'.$noti['titulo'].'</h5>	
+																	Por '.$noti[autor].'</span>'.$noti['titulo'].'</h5>	
 															<p>'.$noti['contenido'].'</p>
 														</div>
 													</div>
@@ -124,7 +122,7 @@ include_once 'session.php';
 												}
 												if(!$fin)
 													echo '<li>
-														<a href="noticias.php?pag='.$paginas.'"><i class="icon-chevron-right"></i></a>
+														<a href="noticias.php?pag='.$paginas.'" style="padding: 13.5;"><i class="icon-chevron-right"></i></a>
 													</li>';
 												?>
 												
