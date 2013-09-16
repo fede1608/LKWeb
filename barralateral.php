@@ -155,7 +155,7 @@ function getBar($tipo,$active){
 						<!-- user -->
 						<div class="fondo-solido-azul-1 nav-user hidden-xs pos-rlt">
 							<div class="nav-avatar pos-rlt">
-								<a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown"> <img src="'.$avatar.'" alt="" class=""> <span class="caret caret-white"></span> </a>
+								<a href="#" class="thumb-sm avatar animated rollIn" data-toggle="dropdown"> <img src="'.$avatar.'" alt="" class="" style="width:28px !important; height:28px !important;"> <span class="caret caret-white"></span> </a>
 								<ul class="dropdown-menu m-t-sm animated fadeInLeft">
 									<span class="arrow top">
 									</span>
@@ -205,9 +205,9 @@ function getBar($tipo,$active){
 									<a href="index2.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
 								
-								<!--<li '.($active==3?'class="active"':'').'>
+								<li '.($active==3?'class="active"':'').'>
 									<a href="ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
-								</li>-->
+								</li>
 								<li '.($active==4?'class="active"':'').'>
 									<a href="stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>
@@ -315,9 +315,9 @@ function getBarSinForo($tipo,$active){
 									<a href="../index.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
 								
-								<!--<li '.($active==3?'class="active"':'').'>
+								<li '.($active==3?'class="active"':'').'>
 									<a href="../ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
-								</li>-->
+								</li>
 								<li '.($active==4?'class="active"':'').'>
 									<a href="../stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>

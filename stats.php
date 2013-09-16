@@ -608,7 +608,7 @@ if(!isacmlogged()){
               <section class="panel">
                 <header class="panel-heading">
                   Top 100 PK Kills
-                  <i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i> 
+                  <!--<i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i>--> 
                 </header>
                 <div class="table-responsive">
                   <table class="table table-striped m-b-none" data-ride="datatables" style="/* width: 1089px; */">
@@ -632,7 +632,7 @@ if(!isacmlogged()){
               <section class="panel">
                 <header class="panel-heading">
                   Top 100 PVP Kills
-                  <i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i> 
+                  <!--<i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i>--> 
                 </header>
                 <div class="table-responsive">
                   <table class="table table-striped m-b-none" data-ride="datatables2" style="/* width: 1089px; */">
@@ -656,7 +656,7 @@ if(!isacmlogged()){
               <section class="panel">
                 <header class="panel-heading">
                   Top 100 Tiempo Online
-                  <i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i> 
+                  <!--<i class="icon-info-sign text-muted" data-toggle="tooltip" data-placement="bottom" data-title="ajax to load the data."></i>--> 
                 </header>
                 <div class="table-responsive">
                   <table class="table table-striped m-b-none" data-ride="datatables3" style="/* width: 1089px; */">

@@ -38,6 +38,7 @@ include_once 'session.php';
                 </section>
 			<!-- /.vbox -->
 		</section>
+        
 		<script src="css/app.v1.js">
 		</script>
 		<!-- Bootstrap -->
