@@ -9,7 +9,7 @@
         <div class="col-sm-12">
                   <section class="panel">
                     <header class="panel-heading">
-                      <!--<span class="label bg-danger pull-right">Descuento extra activo: 0%</span>-->
+                      <span class="label bg-danger pull-right">OFERTA: 15% extra de LCs gratis por PayPal</span>
                       <b>Paquetes de donación con bonus</b>
                     </header>
                     <table class="table table-striped m-b-none text-sm"  style="vertical-align:middle;">
@@ -29,7 +29,12 @@
                             <i class="icon-level-up"></i>+0
                           </td>
                           <td>
-                          <form id="pp15" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px;"><input type="hidden" name="cmd" value="_s-xclick"><input type="hidden" name="hosted_button_id" value="C62S8DPCSBTHN"><input name="custom" type="hidden" id="custom" size="45" value="<?php echo $userdata['login']; ?>"> <input type="hidden" name="item_name" value="LinekkitCoins-15"> </form>
+                          <form id="pp15" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px; margin-bottom: 0px;">
+                            <input type="hidden" name="cmd" value="_s-xclick">
+                            <input type="hidden" name="hosted_button_id" value="C62S8DPCSBTHN">
+                            <input name="custom" type="hidden" id="custom" size="45" value="<?php echo $userdata['login']; ?>">
+                            <input type="hidden" name="item_name" value="LinekkitCoins-15"> 
+                          </form>
 
                           <a  href="javascript:void()" onclick="document.getElementById('pp15').submit();" class="btn btn-warning btn-block m-b-sm letras-negras" style="font-size:9px; margin-bottom:0"><i class="icon-gift pull-left"></i><b>Donar</b></a>
                           </td>
@@ -41,7 +46,7 @@
                             <i class="icon-level-up"></i>+2
                           </td>
                            <td>
-                			<form id="pp27" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px;">
+                			<form id="pp27" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px; margin-bottom: 0px;">
                             <input type="hidden" name="cmd" value="_s-xclick">
                             <input type="hidden" name="hosted_button_id" value="HX4C93QRYTS44">
                             <input name="custom" type="hidden" id="custom" size="45" value="<?php echo $userdata['login']; ?>"> 
@@ -57,7 +62,7 @@
                             <i class="icon-level-up"></i>+5
                           </td>
                            <td>
-                			<form id="pp55" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px;">
+                			<form id="pp55" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px; margin-bottom: 0px;">
                             <input type="hidden" name="cmd" value="_s-xclick">
                             <input type="hidden" name="hosted_button_id" value="ZC4U7N67JVSE4">
                             <input name="custom" type="hidden" id="custom" size="45" value="<?php echo $userdata['login']; ?>"> 
@@ -73,7 +78,7 @@
                             <i class="icon-level-up"></i>+20
                           </td>
                            <td>
-                			<form id="pp120" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px;">
+                			<form id="pp120" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px; margin-bottom: 0px;">
                             <input type="hidden" name="cmd" value="_s-xclick">
                             <input type="hidden" name="hosted_button_id" value="QSQQDK9YMTKL8">
                             <input name="custom" type="hidden" id="custom" size="45" value="<?php echo $userdata['login']; ?>"> 
@@ -89,7 +94,7 @@
                             <i class="icon-level-up"></i>+50
                           </td>
                            <td>
-                           <form id="pp250" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px;">
+                           <form id="pp250" action="https://www.paypal.com/cgi-bin/webscr" method="post"style="margin-top: 0px; width: 100px;	margin-left: 0px; margin-bottom: 0px;">
                             <input type="hidden" name="cmd" value="_s-xclick">
                             <input type="hidden" name="hosted_button_id" value="496P6LA2BGX46">
                             <input name="custom" type="hidden" id="custom" size="45" value="<?php echo $userdata['login']; ?>"> 
