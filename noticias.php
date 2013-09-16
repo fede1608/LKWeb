@@ -69,14 +69,16 @@ include_once 'session.php';
 											
                                             $notis=getNews($cantidad,$pagina);
 											$alt='';
+                                            $dir='left';
                                             foreach($notis as $noti){
                                                 $noti['fecha']= $noti['fecha'] - (4*60*60);
 												$alt=$alt==''?'alt':'';
+                                                $dir=$dir=='right'?'left':'right';
                                                 echo '<article class="timeline-item '.$alt.'">
 												<div class="timeline-caption">
 													<div class="panel">
 														<div class="panel-body">
-															<span class="arrow left">
+															<span class="arrow '.$dir.'">
 															</span>
 															<span class="timeline-icon">
 																<i class="icon-file-text time-icon bg-primary">
