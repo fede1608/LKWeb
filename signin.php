@@ -37,11 +37,63 @@
         
         <section id="content" class="wrapper-md animated fadeInUp">
         <div class="row m-n">
-                <!-- Columna izquierda -->
+                
+				<!-- Logo -->
+				<div class="row m-b-xs">
+					<div class="col-lg-2"></div>
+					<div class="col-lg-10">
+	                	<img src="images/logo.png" width="455" height="132">
+	            	</div>
+	                <div class="col-lg-2"></div>
+                </div>
+                <!-- / Logo -->
+				
+				<!-- Mensaje sobre la BETA -->
+                <div class="row m-t-xs">
+                	<div class="col-lg-2"></div>
+	                <div class="col-lg-8">
+	                	<div class="alert alert-warning alert-block">
+	               			<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+	                			<h4><i class="icon-warning-sign"></i>Información importante sobre la BETA</h4>
+	                		<p>Estas entrando a la versión BETA de Kitlog, la nueva web de Linekkit. Esta versión NO es final ni definitiva y se encuentra abierta al público únicamente con el objetivo de 
+	                			realizar pruebas que nos permitan encontrar posibles bugs a tiempo antes del lanzamiento oficial del servidor el 18/09/13 a las 20:00Hs (ARG). 
+	                			Si encontrás algun tipo de error en la web, comunicate con el equipo de Linekkit vía foro o Facebook para que sea arreglado. Gracias por participar en la beta!</p>
+	              		</div>
+	               	</div>
+	               	<div class="col-lg-2"></div>
+                </div>
+                <!-- / Mensaje sobre la BETA -->
+
+                <!-- PHP -->
+                <div class="row m-t-xs">
+                	<div class="col-lg-2"></div>
+	                <div class="col-lg-8">
+		                <?php if (isset($_GET['error'])) {
+						require_once './acm/language/spanish.php'; ?>
+						<div class="alert alert-danger">
+		                <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+		                <i class="icon-ban-circle"></i> <?php echo $vm[$_GET['error']];?> </div>
+						 <?php };?>
+						 <?php if (isset($_GET['valid'])) {
+						 require_once './acm/language/spanish.php';?>
+						 <div class="alert alert-success">
+		                 <button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
+		                 <i class="icon-ok-sign"></i> <?php echo $vm[$_GET['valid']];?> </div>
+						 <?php };?>
+						 </div>
+	               	</div>
+	               	<div class="col-lg-2"></div>
+                </div>
+				<!-- / PHP -->
+
+				<div class="row">
+
+				<!-- Columna izquierda -->
                 <div class="col-lg-4 col-lg-offset-2">
-                	<img src="images/logo.png" width="455" height="132">
-                    <br>
+                	
                     <!-- .scrollable -->
+
+
 								<section class="panel fondo-transparente-negro borde-transparente-negro">
                 
                                     <header class="panel-heading text-center fondo-transparente-negro borde-transparente-negro">    
@@ -92,7 +144,7 @@
                 <!-- /Columna izquierda -->
                 
 	  			<!-- Columna derecha -->
-				<div class="col-lg-4" style="margin-top:131px;">
+				<div class="col-lg-4">
 					<section class="panel fondo-transparente-negro borde-transparente-negro">
 						<header class="panel-heading text-center bg-primary borde-transparente-negro">
 							Iniciar sesión
@@ -117,7 +169,7 @@
 									Mantenme conectado
 							  </label>
 							</div>
-							<a href="#" class="pull-right m-t-xs"><small>¿Olvidaste tu contraseña?</small></a>
+							<a href="/acm/index.php?action=forgot_pwd" class="pull-right m-t-xs"><small>¿Olvidaste tu contraseña?</small></a>
 							<button type="submit" class="btn btn-warning">
 								Conectarse
 						  </button>
@@ -152,6 +204,9 @@
 					</section>
 				</div>
                 <!-- / Columna derecha -->
+
+				</div>
+
 			</div>
 		</section>
     </div>
