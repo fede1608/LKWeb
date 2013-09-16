@@ -155,6 +155,21 @@ function getRaceStats(){
 
 }
 
+function getClanStats(){
+    global $MySQLLK,$MySQLMK;
+    $clans=$MySQLLK->execute('SELECT  `clan_name` ,  `puntosdeclan` as cantidad FROM  `clan_data` ORDER BY puntosdeclan DESC LIMIT 7');
+    $back='';
+    for($i=0;$i<=5;$i++){
+        $obj[$i]['cant']=isset($clans[$i]['cantidad'])?($clans[$i]['cantidad']):0;
+        $obj[$i]['clan']=isset($clans[$i]['clan_name'])?($clans[$i]['clan_name']):-1;
+        $back.=$obj[$i]['cant'];
+        if($i!=5)$back.=',';
+    }
+    $obj['str']=$back;
+    return $obj;
+
+}
+
 function get7SStats(){
     global $MySQLLK,$MySQLMK;
     $SS=$MySQLLK->execute('SELECT `dawn_festival_score`+`dawn_stone_score` as dawn,`dusk_festival_score`+`dusk_stone_score` as dusk FROM `seven_signs_status`');
@@ -233,6 +248,33 @@ function getGeneralTops(){
         $obj[$i][$j]['class']=$class[$char[0]['classId']];
         $obj[$i][$j]['premium']=$char[0]['premium_service'];
     }
+    $onlinetop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.onlinetime FROM characters as c,account_premium as p WHERE c.account_name=p.account_name ORDER BY onlinetime  DESC LIMIT 7');
+    $expxmintop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.exp/(c.onlinetime/60) as expxmin FROM characters as c,account_premium as p WHERE c.account_name=p.account_name ORDER BY expxmin  DESC LIMIT 7');
+    $i=9;//exp por minuto
+    for($j=1;$j<=7;$j++){
+        
+        $obj[$i][$j]['cant']=$expxmintop[$j-1]['expxmin'];
+        $obj[$i][$j]['pj']=$expxmintop[$j-1]['char_name'];
+        $obj[$i][$j]['race']=$race[$expxmintop[$j-1]['race']];
+        $obj[$i][$j]['lvl']=$expxmintop[$j-1]['level'];
+        $obj[$i][$j]['class']=$class[$expxmintop[$j-1]['classId']];
+        $obj[$i][$j]['premium']=$expxmintop[$j-1]['premium_service'];
+    }
+    $i=8;//online time
+    for($j=1;$j<=7;$j++){
+        $horas=floor($onlinetop[$j-1]['onlinetime']/3600);
+        $minutos=ceil((($onlinetop[$j-1]['onlinetime']/3600)-$horas)*60);
+
+        $obj[$i][$j]['cant']=($horas<10?('0'.$horas):$horas).':'.($minutos<10?('0'.$minutos):$minutos);
+        $obj[$i][$j]['pj']=$onlinetop[$j-1]['char_name'];
+        $obj[$i][$j]['race']=$race[$onlinetop[$j-1]['race']];
+        $obj[$i][$j]['lvl']=$onlinetop[$j-1]['level'];
+        $obj[$i][$j]['class']=$class[$onlinetop[$j-1]['classId']];
+        $obj[$i][$j]['premium']=$onlinetop[$j-1]['premium_service'];
+    }
+    
+    
+    
     //$event=$MySQLLK->execute('SELECT c.char_name as player,c.level,c.race,c.classId,sum(n.`wins`) as suma FROM `nexus_stats_global` as n,characters as c  WHERE n.`player`=c.charId GROUP BY n.`player` ORDER BY suma DESC LIMIT 1');
    // $obj[4]['cant']=$event[0]['suma'];
 //    $obj[4]['pj']=$event[0]['player'];

@@ -131,7 +131,7 @@ if(!isacmlogged()){
                                             </div>
                                             <div class="col-xs-11" style="width:86%">
                                             
-                                                                                        <?php
+                                            <?php
                                             $conttop=1;
                                             foreach($todayStats[5] as $todayStatsptosgral){
                                                 switch($conttop){case 1: $star='icon-star';break;case 2:case 3: $star='icon-star-half-full';break;case 4:case 5:case 6: case 7: $star='icon-star-empty';break;};

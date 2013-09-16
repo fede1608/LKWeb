@@ -2278,10 +2278,10 @@ class MyBBIntegrator
 			return false;
 		}
 		// Otherwise, check logoutkey
-		else if (!$this->mybb->input['sid'] && $this->mybb->input['logoutkey'] != $this->mybb->user['logoutkey'])
-		{
-			return false;
-		}
+//		else if (!$this->mybb->input['sid'] && $this->mybb->input['logoutkey'] != $this->mybb->user['logoutkey'])
+//		{
+//			return false;
+//		}
 		
 		// Clear essential login cookies
 		my_unsetcookie("mybbuser");
