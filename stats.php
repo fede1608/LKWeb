@@ -737,11 +737,11 @@ if(!isacmlogged()){
               <!-- SEGUNDA FILA -->
               
               <!-- Primera columna-->
-              <div class="col-sm-6">
+              <div class="col-lg-6">
               	<section class="row panel fondo-transparente-negro-075 borde-transparente-negro">
                 	
                     <!-- Primera columna-->
-                    <div class="col-sm-6">
+                    <div class="col-xs-6">
                     
                         <h2 class="text-center letras-blancas" style="font-family:Alegreya SC;">Razas</h2>
                         <div class="text-center wrapper ">
@@ -759,7 +759,7 @@ if(!isacmlogged()){
                     <!-- / Primera columna -->
                     
                     <!-- Segunda columna-->
-                    <div class="col-sm-6">
+                    <div class="col-xs-6">
 					
                         <ul class="list-group list-group-flush no-borders no-radius alt m-t-xs letras-blancas">
                                             <?php 
@@ -787,7 +787,7 @@ if(!isacmlogged()){
               <!-- / Primera columna-->
               
               <!-- Primera columna-->
-              <div class="col-sm-6">
+              <div class="col-lg-6">
               	<section class="row panel fondo-transparente-negro-075 borde-transparente-negro">
 					
                     <!-- Primera columna-->
