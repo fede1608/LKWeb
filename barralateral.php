@@ -209,9 +209,9 @@ function getBar($tipo,$active){
 								<li '.($active==4?'class="active"':'').'>
 									<a href="stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>
-								<!--<li '.($active==5?'class="active"':'').'>
+								<li '.($active==5?'class="active"':'').'>
 									<a href="donacion.php"> <i class="icon-thumbs-up"></i> <span>Donar</span> </a>
-								</li>-->
+								</li>
 								<li '.($active==6?'class="active"':'').'>
 									<a href="noticias.php"> <i class="icon-time"></i> <span>Noticias</span> </a>
 								</li>

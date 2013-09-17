@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("America/Argentina/Buenos_Aires");
 include_once 'session.php';
 ?>
 <!DOCTYPE html>
@@ -38,7 +39,7 @@ include_once 'session.php';
 				<section class="vbox">
 					<footer class="footer bg-light dker bg-gradient">
 						<p>
-							Promociones y ofertas: No hay ninguna promción en este momento
+							Promociones y ofertas: 15% de Coins extra con Paypal
 						</p>
 					</footer>
 					<section class="fondo-transparente-negro lter">
@@ -71,7 +72,7 @@ include_once 'session.php';
 											$alt='';
                                             $dir='left';
                                             foreach($notis as $noti){
-                                                $noti['fecha']= $noti['fecha'] - (4*60*60);
+                                                $noti['fecha']= $noti['fecha'];
 												$alt=$alt==''?'alt':'';
                                                 $dir=$dir=='right'?'left':'right';
                                                 echo '<article class="timeline-item '.$alt.'">

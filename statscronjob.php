@@ -15,7 +15,7 @@ require_once 'libs/mysql.inc.php';
 require_once 'libs/config.inc.php';
 $MySQL = new SQL($hostL, $usernombre, $pass, $dbgame);
 $MySQL2 = new SQL($host, $usernombre, $pass,$dbnoticias);
-$pjs=$MySQL->execute('SELECT account_name,charId,char_name,level,pvpkills,pkkills,exp,nobless,clanid FROM characters ORDER BY charId');
+$pjs=$MySQL->execute('SELECT account_name,charId,char_name,level,pvpkills,pkkills,exp,nobless,clanid FROM characters WHERE accesslevel=0 ORDER BY charId ');
 //$statspj=$MySQL2->execute('SELECT * FROM dailystats WHERE charID=');
 $date=date('ymd');
 $heroe=$MySQL->execute('SELECT `charId` as id, `played` FROM `heroes` ');

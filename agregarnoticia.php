@@ -54,6 +54,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
 						<p>
 						<?php if(isset($_POST['titulo'])){
 						  $MySQLN = new SQL($host, $usernombre, $pass, $dbnoticias);
+                          $_POST['user']=($_POST['user']=='zephyrmv216'?'Zephyr':$_POST['user']);
 						$MySQLN->execute("SET NAMES 'utf8'");
 						$consulta = "INSERT INTO `news` (titulo, fecha, autor, contenido) VALUES ('".$_POST['titulo']."', UNIX_TIMESTAMP(),'".$_POST['user']."','".$_POST['contenido']."') ";
 						$MySQLN->execute($consulta);

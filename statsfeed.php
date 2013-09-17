@@ -248,8 +248,8 @@ function getGeneralTops(){
         $obj[$i][$j]['class']=$class[$char[0]['classId']];
         $obj[$i][$j]['premium']=$char[0]['premium_service'];
     }
-    $onlinetop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.onlinetime FROM characters as c,account_premium as p WHERE c.account_name=p.account_name ORDER BY onlinetime  DESC LIMIT 7');
-    $expxmintop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.exp/(c.onlinetime/60) as expxmin FROM characters as c,account_premium as p WHERE c.account_name=p.account_name ORDER BY expxmin  DESC LIMIT 7');
+    $onlinetop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.onlinetime FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND c.accesslevel=0 ORDER BY onlinetime  DESC LIMIT 7');
+    $expxmintop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.exp/(c.onlinetime/60) as expxmin FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND c.accesslevel=0 ORDER BY expxmin  DESC LIMIT 7');
     $i=9;//exp por minuto
     for($j=1;$j<=7;$j++){
         
