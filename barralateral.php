@@ -205,9 +205,7 @@ function getBar($tipo,$active){
 									<a href="index.php"> <i class="icon-eye-open"></i> <span>Inicio</span> </a>
 								</li>
 								
-								<li '.($active==3?'class="active"':'').'>
-									<a href="ayuda.php"> <i class="icon-plus-sign"></i> <span>Ayuda</span> </a>
-								</li>
+							
 								<li '.($active==4?'class="active"':'').'>
 									<a href="stats.php"> <i class="icon-tasks"></i> <span>Estadísticas</span> </a>
 								</li>
@@ -222,6 +220,9 @@ function getBar($tipo,$active){
 								</li>
                                 <li '.($active==8?'class="active"':'').'>
 									<a href="descargas.php"> <i class="icon-cloud-download"></i> <span>Descargas</span> </a>
+								</li>
+       	                        <li '.($active==3?'class="active"':'').'>
+									<a href="ayuda.php"> <i class="icon-plus-sign"></i> <span>FAQ</span> </a>
 								</li>
                                 '.$adminli.'
                                 

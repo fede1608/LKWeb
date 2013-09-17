@@ -66,7 +66,7 @@ class core {
                 $query = $mysqldb->execute('SELECT * FROM accounts WHERE login="'.$db->escape_string($_POST['Luser']).'"');
                 $useracm = $query[0];
                     
-                    $MyBBI->logout();
+                    //$MyBBI->logout();
                     if(!$MyBBI->login($useracm['userForum'], $_POST['Lpwd'],'','')){
                         //$this->loginForo();
                        echo '';
