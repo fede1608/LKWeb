@@ -444,7 +444,7 @@ if(!isacmlogged()){
                                                         '.$stats[$i]['cant'].'
                                                     </span>
                                                     <span class="label bg-success" style="background-color:'.$arrayColor[$i].';">
-                                                        '.$i.'
+                                                        '.($i+1).'
                                                     </span>
                                                     <span class="m-l-xs">'.$race[$stats[$i]['race']].'</span>
                                                 </li>';
@@ -496,7 +496,7 @@ if(!isacmlogged()){
                                                         '.$stats[$i]['cant'].'
                                                     </span>
                                                     <span class="label bg-success" style="background-color:'.$arrayColor[$i].';">
-                                                        '.$i.'
+                                                        '.($i+1).'
                                                     </span>
                                                     <span class="m-l-xs">'.$stats[$i]['clan'].'</span>
                                                 </li>';
