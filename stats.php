@@ -139,7 +139,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="'.$gralStatsptosgral['profile_pic'].'" style="width:84px !important; height:100px !important;" class="img-rounded">
+                                                        <img src="'.$gralStatsptosgral['profile_pic'].'" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$gralStatsptosgral['pj'].'
@@ -193,7 +193,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:100px !important;" class="img-rounded">
+                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$gralStat['pj'].'
@@ -249,7 +249,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:100px !important;" class="img-rounded">
+                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$gralStat['pj'].'
@@ -303,7 +303,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:100px !important;" class="img-rounded">
+                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$gralStat['pj'].'
@@ -360,7 +360,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:100px !important;" class="img-rounded">
+                                                        <img src="'.$gralStat['profile_pic'].'" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$gralStat['pj'].'

@@ -62,7 +62,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                           <div class="tab-content">
                             <div class="tab-pane active" id="tab1">
                               <div class="wrapper">
-                              <h1>Por dia<?php echo ( floor ( time() / $round_numerator ) * $round_numerator );  ?></h1>
+                              <h1>Por dia</h1>
                                 <div id="donacion-area-dia" class="graph"></div>
                                 <h1>Por semana</h1>
                                 <div id="donacion-area-semana" class="graph"></div>
@@ -166,7 +166,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
 $round_numerator = 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
 //$round_numerator = 60 * 60 or to the nearest hour
 //$round_numerator = 60 * 60 * 24 or to the nearest day
-$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator );//+(3*60 * 24);
+$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator )+(3*60 * 60);
 $diasatras = $rounded_time - 9*24*60*60;
 $resserv=$MySQLEco->execute('SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$diasatras.' ORDER BY d.fecha,d.servidor, d.currency');
 $cont=0;
@@ -211,6 +211,7 @@ echo "],
 			labels: ['Minekkit Server', 'Linekkit Server'],			
 			hideHover: 'auto',
 			lineWidth: 2,
+            behaveLikeLine: true,
 			pointSize: 4,
 			lineColors: ['#59dbbf', '#aeb6cb'],
 			fillOpacity: 0.5,
@@ -284,6 +285,7 @@ echo "],
 			hideHover: 'auto',
 			lineWidth: 2,
 			pointSize: 4,
+            behaveLikeLine: true,
 			lineColors: ['#59dbbf', '#aeb6cb'],
 			fillOpacity: 0.5,
 			smooth: true,
@@ -301,7 +303,7 @@ echo "],
 			}, 5500);
 		});*/
 	});
-    ";
+    "; 
  $round_numerator = 30 * 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
 //$round_numerator = 60 * 60 or to the nearest hour
 //$round_numerator = 60 * 60 * 24 or to the nearest day
@@ -354,6 +356,7 @@ echo "],
 			labels: ['Minekkit Server', 'Linekkit Server'],			
 			hideHover: 'auto',
 			lineWidth: 2,
+            behaveLikeLine: true,
 			pointSize: 4,
 			lineColors: ['#59dbbf', '#aeb6cb'],
 			fillOpacity: 0.5,
