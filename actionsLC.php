@@ -207,7 +207,43 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>4) ? 1 : $_GET['id']; //
              </div>
              
 					<?php } ?>	
-						
+                    
+                    
+						<div class="panel no-border" style="background-color:rgba(0,0,0,0);"><div class="panel-heading fondo-transparente-negro-075">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapse5"> 
+        				            <strong>Cambiar imagen de perfil del personaje</strong> </a></div>
+        					   <div id="collapse5" class="panel-collapse   fondo-transparente-negro-075 collapse" style="height: auto;"><div class="panel-body text-sm"><h3>Cambiar Imagen de Perfil del Personaje:</h3><div class="col-lg-4 col-lg-offset-4"><h3 style="font-size: 12px;color: #4A4A4A;"><p>Debe ser la URL de una imagen (jpg,gif,png)</p><p>Recomendamos que sea una im&aacute;gen cuadrada				
+        				</p><form name="agregar" method="POST" action="./charprofilechange.php" class="panel-body">
+        				<br>
+        				
+        				<br>
+        				<label></label>
+                        
+                        	<?php
+        					
+        					echo "<br><label>Elegir Personaje:</label> <br><span class=\"field\"><select id=\"char\" name=\"char\" class=\"form-control\">";
+        					foreach ($chars as $char){
+        					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+        					}
+        					echo "</select><br>";
+                            
+                            ?>
+                        
+        				<br><br>
+        				<label>Nuevo Nombre:</label>
+        				<br><span class="field"><input type="text" id="imgurl" name="imgurl" value="http://www.example.com/image.png" class="form-control"></span>
+        				
+        
+        				
+        				<br>
+        				<input type="button" onclick="document.location='./acm/index.php?action=acc_serv'" class="btn btn-info" value="Atras">
+        				
+        				<input type="submit" value="Crear" class="btn btn-success">
+			         </form>
+			     </h3></div>
+                </div>
+             </div>
+            </div>
 						
 						
 						

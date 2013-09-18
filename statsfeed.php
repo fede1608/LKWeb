@@ -14,7 +14,7 @@ function getStats($account){
   global $race,$class,$level,$MySQLLK,$MySQLMK;
 
     
-    $charsid=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp,karma,createTime,onlinetime FROM characters WHERE account_name="'.$account.'"');
+    $charsid=$MySQLLK->execute('SELECT char_name,charId,race,classId,level,exp,karma,createTime,onlinetime,profile_pic FROM characters WHERE account_name="'.$account.'"');
     $premiumacc=$MySQLLK->execute('SELECT * FROM account_premium WHERE account_name="'.$account.'"');
 
     //$obj['premium']=$premiumacc[0]['premium_service'];
@@ -37,6 +37,7 @@ function getStats($account){
         $obj[$cantpj]['stars']=$obj[$cantpj]['full']+$obj[$cantpj]['half']*0.5;
         
         $obj[$cantpj]['name']=$charid['char_name'];
+        $obj[$cantpj]['profile_pic']=$charid['profile_pic'];
         $obj[$cantpj]['level']=$charid['level'];
         $obj[$cantpj]['exp']=$charid['exp'];
         $obj[$cantpj]['karma']=$charid['karma'];
@@ -194,24 +195,26 @@ function getTodayTops(){
         $result=$MySQLMK->execute('SELECT `charId`,cant FROM dailystats WHERE fecha='.$fecha.' AND tipo='.$i.' ORDER BY `cant` DESC LIMIT 3');
         for($j=1;$j<=3;$j++){
             $obj[$i][$j]['cant']=$result[$j-1]['cant'];
-            $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
+            $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.profile_pic FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
             $obj[$i][$j]['pj']=$char[0]['char_name'];
             $obj[$i][$j]['race']=$race[$char[0]['race']];
             $obj[$i][$j]['lvl']=$char[0]['level'];
             $obj[$i][$j]['class']=$class[$char[0]['classId']];
             $obj[$i][$j]['premium']=$char[0]['premium_service'];
+            $obj[$i][$j]['profile_pic']=$char[0]['profile_pic'];
         }
     }
     $i=5;
     $result=$MySQLMK->execute('SELECT `charId`,cant FROM dailystats WHERE fecha='.$fecha.' AND tipo='.$i.' ORDER BY `cant` DESC LIMIT 7');
     for($j=1;$j<=7;$j++){
         $obj[$i][$j]['cant']=$result[$j-1]['cant'];
-        $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
+        $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.profile_pic FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
         $obj[$i][$j]['pj']=$char[0]['char_name'];
         $obj[$i][$j]['race']=$race[$char[0]['race']];
         $obj[$i][$j]['lvl']=$char[0]['level'];
         $obj[$i][$j]['class']=$class[$char[0]['classId']];
         $obj[$i][$j]['premium']=$char[0]['premium_service'];
+        $obj[$i][$j]['profile_pic']=$char[0]['profile_pic'];
     }
     //$event=$MySQLLK->execute('SELECT c.char_name as player,c.level,c.race,c.classId,sum(n.`wins`) as suma FROM `nexus_stats_global` as n,characters as c  WHERE n.`player`=c.charId GROUP BY n.`player` ORDER BY suma DESC LIMIT 1');
    // $obj[4]['cant']=$event[0]['suma'];
@@ -229,27 +232,29 @@ function getGeneralTops(){
         $result=$MySQLMK->execute('SELECT d.`charId`,sum(d.cant) as cant FROM dailystats as d WHERE tipo='.$i.' GROUP BY charId  ORDER BY `cant` DESC LIMIT 7');
         for($j=1;$j<=7;$j++){
             $obj[$i][$j]['cant']=$result[$j-1]['cant'];
-            $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
+            $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.profile_pic FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
             $obj[$i][$j]['pj']=$char[0]['char_name'];
             $obj[$i][$j]['race']=$race[$char[0]['race']];
             $obj[$i][$j]['lvl']=$char[0]['level'];
             $obj[$i][$j]['class']=$class[$char[0]['classId']];
             $obj[$i][$j]['premium']=$char[0]['premium_service'];
+            $obj[$i][$j]['profile_pic']=$char[0]['profile_pic'];
         }
     }
     $i=5;
     $result=$MySQLMK->execute('SELECT d.`charId`,sum(d.cant) as cant FROM dailystats as d WHERE tipo='.$i.' GROUP BY charId  ORDER BY `cant` DESC LIMIT 7');
     for($j=1;$j<=7;$j++){
         $obj[$i][$j]['cant']=$result[$j-1]['cant'];
-        $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
+        $char=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.profile_pic FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND charId='.$result[$j-1]['charId'].'');
         $obj[$i][$j]['pj']=$char[0]['char_name'];
         $obj[$i][$j]['race']=$race[$char[0]['race']];
         $obj[$i][$j]['lvl']=$char[0]['level'];
         $obj[$i][$j]['class']=$class[$char[0]['classId']];
         $obj[$i][$j]['premium']=$char[0]['premium_service'];
+        $obj[$i][$j]['profile_pic']=$char[0]['profile_pic'];
     }
-    $onlinetop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.onlinetime FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND c.accesslevel=0 ORDER BY onlinetime  DESC LIMIT 7');
-    $expxmintop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.exp/(c.onlinetime/60) as expxmin FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND c.accesslevel=0 ORDER BY expxmin  DESC LIMIT 7');
+    $onlinetop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.onlinetime,c.profile_pic FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND c.accesslevel=0 ORDER BY onlinetime  DESC LIMIT 7');
+    $expxmintop=$MySQLLK->execute('SELECT c.char_name,c.charId,c.race,c.classId,c.level,c.exp,p.premium_service,c.exp/(c.onlinetime/60),c.profile_pic as expxmin FROM characters as c,account_premium as p WHERE c.account_name=p.account_name AND c.accesslevel=0 ORDER BY expxmin  DESC LIMIT 7');
     $i=9;//exp por minuto
     for($j=1;$j<=7;$j++){
         
@@ -259,6 +264,7 @@ function getGeneralTops(){
         $obj[$i][$j]['lvl']=$expxmintop[$j-1]['level'];
         $obj[$i][$j]['class']=$class[$expxmintop[$j-1]['classId']];
         $obj[$i][$j]['premium']=$expxmintop[$j-1]['premium_service'];
+        $obj[$i][$j]['profile_pic']=$expxmintop[$j-1]['profile_pic'];
     }
     $i=8;//online time
     for($j=1;$j<=7;$j++){
@@ -271,6 +277,7 @@ function getGeneralTops(){
         $obj[$i][$j]['lvl']=$onlinetop[$j-1]['level'];
         $obj[$i][$j]['class']=$class[$onlinetop[$j-1]['classId']];
         $obj[$i][$j]['premium']=$onlinetop[$j-1]['premium_service'];
+        $obj[$i][$j]['profile_pic']=$onlinetop[$j-1]['profile_pic'];
     }
     
     

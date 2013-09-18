@@ -144,7 +144,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:38px;">
-                                                        <img src="images/'.$todayStatsptosgral['race'].'.png" style="width:84px !important; height:100px !important;" class="img-rounded">
+                                                        <img src="'.$todayStatsptosgral['profile_pic'].'" style="width:84px !important; height:84px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$todayStatsptosgral['pj'].'
@@ -202,7 +202,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
-                                                        <img src="images/'.$todayStatspvp['race'].'.png" style="width:64px !important; height:70px !important;" class="img-rounded">
+                                                        <img src="'.$todayStatspvp['profile_pic'].'" style="width:64px !important; height:64px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$todayStatspvp['pj'].'
@@ -256,7 +256,7 @@ if(!isacmlogged()){
                                                         <i class="'.$star.'"></i> '.$conttop.'</span>
                                                     </div>
                                                     <div class="row" style="padding-left:48px;">
-                                                        <img src="images/'.$todayStatspk['race'].'.png" style="width:64px !important; height:70px !important;" class="img-rounded">
+                                                        <img src="'.$todayStatspk['profile_pic'].'" style="width:64px !important; height:64px !important;" class="img-rounded">
                                                     </div>
                                                     <div class="row text-center letras-blancas">
                                                         '.$todayStatspk['pj'].'
@@ -345,7 +345,8 @@ if(!isacmlogged()){
                                                                                                     <div class="letras-blancas">
                                                                        
                                                                                                             <div class="row">
-																											
+																											     <div class="col-lg-4">	<img src="'.$stat['profile_pic'].'" style="width:100px !important; height:100px !important;" class="img-rounded">	</div>																				
+																												<div class="col-lg-8">
 																												<h2 class="m-t-none m-b-none"  style="font-family:Alegreya SC;">
 																														Nombre: '.$stat['name'].'
 																														<br>
@@ -353,6 +354,7 @@ if(!isacmlogged()){
 																														<br>
 																														Clase: '.$stat['class'].'
 																												</h2>
+                                                                                                                </div>
 																												
 																											</div>
 																											
