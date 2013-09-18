@@ -106,7 +106,7 @@ if(!isacmlogged()){
                                                     	Donaciones por tarjeta de crédito acreditadas instantáneamente
                                                     </li>
                                                     <li>
-                                                    Donaciones por PagoFácil/Rapipago acreditadas en 48Hs hábiles automáticamente
+                                                    Donaciones por PagoFácil/Rapipago acreditadas en 24Hs hábiles automáticamente
                                                     </li>
                                                     <li>
                                                     Es posible donar utilizando crédito existente en la cuenta de MercadoPago, la acrecitación es instantánea
@@ -190,9 +190,12 @@ if(!isacmlogged()){
                                     <b>Otros métodos</b>
                               </header>
                                 
-                       		<img src="images/western-union-logo.jpg" style="width:100%; max-height:163px">
+                       		<img src="images/western-union-logo.jpg" style="width:100%; max-height:133px">
                             <img src="images/logo-banco-nacion.jpg" style="width:100%; max-height:130px;">
                             <div class="row"></div>
+                            <h5 class="letras-blancas" style="text-align:center; font-family:Alegreya SC">
+                            5% Extra de Coins con Transf. Banc.
+                            </h5>
                             <h5 class="letras-blancas" style="text-align:center; font-family:Alegreya SC">
                             Comunicate con nosotros para donar por estos métodos
                             </h5>

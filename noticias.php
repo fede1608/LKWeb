@@ -39,7 +39,7 @@ include_once 'session.php';
 				<section class="vbox">
 					<footer class="footer bg-light dker bg-gradient">
 						<p>
-							Promociones y ofertas: 15% de Coins extra con Paypal
+							Promociones y ofertas: 15% de Coins extra con Paypal, 5% Extra con Transferencia Bancaria
 						</p>
 					</footer>
 					<section class="fondo-transparente-negro lter">

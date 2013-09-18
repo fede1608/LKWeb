@@ -795,6 +795,10 @@ if(!isacmlogged()){
             </div><!-- /.modal-dialog -->
         </div>
         
+        <?php 
+                $MySQL2 = new SQL($hostL, $usernombre, $pass, $dbgame);
+                $chars = $MySQL2->execute("SELECT * FROM `". $tablecharacters ."` WHERE account_name=\"".$userdata['login']."\"");
+        ?>
         <div class="modal fade" id="modal-LCs">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -819,18 +823,20 @@ if(!isacmlogged()){
                                       Cambia tus Linekkit Coins por Donator Coins para usar dentro del juego.<br>
                                       Las Donator Coins son tradeables y pueden ser canjeadas en el NPC de donación.
 									</p>
-                                      <form role="form">
+                                      <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
                                         <div class="form-group">
                                           <label>Personaje</label>
-                                          <select type="text" class="form-control">
-                                            <option value='1'> Personaje 1</option>
-                                            <option value='2'> Personaje 2</option>
-                                            <option value='3'> Personaje 3</option>
-                                          </select>
+                                            <?php echo "<select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+                        					foreach ($chars as $char){
+                        					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+                        					}
+                        					echo "</select><br>"; ?>
                                         </div>
                                         <div class="form-group">
+                                        <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+                                        <input type="hidden" name="opcion" value="1">
                                           <label>LCs a cambiar por Donator Coins</label>
-                                          <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="120">
+                                          <input type="text" id="cantidadcoins" name="cantidadcoins" class="form-control" placeholder="0">
                                         </div>
                                         <div class="checkbox m-t-lg">
                                           <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Asignar</strong></button>
@@ -865,19 +871,21 @@ if(!isacmlogged()){
                                 <p>
                                	<b>LCs requeridas:</b> 15 por cambio
                                 </p>
-                                <form role="form">
+                                <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
                                 <div class="form-group">
                                   <label>Personaje</label>
-                                  <select type="text" class="form-control">
-                                    <option value='1'> Personaje 1</option>
-                                    <option value='2'> Personaje 2</option>
-                                    <option value='3'> Personaje 3</option>
-                                  </select>
+                                  <?php echo "<select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+            					foreach ($chars as $char){
+            					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+            					}
+            					echo "</select><br>"; ?>
                                 </div>
                                 <div class="form-group">
-                                  <label>Nuevo nombre <i>(Máximo 16 caracteres)</i></label>
-                                  <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="120">
+                                  <label>Nuevo nombre <i>(M&aacute;ximo 16 caracteres)</i></label>
+                                  <input type="text" id="nuevonombre" name="nuevonombre" class="form-control" placeholder="Nuevo Nombre">
                                 </div>
+                                <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+                                <input type="hidden" name="opcion" value="2">
                                 <p style="text-align:justify"> Recordatorio: Esta absolutamente prohibido utilizar nombres que puedan resultar ofensivos para otros jugadores o que se consideren de mal gusto. El no cumplimiento de esta norma será rápidamente detectado y podrá ocasionar la suspensión permanente de la cuenta. Si no estas seguro de si un nombre cumple con los términos y condiciones de Linekkit, por favor realiza tu consulta a la administración antes de realizar el cambio.
                                 </p>
                                 <div class="checkbox m-t-lg">
@@ -897,16 +905,18 @@ if(!isacmlogged()){
                                 </p>
                                 <p style="color:#F66"><b> Importante: Los personajes de la raza Kamael no pueden cambiar de sexo.</b>
                                 </p>
-                                <form role="form">
+                                <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
                                 <div class="form-group">
                                   <label>Personaje</label>
-                                  <select type="text" class="form-control">
-                                    <option value='1'> Personaje 1</option>
-                                    <option value='2'> Personaje 2</option>
-                                    <option value='3'> Personaje 3</option>
-                                  </select>
+                                <?php echo "<select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+            					foreach ($chars as $char){
+            					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+            					}
+            					echo "</select><br>"; ?>
                                 </div>    
                                 <div class="checkbox m-t-lg">
+                                        <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+				                        <input type="hidden" name="opcion" value="3">
                                   <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Cambiar sexo</strong></button>
                                 </div>        
                                 </form>
@@ -925,13 +935,16 @@ if(!isacmlogged()){
                                   tener el servicio premium de Linekkit.<br>
                                   <b>Todos los personajes de la cuenta reciben los beneficios!<br></b>
                                   </p>
-                                  <form role="form">
+                                  <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
                                     <div class="form-group">
                                       <label>Packs de servicio Premium</label>
                                       <select type="text" class="form-control">
                                         <option value='1'>Premium 30 días - 120 LCs</option>
                                         <option value='2'>Premium 15 días - 70 LCs</option>
                                       </select>
+                                      <input type="hidden" name="pjseleccionado" value="--">
+                                      <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+				                        <input type="hidden" name="opcion" value="4">
                                     </div>
                                     <p><i>Los packs premium son acumulables y se activan relogeando la cuenta.</i></p>
                                     <div class="checkbox m-t-lg">
@@ -977,18 +990,18 @@ if(!isacmlogged()){
                     <div class="col-sm-6 b-r">
                       <h3 class="m-t-none m-b">Imagen de perfil</h3>
                       <p>Debe ser la URL de una imagen (.jpg, .gif o .png)</p>
-                      <form role="form">
+                      <form role="form" name="agregar" method="POST" action="./charprofilechange.php">
                         <div class="form-group">
                           <label>Personaje</label>
-                          <select type="text" class="form-control">
-                          	<option value='1'> Personaje 1</option>
-                			<option value='2'> Personaje 2</option>
-               				<option value='3'> Personaje 3</option>
-                          </select>
+                          <?php echo "<select id=\"char\" name=\"char\" class=\"form-control\">";
+        					foreach ($chars as $char){
+        					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+        					}
+        					echo "</select><br>"; ?>
                         </div>
                         <div class="form-group">
                           <label>URL de la imagen</label>
-                          <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="http://www.example.com/image.png">
+                          <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="http://www.linekkit.com/images/default.jpg">
                         </div>
                         <div class="checkbox m-t-lg">
                           <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Guardar</strong></button>
