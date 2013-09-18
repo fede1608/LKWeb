@@ -144,7 +144,7 @@ function getBar($tipo,$active){
 				<section class="vbox">
 					<header class="dker nav-bar">
 						<a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen" data-target="body"> <i class="icon-reorder"></i> </a>
-						<a href="#" class="nav-brand" data-toggle="fullscreen"><img src="images/logo.png" style="width: 100%;"></a>
+						<a href="#" class="nav-brand" data-toggle="fullscreen"><img src="images/logo.png" style="width: 100%; max-width:130; max-height:40"></a>
 						<a class="btn btn-link visible-xs" data-toggle="class:show" data-target=".nav-user"> <i class="icon-comment-alt"></i> </a>
 					</header>
 					<footer class="footer bg-gradient hidden-xs">
