@@ -691,6 +691,33 @@ if(!isacmlogged()){
                             
                             <!-- Panel de la derecha-->
                             <div class="col-lg-3">
+                            
+                            <!-- Linekkit Coins-->
+                                <section class="panel clearfix borde-transparente-negro" style="background-color:transparent">
+									<div class="panel-body fondo-transparente-negro-075 borde-transparente-negro" >
+										
+										<div class="clear">
+											
+                                            <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Linekkit Coins</h2>
+                                            
+                                            <div class="pull-in clearfix m-b-n">
+											     <div class="m-t-sm m-b text-center animated bounceInDown">
+                                                 	
+                                                    <div class="row">
+                                                    <h3 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Actualmente <br> dispones de: 000 LCs</h3>
+                                                    </div>
+                                                </div>
+											</div>
+                                            
+                                            <div class="col-xs-12 row m-t-sm m-l-xs m-r-xs text-center">
+                                                       <a href="/donacion.php" class="btn btn-warning letras-negras btn-block m-b-sm"><i class="icon-gift pull-left"></i><b>
+                                                    Obtener Linekkit Coins</b></a>                 
+                                            </div>
+
+										</div>
+									</div>
+								</section>
+                                <!-- /Linekkit Coins-->  
                                                         
                                 <!-- Votos -->
                                 <section class="panel clearfix borde-transparente-negro" style="background-color:transparent">
@@ -838,6 +865,10 @@ if(!isacmlogged()){
                                           <label>LCs a cambiar por Donator Coins</label>
                                           <input type="text" id="cantidadcoins" name="cantidadcoins" class="form-control" placeholder="0">
                                         </div>
+                                        <p>
+                                      Cambia tus Linekkit Coins por Donator Coins para usar dentro del juego.<br>
+                                      Las Donator Coins son tradeables y pueden ser canjeadas en el NPC de donación.
+									</p>
                                         <div class="checkbox m-t-lg">
                                           <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Asignar</strong></button>
                                         </div>                
