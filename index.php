@@ -609,6 +609,26 @@ if(!isacmlogged()){
                                                                 <a class="left carousel-control" href="#c-slide" data-slide="prev"> <i class="icon-angle-left"></i> </a>
                                                                 <a class="right carousel-control" href="#c-slide" data-slide="next"> <i class="icon-angle-right"></i> </a>
                                                         </div>
+                                                        
+                                                        <div class="row m-t-lg m-l-sm m-r-sm">
+                             
+																						 <div class="col-xs-4">
+																							<a href="/acm/index.php?action=acc_serv" class="btn btn-gplus btn-block m-b-sm"><i class="icon-cogs pull-left"></i><b>
+																							Panel de usuario</b></a>
+																						 </div>
+                                                                                         
+                                                                                         
+																						 <div class="col-xs-4">
+																							<a href="#modal-LCs" data-toggle="modal" class="btn btn-warning letras-negras btn-block m-b-sm"><i class="icon-unlock-alt pull-left"></i><b>
+																							Linekkit Coins (LC)</b></a>
+																						 </div>
+                                                                                         
+                                                                                         <div class="col-xs-4">
+																							<a href="#modal-profileImg" data-toggle="modal" class="btn btn-facebook  btn-block m-b-sm"><i class="icon-picture pull-left"></i><b>
+																							Cambiar imagen de perfil</b></a>
+																						 </div>
+																						 
+																					 </div>
                                                 </div>
                                             
                                             </div>
@@ -671,6 +691,41 @@ if(!isacmlogged()){
                             
                             <!-- Panel de la derecha-->
                             <div class="col-lg-3">
+          <?php 
+                 require_once 'libs/mysql.inc.php';
+                require_once 'libs/config.inc.php';
+                $MySQL2 = new SQL($hostL, $usernombre, $pass, $dbgame);
+                $chars = $MySQL2->execute("SELECT * FROM `characters` WHERE account_name=\"".$userdata['login']."\"");
+                
+                $coins = $MySQL2->execute("SELECT coins FROM ".$dblogin.".accounts WHERE login=\"".$userdata['login']."\"");
+                $coins = $coins[0]['coins'];
+        ?>                          
+                            <!-- Linekkit Coins-->
+                                <section class="panel clearfix borde-transparente-negro" style="background-color:transparent">
+									<div class="panel-body fondo-transparente-negro-075 borde-transparente-negro" >
+										
+										<div class="clear">
+											
+                                            <h2 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Linekkit Coins</h2>
+                                            
+                                            <div class="pull-in clearfix m-b-n">
+											     <div class="m-t-sm m-b text-center animated bounceInDown">
+                                                 	
+                                                    <div class="row">
+                                                    <h3 class="text-center letras-blancas" style="font-family:Alegreya SC; margin-top:0">Actualmente <br> dispones de: <?php echo $coins; ?> LCs</h3>
+                                                    </div>
+                                                </div>
+											</div>
+                                            
+                                            <div class="col-xs-12 row m-t-sm m-l-xs m-r-xs text-center">
+                                                       <a href="/donacion.php" class="btn btn-warning letras-negras btn-block m-b-sm"><i class="icon-gift pull-left"></i><b>
+                                                    Obtener Linekkit Coins</b></a>                 
+                                            </div>
+
+										</div>
+									</div>
+								</section>
+                                <!-- /Linekkit Coins-->  
                                                         
                                 <!-- Votos -->
                                 <section class="panel clearfix borde-transparente-negro" style="background-color:transparent">
@@ -748,6 +803,259 @@ if(!isacmlogged()){
 			</section>
 			<!-- /.vbox -->
 		</section>
+        <div class="modal fade" id="modal-panelDeUsuario">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <!-- .nav-justified -->
+                      <section class="panel">
+                        <header class="panel-heading bg-light">
+                          <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a href="#arreglarPj" data-toggle="tab">Arreglar personaje</a></li>
+                            <li><a href="#moverPj" data-toggle="tab">Mover personaje</a></li>
+                            <li><a href="#password" data-toggle="tab">Cambiar contraseña</a></li>
+                          </ul>
+                        </header>
+                        <div class="panel-body">
+                          <div class="tab-content">
+                            <div class="tab-pane active" id="arreglarPj">panel de usuario</div>
+                            <div class="tab-pane" id="moverPj">message</div>
+                            <div class="tab-pane" id="password">settings</div>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- / .nav-justified -->       
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        
+
+        <div class="modal fade" id="modal-LCs">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <!-- .nav-justified -->
+                      <section class="panel">
+                        <header class="panel-heading bg-light">
+                          <ul class="nav nav-tabs nav-justified">
+                            <li class="active"><a href="#donatorCoins" data-toggle="tab">Asignar Linekkit Coins</a></li>
+                            <li><a href="#renomPj" data-toggle="tab">Renombrar personaje</a></li>
+                            <li><a href="#cambioDeSexo" data-toggle="tab">Cambio de sexo de personaje</a></li>
+                            <li><a href="#obtPremium" data-toggle="tab">Obtener Premium</a></li>
+                          </ul>
+                        </header>
+                        <div class="panel-body">
+                          <div class="tab-content">
+                            <div class="tab-pane active" id="donatorCoins">
+                            	<div class="row">
+                                    <div class="col-sm-6 b-r">
+                                      <h3 class="m-t-none m-b">Asignar LCs</h3>
+                                      <p>
+                                      Cambia tus Linekkit Coins por Donator Coins para usar dentro del juego.<br>
+                                      Las Donator Coins son tradeables y pueden ser canjeadas en el NPC de donación.
+									</p>
+                                      <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
+                                        <div class="form-group">
+                                          <label>Personaje</label>
+                                            <?php echo "<select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+                        					foreach ($chars as $char){
+                        					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+                        					}
+                        					echo "</select><br>"; ?>
+                                        </div>
+                                        <div class="form-group">
+                                        <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+                                        <input type="hidden" name="opcion" value="1">
+                                          <label>LCs a cambiar por Donator Coins</label>
+                                          <input type="text" id="cantidadcoins" name="cantidadcoins" class="form-control" placeholder="0">
+                                        </div>
+                                        <p>
+                                      Cambia tus Linekkit Coins por Donator Coins para usar dentro del juego.<br>
+                                      Las Donator Coins son tradeables y pueden ser canjeadas en el NPC de donación.
+									</p>
+                                        <div class="checkbox m-t-lg">
+                                          <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Asignar</strong></button>
+                                        </div>                
+                                      </form>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <h4>¿Necesitas Linekkit Coins?</h4>
+                                      <div class="row text-center">
+                                        
+                                      </div>
+                                      <p style="text-align:center"><i>Obtené Linekkit Coins realizando una donación al servidor y potencia a tus personajes al máximo!</i></p>
+                                      <p>Conseguí tus Linekkit Coins y obtené acceso a los items más demandados por los jugadores expertos</p>
+                                      <ul>
+                                      	<li>Armas y armaduras</li>
+                                        <li>Joyería</li>
+                                        <li>Agathions</li>
+                                        <li>Accesorios estéticos</li>
+                                        <li>Cambio de clase</li>
+                                        <li>Categoría Premium</li>
+                                      </ul>
+                                      <a href="/donacion.php" class="btn btn-warning letras-negras btn-block m-b-sm"><i class="icon-gift pull-left"></i><b>Obtener LCs</b></a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="tab-pane" id="renomPj">
+                           
+                                <h3 class="m-t-none m-b">Renombra a tus personajes</h3>
+                                <p>
+                                Usa tus Linekkit Coins para cambiar el nombre de cualquiera de tus personajes. El nuevo nombre no expira nunca y puede volver a ser cambiado por este mismo método en cualquier momento. 
+                                </p>
+                                <p>
+                               	<b>LCs requeridas:</b> 15 por cambio
+                                </p>
+                                <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
+                                <div class="form-group">
+                                  <label>Personaje</label>
+                                  <?php echo "<select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+            					foreach ($chars as $char){
+            					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+            					}
+            					echo "</select><br>"; ?>
+                                </div>
+                                <div class="form-group">
+                                  <label>Nuevo nombre <i>(M&aacute;ximo 16 caracteres)</i></label>
+                                  <input type="text" id="nuevonombre" name="nuevonombre" class="form-control" placeholder="Nuevo Nombre">
+                                </div>
+                                <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+                                <input type="hidden" name="opcion" value="2">
+                                <p style="text-align:justify"> Recordatorio: Esta absolutamente prohibido utilizar nombres que puedan resultar ofensivos para otros jugadores o que se consideren de mal gusto. El no cumplimiento de esta norma será rápidamente detectado y podrá ocasionar la suspensión permanente de la cuenta. Si no estas seguro de si un nombre cumple con los términos y condiciones de Linekkit, por favor realiza tu consulta a la administración antes de realizar el cambio.
+                                </p>
+                                <div class="checkbox m-t-lg">
+                                  <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Cambiar nombre</strong></button>
+                                </div>                
+                                </form>
+                                 
+                            </div>
+                            <div class="tab-pane" id="cambioDeSexo">
+                            
+                            	<h3 class="m-t-none m-b">Cambia el sexo de tu personaje</h3>
+                                <p>
+                                En Linekkit podes cambiar el sexo de tus personajes cuando quieras sin necesidad de cirujía plástica. El nuevo sexo no expira nunca y puede volver a ser cambiado por este mismo método en cualquier momento. 
+                                </p>
+                                <p>
+                               	<b>LCs requeridas:</b> 15 por cambio
+                                </p>
+                                <p style="color:#F66"><b> Importante: Los personajes de la raza Kamael no pueden cambiar de sexo.</b>
+                                </p>
+                                <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
+                                <div class="form-group">
+                                  <label>Personaje</label>
+                                <?php echo "<select id=\"pjseleccionado\" name=\"pjseleccionado\" class=\"form-control\">";
+            					foreach ($chars as $char){
+            					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+            					}
+            					echo "</select><br>"; ?>
+                                </div>    
+                                <div class="checkbox m-t-lg">
+                                        <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+				                        <input type="hidden" name="opcion" value="3">
+                                  <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Cambiar sexo</strong></button>
+                                </div>        
+                                </form>
+                            
+                            </div>
+                            <div class="tab-pane" id="obtPremium">
+                            	
+                                <div class="row text-center">
+                            	<img src="images/premium.jpg" width="480" height="74">
+                                </div>
+                                
+                                <div class="row m-t-lg">
+                                <div class="col-sm-6 b-r">
+                                  <h3 class="m-t-none m-b">Servicio Premium</h3>
+                                  <p style="text-align:center">Volvete único, llegá más lejos y aprovechá al máximo tu tiempo con los beneficios de
+                                  tener el servicio premium de Linekkit.<br>
+                                  <b>Todos los personajes de la cuenta reciben los beneficios!<br></b>
+                                  </p>
+                                  <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
+                                    <div class="form-group">
+                                      <label>Packs de servicio Premium</label>
+                                      <select type="text" class="form-control">
+                                        <option value='1'>Premium 30 días - 120 LCs</option>
+                                        <option value='2'>Premium 15 días - 70 LCs</option>
+                                      </select>
+                                      <input type="hidden" name="pjseleccionado" value="--">
+                                      <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
+				                        <input type="hidden" name="opcion" value="4">
+                                    </div>
+                                    <p><i>Los packs premium son acumulables y se activan relogeando la cuenta.</i></p>
+                                    <div class="checkbox m-t-lg">
+                                      <button type="submit" class="btn btn-sm btn-warning letras-negras pull-right text-uc m-t-n-xs"><strong>Obtener premium</strong></button>
+                                    </div>                
+                                  </form>
+                                </div>
+                                <div class="col-sm-6">
+                                      <h4>Ser un jugador Premium</h4>
+                                      <div class="row text-center">
+                                        
+                                      </div>
+                                      <p style="text-align:center">El servicio Premium te permite aprovechar los premium rates y destacarte en los tops de Linekkit, además de ser reconocido como un jugador especial dentro de la comunidad.</p>
+                                      <p>Características:</p>
+                                      <ul>
+                                      	<li>Se aplica a todos los personajes de la cuenta</li>
+                                        <li>EXP x12</li>
+                                        <li>SP x12</li>
+                                        <li>Drop x9</li>
+                                        <li>Spoil x9</li>
+                                        <li>Distintivo en los tops</li>
+                                        <li>Distintivo en el perfil</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              </div>
+                                
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                      <!-- / .nav-justified -->       
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
+        
+        <div class="modal fade" id="modal-profileImg">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-sm-6 b-r">
+                      <h3 class="m-t-none m-b">Imagen de perfil</h3>
+                      <p>Debe ser la URL de una imagen (.jpg, .gif o .png)</p>
+                      <form role="form" name="agregar" method="POST" action="./charprofilechange.php">
+                        <div class="form-group">
+                          <label>Personaje</label>
+                          <?php echo "<select id=\"char\" name=\"char\" class=\"form-control\">";
+        					foreach ($chars as $char){
+        					echo "<option value='".$char['char_name']."'>Lx10 - ".$char['char_name']."</option>";
+        					}
+        					echo "</select><br>"; ?>
+                        </div>
+                        <div class="form-group">
+                          <label>URL de la imagen</label>
+                          <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="http://www.linekkit.com/images/default.jpg">
+                        </div>
+                        <div class="checkbox m-t-lg">
+                          <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Guardar</strong></button>
+                        </div>                
+                      </form>
+                    </div>
+                    <div class="col-sm-6">
+                      <h4>Recomendación</h4>
+                      <div class="row text-center">
+                      	<img src="http://linekkit.com/images/profile_default.jpg" style="width:160px !important; height:160px !important;" class="img-rounded">
+                      </div>
+                      <p style="text-align:center"><i>Para una mejor visualización, recomendamos usar imagenes cuadradas que no tengan resoluciones superiores a 800x800 y/o superen los 500KB</i></p>
+                    </div>
+                  </div>          
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div>
         
         <script src="js/jquery.min.js"></script>
         <!-- Bootstrap -->
