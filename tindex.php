@@ -613,7 +613,7 @@ if(!isacmlogged()){
                                                         <div class="row m-t-lg m-l-sm m-r-sm">
                              
 																						 <div class="col-xs-4">
-																							<a href="#modal-panelDeUsuario" data-toggle="modal" class="btn btn-gplus btn-block m-b-sm"><i class="icon-cogs pull-left"></i><b>
+																							<a href="/acm/index.php?action=acc_serv" class="btn btn-gplus btn-block m-b-sm"><i class="icon-cogs pull-left"></i><b>
 																							Panel de usuario</b></a>
 																						 </div>
                                                                                          
@@ -803,7 +803,7 @@ if(!isacmlogged()){
                       <section class="panel">
                         <header class="panel-heading bg-light">
                           <ul class="nav nav-tabs nav-justified">
-                            <li class="active"><a href="#donatorCoins" data-toggle="tab">Asignar Donator Coins</a></li>
+                            <li class="active"><a href="#donatorCoins" data-toggle="tab">Asignar Linekkit Coins</a></li>
                             <li><a href="#renomPj" data-toggle="tab">Renombrar personaje</a></li>
                             <li><a href="#cambioDeSexo" data-toggle="tab">Cambio de sexo de personaje</a></li>
                             <li><a href="#obtPremium" data-toggle="tab">Obtener Premium</a></li>
@@ -811,13 +811,154 @@ if(!isacmlogged()){
                         </header>
                         <div class="panel-body">
                           <div class="tab-content">
-                            <div class="tab-pane active" id="donatorCoins">Asignar</div>
-                            <div class="tab-pane" id="renomPj">Renombrar</div>
-                            <div class="tab-pane" id="cambioDeSexo">Cambio de sexo</div>
+                            <div class="tab-pane active" id="donatorCoins">
+                            	<div class="row">
+                                    <div class="col-sm-6 b-r">
+                                      <h3 class="m-t-none m-b">Asignar LCs</h3>
+                                      <p>
+                                      Cambia tus Linekkit Coins por Donator Coins para usar dentro del juego.<br>
+                                      Las Donator Coins son tradeables y pueden ser canjeadas en el NPC de donación.
+									</p>
+                                      <form role="form">
+                                        <div class="form-group">
+                                          <label>Personaje</label>
+                                          <select type="text" class="form-control">
+                                            <option value='1'> Personaje 1</option>
+                                            <option value='2'> Personaje 2</option>
+                                            <option value='3'> Personaje 3</option>
+                                          </select>
+                                        </div>
+                                        <div class="form-group">
+                                          <label>LCs a cambiar por Donator Coins</label>
+                                          <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="120">
+                                        </div>
+                                        <div class="checkbox m-t-lg">
+                                          <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Asignar</strong></button>
+                                        </div>                
+                                      </form>
+                                    </div>
+                                    <div class="col-sm-6">
+                                      <h4>¿Necesitas Linekkit Coins?</h4>
+                                      <div class="row text-center">
+                                        
+                                      </div>
+                                      <p style="text-align:center"><i>Obtené Linekkit Coins realizando una donación al servidor y potencia a tus personajes al máximo!</i></p>
+                                      <p>Conseguí tus Linekkit Coins y obtené acceso a los items más demandados por los jugadores expertos</p>
+                                      <ul>
+                                      	<li>Armas y armaduras</li>
+                                        <li>Joyería</li>
+                                        <li>Agathions</li>
+                                        <li>Accesorios estéticos</li>
+                                        <li>Cambio de clase</li>
+                                        <li>Categoría Premium</li>
+                                      </ul>
+                                      <a href="/donacion.php" class="btn btn-warning letras-negras btn-block m-b-sm"><i class="icon-gift pull-left"></i><b>Obtener LCs</b></a>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="tab-pane" id="renomPj">
+                           
+                                <h3 class="m-t-none m-b">Renombra a tus personajes</h3>
+                                <p>
+                                Usa tus Linekkit Coins para cambiar el nombre de cualquiera de tus personajes. El nuevo nombre no expira nunca y puede volver a ser cambiado por este mismo método en cualquier momento. 
+                                </p>
+                                <p>
+                               	<b>LCs requeridas:</b> 15 por cambio
+                                </p>
+                                <form role="form">
+                                <div class="form-group">
+                                  <label>Personaje</label>
+                                  <select type="text" class="form-control">
+                                    <option value='1'> Personaje 1</option>
+                                    <option value='2'> Personaje 2</option>
+                                    <option value='3'> Personaje 3</option>
+                                  </select>
+                                </div>
+                                <div class="form-group">
+                                  <label>Nuevo nombre <i>(Máximo 16 caracteres)</i></label>
+                                  <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="120">
+                                </div>
+                                <p style="text-align:justify"> Recordatorio: Esta absolutamente prohibido utilizar nombres que puedan resultar ofensivos para otros jugadores o que se consideren de mal gusto. El no cumplimiento de esta norma será rápidamente detectado y podrá ocasionar la suspensión permanente de la cuenta. Si no estas seguro de si un nombre cumple con los términos y condiciones de Linekkit, por favor realiza tu consulta a la administración antes de realizar el cambio.
+                                </p>
+                                <div class="checkbox m-t-lg">
+                                  <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Cambiar nombre</strong></button>
+                                </div>                
+                                </form>
+                                 
+                            </div>
+                            <div class="tab-pane" id="cambioDeSexo">
+                            
+                            	<h3 class="m-t-none m-b">Cambia el sexo de tu personaje</h3>
+                                <p>
+                                En Linekkit podes cambiar el sexo de tus personajes cuando quieras sin necesidad de cirujía plástica. El nuevo sexo no expira nunca y puede volver a ser cambiado por este mismo método en cualquier momento. 
+                                </p>
+                                <p>
+                               	<b>LCs requeridas:</b> 15 por cambio
+                                </p>
+                                <p style="color:#F66"><b> Importante: Los personajes de la raza Kamael no pueden cambiar de sexo.</b>
+                                </p>
+                                <form role="form">
+                                <div class="form-group">
+                                  <label>Personaje</label>
+                                  <select type="text" class="form-control">
+                                    <option value='1'> Personaje 1</option>
+                                    <option value='2'> Personaje 2</option>
+                                    <option value='3'> Personaje 3</option>
+                                  </select>
+                                </div>    
+                                <div class="checkbox m-t-lg">
+                                  <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Cambiar sexo</strong></button>
+                                </div>        
+                                </form>
+                            
+                            </div>
                             <div class="tab-pane" id="obtPremium">
-                            	<div class="row text-center">
+                            	
+                                <div class="row text-center">
                             	<img src="images/premium.jpg" width="480" height="74">
                                 </div>
+                                
+                                <div class="row m-t-lg">
+                                <div class="col-sm-6 b-r">
+                                  <h3 class="m-t-none m-b">Servicio Premium</h3>
+                                  <p style="text-align:center">Volvete único, llegá más lejos y aprovechá al máximo tu tiempo con los beneficios de
+                                  tener el servicio premium de Linekkit.<br>
+                                  <b>Todos los personajes de la cuenta reciben los beneficios!<br></b>
+                                  </p>
+                                  <form role="form">
+                                    <div class="form-group">
+                                      <label>Packs de servicio Premium</label>
+                                      <select type="text" class="form-control">
+                                        <option value='1'>Premium 30 días - 120 LCs</option>
+                                        <option value='2'>Premium 15 días - 70 LCs</option>
+                                      </select>
+                                    </div>
+                                    <p><i>Los packs premium son acumulables y se activan relogeando la cuenta.</i></p>
+                                    <div class="checkbox m-t-lg">
+                                      <button type="submit" class="btn btn-sm btn-warning letras-negras pull-right text-uc m-t-n-xs"><strong>Obtener premium</strong></button>
+                                    </div>                
+                                  </form>
+                                </div>
+                                <div class="col-sm-6">
+                                      <h4>Ser un jugador Premium</h4>
+                                      <div class="row text-center">
+                                        
+                                      </div>
+                                      <p style="text-align:center">El servicio Premium te permite aprovechar los premium rates y destacarte en los tops de Linekkit, además de ser reconocido como un jugador especial dentro de la comunidad.</p>
+                                      <p>Características:</p>
+                                      <ul>
+                                      	<li>Se aplica a todos los personajes de la cuenta</li>
+                                        <li>EXP x12</li>
+                                        <li>SP x12</li>
+                                        <li>Drop x9</li>
+                                        <li>Spoil x9</li>
+                                        <li>Distintivo en los tops</li>
+                                        <li>Distintivo en el perfil</li>
+                                      </ul>
+                                    </div>
+                                  </div>
+                              </div>
+                                
                             </div>
                           </div>
                         </div>
