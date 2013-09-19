@@ -52,13 +52,13 @@
                 <div class="row m-t-xs">
                 	<div class="col-lg-2"></div>
 	                <div class="col-lg-8">
-	                	<div class="alert alert-warning alert-block">
+	                	<!--<div class="alert alert-warning alert-block">
 	               			<button type="button" class="close" data-dismiss="alert"><i class="icon-remove"></i></button>
 	                			<h4><i class="icon-warning-sign"></i>Información importante sobre la BETA</h4>
 	                		<p>Estas entrando a la versión BETA de Kitlog, la nueva web de Linekkit. Esta versión NO es final ni definitiva y se encuentra abierta al público únicamente con el objetivo de 
 	                			realizar pruebas que nos permitan encontrar posibles bugs a tiempo antes del lanzamiento oficial del servidor el 18/09/13 a las 20:00Hs (ARG). 
 	                			Si encontrás algun tipo de error en la web, comunicate con el equipo de Linekkit vía foro o Facebook para que sea arreglado. Gracias por participar en la beta!</p>
-	              		</div>
+	              		</div>-->
 	               	</div>
 	               	<div class="col-lg-2"></div>
                 </div>
