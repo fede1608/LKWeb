@@ -24,8 +24,9 @@ function noExisteNombreNuevo($nuevonombre,$conexion) {
 function error($msg){
 GLOBAL $opcion;
 			echo "<script language=\"JavaScript\">";
-			echo "self.location=\"./actionsLC.php?id=".intval($opcion)."&error=".$msg."\";";
+			echo "self.location=\"./index.php?id=".intval($opcion)."&error=".$msg."\";";
 			echo "</script>";
+            exit();
 	}
 function exito($msg){
 			echo "<script language=\"JavaScript\">";
@@ -200,6 +201,7 @@ if(mysql_select_db($dbgame,$conexion)) {
 			error("nocoins");}
 		break;
 		case 4:
+        if($recoplasactuales>=40) {
 			$service='';
 			switch($ps){
 				case 1:	
@@ -243,6 +245,7 @@ if(mysql_select_db($dbgame,$conexion)) {
 			fputs($archivo,date(DATE_RFC822)." El usuario ".$nombredeusuario." ha asignado ".$service." de Premium Service . LCoins: ".$recoplasactuales."  IP: ".$_SERVER['REMOTE_ADDR']." RealIp: ".getip(). " Host: ".gethostbyaddr(getip()));
 			fputs($archivo,"\n");
 			exito("_premium_yes");
+            }else error("nocoins");
 			break;
 		default:
 			echo 'No elegiste opción';

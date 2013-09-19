@@ -130,7 +130,7 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>4) ? 1 : $_GET['id']; //
                         case 4: 
                         $titulo="Convertirse en Premium";
                         $comment2='';
-						$costinfo="<p>Premium Rates: Exp x12  SP x12 Drop x9 Spoil x9</p><p>120 LC/1 Mes, 70LC/15 Dias, 40LC/7 Dias</p;";
+						$costinfo="<p>Premium Rates: Exp x12  SP x12 Drop x9 Spoil x9</p><p>120 LC/1 Mes, 70LC/15 Dias</p;";
                         $ps=true;
 						break;
 					}
@@ -182,7 +182,7 @@ $aid = (empty($_GET['id'])||$_GET['id']<=0||$_GET['id']>4) ? 1 : $_GET['id']; //
 				<br><span class="field"><select id="packpremium" name="packpremium" class="form-control">
                 <option value='1'> Premium Rates x 1 Mes</option>
                 <option value='2'> Premium Rates x 15 D&iacute;as</option>
-                <option value='3'> Premium Rates x 7 D&iacute;as</option>
+                
                 </select></span>
                 <input type="hidden" name="pjseleccionado" value="--">
 				<?php } ?>
