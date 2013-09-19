@@ -279,6 +279,7 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                                 <div class="panel-body text-sm">
                                  <a href="Logs/" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Carpeta</a><br />
                                  <a href="Logs/LogsCambioDePuntos.txt" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Cambio De Puntos Logs</a><br />
+                                 <a href="verdc.php" target="search_iframe"><i class="icon-level-down icon-2x icon-muted  v-middle"></i> Ver DC</a><br />
 
                                 </div>
                               </div>

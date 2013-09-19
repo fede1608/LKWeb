@@ -870,10 +870,7 @@ if(!isacmlogged()){
                                           <label>LCs a cambiar por Donator Coins</label>
                                           <input type="text" id="cantidadcoins" name="cantidadcoins" class="form-control" placeholder="0">
                                         </div>
-                                        <p>
-                                      Cambia tus Linekkit Coins por Donator Coins para usar dentro del juego.<br>
-                                      Las Donator Coins son tradeables y pueden ser canjeadas en el NPC de donación.
-									</p>
+                                       
                                         <div class="checkbox m-t-lg">
                                           <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Asignar</strong></button>
                                         </div>                
@@ -974,9 +971,9 @@ if(!isacmlogged()){
                                   <form role="form" name="agregar" method="POST" action="./cambiodepuntos.php">
                                     <div class="form-group">
                                       <label>Packs de servicio Premium</label>
-                                      <select type="text" class="form-control">
-                                        <option value='1'>Premium 30 días - 120 LCs</option>
-                                        <option value='2'>Premium 15 días - 70 LCs</option>
+                                      <select id="packpremium" name="packpremium" class="form-control" >
+                                        <option value="1">Premium 30 días - 120 LCs</option>
+                                        <option value="2">Premium 15 días - 70 LCs</option>
                                       </select>
                                       <input type="hidden" name="pjseleccionado" value="--">
                                       <input type="hidden" name="nombredeusuario" value="<?php echo $userdata['login']; ?>">
@@ -1037,7 +1034,7 @@ if(!isacmlogged()){
                         </div>
                         <div class="form-group">
                           <label>URL de la imagen</label>
-                          <input type="text" id="imgurl" name="imgurl" class="form-control" placeholder="http://www.linekkit.com/images/default.jpg">
+                          <input type="text" onChange="cargar(this.value);" id="imgurl" name="imgurl" class="form-control" placeholder="http://linekkit.com/images/profile_default.jpg" >
                         </div>
                         <div class="checkbox m-t-lg">
                           <button type="submit" class="btn btn-sm btn-success pull-right text-uc m-t-n-xs"><strong>Guardar</strong></button>
@@ -1045,9 +1042,9 @@ if(!isacmlogged()){
                       </form>
                     </div>
                     <div class="col-sm-6">
-                      <h4>Recomendación</h4>
+                      <h4>Vista Previa</h4>
                       <div class="row text-center">
-                      	<img src="http://linekkit.com/images/profile_default.jpg" style="width:160px !important; height:160px !important;" class="img-rounded">
+                      	<img id="imagen1" src="http://linekkit.com/images/profile_default.jpg" style="width:160px !important; height:160px !important;" class="img-rounded">
                       </div>
                       <p style="text-align:center"><i>Para una mejor visualización, recomendamos usar imagenes cuadradas que no tengan resoluciones superiores a 800x800 y/o superen los 500KB</i></p>
                     </div>
@@ -1066,8 +1063,21 @@ if(!isacmlogged()){
         <script src="js/app.js"></script>
         <script src="js/app.plugin.js"></script>
         <script src="js/app.data.js"></script>  
-		
+		<script src="js/load-image.min.js"></script>
         <!--  fix carousel canvas -->
+        <script type="text/javascript">
+        
+        cargar(document.getElementById('imgurl').placeholder);
+         function cargar(e) {
+            loadImage(
+                e,
+                function (img) {
+                    document.getElementById('imagen1').src = img.src;
+                },
+                {maxWidth: 100} // Options
+            );
+        };
+        </script>
         <script type="text/javascript">
         $('#c-slide').on('slid.bs.carousel', function () {
             $.sparkline_display_visible();
