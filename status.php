@@ -8,13 +8,13 @@ date_default_timezone_set("America/Argentina/Buenos_Aires");
 require_once 'libs/mysql.inc.php';
 require_once 'libs/config.inc.php';
 $fakepcs=0;
-$MySQL = new SQL($hostL, $usernombre, $pass, "linekkittest");
+$MySQL = new SQL($hostL, $usernombre, $pass, $dbgame);
 
 function getStatusVar($loginport,$gameport,$ip,$db,$maxplayers){
    global $MySQL;
     $fgame = @fsockopen ($ip,$gameport, $errno, $errstr, 1);
     $flogin = @fsockopen ($ip,$loginport, $errno, $errstr, 1);
-    $activity = $MySQL->execute("SELECT COUNT(*) FROM ".$db.".characters WHERE online = 1");
+    $activity = $MySQL->execute("SELECT COUNT(*) FROM characters WHERE online = 1");
     $online=$activity[0]['COUNT(*)'];
     $tmp = $online + ($fakepcs);
     $percent = ceil($tmp / $maxplayers *100);  
@@ -26,7 +26,7 @@ function getStatusVar($loginport,$gameport,$ip,$db,$maxplayers){
 }
 function getStatus(){
     global $MySQL;
-    $maxplayers=400;
+    $maxplayers=600;
     $fgame = @fsockopen ("freya.linekkit.com",7778, $errno, $errstr, 1);
     $flogin = @fsockopen ("freya.linekkit.com",2106, $errno, $errstr, 1);
     $activity = $MySQL->execute("SELECT COUNT(*) FROM characters WHERE online = 1");
