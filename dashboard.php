@@ -225,12 +225,27 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                       <section class="vbox">
                         <section class="scrollable wrapper">
                           <div class="text-center">
-                            <div class="inline">
-                              <div class="easypiechart" data-percent="65" data-line-width="25" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#ddd" data-loop="false" data-size="180">
-                                <span class="h2">60</span>%
-                                <div class="easypie-text">Processing</div>
+                            <section class="panel">
+                                      <header class="panel-heading">Cuentas</header>
+                                      <div class="panel-body text-center"><div class="list-group bg-white">
+                                      <?php  
+                                      $cuentas=$MySQLEco->execute('SELECT a.cuenta,sp.name,sum(a.monto) as cantidad,c.cur  FROM `asientos` as a, sistemasdepago as sp,currency as c WHERE a.cuenta=sp.id AND a.currency=c.id GROUP BY cuenta');
+                                        
+                                        foreach($cuentas as $cuenta){
+                                            echo '<a href="#" class="list-group-item">
+                                              <i class="icon-dollar"></i>
+                                              <span class="badge">'.$cuenta['cur'].' '.$cuenta['cantidad'].'</span><br/>
+                                               '.$cuenta['name'].'
+                                              </a>';
+                                            
+                                        }
+                                      ?>
+
+                                      </div>
+                                                                
+                                                                
                               </div>
-                            </div>
+                            </section>
                           </div>
                           <div class="panel-group m-b" id="accordion2">
                             <div class="panel">
