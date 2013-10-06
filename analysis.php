@@ -134,6 +134,8 @@ if((!isacmlogged())||(!$MyBBI->isLoggedIn())||(!$MyBBI->isSuperAdmin())){
                                         <strong><small class="pull-right"> '.$r['currency'].' '.$r['valor'].' </small></strong>
                                       </a>
                                     </li>';
+                                    
+                                    
                                 }
                                 ?>
                                 
@@ -304,40 +306,51 @@ echo "],
 		});*/
 	});
     "; 
- $round_numerator = 30 * 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
-//$round_numerator = 60 * 60 or to the nearest hour
-//$round_numerator = 60 * 60 * 24 or to the nearest day
-$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator )+(3*60 * 24);
-$semanasatras = $rounded_time - 9*30*24*60*60;
-$resserv=$MySQLEco->execute('SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$semanasatras.' ORDER BY d.fecha,d.servidor, d.currency');
+// $round_numerator = 30 * 60 * 60 * 24;//60 * 15 // 60 seconds per minute * 15 minutes equals 900 seconds
+////$round_numerator = 60 * 60 or to the nearest hour
+////$round_numerator = 60 * 60 * 24 or to the nearest day
+//$rounded_time=( floor ( time() / $round_numerator ) * $round_numerator )+(3*60 * 24);
+//$semanasatras = $rounded_time - 9*30*24*60*60;
+$resserv=$MySQLEco->execute('SELECT Year(FROM_UNIXTIME(fecha)) as anio,Month(FROM_UNIXTIME(fecha)) as mes, servidor,sum(
+CASE WHEN (currency =0 AND servidor=0) THEN valor 
+WHEN (currency=1 AND servidor=0) THEN valor*5.7 
+ELSE 0 END) as cant1, sum(
+CASE WHEN (currency =0 AND servidor=1) THEN valor 
+WHEN (currency=1 AND servidor=1) THEN valor*5.7 
+ELSE 0 END) as cant2
+FROM donaciones 
+GROUP BY Month(FROM_UNIXTIME(fecha)),Year(FROM_UNIXTIME(fecha))
+ORDER BY anio DESC,mes DESC');
+
+
 //echo 'SELECT * FROM `donaciones` as d WHERE  d.fecha>'.$semanasatras.' ORDER BY d.fecha,d.servidor, d.currency';
 //print_r($resserv);
 $cont=0;
-for($i=9;$i>=0;$i--){
-    $mes= mktime(0,0,0,intval(date('m',time()-($i*$round_numerator))),1,intval(date('Y',time()-($i*$round_numerator))));//$rounded_time-($i*$round_numerator);
-    $messiguiente=mktime(0,0,0,intval(date('m',time()-(($i-1)*$round_numerator))),1,intval(date('Y',time()-(($i-1)*$round_numerator))));
-    $dataarea[$i]['period']=date('Y-m',$mes);
-    $dataarea[$i][0]=0;
-    $dataarea[$i][1]=0;
+for($i=0;$i<10;$i++){
+    //$mes= mktime(0,0,0,intval(date('m',time()-($i*$round_numerator))),1,intval(date('Y',time()-($i*$round_numerator))));//$rounded_time-($i*$round_numerator);
+//    $messiguiente=mktime(0,0,0,intval(date('m',time()-(($i-1)*$round_numerator))),1,intval(date('Y',time()-(($i-1)*$round_numerator))));
+    $dataarea[$i]['period']=$resserv[$i]['anio'].'-'.$resserv[$i]['mes'];
+    $dataarea[$i][0]=intval($resserv[$i]['cant1']*100)/100;
+    $dataarea[$i][1]=intval($resserv[$i]['cant2']*100)/100;
     
     //if(!isset($resserv[$cont])) break;
 	//echo '('.$resserv[$cont]['fecha'].'>'.$semana.')&&('.$resserv[$cont]['fecha'].'<'.$semanasiguiente.')';
-    while(($resserv[$cont]['fecha']>$mes)&&($resserv[$cont]['fecha']<$messiguiente)){
-	//echo "while $cont <br>";
-        $cant=$resserv[$cont]['valor'];
-        switch($resserv[$cont]['currency']){
-            case 0:
-            break;
-            case 1:
-            $cant*=5.70;
-            break;
-            case 2:
-            $cant*=7.65;
-            break;
-        }
-        $dataarea[$i][$resserv[$cont]['servidor']]+=$cant;
-        $cont++;
-    }    
+    //while(($resserv[$cont]['fecha']>$mes)&&($resserv[$cont]['fecha']<$messiguiente)){
+//	//echo "while $cont <br>";
+//        $cant=$resserv[$cont]['valor'];
+//        switch($resserv[$cont]['currency']){
+//            case 0:
+//            break;
+//            case 1:
+//            $cant*=5.70;
+//            break;
+//            case 2:
+//            $cant*=7.65;
+//            break;
+//        }
+        //$dataarea[$i][$resserv[$cont]['servidor']]+=$cant;
+        //$cont++;
+      
 }
 
 echo "	
@@ -345,7 +358,7 @@ echo "
 		Morris.Area({
 			element: 'donacion-area-mes',
 			data: [";  
-for($i=9;$i>0;$i--){
+for($i=0;$i<9;$i++){
     echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."},";
 }
 echo "{period: '".$dataarea[$i]['period']."', minekkit: ".$dataarea[$i][0].", linekkit: ".$dataarea[$i][1]."}";
